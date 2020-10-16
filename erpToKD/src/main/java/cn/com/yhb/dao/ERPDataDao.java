@@ -104,6 +104,21 @@ public class ERPDataDao {
                 t_icItem.setFusestate(341);
                 t_icItem.setFabccls(null);
                 t_icItem.setFacctid(1024);
+                t_icItem.setFbatchmanager(false);
+                t_icItem.setFbatchqty(null);
+                t_icItem.setFbeforeexpire(null);
+                t_icItem.setFbookplan(null);
+                t_icItem.setFcheckcycle(null);
+                t_icItem.setFcheckcycunit(null);
+                t_icItem.setFclass(false);
+                t_icItem.setFcostacctid(0);
+                t_icItem.setFcostdiffrate(null);
+                t_icItem.setFcostproject(0);
+                t_icItem.setFdaysper(null);
+                t_icItem.setFdepartment(Integer.parseInt(resultSet.getString("dept_id")));
+                t_icItem.setFgoodspec(0);
+                t_icItem.setFiskfperiod(false);
+
 
 
 
