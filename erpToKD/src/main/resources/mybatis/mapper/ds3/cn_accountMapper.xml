@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.cn_account3Mapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.cn_account" >
+    <id column="FID" property="fid" jdbcType="INTEGER" />
+    <result column="FKmID" property="fkmid" jdbcType="INTEGER" />
+    <result column="FKmdm" property="fkmdm" jdbcType="VARCHAR" />
+    <result column="FKmmc" property="fkmmc" jdbcType="VARCHAR" />
+    <result column="FBbID" property="fbbid" jdbcType="INTEGER" />
+    <result column="FBb" property="fbb" jdbcType="VARCHAR" />
+    <result column="FYhmc" property="fyhmc" jdbcType="VARCHAR" />
+    <result column="FYhzh" property="fyhzh" jdbcType="VARCHAR" />
+    <result column="FYhdzdYe" property="fyhdzdye" jdbcType="DECIMAL" />
+    <result column="FJfje" property="fjfje" jdbcType="DECIMAL" />
+    <result column="FDfje" property="fdfje" jdbcType="DECIMAL" />
+    <result column="FYe" property="fye" jdbcType="DECIMAL" />
+    <result column="FJfjeB" property="fjfjeb" jdbcType="DECIMAL" />
+    <result column="FDfjeB" property="fdfjeb" jdbcType="DECIMAL" />
+    <result column="FYeB" property="fyeb" jdbcType="DECIMAL" />
+    <result column="FYhrjzTzhYe" property="fyhrjztzhye" jdbcType="DECIMAL" />
+    <result column="FYhdzdTzhYe" property="fyhdzdtzhye" jdbcType="DECIMAL" />
+    <result column="FYeIsBalance" property="fyeisbalance" jdbcType="BIT" />
+    <result column="FIsCash" property="fiscash" jdbcType="BIT" />
+    <result column="FIsCombineKm" property="fiscombinekm" jdbcType="BIT" />
+    <result column="FQy" property="fqy" jdbcType="BIT" />
+    <result column="FForbid" property="fforbid" jdbcType="BIT" />
+    <result column="FStartupYear" property="fstartupyear" jdbcType="INTEGER" />
+    <result column="FStartupPeriod" property="fstartupperiod" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FID, FKmID, FKmdm, FKmmc, FBbID, FBb, FYhmc, FYhzh, FYhdzdYe, FJfje, FDfje, FYe, 
+    FJfjeB, FDfjeB, FYeB, FYhrjzTzhYe, FYhdzdTzhYe, FYeIsBalance, FIsCash, FIsCombineKm, 
+    FQy, FForbid, FStartupYear, FStartupPeriod
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cn_account
+    where FID = #{fid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cn_account
+    where FID = #{fid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.cn_account" >
+    insert into cn_account (FID, FKmID, FKmdm, 
+      FKmmc, FBbID, FBb, 
+      FYhmc, FYhzh, FYhdzdYe, 
+      FJfje, FDfje, FYe, 
+      FJfjeB, FDfjeB, FYeB, 
+      FYhrjzTzhYe, FYhdzdTzhYe, FYeIsBalance, 
+      FIsCash, FIsCombineKm, FQy, FForbid, 
+      FStartupYear, FStartupPeriod)
+    values (#{fid,jdbcType=INTEGER}, #{fkmid,jdbcType=INTEGER}, #{fkmdm,jdbcType=VARCHAR}, 
+      #{fkmmc,jdbcType=VARCHAR}, #{fbbid,jdbcType=INTEGER}, #{fbb,jdbcType=VARCHAR}, 
+      #{fyhmc,jdbcType=VARCHAR}, #{fyhzh,jdbcType=VARCHAR}, #{fyhdzdye,jdbcType=DECIMAL}, 
+      #{fjfje,jdbcType=DECIMAL}, #{fdfje,jdbcType=DECIMAL}, #{fye,jdbcType=DECIMAL}, 
+      #{fjfjeb,jdbcType=DECIMAL}, #{fdfjeb,jdbcType=DECIMAL}, #{fyeb,jdbcType=DECIMAL}, 
+      #{fyhrjztzhye,jdbcType=DECIMAL}, #{fyhdzdtzhye,jdbcType=DECIMAL}, #{fyeisbalance,jdbcType=BIT}, 
+      #{fiscash,jdbcType=BIT}, #{fiscombinekm,jdbcType=BIT}, #{fqy,jdbcType=BIT}, #{fforbid,jdbcType=BIT}, 
+      #{fstartupyear,jdbcType=INTEGER}, #{fstartupperiod,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.cn_account" >
+    insert into cn_account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        FID,
+      </if>
+      <if test="fkmid != null" >
+        FKmID,
+      </if>
+      <if test="fkmdm != null" >
+        FKmdm,
+      </if>
+      <if test="fkmmc != null" >
+        FKmmc,
+      </if>
+      <if test="fbbid != null" >
+        FBbID,
+      </if>
+      <if test="fbb != null" >
+        FBb,
+      </if>
+      <if test="fyhmc != null" >
+        FYhmc,
+      </if>
+      <if test="fyhzh != null" >
+        FYhzh,
+      </if>
+      <if test="fyhdzdye != null" >
+        FYhdzdYe,
+      </if>
+      <if test="fjfje != null" >
+        FJfje,
+      </if>
+      <if test="fdfje != null" >
+        FDfje,
+      </if>
+      <if test="fye != null" >
+        FYe,
+      </if>
+      <if test="fjfjeb != null" >
+        FJfjeB,
+      </if>
+      <if test="fdfjeb != null" >
+        FDfjeB,
+      </if>
+      <if test="fyeb != null" >
+        FYeB,
+      </if>
+      <if test="fyhrjztzhye != null" >
+        FYhrjzTzhYe,
+      </if>
+      <if test="fyhdzdtzhye != null" >
+        FYhdzdTzhYe,
+      </if>
+      <if test="fyeisbalance != null" >
+        FYeIsBalance,
+      </if>
+      <if test="fiscash != null" >
+        FIsCash,
+      </if>
+      <if test="fiscombinekm != null" >
+        FIsCombineKm,
+      </if>
+      <if test="fqy != null" >
+        FQy,
+      </if>
+      <if test="fforbid != null" >
+        FForbid,
+      </if>
+      <if test="fstartupyear != null" >
+        FStartupYear,
+      </if>
+      <if test="fstartupperiod != null" >
+        FStartupPeriod,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="fkmid != null" >
+        #{fkmid,jdbcType=INTEGER},
+      </if>
+      <if test="fkmdm != null" >
+        #{fkmdm,jdbcType=VARCHAR},
+      </if>
+      <if test="fkmmc != null" >
+        #{fkmmc,jdbcType=VARCHAR},
+      </if>
+      <if test="fbbid != null" >
+        #{fbbid,jdbcType=INTEGER},
+      </if>
+      <if test="fbb != null" >
+        #{fbb,jdbcType=VARCHAR},
+      </if>
+      <if test="fyhmc != null" >
+        #{fyhmc,jdbcType=VARCHAR},
+      </if>
+      <if test="fyhzh != null" >
+        #{fyhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="fyhdzdye != null" >
+        #{fyhdzdye,jdbcType=DECIMAL},
+      </if>
+      <if test="fjfje != null" >
+        #{fjfje,jdbcType=DECIMAL},
+      </if>
+      <if test="fdfje != null" >
+        #{fdfje,jdbcType=DECIMAL},
+      </if>
+      <if test="fye != null" >
+        #{fye,jdbcType=DECIMAL},
+      </if>
+      <if test="fjfjeb != null" >
+        #{fjfjeb,jdbcType=DECIMAL},
+      </if>
+      <if test="fdfjeb != null" >
+        #{fdfjeb,jdbcType=DECIMAL},
+      </if>
+      <if test="fyeb != null" >
+        #{fyeb,jdbcType=DECIMAL},
+      </if>
+      <if test="fyhrjztzhye != null" >
+        #{fyhrjztzhye,jdbcType=DECIMAL},
+      </if>
+      <if test="fyhdzdtzhye != null" >
+        #{fyhdzdtzhye,jdbcType=DECIMAL},
+      </if>
+      <if test="fyeisbalance != null" >
+        #{fyeisbalance,jdbcType=BIT},
+      </if>
+      <if test="fiscash != null" >
+        #{fiscash,jdbcType=BIT},
+      </if>
+      <if test="fiscombinekm != null" >
+        #{fiscombinekm,jdbcType=BIT},
+      </if>
+      <if test="fqy != null" >
+        #{fqy,jdbcType=BIT},
+      </if>
+      <if test="fforbid != null" >
+        #{fforbid,jdbcType=BIT},
+      </if>
+      <if test="fstartupyear != null" >
+        #{fstartupyear,jdbcType=INTEGER},
+      </if>
+      <if test="fstartupperiod != null" >
+        #{fstartupperiod,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.cn_account" >
+    update cn_account
+    <set >
+      <if test="fkmid != null" >
+        FKmID = #{fkmid,jdbcType=INTEGER},
+      </if>
+      <if test="fkmdm != null" >
+        FKmdm = #{fkmdm,jdbcType=VARCHAR},
+      </if>
+      <if test="fkmmc != null" >
+        FKmmc = #{fkmmc,jdbcType=VARCHAR},
+      </if>
+      <if test="fbbid != null" >
+        FBbID = #{fbbid,jdbcType=INTEGER},
+      </if>
+      <if test="fbb != null" >
+        FBb = #{fbb,jdbcType=VARCHAR},
+      </if>
+      <if test="fyhmc != null" >
+        FYhmc = #{fyhmc,jdbcType=VARCHAR},
+      </if>
+      <if test="fyhzh != null" >
+        FYhzh = #{fyhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="fyhdzdye != null" >
+        FYhdzdYe = #{fyhdzdye,jdbcType=DECIMAL},
+      </if>
+      <if test="fjfje != null" >
+        FJfje = #{fjfje,jdbcType=DECIMAL},
+      </if>
+      <if test="fdfje != null" >
+        FDfje = #{fdfje,jdbcType=DECIMAL},
+      </if>
+      <if test="fye != null" >
+        FYe = #{fye,jdbcType=DECIMAL},
+      </if>
+      <if test="fjfjeb != null" >
+        FJfjeB = #{fjfjeb,jdbcType=DECIMAL},
+      </if>
+      <if test="fdfjeb != null" >
+        FDfjeB = #{fdfjeb,jdbcType=DECIMAL},
+      </if>
+      <if test="fyeb != null" >
+        FYeB = #{fyeb,jdbcType=DECIMAL},
+      </if>
+      <if test="fyhrjztzhye != null" >
+        FYhrjzTzhYe = #{fyhrjztzhye,jdbcType=DECIMAL},
+      </if>
+      <if test="fyhdzdtzhye != null" >
+        FYhdzdTzhYe = #{fyhdzdtzhye,jdbcType=DECIMAL},
+      </if>
+      <if test="fyeisbalance != null" >
+        FYeIsBalance = #{fyeisbalance,jdbcType=BIT},
+      </if>
+      <if test="fiscash != null" >
+        FIsCash = #{fiscash,jdbcType=BIT},
+      </if>
+      <if test="fiscombinekm != null" >
+        FIsCombineKm = #{fiscombinekm,jdbcType=BIT},
+      </if>
+      <if test="fqy != null" >
+        FQy = #{fqy,jdbcType=BIT},
+      </if>
+      <if test="fforbid != null" >
+        FForbid = #{fforbid,jdbcType=BIT},
+      </if>
+      <if test="fstartupyear != null" >
+        FStartupYear = #{fstartupyear,jdbcType=INTEGER},
+      </if>
+      <if test="fstartupperiod != null" >
+        FStartupPeriod = #{fstartupperiod,jdbcType=INTEGER},
+      </if>
+    </set>
+    where FID = #{fid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.cn_account" >
+    update cn_account
+    set FKmID = #{fkmid,jdbcType=INTEGER},
+      FKmdm = #{fkmdm,jdbcType=VARCHAR},
+      FKmmc = #{fkmmc,jdbcType=VARCHAR},
+      FBbID = #{fbbid,jdbcType=INTEGER},
+      FBb = #{fbb,jdbcType=VARCHAR},
+      FYhmc = #{fyhmc,jdbcType=VARCHAR},
+      FYhzh = #{fyhzh,jdbcType=VARCHAR},
+      FYhdzdYe = #{fyhdzdye,jdbcType=DECIMAL},
+      FJfje = #{fjfje,jdbcType=DECIMAL},
+      FDfje = #{fdfje,jdbcType=DECIMAL},
+      FYe = #{fye,jdbcType=DECIMAL},
+      FJfjeB = #{fjfjeb,jdbcType=DECIMAL},
+      FDfjeB = #{fdfjeb,jdbcType=DECIMAL},
+      FYeB = #{fyeb,jdbcType=DECIMAL},
+      FYhrjzTzhYe = #{fyhrjztzhye,jdbcType=DECIMAL},
+      FYhdzdTzhYe = #{fyhdzdtzhye,jdbcType=DECIMAL},
+      FYeIsBalance = #{fyeisbalance,jdbcType=BIT},
+      FIsCash = #{fiscash,jdbcType=BIT},
+      FIsCombineKm = #{fiscombinekm,jdbcType=BIT},
+      FQy = #{fqy,jdbcType=BIT},
+      FForbid = #{fforbid,jdbcType=BIT},
+      FStartupYear = #{fstartupyear,jdbcType=INTEGER},
+      FStartupPeriod = #{fstartupperiod,jdbcType=INTEGER}
+    where FID = #{fid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.t_ItemClass3Mapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ItemClass" >
+    <id column="FItemClassID" property="fitemclassid" jdbcType="INTEGER" />
+    <result column="FNumber" property="fnumber" jdbcType="VARCHAR" />
+    <result column="FName" property="fname" jdbcType="NVARCHAR" />
+    <result column="FName_cht" property="fnameCht" jdbcType="NVARCHAR" />
+    <result column="FName_en" property="fnameEn" jdbcType="NVARCHAR" />
+    <result column="FSQLTableName" property="fsqltablename" jdbcType="VARCHAR" />
+    <result column="FVersion" property="fversion" jdbcType="SMALLINT" />
+    <result column="FImport" property="fimport" jdbcType="BIT" />
+    <result column="FBrNo" property="fbrno" jdbcType="CHAR" />
+    <result column="FUserDefilast" property="fuserdefilast" jdbcType="INTEGER" />
+    <result column="FType" property="ftype" jdbcType="SMALLINT" />
+    <result column="FGRType" property="fgrtype" jdbcType="SMALLINT" />
+    <result column="FRemark" property="fremark" jdbcType="VARCHAR" />
+    <result column="FGrControl" property="fgrcontrol" jdbcType="INTEGER" />
+    <result column="UUID" property="uuid" jdbcType="CHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_ItemClass" extends="BaseResultMap" >
+    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemClassID, FNumber, FName, FName_cht, FName_en, FSQLTableName, FVersion, FImport, 
+    FBrNo, FUserDefilast, FType, FGRType, FRemark, FGrControl, UUID
+  </sql>
+  <sql id="Blob_Column_List" >
+    FModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_ItemClass
+    where FItemClassID = #{fitemclassid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ItemClass
+    where FItemClassID = #{fitemclassid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ItemClass" >
+    insert into t_ItemClass (FItemClassID, FNumber, FName, 
+      FName_cht, FName_en, FSQLTableName, 
+      FVersion, FImport, FBrNo, 
+      FUserDefilast, FType, FGRType, 
+      FRemark, FGrControl, UUID, 
+      FModifyTime)
+    values (#{fitemclassid,jdbcType=INTEGER}, #{fnumber,jdbcType=VARCHAR}, #{fname,jdbcType=NVARCHAR}, 
+      #{fnameCht,jdbcType=NVARCHAR}, #{fnameEn,jdbcType=NVARCHAR}, #{fsqltablename,jdbcType=VARCHAR}, 
+      #{fversion,jdbcType=SMALLINT}, #{fimport,jdbcType=BIT}, #{fbrno,jdbcType=CHAR}, 
+      #{fuserdefilast,jdbcType=INTEGER}, #{ftype,jdbcType=SMALLINT}, #{fgrtype,jdbcType=SMALLINT}, 
+      #{fremark,jdbcType=VARCHAR}, #{fgrcontrol,jdbcType=INTEGER}, #{uuid,jdbcType=CHAR}, 
+      #{fmodifytime,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ItemClass" >
+    insert into t_ItemClass
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemclassid != null" >
+        FItemClassID,
+      </if>
+      <if test="fnumber != null" >
+        FNumber,
+      </if>
+      <if test="fname != null" >
+        FName,
+      </if>
+      <if test="fnameCht != null" >
+        FName_cht,
+      </if>
+      <if test="fnameEn != null" >
+        FName_en,
+      </if>
+      <if test="fsqltablename != null" >
+        FSQLTableName,
+      </if>
+      <if test="fversion != null" >
+        FVersion,
+      </if>
+      <if test="fimport != null" >
+        FImport,
+      </if>
+      <if test="fbrno != null" >
+        FBrNo,
+      </if>
+      <if test="fuserdefilast != null" >
+        FUserDefilast,
+      </if>
+      <if test="ftype != null" >
+        FType,
+      </if>
+      <if test="fgrtype != null" >
+        FGRType,
+      </if>
+      <if test="fremark != null" >
+        FRemark,
+      </if>
+      <if test="fgrcontrol != null" >
+        FGrControl,
+      </if>
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemclassid != null" >
+        #{fitemclassid,jdbcType=INTEGER},
+      </if>
+      <if test="fnumber != null" >
+        #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=NVARCHAR},
+      </if>
+      <if test="fnameCht != null" >
+        #{fnameCht,jdbcType=NVARCHAR},
+      </if>
+      <if test="fnameEn != null" >
+        #{fnameEn,jdbcType=NVARCHAR},
+      </if>
+      <if test="fsqltablename != null" >
+        #{fsqltablename,jdbcType=VARCHAR},
+      </if>
+      <if test="fversion != null" >
+        #{fversion,jdbcType=SMALLINT},
+      </if>
+      <if test="fimport != null" >
+        #{fimport,jdbcType=BIT},
+      </if>
+      <if test="fbrno != null" >
+        #{fbrno,jdbcType=CHAR},
+      </if>
+      <if test="fuserdefilast != null" >
+        #{fuserdefilast,jdbcType=INTEGER},
+      </if>
+      <if test="ftype != null" >
+        #{ftype,jdbcType=SMALLINT},
+      </if>
+      <if test="fgrtype != null" >
+        #{fgrtype,jdbcType=SMALLINT},
+      </if>
+      <if test="fremark != null" >
+        #{fremark,jdbcType=VARCHAR},
+      </if>
+      <if test="fgrcontrol != null" >
+        #{fgrcontrol,jdbcType=INTEGER},
+      </if>
+      <if test="uuid != null" >
+        #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ItemClass" >
+    update t_ItemClass
+    <set >
+      <if test="fnumber != null" >
+        FNumber = #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        FName = #{fname,jdbcType=NVARCHAR},
+      </if>
+      <if test="fnameCht != null" >
+        FName_cht = #{fnameCht,jdbcType=NVARCHAR},
+      </if>
+      <if test="fnameEn != null" >
+        FName_en = #{fnameEn,jdbcType=NVARCHAR},
+      </if>
+      <if test="fsqltablename != null" >
+        FSQLTableName = #{fsqltablename,jdbcType=VARCHAR},
+      </if>
+      <if test="fversion != null" >
+        FVersion = #{fversion,jdbcType=SMALLINT},
+      </if>
+      <if test="fimport != null" >
+        FImport = #{fimport,jdbcType=BIT},
+      </if>
+      <if test="fbrno != null" >
+        FBrNo = #{fbrno,jdbcType=CHAR},
+      </if>
+      <if test="fuserdefilast != null" >
+        FUserDefilast = #{fuserdefilast,jdbcType=INTEGER},
+      </if>
+      <if test="ftype != null" >
+        FType = #{ftype,jdbcType=SMALLINT},
+      </if>
+      <if test="fgrtype != null" >
+        FGRType = #{fgrtype,jdbcType=SMALLINT},
+      </if>
+      <if test="fremark != null" >
+        FRemark = #{fremark,jdbcType=VARCHAR},
+      </if>
+      <if test="fgrcontrol != null" >
+        FGrControl = #{fgrcontrol,jdbcType=INTEGER},
+      </if>
+      <if test="uuid != null" >
+        UUID = #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime = #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </set>
+    where FItemClassID = #{fitemclassid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.com.yhb.entity.t_ItemClass" >
+    update t_ItemClass
+    set FNumber = #{fnumber,jdbcType=VARCHAR},
+      FName = #{fname,jdbcType=NVARCHAR},
+      FName_cht = #{fnameCht,jdbcType=NVARCHAR},
+      FName_en = #{fnameEn,jdbcType=NVARCHAR},
+      FSQLTableName = #{fsqltablename,jdbcType=VARCHAR},
+      FVersion = #{fversion,jdbcType=SMALLINT},
+      FImport = #{fimport,jdbcType=BIT},
+      FBrNo = #{fbrno,jdbcType=CHAR},
+      FUserDefilast = #{fuserdefilast,jdbcType=INTEGER},
+      FType = #{ftype,jdbcType=SMALLINT},
+      FGRType = #{fgrtype,jdbcType=SMALLINT},
+      FRemark = #{fremark,jdbcType=VARCHAR},
+      FGrControl = #{fgrcontrol,jdbcType=INTEGER},
+      UUID = #{uuid,jdbcType=CHAR},
+      FModifyTime = #{fmodifytime,jdbcType=BINARY}
+    where FItemClassID = #{fitemclassid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ItemClass" >
+    update t_ItemClass
+    set FNumber = #{fnumber,jdbcType=VARCHAR},
+      FName = #{fname,jdbcType=NVARCHAR},
+      FName_cht = #{fnameCht,jdbcType=NVARCHAR},
+      FName_en = #{fnameEn,jdbcType=NVARCHAR},
+      FSQLTableName = #{fsqltablename,jdbcType=VARCHAR},
+      FVersion = #{fversion,jdbcType=SMALLINT},
+      FImport = #{fimport,jdbcType=BIT},
+      FBrNo = #{fbrno,jdbcType=CHAR},
+      FUserDefilast = #{fuserdefilast,jdbcType=INTEGER},
+      FType = #{ftype,jdbcType=SMALLINT},
+      FGRType = #{fgrtype,jdbcType=SMALLINT},
+      FRemark = #{fremark,jdbcType=VARCHAR},
+      FGrControl = #{fgrcontrol,jdbcType=INTEGER},
+      UUID = #{uuid,jdbcType=CHAR}
+    where FItemClassID = #{fitemclassid,jdbcType=INTEGER}
+  </update>
+</mapper>

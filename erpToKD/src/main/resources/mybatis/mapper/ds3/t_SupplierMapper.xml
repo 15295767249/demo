@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.t_Supplier3Mapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_Supplier" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FAddress" property="faddress" jdbcType="VARCHAR" />
+    <result column="FCity" property="fcity" jdbcType="VARCHAR" />
+    <result column="FProvince" property="fprovince" jdbcType="VARCHAR" />
+    <result column="FCountry" property="fcountry" jdbcType="VARCHAR" />
+    <result column="FPostalCode" property="fpostalcode" jdbcType="VARCHAR" />
+    <result column="FPhone" property="fphone" jdbcType="VARCHAR" />
+    <result column="FFax" property="ffax" jdbcType="VARCHAR" />
+    <result column="FEmail" property="femail" jdbcType="VARCHAR" />
+    <result column="FHomePage" property="fhomepage" jdbcType="VARCHAR" />
+    <result column="FCreditLimit" property="fcreditlimit" jdbcType="VARCHAR" />
+    <result column="FTaxID" property="ftaxid" jdbcType="VARCHAR" />
+    <result column="FBank" property="fbank" jdbcType="VARCHAR" />
+    <result column="FAccount" property="faccount" jdbcType="VARCHAR" />
+    <result column="FBrNo" property="fbrno" jdbcType="VARCHAR" />
+    <result column="FBoundAttr" property="fboundattr" jdbcType="INTEGER" />
+    <result column="FErpClsID" property="ferpclsid" jdbcType="INTEGER" />
+    <result column="FShortName" property="fshortname" jdbcType="VARCHAR" />
+    <result column="FPriorityID" property="fpriorityid" jdbcType="INTEGER" />
+    <result column="FPOGroupID" property="fpogroupid" jdbcType="INTEGER" />
+    <result column="FStatus" property="fstatus" jdbcType="INTEGER" />
+    <result column="FLanguageID" property="flanguageid" jdbcType="INTEGER" />
+    <result column="FRegionID" property="fregionid" jdbcType="INTEGER" />
+    <result column="FTrade" property="ftrade" jdbcType="INTEGER" />
+    <result column="FMinPOValue" property="fminpovalue" jdbcType="DOUBLE" />
+    <result column="FMaxDebitDate" property="fmaxdebitdate" jdbcType="DOUBLE" />
+    <result column="FLegalPerson" property="flegalperson" jdbcType="VARCHAR" />
+    <result column="FContact" property="fcontact" jdbcType="VARCHAR" />
+    <result column="FContactAcct" property="fcontactacct" jdbcType="VARCHAR" />
+    <result column="FPhoneAcct" property="fphoneacct" jdbcType="VARCHAR" />
+    <result column="FFaxAcct" property="ffaxacct" jdbcType="VARCHAR" />
+    <result column="FZipAcct" property="fzipacct" jdbcType="VARCHAR" />
+    <result column="FEmailAcct" property="femailacct" jdbcType="VARCHAR" />
+    <result column="FAddrAcct" property="faddracct" jdbcType="VARCHAR" />
+    <result column="FTax" property="ftax" jdbcType="REAL" />
+    <result column="FCyID" property="fcyid" jdbcType="INTEGER" />
+    <result column="FSetID" property="fsetid" jdbcType="INTEGER" />
+    <result column="FSetDLineID" property="fsetdlineid" jdbcType="INTEGER" />
+    <result column="FTaxNum" property="ftaxnum" jdbcType="VARCHAR" />
+    <result column="FPriceClsID" property="fpriceclsid" jdbcType="INTEGER" />
+    <result column="FOperID" property="foperid" jdbcType="INTEGER" />
+    <result column="FCIQNumber" property="fciqnumber" jdbcType="VARCHAR" />
+    <result column="FDeleted" property="fdeleted" jdbcType="SMALLINT" />
+    <result column="FSaleMode" property="fsalemode" jdbcType="SMALLINT" />
+    <result column="FName" property="fname" jdbcType="VARCHAR" />
+    <result column="FNumber" property="fnumber" jdbcType="VARCHAR" />
+    <result column="FParentID" property="fparentid" jdbcType="INTEGER" />
+    <result column="FShortNumber" property="fshortnumber" jdbcType="VARCHAR" />
+    <result column="FARAccountID" property="faraccountid" jdbcType="INTEGER" />
+    <result column="FAPAccountID" property="fapaccountid" jdbcType="INTEGER" />
+    <result column="FpreAcctID" property="fpreacctid" jdbcType="INTEGER" />
+    <result column="FlastTradeAmount" property="flasttradeamount" jdbcType="DECIMAL" />
+    <result column="FLastRPAmount" property="flastrpamount" jdbcType="DECIMAL" />
+    <result column="FFavorPolicy" property="ffavorpolicy" jdbcType="VARCHAR" />
+    <result column="Fdepartment" property="fdepartment" jdbcType="INTEGER" />
+    <result column="Femployee" property="femployee" jdbcType="INTEGER" />
+    <result column="Fcorperate" property="fcorperate" jdbcType="VARCHAR" />
+    <result column="FBeginTradeDate" property="fbegintradedate" jdbcType="TIMESTAMP" />
+    <result column="FEndTradeDate" property="fendtradedate" jdbcType="TIMESTAMP" />
+    <result column="FLastTradeDate" property="flasttradedate" jdbcType="TIMESTAMP" />
+    <result column="FLastReceiveDate" property="flastreceivedate" jdbcType="TIMESTAMP" />
+    <result column="FcashDiscount" property="fcashdiscount" jdbcType="VARCHAR" />
+    <result column="FcurrencyID" property="fcurrencyid" jdbcType="INTEGER" />
+    <result column="FMaxDealAmount" property="fmaxdealamount" jdbcType="DOUBLE" />
+    <result column="FMinForeReceiveRate" property="fminforereceiverate" jdbcType="DOUBLE" />
+    <result column="FMinReserveRate" property="fminreserverate" jdbcType="DOUBLE" />
+    <result column="FMaxForePayAmount" property="fmaxforepayamount" jdbcType="DOUBLE" />
+    <result column="FMaxForePayRate" property="fmaxforepayrate" jdbcType="DOUBLE" />
+    <result column="FdebtLevel" property="fdebtlevel" jdbcType="INTEGER" />
+    <result column="FCreditDays" property="fcreditdays" jdbcType="INTEGER" />
+    <result column="FValueAddRate" property="fvalueaddrate" jdbcType="DECIMAL" />
+    <result column="FPayTaxAcctID" property="fpaytaxacctid" jdbcType="INTEGER" />
+    <result column="FDiscount" property="fdiscount" jdbcType="DECIMAL" />
+    <result column="FTypeID" property="ftypeid" jdbcType="INTEGER" />
+    <result column="FCreditAmount" property="fcreditamount" jdbcType="DECIMAL" />
+    <result column="FCreditLevel" property="fcreditlevel" jdbcType="VARCHAR" />
+    <result column="FStockIDAssignee" property="fstockidassignee" jdbcType="INTEGER" />
+    <result column="FBr" property="fbr" jdbcType="INTEGER" />
+    <result column="FRegmark" property="fregmark" jdbcType="VARCHAR" />
+    <result column="FLicAndPermit" property="flicandpermit" jdbcType="BIT" />
+    <result column="FLicence" property="flicence" jdbcType="VARCHAR" />
+    <result column="FPaperPeriod" property="fpaperperiod" jdbcType="TIMESTAMP" />
+    <result column="FAlarmPeriod" property="falarmperiod" jdbcType="INTEGER" />
+    <result column="FOtherARAcctID" property="fotheraracctid" jdbcType="INTEGER" />
+    <result column="FOtherAPAcctID" property="fotherapacctid" jdbcType="INTEGER" />
+    <result column="FPreARAcctID" property="fprearacctid" jdbcType="INTEGER" />
+    <result column="FHelpCode" property="fhelpcode" jdbcType="VARCHAR" />
+    <result column="FCreditDegree" property="fcreditdegree" jdbcType="INTEGER" />
+    <result column="FRightUserID" property="frightuserid" jdbcType="VARCHAR" />
+    <result column="FPaymentTime" property="fpaymenttime" jdbcType="INTEGER" />
+    <result column="FSMSPhoneNumber" property="fsmsphonenumber" jdbcType="VARCHAR" />
+    <result column="FFullName" property="ffullname" jdbcType="VARCHAR" />
+    <result column="FAcctID" property="facctid" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Supplier" extends="BaseResultMap" >
+    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FAddress, FCity, FProvince, FCountry, FPostalCode, FPhone, FFax, FEmail, 
+    FHomePage, FCreditLimit, FTaxID, FBank, FAccount, FBrNo, FBoundAttr, FErpClsID, FShortName, 
+    FPriorityID, FPOGroupID, FStatus, FLanguageID, FRegionID, FTrade, FMinPOValue, FMaxDebitDate, 
+    FLegalPerson, FContact, FContactAcct, FPhoneAcct, FFaxAcct, FZipAcct, FEmailAcct, 
+    FAddrAcct, FTax, FCyID, FSetID, FSetDLineID, FTaxNum, FPriceClsID, FOperID, FCIQNumber, 
+    FDeleted, FSaleMode, FName, FNumber, FParentID, FShortNumber, FARAccountID, FAPAccountID, 
+    FpreAcctID, FlastTradeAmount, FLastRPAmount, FFavorPolicy, Fdepartment, Femployee, 
+    Fcorperate, FBeginTradeDate, FEndTradeDate, FLastTradeDate, FLastReceiveDate, FcashDiscount, 
+    FcurrencyID, FMaxDealAmount, FMinForeReceiveRate, FMinReserveRate, FMaxForePayAmount, 
+    FMaxForePayRate, FdebtLevel, FCreditDays, FValueAddRate, FPayTaxAcctID, FDiscount, 
+    FTypeID, FCreditAmount, FCreditLevel, FStockIDAssignee, FBr, FRegmark, FLicAndPermit, 
+    FLicence, FPaperPeriod, FAlarmPeriod, FOtherARAcctID, FOtherAPAcctID, FPreARAcctID, 
+    FHelpCode, FCreditDegree, FRightUserID, FPaymentTime, FSMSPhoneNumber, FFullName, 
+    FAcctID
+  </sql>
+  <sql id="Blob_Column_List" >
+    FModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_Supplier
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_Supplier
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_Supplier" >
+    insert into t_Supplier (FItemID, FAddress, FCity, 
+      FProvince, FCountry, FPostalCode, 
+      FPhone, FFax, FEmail, 
+      FHomePage, FCreditLimit, FTaxID, 
+      FBank, FAccount, FBrNo, 
+      FBoundAttr, FErpClsID, FShortName, 
+      FPriorityID, FPOGroupID, FStatus, 
+      FLanguageID, FRegionID, FTrade, 
+      FMinPOValue, FMaxDebitDate, FLegalPerson, 
+      FContact, FContactAcct, FPhoneAcct, 
+      FFaxAcct, FZipAcct, FEmailAcct, 
+      FAddrAcct, FTax, FCyID, 
+      FSetID, FSetDLineID, FTaxNum, 
+      FPriceClsID, FOperID, FCIQNumber, 
+      FDeleted, FSaleMode, FName, 
+      FNumber, FParentID, FShortNumber, 
+      FARAccountID, FAPAccountID, FpreAcctID, 
+      FlastTradeAmount, FLastRPAmount, FFavorPolicy, 
+      Fdepartment, Femployee, Fcorperate, 
+      FBeginTradeDate, FEndTradeDate, FLastTradeDate, 
+      FLastReceiveDate, FcashDiscount, FcurrencyID, 
+      FMaxDealAmount, FMinForeReceiveRate, FMinReserveRate, 
+      FMaxForePayAmount, FMaxForePayRate, FdebtLevel, 
+      FCreditDays, FValueAddRate, FPayTaxAcctID, 
+      FDiscount, FTypeID, FCreditAmount, 
+      FCreditLevel, FStockIDAssignee, FBr, 
+      FRegmark, FLicAndPermit, FLicence, 
+      FPaperPeriod, FAlarmPeriod, FOtherARAcctID, 
+      FOtherAPAcctID, FPreARAcctID, FHelpCode, 
+      FCreditDegree, FRightUserID, FPaymentTime, 
+      FSMSPhoneNumber, FFullName, FAcctID, 
+      FModifyTime)
+    values (#{fitemid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fcity,jdbcType=VARCHAR}, 
+      #{fprovince,jdbcType=VARCHAR}, #{fcountry,jdbcType=VARCHAR}, #{fpostalcode,jdbcType=VARCHAR}, 
+      #{fphone,jdbcType=VARCHAR}, #{ffax,jdbcType=VARCHAR}, #{femail,jdbcType=VARCHAR}, 
+      #{fhomepage,jdbcType=VARCHAR}, #{fcreditlimit,jdbcType=VARCHAR}, #{ftaxid,jdbcType=VARCHAR}, 
+      #{fbank,jdbcType=VARCHAR}, #{faccount,jdbcType=VARCHAR}, #{fbrno,jdbcType=VARCHAR}, 
+      #{fboundattr,jdbcType=INTEGER}, #{ferpclsid,jdbcType=INTEGER}, #{fshortname,jdbcType=VARCHAR}, 
+      #{fpriorityid,jdbcType=INTEGER}, #{fpogroupid,jdbcType=INTEGER}, #{fstatus,jdbcType=INTEGER}, 
+      #{flanguageid,jdbcType=INTEGER}, #{fregionid,jdbcType=INTEGER}, #{ftrade,jdbcType=INTEGER}, 
+      #{fminpovalue,jdbcType=DOUBLE}, #{fmaxdebitdate,jdbcType=DOUBLE}, #{flegalperson,jdbcType=VARCHAR}, 
+      #{fcontact,jdbcType=VARCHAR}, #{fcontactacct,jdbcType=VARCHAR}, #{fphoneacct,jdbcType=VARCHAR}, 
+      #{ffaxacct,jdbcType=VARCHAR}, #{fzipacct,jdbcType=VARCHAR}, #{femailacct,jdbcType=VARCHAR}, 
+      #{faddracct,jdbcType=VARCHAR}, #{ftax,jdbcType=REAL}, #{fcyid,jdbcType=INTEGER}, 
+      #{fsetid,jdbcType=INTEGER}, #{fsetdlineid,jdbcType=INTEGER}, #{ftaxnum,jdbcType=VARCHAR}, 
+      #{fpriceclsid,jdbcType=INTEGER}, #{foperid,jdbcType=INTEGER}, #{fciqnumber,jdbcType=VARCHAR}, 
+      #{fdeleted,jdbcType=SMALLINT}, #{fsalemode,jdbcType=SMALLINT}, #{fname,jdbcType=VARCHAR}, 
+      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fshortnumber,jdbcType=VARCHAR}, 
+      #{faraccountid,jdbcType=INTEGER}, #{fapaccountid,jdbcType=INTEGER}, #{fpreacctid,jdbcType=INTEGER}, 
+      #{flasttradeamount,jdbcType=DECIMAL}, #{flastrpamount,jdbcType=DECIMAL}, #{ffavorpolicy,jdbcType=VARCHAR}, 
+      #{fdepartment,jdbcType=INTEGER}, #{femployee,jdbcType=INTEGER}, #{fcorperate,jdbcType=VARCHAR}, 
+      #{fbegintradedate,jdbcType=TIMESTAMP}, #{fendtradedate,jdbcType=TIMESTAMP}, #{flasttradedate,jdbcType=TIMESTAMP}, 
+      #{flastreceivedate,jdbcType=TIMESTAMP}, #{fcashdiscount,jdbcType=VARCHAR}, #{fcurrencyid,jdbcType=INTEGER}, 
+      #{fmaxdealamount,jdbcType=DOUBLE}, #{fminforereceiverate,jdbcType=DOUBLE}, #{fminreserverate,jdbcType=DOUBLE}, 
+      #{fmaxforepayamount,jdbcType=DOUBLE}, #{fmaxforepayrate,jdbcType=DOUBLE}, #{fdebtlevel,jdbcType=INTEGER}, 
+      #{fcreditdays,jdbcType=INTEGER}, #{fvalueaddrate,jdbcType=DECIMAL}, #{fpaytaxacctid,jdbcType=INTEGER}, 
+      #{fdiscount,jdbcType=DECIMAL}, #{ftypeid,jdbcType=INTEGER}, #{fcreditamount,jdbcType=DECIMAL}, 
+      #{fcreditlevel,jdbcType=VARCHAR}, #{fstockidassignee,jdbcType=INTEGER}, #{fbr,jdbcType=INTEGER}, 
+      #{fregmark,jdbcType=VARCHAR}, #{flicandpermit,jdbcType=BIT}, #{flicence,jdbcType=VARCHAR}, 
+      #{fpaperperiod,jdbcType=TIMESTAMP}, #{falarmperiod,jdbcType=INTEGER}, #{fotheraracctid,jdbcType=INTEGER}, 
+      #{fotherapacctid,jdbcType=INTEGER}, #{fprearacctid,jdbcType=INTEGER}, #{fhelpcode,jdbcType=VARCHAR}, 
+      #{fcreditdegree,jdbcType=INTEGER}, #{frightuserid,jdbcType=VARCHAR}, #{fpaymenttime,jdbcType=INTEGER}, 
+      #{fsmsphonenumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR}, #{facctid,jdbcType=INTEGER}, 
+      #{fmodifytime,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Supplier" >
+    insert into t_Supplier
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="faddress != null" >
+        FAddress,
+      </if>
+      <if test="fcity != null" >
+        FCity,
+      </if>
+      <if test="fprovince != null" >
+        FProvince,
+      </if>
+      <if test="fcountry != null" >
+        FCountry,
+      </if>
+      <if test="fpostalcode != null" >
+        FPostalCode,
+      </if>
+      <if test="fphone != null" >
+        FPhone,
+      </if>
+      <if test="ffax != null" >
+        FFax,
+      </if>
+      <if test="femail != null" >
+        FEmail,
+      </if>
+      <if test="fhomepage != null" >
+        FHomePage,
+      </if>
+      <if test="fcreditlimit != null" >
+        FCreditLimit,
+      </if>
+      <if test="ftaxid != null" >
+        FTaxID,
+      </if>
+      <if test="fbank != null" >
+        FBank,
+      </if>
+      <if test="faccount != null" >
+        FAccount,
+      </if>
+      <if test="fbrno != null" >
+        FBrNo,
+      </if>
+      <if test="fboundattr != null" >
+        FBoundAttr,
+      </if>
+      <if test="ferpclsid != null" >
+        FErpClsID,
+      </if>
+      <if test="fshortname != null" >
+        FShortName,
+      </if>
+      <if test="fpriorityid != null" >
+        FPriorityID,
+      </if>
+      <if test="fpogroupid != null" >
+        FPOGroupID,
+      </if>
+      <if test="fstatus != null" >
+        FStatus,
+      </if>
+      <if test="flanguageid != null" >
+        FLanguageID,
+      </if>
+      <if test="fregionid != null" >
+        FRegionID,
+      </if>
+      <if test="ftrade != null" >
+        FTrade,
+      </if>
+      <if test="fminpovalue != null" >
+        FMinPOValue,
+      </if>
+      <if test="fmaxdebitdate != null" >
+        FMaxDebitDate,
+      </if>
+      <if test="flegalperson != null" >
+        FLegalPerson,
+      </if>
+      <if test="fcontact != null" >
+        FContact,
+      </if>
+      <if test="fcontactacct != null" >
+        FContactAcct,
+      </if>
+      <if test="fphoneacct != null" >
+        FPhoneAcct,
+      </if>
+      <if test="ffaxacct != null" >
+        FFaxAcct,
+      </if>
+      <if test="fzipacct != null" >
+        FZipAcct,
+      </if>
+      <if test="femailacct != null" >
+        FEmailAcct,
+      </if>
+      <if test="faddracct != null" >
+        FAddrAcct,
+      </if>
+      <if test="ftax != null" >
+        FTax,
+      </if>
+      <if test="fcyid != null" >
+        FCyID,
+      </if>
+      <if test="fsetid != null" >
+        FSetID,
+      </if>
+      <if test="fsetdlineid != null" >
+        FSetDLineID,
+      </if>
+      <if test="ftaxnum != null" >
+        FTaxNum,
+      </if>
+      <if test="fpriceclsid != null" >
+        FPriceClsID,
+      </if>
+      <if test="foperid != null" >
+        FOperID,
+      </if>
+      <if test="fciqnumber != null" >
+        FCIQNumber,
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted,
+      </if>
+      <if test="fsalemode != null" >
+        FSaleMode,
+      </if>
+      <if test="fname != null" >
+        FName,
+      </if>
+      <if test="fnumber != null" >
+        FNumber,
+      </if>
+      <if test="fparentid != null" >
+        FParentID,
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber,
+      </if>
+      <if test="faraccountid != null" >
+        FARAccountID,
+      </if>
+      <if test="fapaccountid != null" >
+        FAPAccountID,
+      </if>
+      <if test="fpreacctid != null" >
+        FpreAcctID,
+      </if>
+      <if test="flasttradeamount != null" >
+        FlastTradeAmount,
+      </if>
+      <if test="flastrpamount != null" >
+        FLastRPAmount,
+      </if>
+      <if test="ffavorpolicy != null" >
+        FFavorPolicy,
+      </if>
+      <if test="fdepartment != null" >
+        Fdepartment,
+      </if>
+      <if test="femployee != null" >
+        Femployee,
+      </if>
+      <if test="fcorperate != null" >
+        Fcorperate,
+      </if>
+      <if test="fbegintradedate != null" >
+        FBeginTradeDate,
+      </if>
+      <if test="fendtradedate != null" >
+        FEndTradeDate,
+      </if>
+      <if test="flasttradedate != null" >
+        FLastTradeDate,
+      </if>
+      <if test="flastreceivedate != null" >
+        FLastReceiveDate,
+      </if>
+      <if test="fcashdiscount != null" >
+        FcashDiscount,
+      </if>
+      <if test="fcurrencyid != null" >
+        FcurrencyID,
+      </if>
+      <if test="fmaxdealamount != null" >
+        FMaxDealAmount,
+      </if>
+      <if test="fminforereceiverate != null" >
+        FMinForeReceiveRate,
+      </if>
+      <if test="fminreserverate != null" >
+        FMinReserveRate,
+      </if>
+      <if test="fmaxforepayamount != null" >
+        FMaxForePayAmount,
+      </if>
+      <if test="fmaxforepayrate != null" >
+        FMaxForePayRate,
+      </if>
+      <if test="fdebtlevel != null" >
+        FdebtLevel,
+      </if>
+      <if test="fcreditdays != null" >
+        FCreditDays,
+      </if>
+      <if test="fvalueaddrate != null" >
+        FValueAddRate,
+      </if>
+      <if test="fpaytaxacctid != null" >
+        FPayTaxAcctID,
+      </if>
+      <if test="fdiscount != null" >
+        FDiscount,
+      </if>
+      <if test="ftypeid != null" >
+        FTypeID,
+      </if>
+      <if test="fcreditamount != null" >
+        FCreditAmount,
+      </if>
+      <if test="fcreditlevel != null" >
+        FCreditLevel,
+      </if>
+      <if test="fstockidassignee != null" >
+        FStockIDAssignee,
+      </if>
+      <if test="fbr != null" >
+        FBr,
+      </if>
+      <if test="fregmark != null" >
+        FRegmark,
+      </if>
+      <if test="flicandpermit != null" >
+        FLicAndPermit,
+      </if>
+      <if test="flicence != null" >
+        FLicence,
+      </if>
+      <if test="fpaperperiod != null" >
+        FPaperPeriod,
+      </if>
+      <if test="falarmperiod != null" >
+        FAlarmPeriod,
+      </if>
+      <if test="fotheraracctid != null" >
+        FOtherARAcctID,
+      </if>
+      <if test="fotherapacctid != null" >
+        FOtherAPAcctID,
+      </if>
+      <if test="fprearacctid != null" >
+        FPreARAcctID,
+      </if>
+      <if test="fhelpcode != null" >
+        FHelpCode,
+      </if>
+      <if test="fcreditdegree != null" >
+        FCreditDegree,
+      </if>
+      <if test="frightuserid != null" >
+        FRightUserID,
+      </if>
+      <if test="fpaymenttime != null" >
+        FPaymentTime,
+      </if>
+      <if test="fsmsphonenumber != null" >
+        FSMSPhoneNumber,
+      </if>
+      <if test="ffullname != null" >
+        FFullName,
+      </if>
+      <if test="facctid != null" >
+        FAcctID,
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="faddress != null" >
+        #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fcity != null" >
+        #{fcity,jdbcType=VARCHAR},
+      </if>
+      <if test="fprovince != null" >
+        #{fprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="fcountry != null" >
+        #{fcountry,jdbcType=VARCHAR},
+      </if>
+      <if test="fpostalcode != null" >
+        #{fpostalcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fphone != null" >
+        #{fphone,jdbcType=VARCHAR},
+      </if>
+      <if test="ffax != null" >
+        #{ffax,jdbcType=VARCHAR},
+      </if>
+      <if test="femail != null" >
+        #{femail,jdbcType=VARCHAR},
+      </if>
+      <if test="fhomepage != null" >
+        #{fhomepage,jdbcType=VARCHAR},
+      </if>
+      <if test="fcreditlimit != null" >
+        #{fcreditlimit,jdbcType=VARCHAR},
+      </if>
+      <if test="ftaxid != null" >
+        #{ftaxid,jdbcType=VARCHAR},
+      </if>
+      <if test="fbank != null" >
+        #{fbank,jdbcType=VARCHAR},
+      </if>
+      <if test="faccount != null" >
+        #{faccount,jdbcType=VARCHAR},
+      </if>
+      <if test="fbrno != null" >
+        #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="fboundattr != null" >
+        #{fboundattr,jdbcType=INTEGER},
+      </if>
+      <if test="ferpclsid != null" >
+        #{ferpclsid,jdbcType=INTEGER},
+      </if>
+      <if test="fshortname != null" >
+        #{fshortname,jdbcType=VARCHAR},
+      </if>
+      <if test="fpriorityid != null" >
+        #{fpriorityid,jdbcType=INTEGER},
+      </if>
+      <if test="fpogroupid != null" >
+        #{fpogroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fstatus != null" >
+        #{fstatus,jdbcType=INTEGER},
+      </if>
+      <if test="flanguageid != null" >
+        #{flanguageid,jdbcType=INTEGER},
+      </if>
+      <if test="fregionid != null" >
+        #{fregionid,jdbcType=INTEGER},
+      </if>
+      <if test="ftrade != null" >
+        #{ftrade,jdbcType=INTEGER},
+      </if>
+      <if test="fminpovalue != null" >
+        #{fminpovalue,jdbcType=DOUBLE},
+      </if>
+      <if test="fmaxdebitdate != null" >
+        #{fmaxdebitdate,jdbcType=DOUBLE},
+      </if>
+      <if test="flegalperson != null" >
+        #{flegalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="fcontact != null" >
+        #{fcontact,jdbcType=VARCHAR},
+      </if>
+      <if test="fcontactacct != null" >
+        #{fcontactacct,jdbcType=VARCHAR},
+      </if>
+      <if test="fphoneacct != null" >
+        #{fphoneacct,jdbcType=VARCHAR},
+      </if>
+      <if test="ffaxacct != null" >
+        #{ffaxacct,jdbcType=VARCHAR},
+      </if>
+      <if test="fzipacct != null" >
+        #{fzipacct,jdbcType=VARCHAR},
+      </if>
+      <if test="femailacct != null" >
+        #{femailacct,jdbcType=VARCHAR},
+      </if>
+      <if test="faddracct != null" >
+        #{faddracct,jdbcType=VARCHAR},
+      </if>
+      <if test="ftax != null" >
+        #{ftax,jdbcType=REAL},
+      </if>
+      <if test="fcyid != null" >
+        #{fcyid,jdbcType=INTEGER},
+      </if>
+      <if test="fsetid != null" >
+        #{fsetid,jdbcType=INTEGER},
+      </if>
+      <if test="fsetdlineid != null" >
+        #{fsetdlineid,jdbcType=INTEGER},
+      </if>
+      <if test="ftaxnum != null" >
+        #{ftaxnum,jdbcType=VARCHAR},
+      </if>
+      <if test="fpriceclsid != null" >
+        #{fpriceclsid,jdbcType=INTEGER},
+      </if>
+      <if test="foperid != null" >
+        #{foperid,jdbcType=INTEGER},
+      </if>
+      <if test="fciqnumber != null" >
+        #{fciqnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fdeleted != null" >
+        #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fsalemode != null" >
+        #{fsalemode,jdbcType=SMALLINT},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fnumber != null" >
+        #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fshortnumber != null" >
+        #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="faraccountid != null" >
+        #{faraccountid,jdbcType=INTEGER},
+      </if>
+      <if test="fapaccountid != null" >
+        #{fapaccountid,jdbcType=INTEGER},
+      </if>
+      <if test="fpreacctid != null" >
+        #{fpreacctid,jdbcType=INTEGER},
+      </if>
+      <if test="flasttradeamount != null" >
+        #{flasttradeamount,jdbcType=DECIMAL},
+      </if>
+      <if test="flastrpamount != null" >
+        #{flastrpamount,jdbcType=DECIMAL},
+      </if>
+      <if test="ffavorpolicy != null" >
+        #{ffavorpolicy,jdbcType=VARCHAR},
+      </if>
+      <if test="fdepartment != null" >
+        #{fdepartment,jdbcType=INTEGER},
+      </if>
+      <if test="femployee != null" >
+        #{femployee,jdbcType=INTEGER},
+      </if>
+      <if test="fcorperate != null" >
+        #{fcorperate,jdbcType=VARCHAR},
+      </if>
+      <if test="fbegintradedate != null" >
+        #{fbegintradedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fendtradedate != null" >
+        #{fendtradedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flasttradedate != null" >
+        #{flasttradedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flastreceivedate != null" >
+        #{flastreceivedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fcashdiscount != null" >
+        #{fcashdiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="fcurrencyid != null" >
+        #{fcurrencyid,jdbcType=INTEGER},
+      </if>
+      <if test="fmaxdealamount != null" >
+        #{fmaxdealamount,jdbcType=DOUBLE},
+      </if>
+      <if test="fminforereceiverate != null" >
+        #{fminforereceiverate,jdbcType=DOUBLE},
+      </if>
+      <if test="fminreserverate != null" >
+        #{fminreserverate,jdbcType=DOUBLE},
+      </if>
+      <if test="fmaxforepayamount != null" >
+        #{fmaxforepayamount,jdbcType=DOUBLE},
+      </if>
+      <if test="fmaxforepayrate != null" >
+        #{fmaxforepayrate,jdbcType=DOUBLE},
+      </if>
+      <if test="fdebtlevel != null" >
+        #{fdebtlevel,jdbcType=INTEGER},
+      </if>
+      <if test="fcreditdays != null" >
+        #{fcreditdays,jdbcType=INTEGER},
+      </if>
+      <if test="fvalueaddrate != null" >
+        #{fvalueaddrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fpaytaxacctid != null" >
+        #{fpaytaxacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fdiscount != null" >
+        #{fdiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="ftypeid != null" >
+        #{ftypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fcreditamount != null" >
+        #{fcreditamount,jdbcType=DECIMAL},
+      </if>
+      <if test="fcreditlevel != null" >
+        #{fcreditlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="fstockidassignee != null" >
+        #{fstockidassignee,jdbcType=INTEGER},
+      </if>
+      <if test="fbr != null" >
+        #{fbr,jdbcType=INTEGER},
+      </if>
+      <if test="fregmark != null" >
+        #{fregmark,jdbcType=VARCHAR},
+      </if>
+      <if test="flicandpermit != null" >
+        #{flicandpermit,jdbcType=BIT},
+      </if>
+      <if test="flicence != null" >
+        #{flicence,jdbcType=VARCHAR},
+      </if>
+      <if test="fpaperperiod != null" >
+        #{fpaperperiod,jdbcType=TIMESTAMP},
+      </if>
+      <if test="falarmperiod != null" >
+        #{falarmperiod,jdbcType=INTEGER},
+      </if>
+      <if test="fotheraracctid != null" >
+        #{fotheraracctid,jdbcType=INTEGER},
+      </if>
+      <if test="fotherapacctid != null" >
+        #{fotherapacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fprearacctid != null" >
+        #{fprearacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fhelpcode != null" >
+        #{fhelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fcreditdegree != null" >
+        #{fcreditdegree,jdbcType=INTEGER},
+      </if>
+      <if test="frightuserid != null" >
+        #{frightuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fpaymenttime != null" >
+        #{fpaymenttime,jdbcType=INTEGER},
+      </if>
+      <if test="fsmsphonenumber != null" >
+        #{fsmsphonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ffullname != null" >
+        #{ffullname,jdbcType=VARCHAR},
+      </if>
+      <if test="facctid != null" >
+        #{facctid,jdbcType=INTEGER},
+      </if>
+      <if test="fmodifytime != null" >
+        #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_Supplier" >
+    update t_Supplier
+    <set >
+      <if test="faddress != null" >
+        FAddress = #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fcity != null" >
+        FCity = #{fcity,jdbcType=VARCHAR},
+      </if>
+      <if test="fprovince != null" >
+        FProvince = #{fprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="fcountry != null" >
+        FCountry = #{fcountry,jdbcType=VARCHAR},
+      </if>
+      <if test="fpostalcode != null" >
+        FPostalCode = #{fpostalcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fphone != null" >
+        FPhone = #{fphone,jdbcType=VARCHAR},
+      </if>
+      <if test="ffax != null" >
+        FFax = #{ffax,jdbcType=VARCHAR},
+      </if>
+      <if test="femail != null" >
+        FEmail = #{femail,jdbcType=VARCHAR},
+      </if>
+      <if test="fhomepage != null" >
+        FHomePage = #{fhomepage,jdbcType=VARCHAR},
+      </if>
+      <if test="fcreditlimit != null" >
+        FCreditLimit = #{fcreditlimit,jdbcType=VARCHAR},
+      </if>
+      <if test="ftaxid != null" >
+        FTaxID = #{ftaxid,jdbcType=VARCHAR},
+      </if>
+      <if test="fbank != null" >
+        FBank = #{fbank,jdbcType=VARCHAR},
+      </if>
+      <if test="faccount != null" >
+        FAccount = #{faccount,jdbcType=VARCHAR},
+      </if>
+      <if test="fbrno != null" >
+        FBrNo = #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="fboundattr != null" >
+        FBoundAttr = #{fboundattr,jdbcType=INTEGER},
+      </if>
+      <if test="ferpclsid != null" >
+        FErpClsID = #{ferpclsid,jdbcType=INTEGER},
+      </if>
+      <if test="fshortname != null" >
+        FShortName = #{fshortname,jdbcType=VARCHAR},
+      </if>
+      <if test="fpriorityid != null" >
+        FPriorityID = #{fpriorityid,jdbcType=INTEGER},
+      </if>
+      <if test="fpogroupid != null" >
+        FPOGroupID = #{fpogroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fstatus != null" >
+        FStatus = #{fstatus,jdbcType=INTEGER},
+      </if>
+      <if test="flanguageid != null" >
+        FLanguageID = #{flanguageid,jdbcType=INTEGER},
+      </if>
+      <if test="fregionid != null" >
+        FRegionID = #{fregionid,jdbcType=INTEGER},
+      </if>
+      <if test="ftrade != null" >
+        FTrade = #{ftrade,jdbcType=INTEGER},
+      </if>
+      <if test="fminpovalue != null" >
+        FMinPOValue = #{fminpovalue,jdbcType=DOUBLE},
+      </if>
+      <if test="fmaxdebitdate != null" >
+        FMaxDebitDate = #{fmaxdebitdate,jdbcType=DOUBLE},
+      </if>
+      <if test="flegalperson != null" >
+        FLegalPerson = #{flegalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="fcontact != null" >
+        FContact = #{fcontact,jdbcType=VARCHAR},
+      </if>
+      <if test="fcontactacct != null" >
+        FContactAcct = #{fcontactacct,jdbcType=VARCHAR},
+      </if>
+      <if test="fphoneacct != null" >
+        FPhoneAcct = #{fphoneacct,jdbcType=VARCHAR},
+      </if>
+      <if test="ffaxacct != null" >
+        FFaxAcct = #{ffaxacct,jdbcType=VARCHAR},
+      </if>
+      <if test="fzipacct != null" >
+        FZipAcct = #{fzipacct,jdbcType=VARCHAR},
+      </if>
+      <if test="femailacct != null" >
+        FEmailAcct = #{femailacct,jdbcType=VARCHAR},
+      </if>
+      <if test="faddracct != null" >
+        FAddrAcct = #{faddracct,jdbcType=VARCHAR},
+      </if>
+      <if test="ftax != null" >
+        FTax = #{ftax,jdbcType=REAL},
+      </if>
+      <if test="fcyid != null" >
+        FCyID = #{fcyid,jdbcType=INTEGER},
+      </if>
+      <if test="fsetid != null" >
+        FSetID = #{fsetid,jdbcType=INTEGER},
+      </if>
+      <if test="fsetdlineid != null" >
+        FSetDLineID = #{fsetdlineid,jdbcType=INTEGER},
+      </if>
+      <if test="ftaxnum != null" >
+        FTaxNum = #{ftaxnum,jdbcType=VARCHAR},
+      </if>
+      <if test="fpriceclsid != null" >
+        FPriceClsID = #{fpriceclsid,jdbcType=INTEGER},
+      </if>
+      <if test="foperid != null" >
+        FOperID = #{foperid,jdbcType=INTEGER},
+      </if>
+      <if test="fciqnumber != null" >
+        FCIQNumber = #{fciqnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fsalemode != null" >
+        FSaleMode = #{fsalemode,jdbcType=SMALLINT},
+      </if>
+      <if test="fname != null" >
+        FName = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fnumber != null" >
+        FNumber = #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        FParentID = #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="faraccountid != null" >
+        FARAccountID = #{faraccountid,jdbcType=INTEGER},
+      </if>
+      <if test="fapaccountid != null" >
+        FAPAccountID = #{fapaccountid,jdbcType=INTEGER},
+      </if>
+      <if test="fpreacctid != null" >
+        FpreAcctID = #{fpreacctid,jdbcType=INTEGER},
+      </if>
+      <if test="flasttradeamount != null" >
+        FlastTradeAmount = #{flasttradeamount,jdbcType=DECIMAL},
+      </if>
+      <if test="flastrpamount != null" >
+        FLastRPAmount = #{flastrpamount,jdbcType=DECIMAL},
+      </if>
+      <if test="ffavorpolicy != null" >
+        FFavorPolicy = #{ffavorpolicy,jdbcType=VARCHAR},
+      </if>
+      <if test="fdepartment != null" >
+        Fdepartment = #{fdepartment,jdbcType=INTEGER},
+      </if>
+      <if test="femployee != null" >
+        Femployee = #{femployee,jdbcType=INTEGER},
+      </if>
+      <if test="fcorperate != null" >
+        Fcorperate = #{fcorperate,jdbcType=VARCHAR},
+      </if>
+      <if test="fbegintradedate != null" >
+        FBeginTradeDate = #{fbegintradedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fendtradedate != null" >
+        FEndTradeDate = #{fendtradedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flasttradedate != null" >
+        FLastTradeDate = #{flasttradedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flastreceivedate != null" >
+        FLastReceiveDate = #{flastreceivedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fcashdiscount != null" >
+        FcashDiscount = #{fcashdiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="fcurrencyid != null" >
+        FcurrencyID = #{fcurrencyid,jdbcType=INTEGER},
+      </if>
+      <if test="fmaxdealamount != null" >
+        FMaxDealAmount = #{fmaxdealamount,jdbcType=DOUBLE},
+      </if>
+      <if test="fminforereceiverate != null" >
+        FMinForeReceiveRate = #{fminforereceiverate,jdbcType=DOUBLE},
+      </if>
+      <if test="fminreserverate != null" >
+        FMinReserveRate = #{fminreserverate,jdbcType=DOUBLE},
+      </if>
+      <if test="fmaxforepayamount != null" >
+        FMaxForePayAmount = #{fmaxforepayamount,jdbcType=DOUBLE},
+      </if>
+      <if test="fmaxforepayrate != null" >
+        FMaxForePayRate = #{fmaxforepayrate,jdbcType=DOUBLE},
+      </if>
+      <if test="fdebtlevel != null" >
+        FdebtLevel = #{fdebtlevel,jdbcType=INTEGER},
+      </if>
+      <if test="fcreditdays != null" >
+        FCreditDays = #{fcreditdays,jdbcType=INTEGER},
+      </if>
+      <if test="fvalueaddrate != null" >
+        FValueAddRate = #{fvalueaddrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fpaytaxacctid != null" >
+        FPayTaxAcctID = #{fpaytaxacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fdiscount != null" >
+        FDiscount = #{fdiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="ftypeid != null" >
+        FTypeID = #{ftypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fcreditamount != null" >
+        FCreditAmount = #{fcreditamount,jdbcType=DECIMAL},
+      </if>
+      <if test="fcreditlevel != null" >
+        FCreditLevel = #{fcreditlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="fstockidassignee != null" >
+        FStockIDAssignee = #{fstockidassignee,jdbcType=INTEGER},
+      </if>
+      <if test="fbr != null" >
+        FBr = #{fbr,jdbcType=INTEGER},
+      </if>
+      <if test="fregmark != null" >
+        FRegmark = #{fregmark,jdbcType=VARCHAR},
+      </if>
+      <if test="flicandpermit != null" >
+        FLicAndPermit = #{flicandpermit,jdbcType=BIT},
+      </if>
+      <if test="flicence != null" >
+        FLicence = #{flicence,jdbcType=VARCHAR},
+      </if>
+      <if test="fpaperperiod != null" >
+        FPaperPeriod = #{fpaperperiod,jdbcType=TIMESTAMP},
+      </if>
+      <if test="falarmperiod != null" >
+        FAlarmPeriod = #{falarmperiod,jdbcType=INTEGER},
+      </if>
+      <if test="fotheraracctid != null" >
+        FOtherARAcctID = #{fotheraracctid,jdbcType=INTEGER},
+      </if>
+      <if test="fotherapacctid != null" >
+        FOtherAPAcctID = #{fotherapacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fprearacctid != null" >
+        FPreARAcctID = #{fprearacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fhelpcode != null" >
+        FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fcreditdegree != null" >
+        FCreditDegree = #{fcreditdegree,jdbcType=INTEGER},
+      </if>
+      <if test="frightuserid != null" >
+        FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fpaymenttime != null" >
+        FPaymentTime = #{fpaymenttime,jdbcType=INTEGER},
+      </if>
+      <if test="fsmsphonenumber != null" >
+        FSMSPhoneNumber = #{fsmsphonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ffullname != null" >
+        FFullName = #{ffullname,jdbcType=VARCHAR},
+      </if>
+      <if test="facctid != null" >
+        FAcctID = #{facctid,jdbcType=INTEGER},
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime = #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.com.yhb.entity.t_Supplier" >
+    update t_Supplier
+    set FAddress = #{faddress,jdbcType=VARCHAR},
+      FCity = #{fcity,jdbcType=VARCHAR},
+      FProvince = #{fprovince,jdbcType=VARCHAR},
+      FCountry = #{fcountry,jdbcType=VARCHAR},
+      FPostalCode = #{fpostalcode,jdbcType=VARCHAR},
+      FPhone = #{fphone,jdbcType=VARCHAR},
+      FFax = #{ffax,jdbcType=VARCHAR},
+      FEmail = #{femail,jdbcType=VARCHAR},
+      FHomePage = #{fhomepage,jdbcType=VARCHAR},
+      FCreditLimit = #{fcreditlimit,jdbcType=VARCHAR},
+      FTaxID = #{ftaxid,jdbcType=VARCHAR},
+      FBank = #{fbank,jdbcType=VARCHAR},
+      FAccount = #{faccount,jdbcType=VARCHAR},
+      FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FBoundAttr = #{fboundattr,jdbcType=INTEGER},
+      FErpClsID = #{ferpclsid,jdbcType=INTEGER},
+      FShortName = #{fshortname,jdbcType=VARCHAR},
+      FPriorityID = #{fpriorityid,jdbcType=INTEGER},
+      FPOGroupID = #{fpogroupid,jdbcType=INTEGER},
+      FStatus = #{fstatus,jdbcType=INTEGER},
+      FLanguageID = #{flanguageid,jdbcType=INTEGER},
+      FRegionID = #{fregionid,jdbcType=INTEGER},
+      FTrade = #{ftrade,jdbcType=INTEGER},
+      FMinPOValue = #{fminpovalue,jdbcType=DOUBLE},
+      FMaxDebitDate = #{fmaxdebitdate,jdbcType=DOUBLE},
+      FLegalPerson = #{flegalperson,jdbcType=VARCHAR},
+      FContact = #{fcontact,jdbcType=VARCHAR},
+      FContactAcct = #{fcontactacct,jdbcType=VARCHAR},
+      FPhoneAcct = #{fphoneacct,jdbcType=VARCHAR},
+      FFaxAcct = #{ffaxacct,jdbcType=VARCHAR},
+      FZipAcct = #{fzipacct,jdbcType=VARCHAR},
+      FEmailAcct = #{femailacct,jdbcType=VARCHAR},
+      FAddrAcct = #{faddracct,jdbcType=VARCHAR},
+      FTax = #{ftax,jdbcType=REAL},
+      FCyID = #{fcyid,jdbcType=INTEGER},
+      FSetID = #{fsetid,jdbcType=INTEGER},
+      FSetDLineID = #{fsetdlineid,jdbcType=INTEGER},
+      FTaxNum = #{ftaxnum,jdbcType=VARCHAR},
+      FPriceClsID = #{fpriceclsid,jdbcType=INTEGER},
+      FOperID = #{foperid,jdbcType=INTEGER},
+      FCIQNumber = #{fciqnumber,jdbcType=VARCHAR},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FSaleMode = #{fsalemode,jdbcType=SMALLINT},
+      FName = #{fname,jdbcType=VARCHAR},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FARAccountID = #{faraccountid,jdbcType=INTEGER},
+      FAPAccountID = #{fapaccountid,jdbcType=INTEGER},
+      FpreAcctID = #{fpreacctid,jdbcType=INTEGER},
+      FlastTradeAmount = #{flasttradeamount,jdbcType=DECIMAL},
+      FLastRPAmount = #{flastrpamount,jdbcType=DECIMAL},
+      FFavorPolicy = #{ffavorpolicy,jdbcType=VARCHAR},
+      Fdepartment = #{fdepartment,jdbcType=INTEGER},
+      Femployee = #{femployee,jdbcType=INTEGER},
+      Fcorperate = #{fcorperate,jdbcType=VARCHAR},
+      FBeginTradeDate = #{fbegintradedate,jdbcType=TIMESTAMP},
+      FEndTradeDate = #{fendtradedate,jdbcType=TIMESTAMP},
+      FLastTradeDate = #{flasttradedate,jdbcType=TIMESTAMP},
+      FLastReceiveDate = #{flastreceivedate,jdbcType=TIMESTAMP},
+      FcashDiscount = #{fcashdiscount,jdbcType=VARCHAR},
+      FcurrencyID = #{fcurrencyid,jdbcType=INTEGER},
+      FMaxDealAmount = #{fmaxdealamount,jdbcType=DOUBLE},
+      FMinForeReceiveRate = #{fminforereceiverate,jdbcType=DOUBLE},
+      FMinReserveRate = #{fminreserverate,jdbcType=DOUBLE},
+      FMaxForePayAmount = #{fmaxforepayamount,jdbcType=DOUBLE},
+      FMaxForePayRate = #{fmaxforepayrate,jdbcType=DOUBLE},
+      FdebtLevel = #{fdebtlevel,jdbcType=INTEGER},
+      FCreditDays = #{fcreditdays,jdbcType=INTEGER},
+      FValueAddRate = #{fvalueaddrate,jdbcType=DECIMAL},
+      FPayTaxAcctID = #{fpaytaxacctid,jdbcType=INTEGER},
+      FDiscount = #{fdiscount,jdbcType=DECIMAL},
+      FTypeID = #{ftypeid,jdbcType=INTEGER},
+      FCreditAmount = #{fcreditamount,jdbcType=DECIMAL},
+      FCreditLevel = #{fcreditlevel,jdbcType=VARCHAR},
+      FStockIDAssignee = #{fstockidassignee,jdbcType=INTEGER},
+      FBr = #{fbr,jdbcType=INTEGER},
+      FRegmark = #{fregmark,jdbcType=VARCHAR},
+      FLicAndPermit = #{flicandpermit,jdbcType=BIT},
+      FLicence = #{flicence,jdbcType=VARCHAR},
+      FPaperPeriod = #{fpaperperiod,jdbcType=TIMESTAMP},
+      FAlarmPeriod = #{falarmperiod,jdbcType=INTEGER},
+      FOtherARAcctID = #{fotheraracctid,jdbcType=INTEGER},
+      FOtherAPAcctID = #{fotherapacctid,jdbcType=INTEGER},
+      FPreARAcctID = #{fprearacctid,jdbcType=INTEGER},
+      FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      FCreditDegree = #{fcreditdegree,jdbcType=INTEGER},
+      FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      FPaymentTime = #{fpaymenttime,jdbcType=INTEGER},
+      FSMSPhoneNumber = #{fsmsphonenumber,jdbcType=VARCHAR},
+      FFullName = #{ffullname,jdbcType=VARCHAR},
+      FAcctID = #{facctid,jdbcType=INTEGER},
+      FModifyTime = #{fmodifytime,jdbcType=BINARY}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_Supplier" >
+    update t_Supplier
+    set FAddress = #{faddress,jdbcType=VARCHAR},
+      FCity = #{fcity,jdbcType=VARCHAR},
+      FProvince = #{fprovince,jdbcType=VARCHAR},
+      FCountry = #{fcountry,jdbcType=VARCHAR},
+      FPostalCode = #{fpostalcode,jdbcType=VARCHAR},
+      FPhone = #{fphone,jdbcType=VARCHAR},
+      FFax = #{ffax,jdbcType=VARCHAR},
+      FEmail = #{femail,jdbcType=VARCHAR},
+      FHomePage = #{fhomepage,jdbcType=VARCHAR},
+      FCreditLimit = #{fcreditlimit,jdbcType=VARCHAR},
+      FTaxID = #{ftaxid,jdbcType=VARCHAR},
+      FBank = #{fbank,jdbcType=VARCHAR},
+      FAccount = #{faccount,jdbcType=VARCHAR},
+      FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FBoundAttr = #{fboundattr,jdbcType=INTEGER},
+      FErpClsID = #{ferpclsid,jdbcType=INTEGER},
+      FShortName = #{fshortname,jdbcType=VARCHAR},
+      FPriorityID = #{fpriorityid,jdbcType=INTEGER},
+      FPOGroupID = #{fpogroupid,jdbcType=INTEGER},
+      FStatus = #{fstatus,jdbcType=INTEGER},
+      FLanguageID = #{flanguageid,jdbcType=INTEGER},
+      FRegionID = #{fregionid,jdbcType=INTEGER},
+      FTrade = #{ftrade,jdbcType=INTEGER},
+      FMinPOValue = #{fminpovalue,jdbcType=DOUBLE},
+      FMaxDebitDate = #{fmaxdebitdate,jdbcType=DOUBLE},
+      FLegalPerson = #{flegalperson,jdbcType=VARCHAR},
+      FContact = #{fcontact,jdbcType=VARCHAR},
+      FContactAcct = #{fcontactacct,jdbcType=VARCHAR},
+      FPhoneAcct = #{fphoneacct,jdbcType=VARCHAR},
+      FFaxAcct = #{ffaxacct,jdbcType=VARCHAR},
+      FZipAcct = #{fzipacct,jdbcType=VARCHAR},
+      FEmailAcct = #{femailacct,jdbcType=VARCHAR},
+      FAddrAcct = #{faddracct,jdbcType=VARCHAR},
+      FTax = #{ftax,jdbcType=REAL},
+      FCyID = #{fcyid,jdbcType=INTEGER},
+      FSetID = #{fsetid,jdbcType=INTEGER},
+      FSetDLineID = #{fsetdlineid,jdbcType=INTEGER},
+      FTaxNum = #{ftaxnum,jdbcType=VARCHAR},
+      FPriceClsID = #{fpriceclsid,jdbcType=INTEGER},
+      FOperID = #{foperid,jdbcType=INTEGER},
+      FCIQNumber = #{fciqnumber,jdbcType=VARCHAR},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FSaleMode = #{fsalemode,jdbcType=SMALLINT},
+      FName = #{fname,jdbcType=VARCHAR},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FARAccountID = #{faraccountid,jdbcType=INTEGER},
+      FAPAccountID = #{fapaccountid,jdbcType=INTEGER},
+      FpreAcctID = #{fpreacctid,jdbcType=INTEGER},
+      FlastTradeAmount = #{flasttradeamount,jdbcType=DECIMAL},
+      FLastRPAmount = #{flastrpamount,jdbcType=DECIMAL},
+      FFavorPolicy = #{ffavorpolicy,jdbcType=VARCHAR},
+      Fdepartment = #{fdepartment,jdbcType=INTEGER},
+      Femployee = #{femployee,jdbcType=INTEGER},
+      Fcorperate = #{fcorperate,jdbcType=VARCHAR},
+      FBeginTradeDate = #{fbegintradedate,jdbcType=TIMESTAMP},
+      FEndTradeDate = #{fendtradedate,jdbcType=TIMESTAMP},
+      FLastTradeDate = #{flasttradedate,jdbcType=TIMESTAMP},
+      FLastReceiveDate = #{flastreceivedate,jdbcType=TIMESTAMP},
+      FcashDiscount = #{fcashdiscount,jdbcType=VARCHAR},
+      FcurrencyID = #{fcurrencyid,jdbcType=INTEGER},
+      FMaxDealAmount = #{fmaxdealamount,jdbcType=DOUBLE},
+      FMinForeReceiveRate = #{fminforereceiverate,jdbcType=DOUBLE},
+      FMinReserveRate = #{fminreserverate,jdbcType=DOUBLE},
+      FMaxForePayAmount = #{fmaxforepayamount,jdbcType=DOUBLE},
+      FMaxForePayRate = #{fmaxforepayrate,jdbcType=DOUBLE},
+      FdebtLevel = #{fdebtlevel,jdbcType=INTEGER},
+      FCreditDays = #{fcreditdays,jdbcType=INTEGER},
+      FValueAddRate = #{fvalueaddrate,jdbcType=DECIMAL},
+      FPayTaxAcctID = #{fpaytaxacctid,jdbcType=INTEGER},
+      FDiscount = #{fdiscount,jdbcType=DECIMAL},
+      FTypeID = #{ftypeid,jdbcType=INTEGER},
+      FCreditAmount = #{fcreditamount,jdbcType=DECIMAL},
+      FCreditLevel = #{fcreditlevel,jdbcType=VARCHAR},
+      FStockIDAssignee = #{fstockidassignee,jdbcType=INTEGER},
+      FBr = #{fbr,jdbcType=INTEGER},
+      FRegmark = #{fregmark,jdbcType=VARCHAR},
+      FLicAndPermit = #{flicandpermit,jdbcType=BIT},
+      FLicence = #{flicence,jdbcType=VARCHAR},
+      FPaperPeriod = #{fpaperperiod,jdbcType=TIMESTAMP},
+      FAlarmPeriod = #{falarmperiod,jdbcType=INTEGER},
+      FOtherARAcctID = #{fotheraracctid,jdbcType=INTEGER},
+      FOtherAPAcctID = #{fotherapacctid,jdbcType=INTEGER},
+      FPreARAcctID = #{fprearacctid,jdbcType=INTEGER},
+      FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      FCreditDegree = #{fcreditdegree,jdbcType=INTEGER},
+      FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      FPaymentTime = #{fpaymenttime,jdbcType=INTEGER},
+      FSMSPhoneNumber = #{fsmsphonenumber,jdbcType=VARCHAR},
+      FFullName = #{ffullname,jdbcType=VARCHAR},
+      FAcctID = #{facctid,jdbcType=INTEGER}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

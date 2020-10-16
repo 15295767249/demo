@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.t_Stock3Mapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_Stock" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FBrNO" property="fbrno" jdbcType="VARCHAR" />
+    <result column="FHelpCode" property="fhelpcode" jdbcType="VARCHAR" />
+    <result column="FEmpID" property="fempid" jdbcType="INTEGER" />
+    <result column="FAddress" property="faddress" jdbcType="VARCHAR" />
+    <result column="FPhone" property="fphone" jdbcType="VARCHAR" />
+    <result column="FProperty" property="fproperty" jdbcType="SMALLINT" />
+    <result column="FBWorkShop" property="fbworkshop" jdbcType="INTEGER" />
+    <result column="FName" property="fname" jdbcType="VARCHAR" />
+    <result column="FNumber" property="fnumber" jdbcType="VARCHAR" />
+    <result column="FParentID" property="fparentid" jdbcType="INTEGER" />
+    <result column="FDeleted" property="fdeleted" jdbcType="SMALLINT" />
+    <result column="FShortNumber" property="fshortnumber" jdbcType="VARCHAR" />
+    <result column="FTypeID" property="ftypeid" jdbcType="INTEGER" />
+    <result column="FIsStockMgr" property="fisstockmgr" jdbcType="BIT" />
+    <result column="FSPGroupID" property="fspgroupid" jdbcType="INTEGER" />
+    <result column="FMRPAvail" property="fmrpavail" jdbcType="BIT" />
+    <result column="FGroupID" property="fgroupid" jdbcType="INTEGER" />
+    <result column="FStockGroupID" property="fstockgroupid" jdbcType="INTEGER" />
+    <result column="FCalcCostOrder" property="fcalccostorder" jdbcType="INTEGER" />
+    <result column="FPlanArea" property="fplanarea" jdbcType="INTEGER" />
+    <result column="FRightUserID" property="frightuserid" jdbcType="VARCHAR" />
+    <result column="FSMSPhoneNumber" property="fsmsphonenumber" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Stock" extends="BaseResultMap" >
+    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FBrNO, FHelpCode, FEmpID, FAddress, FPhone, FProperty, FBWorkShop, FName, 
+    FNumber, FParentID, FDeleted, FShortNumber, FTypeID, FIsStockMgr, FSPGroupID, FMRPAvail, 
+    FGroupID, FStockGroupID, FCalcCostOrder, FPlanArea, FRightUserID, FSMSPhoneNumber
+  </sql>
+  <sql id="Blob_Column_List" >
+    FModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_Stock
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_Stock
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_Stock" >
+    insert into t_Stock (FItemID, FBrNO, FHelpCode, 
+      FEmpID, FAddress, FPhone, 
+      FProperty, FBWorkShop, FName, 
+      FNumber, FParentID, FDeleted, 
+      FShortNumber, FTypeID, FIsStockMgr, 
+      FSPGroupID, FMRPAvail, FGroupID, 
+      FStockGroupID, FCalcCostOrder, FPlanArea, 
+      FRightUserID, FSMSPhoneNumber, FModifyTime
+      )
+    values (#{fitemid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, #{fhelpcode,jdbcType=VARCHAR}, 
+      #{fempid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fphone,jdbcType=VARCHAR}, 
+      #{fproperty,jdbcType=SMALLINT}, #{fbworkshop,jdbcType=INTEGER}, #{fname,jdbcType=VARCHAR}, 
+      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fdeleted,jdbcType=SMALLINT}, 
+      #{fshortnumber,jdbcType=VARCHAR}, #{ftypeid,jdbcType=INTEGER}, #{fisstockmgr,jdbcType=BIT}, 
+      #{fspgroupid,jdbcType=INTEGER}, #{fmrpavail,jdbcType=BIT}, #{fgroupid,jdbcType=INTEGER}, 
+      #{fstockgroupid,jdbcType=INTEGER}, #{fcalccostorder,jdbcType=INTEGER}, #{fplanarea,jdbcType=INTEGER}, 
+      #{frightuserid,jdbcType=VARCHAR}, #{fsmsphonenumber,jdbcType=VARCHAR}, #{fmodifytime,jdbcType=BINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Stock" >
+    insert into t_Stock
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fbrno != null" >
+        FBrNO,
+      </if>
+      <if test="fhelpcode != null" >
+        FHelpCode,
+      </if>
+      <if test="fempid != null" >
+        FEmpID,
+      </if>
+      <if test="faddress != null" >
+        FAddress,
+      </if>
+      <if test="fphone != null" >
+        FPhone,
+      </if>
+      <if test="fproperty != null" >
+        FProperty,
+      </if>
+      <if test="fbworkshop != null" >
+        FBWorkShop,
+      </if>
+      <if test="fname != null" >
+        FName,
+      </if>
+      <if test="fnumber != null" >
+        FNumber,
+      </if>
+      <if test="fparentid != null" >
+        FParentID,
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted,
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber,
+      </if>
+      <if test="ftypeid != null" >
+        FTypeID,
+      </if>
+      <if test="fisstockmgr != null" >
+        FIsStockMgr,
+      </if>
+      <if test="fspgroupid != null" >
+        FSPGroupID,
+      </if>
+      <if test="fmrpavail != null" >
+        FMRPAvail,
+      </if>
+      <if test="fgroupid != null" >
+        FGroupID,
+      </if>
+      <if test="fstockgroupid != null" >
+        FStockGroupID,
+      </if>
+      <if test="fcalccostorder != null" >
+        FCalcCostOrder,
+      </if>
+      <if test="fplanarea != null" >
+        FPlanArea,
+      </if>
+      <if test="frightuserid != null" >
+        FRightUserID,
+      </if>
+      <if test="fsmsphonenumber != null" >
+        FSMSPhoneNumber,
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fbrno != null" >
+        #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="fhelpcode != null" >
+        #{fhelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fempid != null" >
+        #{fempid,jdbcType=INTEGER},
+      </if>
+      <if test="faddress != null" >
+        #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fphone != null" >
+        #{fphone,jdbcType=VARCHAR},
+      </if>
+      <if test="fproperty != null" >
+        #{fproperty,jdbcType=SMALLINT},
+      </if>
+      <if test="fbworkshop != null" >
+        #{fbworkshop,jdbcType=INTEGER},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fnumber != null" >
+        #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fdeleted != null" >
+        #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ftypeid != null" >
+        #{ftypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fisstockmgr != null" >
+        #{fisstockmgr,jdbcType=BIT},
+      </if>
+      <if test="fspgroupid != null" >
+        #{fspgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fmrpavail != null" >
+        #{fmrpavail,jdbcType=BIT},
+      </if>
+      <if test="fgroupid != null" >
+        #{fgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fstockgroupid != null" >
+        #{fstockgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fcalccostorder != null" >
+        #{fcalccostorder,jdbcType=INTEGER},
+      </if>
+      <if test="fplanarea != null" >
+        #{fplanarea,jdbcType=INTEGER},
+      </if>
+      <if test="frightuserid != null" >
+        #{frightuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmsphonenumber != null" >
+        #{fsmsphonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_Stock" >
+    update t_Stock
+    <set >
+      <if test="fbrno != null" >
+        FBrNO = #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="fhelpcode != null" >
+        FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fempid != null" >
+        FEmpID = #{fempid,jdbcType=INTEGER},
+      </if>
+      <if test="faddress != null" >
+        FAddress = #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fphone != null" >
+        FPhone = #{fphone,jdbcType=VARCHAR},
+      </if>
+      <if test="fproperty != null" >
+        FProperty = #{fproperty,jdbcType=SMALLINT},
+      </if>
+      <if test="fbworkshop != null" >
+        FBWorkShop = #{fbworkshop,jdbcType=INTEGER},
+      </if>
+      <if test="fname != null" >
+        FName = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fnumber != null" >
+        FNumber = #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        FParentID = #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ftypeid != null" >
+        FTypeID = #{ftypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fisstockmgr != null" >
+        FIsStockMgr = #{fisstockmgr,jdbcType=BIT},
+      </if>
+      <if test="fspgroupid != null" >
+        FSPGroupID = #{fspgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fmrpavail != null" >
+        FMRPAvail = #{fmrpavail,jdbcType=BIT},
+      </if>
+      <if test="fgroupid != null" >
+        FGroupID = #{fgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fstockgroupid != null" >
+        FStockGroupID = #{fstockgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fcalccostorder != null" >
+        FCalcCostOrder = #{fcalccostorder,jdbcType=INTEGER},
+      </if>
+      <if test="fplanarea != null" >
+        FPlanArea = #{fplanarea,jdbcType=INTEGER},
+      </if>
+      <if test="frightuserid != null" >
+        FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmsphonenumber != null" >
+        FSMSPhoneNumber = #{fsmsphonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime = #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.com.yhb.entity.t_Stock" >
+    update t_Stock
+    set FBrNO = #{fbrno,jdbcType=VARCHAR},
+      FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      FEmpID = #{fempid,jdbcType=INTEGER},
+      FAddress = #{faddress,jdbcType=VARCHAR},
+      FPhone = #{fphone,jdbcType=VARCHAR},
+      FProperty = #{fproperty,jdbcType=SMALLINT},
+      FBWorkShop = #{fbworkshop,jdbcType=INTEGER},
+      FName = #{fname,jdbcType=VARCHAR},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FTypeID = #{ftypeid,jdbcType=INTEGER},
+      FIsStockMgr = #{fisstockmgr,jdbcType=BIT},
+      FSPGroupID = #{fspgroupid,jdbcType=INTEGER},
+      FMRPAvail = #{fmrpavail,jdbcType=BIT},
+      FGroupID = #{fgroupid,jdbcType=INTEGER},
+      FStockGroupID = #{fstockgroupid,jdbcType=INTEGER},
+      FCalcCostOrder = #{fcalccostorder,jdbcType=INTEGER},
+      FPlanArea = #{fplanarea,jdbcType=INTEGER},
+      FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      FSMSPhoneNumber = #{fsmsphonenumber,jdbcType=VARCHAR},
+      FModifyTime = #{fmodifytime,jdbcType=BINARY}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_Stock" >
+    update t_Stock
+    set FBrNO = #{fbrno,jdbcType=VARCHAR},
+      FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      FEmpID = #{fempid,jdbcType=INTEGER},
+      FAddress = #{faddress,jdbcType=VARCHAR},
+      FPhone = #{fphone,jdbcType=VARCHAR},
+      FProperty = #{fproperty,jdbcType=SMALLINT},
+      FBWorkShop = #{fbworkshop,jdbcType=INTEGER},
+      FName = #{fname,jdbcType=VARCHAR},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FTypeID = #{ftypeid,jdbcType=INTEGER},
+      FIsStockMgr = #{fisstockmgr,jdbcType=BIT},
+      FSPGroupID = #{fspgroupid,jdbcType=INTEGER},
+      FMRPAvail = #{fmrpavail,jdbcType=BIT},
+      FGroupID = #{fgroupid,jdbcType=INTEGER},
+      FStockGroupID = #{fstockgroupid,jdbcType=INTEGER},
+      FCalcCostOrder = #{fcalccostorder,jdbcType=INTEGER},
+      FPlanArea = #{fplanarea,jdbcType=INTEGER},
+      FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      FSMSPhoneNumber = #{fsmsphonenumber,jdbcType=VARCHAR}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

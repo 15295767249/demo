@@ -1,0 +1,11 @@
+package cn.com.yhb.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public interface UserService {
+
+    boolean pushData();
+
+    boolean pushData1();
+}

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="erpToKD:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/erpToKD_war</output-path>
+    <root id="archive" name="erpToKD_war.war">
+      <element id="artifact" artifact-name="erpToKD:war exploded" />
+    </root>
+  </artifact>
+</component>

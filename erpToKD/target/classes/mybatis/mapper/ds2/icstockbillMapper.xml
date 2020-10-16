@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds2.mapper.icstockbill2Mapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.icstockbill" >
+    <id column="FInterID" property="finterid" jdbcType="INTEGER" />
+    <result column="FBrNo" property="fbrno" jdbcType="VARCHAR" />
+    <result column="FTranType" property="ftrantype" jdbcType="SMALLINT" />
+    <result column="FDate" property="fdate" jdbcType="TIMESTAMP" />
+    <result column="FBillNo" property="fbillno" jdbcType="NVARCHAR" />
+    <result column="FUse" property="fuse" jdbcType="VARCHAR" />
+    <result column="FNote" property="fnote" jdbcType="VARCHAR" />
+    <result column="FDCStockID" property="fdcstockid" jdbcType="INTEGER" />
+    <result column="FSCStockID" property="fscstockid" jdbcType="INTEGER" />
+    <result column="FDeptID" property="fdeptid" jdbcType="INTEGER" />
+    <result column="FEmpID" property="fempid" jdbcType="INTEGER" />
+    <result column="FSupplyID" property="fsupplyid" jdbcType="INTEGER" />
+    <result column="FPosterID" property="fposterid" jdbcType="INTEGER" />
+    <result column="FCheckerID" property="fcheckerid" jdbcType="INTEGER" />
+    <result column="FFManagerID" property="ffmanagerid" jdbcType="INTEGER" />
+    <result column="FSManagerID" property="fsmanagerid" jdbcType="INTEGER" />
+    <result column="FBillerID" property="fbillerid" jdbcType="INTEGER" />
+    <result column="FReturnBillInterID" property="freturnbillinterid" jdbcType="INTEGER" />
+    <result column="FSCBillNo" property="fscbillno" jdbcType="VARCHAR" />
+    <result column="FHookInterID" property="fhookinterid" jdbcType="INTEGER" />
+    <result column="FVchInterID" property="fvchinterid" jdbcType="INTEGER" />
+    <result column="FPosted" property="fposted" jdbcType="SMALLINT" />
+    <result column="FCheckSelect" property="fcheckselect" jdbcType="SMALLINT" />
+    <result column="FCurrencyID" property="fcurrencyid" jdbcType="INTEGER" />
+    <result column="FSaleStyle" property="fsalestyle" jdbcType="INTEGER" />
+    <result column="FAcctID" property="facctid" jdbcType="INTEGER" />
+    <result column="FROB" property="frob" jdbcType="SMALLINT" />
+    <result column="FRSCBillNo" property="frscbillno" jdbcType="VARCHAR" />
+    <result column="FStatus" property="fstatus" jdbcType="SMALLINT" />
+    <result column="FUpStockWhenSave" property="fupstockwhensave" jdbcType="BIT" />
+    <result column="FCancellation" property="fcancellation" jdbcType="BIT" />
+    <result column="FOrgBillInterID" property="forgbillinterid" jdbcType="INTEGER" />
+    <result column="FBillTypeID" property="fbilltypeid" jdbcType="INTEGER" />
+    <result column="FPOStyle" property="fpostyle" jdbcType="INTEGER" />
+    <result column="FMultiCheckLevel1" property="fmultichecklevel1" jdbcType="INTEGER" />
+    <result column="FMultiCheckLevel2" property="fmultichecklevel2" jdbcType="INTEGER" />
+    <result column="FMultiCheckLevel3" property="fmultichecklevel3" jdbcType="INTEGER" />
+    <result column="FMultiCheckLevel4" property="fmultichecklevel4" jdbcType="INTEGER" />
+    <result column="FMultiCheckLevel5" property="fmultichecklevel5" jdbcType="INTEGER" />
+    <result column="FMultiCheckLevel6" property="fmultichecklevel6" jdbcType="INTEGER" />
+    <result column="FMultiCheckDate1" property="fmulticheckdate1" jdbcType="TIMESTAMP" />
+    <result column="FMultiCheckDate2" property="fmulticheckdate2" jdbcType="TIMESTAMP" />
+    <result column="FMultiCheckDate3" property="fmulticheckdate3" jdbcType="TIMESTAMP" />
+    <result column="FMultiCheckDate4" property="fmulticheckdate4" jdbcType="TIMESTAMP" />
+    <result column="FMultiCheckDate5" property="fmulticheckdate5" jdbcType="TIMESTAMP" />
+    <result column="FMultiCheckDate6" property="fmulticheckdate6" jdbcType="TIMESTAMP" />
+    <result column="FCurCheckLevel" property="fcurchecklevel" jdbcType="INTEGER" />
+    <result column="FTaskID" property="ftaskid" jdbcType="INTEGER" />
+    <result column="FResourceID" property="fresourceid" jdbcType="INTEGER" />
+    <result column="FBackFlushed" property="fbackflushed" jdbcType="BIT" />
+    <result column="FWBInterID" property="fwbinterid" jdbcType="INTEGER" />
+    <result column="FTranStatus" property="ftranstatus" jdbcType="INTEGER" />
+    <result column="FZPBillInterID" property="fzpbillinterid" jdbcType="INTEGER" />
+    <result column="FRelateBrID" property="frelatebrid" jdbcType="INTEGER" />
+    <result column="FPurposeID" property="fpurposeid" jdbcType="INTEGER" />
+    <result column="FUUID" property="fuuid" jdbcType="CHAR" />
+    <result column="FRelateInvoiceID" property="frelateinvoiceid" jdbcType="INTEGER" />
+    <result column="FImport" property="fimport" jdbcType="INTEGER" />
+    <result column="FSystemType" property="fsystemtype" jdbcType="INTEGER" />
+    <result column="FMarketingStyle" property="fmarketingstyle" jdbcType="INTEGER" />
+    <result column="FPayBillID" property="fpaybillid" jdbcType="INTEGER" />
+    <result column="FCheckDate" property="fcheckdate" jdbcType="TIMESTAMP" />
+    <result column="FExplanation" property="fexplanation" jdbcType="NVARCHAR" />
+    <result column="FFetchAdd" property="ffetchadd" jdbcType="NVARCHAR" />
+    <result column="FFetchDate" property="ffetchdate" jdbcType="TIMESTAMP" />
+    <result column="FManagerID" property="fmanagerid" jdbcType="INTEGER" />
+    <result column="FRefType" property="freftype" jdbcType="INTEGER" />
+    <result column="FSelTranType" property="fseltrantype" jdbcType="INTEGER" />
+    <result column="FChildren" property="fchildren" jdbcType="INTEGER" />
+    <result column="FHookStatus" property="fhookstatus" jdbcType="SMALLINT" />
+    <result column="FActPriceVchTplID" property="factpricevchtplid" jdbcType="INTEGER" />
+    <result column="FPlanPriceVchTplID" property="fplanpricevchtplid" jdbcType="INTEGER" />
+    <result column="FProcID" property="fprocid" jdbcType="INTEGER" />
+    <result column="FActualVchTplID" property="factualvchtplid" jdbcType="INTEGER" />
+    <result column="FPlanVchTplID" property="fplanvchtplid" jdbcType="INTEGER" />
+    <result column="FBrID" property="fbrid" jdbcType="INTEGER" />
+    <result column="FVIPCardID" property="fvipcardid" jdbcType="INTEGER" />
+    <result column="FVIPScore" property="fvipscore" jdbcType="DECIMAL" />
+    <result column="FHolisticDiscountRate" property="fholisticdiscountrate" jdbcType="DECIMAL" />
+    <result column="FPOSName" property="fposname" jdbcType="VARCHAR" />
+    <result column="FWorkShiftId" property="fworkshiftid" jdbcType="INTEGER" />
+    <result column="FCussentAcctID" property="fcussentacctid" jdbcType="INTEGER" />
+    <result column="FZanGuCount" property="fzangucount" jdbcType="BIT" />
+    <result column="FCustID" property="fcustid" jdbcType="INTEGER" />
+    <result column="FMOItemID" property="fmoitemid" jdbcType="INTEGER" />
+    <result column="FMOUnitID" property="fmounitid" jdbcType="INTEGER" />
+    <result column="FMOAuxQty" property="fmoauxqty" jdbcType="DECIMAL" />
+    <result column="FMOBaseUnitID" property="fmobaseunitid" jdbcType="INTEGER" />
+    <result column="FMOQty" property="fmoqty" jdbcType="DECIMAL" />
+    <result column="FBatchNo" property="fbatchno" jdbcType="VARCHAR" />
+    <result column="FMCustItemNo" property="fmcustitemno" jdbcType="NVARCHAR" />
+    <result column="FMCustItemName" property="fmcustitemname" jdbcType="NVARCHAR" />
+    <result column="FReceiveAddr" property="freceiveaddr" jdbcType="VARCHAR" />
+    <result column="FBillSource" property="fbillsource" jdbcType="VARCHAR" />
+    <result column="FRejected" property="frejected" jdbcType="INTEGER" />
+    <result column="FRejectedNote" property="frejectednote" jdbcType="VARCHAR" />
+    <result column="FRejectedTime" property="frejectedtime" jdbcType="TIMESTAMP" />
+    <result column="FWLNumber" property="fwlnumber" jdbcType="VARCHAR" />
+    <result column="FWLCompany" property="fwlcompany" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.icstockbill" extends="BaseResultMap" >
+    <result column="FOperDate" property="foperdate" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FInterID, FBrNo, FTranType, FDate, FBillNo, FUse, FNote, FDCStockID, FSCStockID, 
+    FDeptID, FEmpID, FSupplyID, FPosterID, FCheckerID, FFManagerID, FSManagerID, FBillerID, 
+    FReturnBillInterID, FSCBillNo, FHookInterID, FVchInterID, FPosted, FCheckSelect, 
+    FCurrencyID, FSaleStyle, FAcctID, FROB, FRSCBillNo, FStatus, FUpStockWhenSave, FCancellation, 
+    FOrgBillInterID, FBillTypeID, FPOStyle, FMultiCheckLevel1, FMultiCheckLevel2, FMultiCheckLevel3, 
+    FMultiCheckLevel4, FMultiCheckLevel5, FMultiCheckLevel6, FMultiCheckDate1, FMultiCheckDate2, 
+    FMultiCheckDate3, FMultiCheckDate4, FMultiCheckDate5, FMultiCheckDate6, FCurCheckLevel, 
+    FTaskID, FResourceID, FBackFlushed, FWBInterID, FTranStatus, FZPBillInterID, FRelateBrID, 
+    FPurposeID, FUUID, FRelateInvoiceID, FImport, FSystemType, FMarketingStyle, FPayBillID, 
+    FCheckDate, FExplanation, FFetchAdd, FFetchDate, FManagerID, FRefType, FSelTranType, 
+    FChildren, FHookStatus, FActPriceVchTplID, FPlanPriceVchTplID, FProcID, FActualVchTplID, 
+    FPlanVchTplID, FBrID, FVIPCardID, FVIPScore, FHolisticDiscountRate, FPOSName, FWorkShiftId, 
+    FCussentAcctID, FZanGuCount, FCustID, FMOItemID, FMOUnitID, FMOAuxQty, FMOBaseUnitID, 
+    FMOQty, FBatchNo, FMCustItemNo, FMCustItemName, FReceiveAddr, FBillSource, FRejected, 
+    FRejectedNote, FRejectedTime, FWLNumber, FWLCompany
+  </sql>
+  <sql id="Blob_Column_List" >
+    FOperDate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ICStockBill
+    where FInterID = #{finterid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ICStockBill
+    where FInterID = #{finterid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.icstockbill" >
+    insert into ICStockBill (FInterID, FBrNo, FTranType, 
+      FDate, FBillNo, FUse, 
+      FNote, FDCStockID, FSCStockID, 
+      FDeptID, FEmpID, FSupplyID, 
+      FPosterID, FCheckerID, FFManagerID, 
+      FSManagerID, FBillerID, FReturnBillInterID, 
+      FSCBillNo, FHookInterID, FVchInterID, 
+      FPosted, FCheckSelect, FCurrencyID, 
+      FSaleStyle, FAcctID, FROB, 
+      FRSCBillNo, FStatus, FUpStockWhenSave, 
+      FCancellation, FOrgBillInterID, FBillTypeID, 
+      FPOStyle, FMultiCheckLevel1, FMultiCheckLevel2, 
+      FMultiCheckLevel3, FMultiCheckLevel4, FMultiCheckLevel5, 
+      FMultiCheckLevel6, FMultiCheckDate1, 
+      FMultiCheckDate2, FMultiCheckDate3, 
+      FMultiCheckDate4, FMultiCheckDate5, 
+      FMultiCheckDate6, FCurCheckLevel, FTaskID, 
+      FResourceID, FBackFlushed, FWBInterID, 
+      FTranStatus, FZPBillInterID, FRelateBrID, 
+      FPurposeID, FUUID, FRelateInvoiceID, 
+      FImport, FSystemType, FMarketingStyle, 
+      FPayBillID, FCheckDate, FExplanation, 
+      FFetchAdd, FFetchDate, FManagerID, 
+      FRefType, FSelTranType, FChildren, 
+      FHookStatus, FActPriceVchTplID, FPlanPriceVchTplID, 
+      FProcID, FActualVchTplID, FPlanVchTplID, 
+      FBrID, FVIPCardID, FVIPScore, 
+      FHolisticDiscountRate, FPOSName, FWorkShiftId, 
+      FCussentAcctID, FZanGuCount, FCustID, 
+      FMOItemID, FMOUnitID, FMOAuxQty, 
+      FMOBaseUnitID, FMOQty, FBatchNo, 
+      FMCustItemNo, FMCustItemName, FReceiveAddr, 
+      FBillSource, FRejected, FRejectedNote, 
+      FRejectedTime, FWLNumber, FWLCompany, 
+      FOperDate)
+    values (#{finterid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, #{ftrantype,jdbcType=SMALLINT}, 
+      #{fdate,jdbcType=TIMESTAMP}, #{fbillno,jdbcType=NVARCHAR}, #{fuse,jdbcType=VARCHAR}, 
+      #{fnote,jdbcType=VARCHAR}, #{fdcstockid,jdbcType=INTEGER}, #{fscstockid,jdbcType=INTEGER}, 
+      #{fdeptid,jdbcType=INTEGER}, #{fempid,jdbcType=INTEGER}, #{fsupplyid,jdbcType=INTEGER}, 
+      #{fposterid,jdbcType=INTEGER}, #{fcheckerid,jdbcType=INTEGER}, #{ffmanagerid,jdbcType=INTEGER}, 
+      #{fsmanagerid,jdbcType=INTEGER}, #{fbillerid,jdbcType=INTEGER}, #{freturnbillinterid,jdbcType=INTEGER}, 
+      #{fscbillno,jdbcType=VARCHAR}, #{fhookinterid,jdbcType=INTEGER}, #{fvchinterid,jdbcType=INTEGER}, 
+      #{fposted,jdbcType=SMALLINT}, #{fcheckselect,jdbcType=SMALLINT}, #{fcurrencyid,jdbcType=INTEGER}, 
+      #{fsalestyle,jdbcType=INTEGER}, #{facctid,jdbcType=INTEGER}, #{frob,jdbcType=SMALLINT}, 
+      #{frscbillno,jdbcType=VARCHAR}, #{fstatus,jdbcType=SMALLINT}, #{fupstockwhensave,jdbcType=BIT}, 
+      #{fcancellation,jdbcType=BIT}, #{forgbillinterid,jdbcType=INTEGER}, #{fbilltypeid,jdbcType=INTEGER}, 
+      #{fpostyle,jdbcType=INTEGER}, #{fmultichecklevel1,jdbcType=INTEGER}, #{fmultichecklevel2,jdbcType=INTEGER}, 
+      #{fmultichecklevel3,jdbcType=INTEGER}, #{fmultichecklevel4,jdbcType=INTEGER}, #{fmultichecklevel5,jdbcType=INTEGER}, 
+      #{fmultichecklevel6,jdbcType=INTEGER}, #{fmulticheckdate1,jdbcType=TIMESTAMP}, 
+      #{fmulticheckdate2,jdbcType=TIMESTAMP}, #{fmulticheckdate3,jdbcType=TIMESTAMP}, 
+      #{fmulticheckdate4,jdbcType=TIMESTAMP}, #{fmulticheckdate5,jdbcType=TIMESTAMP}, 
+      #{fmulticheckdate6,jdbcType=TIMESTAMP}, #{fcurchecklevel,jdbcType=INTEGER}, #{ftaskid,jdbcType=INTEGER}, 
+      #{fresourceid,jdbcType=INTEGER}, #{fbackflushed,jdbcType=BIT}, #{fwbinterid,jdbcType=INTEGER}, 
+      #{ftranstatus,jdbcType=INTEGER}, #{fzpbillinterid,jdbcType=INTEGER}, #{frelatebrid,jdbcType=INTEGER}, 
+      #{fpurposeid,jdbcType=INTEGER}, #{fuuid,jdbcType=CHAR}, #{frelateinvoiceid,jdbcType=INTEGER}, 
+      #{fimport,jdbcType=INTEGER}, #{fsystemtype,jdbcType=INTEGER}, #{fmarketingstyle,jdbcType=INTEGER}, 
+      #{fpaybillid,jdbcType=INTEGER}, #{fcheckdate,jdbcType=TIMESTAMP}, #{fexplanation,jdbcType=NVARCHAR}, 
+      #{ffetchadd,jdbcType=NVARCHAR}, #{ffetchdate,jdbcType=TIMESTAMP}, #{fmanagerid,jdbcType=INTEGER}, 
+      #{freftype,jdbcType=INTEGER}, #{fseltrantype,jdbcType=INTEGER}, #{fchildren,jdbcType=INTEGER}, 
+      #{fhookstatus,jdbcType=SMALLINT}, #{factpricevchtplid,jdbcType=INTEGER}, #{fplanpricevchtplid,jdbcType=INTEGER}, 
+      #{fprocid,jdbcType=INTEGER}, #{factualvchtplid,jdbcType=INTEGER}, #{fplanvchtplid,jdbcType=INTEGER}, 
+      #{fbrid,jdbcType=INTEGER}, #{fvipcardid,jdbcType=INTEGER}, #{fvipscore,jdbcType=DECIMAL}, 
+      #{fholisticdiscountrate,jdbcType=DECIMAL}, #{fposname,jdbcType=VARCHAR}, #{fworkshiftid,jdbcType=INTEGER}, 
+      #{fcussentacctid,jdbcType=INTEGER}, #{fzangucount,jdbcType=BIT}, #{fcustid,jdbcType=INTEGER}, 
+      #{fmoitemid,jdbcType=INTEGER}, #{fmounitid,jdbcType=INTEGER}, #{fmoauxqty,jdbcType=DECIMAL}, 
+      #{fmobaseunitid,jdbcType=INTEGER}, #{fmoqty,jdbcType=DECIMAL}, #{fbatchno,jdbcType=VARCHAR}, 
+      #{fmcustitemno,jdbcType=NVARCHAR}, #{fmcustitemname,jdbcType=NVARCHAR}, #{freceiveaddr,jdbcType=VARCHAR}, 
+      #{fbillsource,jdbcType=VARCHAR}, #{frejected,jdbcType=INTEGER}, #{frejectednote,jdbcType=VARCHAR}, 
+      #{frejectedtime,jdbcType=TIMESTAMP}, #{fwlnumber,jdbcType=VARCHAR}, #{fwlcompany,jdbcType=VARCHAR}, 
+      #{foperdate,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.icstockbill" >
+    insert into ICStockBill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="finterid != null" >
+        FInterID,
+      </if>
+      <if test="fbrno != null" >
+        FBrNo,
+      </if>
+      <if test="ftrantype != null" >
+        FTranType,
+      </if>
+      <if test="fdate != null" >
+        FDate,
+      </if>
+      <if test="fbillno != null" >
+        FBillNo,
+      </if>
+      <if test="fuse != null" >
+        FUse,
+      </if>
+      <if test="fnote != null" >
+        FNote,
+      </if>
+      <if test="fdcstockid != null" >
+        FDCStockID,
+      </if>
+      <if test="fscstockid != null" >
+        FSCStockID,
+      </if>
+      <if test="fdeptid != null" >
+        FDeptID,
+      </if>
+      <if test="fempid != null" >
+        FEmpID,
+      </if>
+      <if test="fsupplyid != null" >
+        FSupplyID,
+      </if>
+      <if test="fposterid != null" >
+        FPosterID,
+      </if>
+      <if test="fcheckerid != null" >
+        FCheckerID,
+      </if>
+      <if test="ffmanagerid != null" >
+        FFManagerID,
+      </if>
+      <if test="fsmanagerid != null" >
+        FSManagerID,
+      </if>
+      <if test="fbillerid != null" >
+        FBillerID,
+      </if>
+      <if test="freturnbillinterid != null" >
+        FReturnBillInterID,
+      </if>
+      <if test="fscbillno != null" >
+        FSCBillNo,
+      </if>
+      <if test="fhookinterid != null" >
+        FHookInterID,
+      </if>
+      <if test="fvchinterid != null" >
+        FVchInterID,
+      </if>
+      <if test="fposted != null" >
+        FPosted,
+      </if>
+      <if test="fcheckselect != null" >
+        FCheckSelect,
+      </if>
+      <if test="fcurrencyid != null" >
+        FCurrencyID,
+      </if>
+      <if test="fsalestyle != null" >
+        FSaleStyle,
+      </if>
+      <if test="facctid != null" >
+        FAcctID,
+      </if>
+      <if test="frob != null" >
+        FROB,
+      </if>
+      <if test="frscbillno != null" >
+        FRSCBillNo,
+      </if>
+      <if test="fstatus != null" >
+        FStatus,
+      </if>
+      <if test="fupstockwhensave != null" >
+        FUpStockWhenSave,
+      </if>
+      <if test="fcancellation != null" >
+        FCancellation,
+      </if>
+      <if test="forgbillinterid != null" >
+        FOrgBillInterID,
+      </if>
+      <if test="fbilltypeid != null" >
+        FBillTypeID,
+      </if>
+      <if test="fpostyle != null" >
+        FPOStyle,
+      </if>
+      <if test="fmultichecklevel1 != null" >
+        FMultiCheckLevel1,
+      </if>
+      <if test="fmultichecklevel2 != null" >
+        FMultiCheckLevel2,
+      </if>
+      <if test="fmultichecklevel3 != null" >
+        FMultiCheckLevel3,
+      </if>
+      <if test="fmultichecklevel4 != null" >
+        FMultiCheckLevel4,
+      </if>
+      <if test="fmultichecklevel5 != null" >
+        FMultiCheckLevel5,
+      </if>
+      <if test="fmultichecklevel6 != null" >
+        FMultiCheckLevel6,
+      </if>
+      <if test="fmulticheckdate1 != null" >
+        FMultiCheckDate1,
+      </if>
+      <if test="fmulticheckdate2 != null" >
+        FMultiCheckDate2,
+      </if>
+      <if test="fmulticheckdate3 != null" >
+        FMultiCheckDate3,
+      </if>
+      <if test="fmulticheckdate4 != null" >
+        FMultiCheckDate4,
+      </if>
+      <if test="fmulticheckdate5 != null" >
+        FMultiCheckDate5,
+      </if>
+      <if test="fmulticheckdate6 != null" >
+        FMultiCheckDate6,
+      </if>
+      <if test="fcurchecklevel != null" >
+        FCurCheckLevel,
+      </if>
+      <if test="ftaskid != null" >
+        FTaskID,
+      </if>
+      <if test="fresourceid != null" >
+        FResourceID,
+      </if>
+      <if test="fbackflushed != null" >
+        FBackFlushed,
+      </if>
+      <if test="fwbinterid != null" >
+        FWBInterID,
+      </if>
+      <if test="ftranstatus != null" >
+        FTranStatus,
+      </if>
+      <if test="fzpbillinterid != null" >
+        FZPBillInterID,
+      </if>
+      <if test="frelatebrid != null" >
+        FRelateBrID,
+      </if>
+      <if test="fpurposeid != null" >
+        FPurposeID,
+      </if>
+      <if test="fuuid != null" >
+        FUUID,
+      </if>
+      <if test="frelateinvoiceid != null" >
+        FRelateInvoiceID,
+      </if>
+      <if test="fimport != null" >
+        FImport,
+      </if>
+      <if test="fsystemtype != null" >
+        FSystemType,
+      </if>
+      <if test="fmarketingstyle != null" >
+        FMarketingStyle,
+      </if>
+      <if test="fpaybillid != null" >
+        FPayBillID,
+      </if>
+      <if test="fcheckdate != null" >
+        FCheckDate,
+      </if>
+      <if test="fexplanation != null" >
+        FExplanation,
+      </if>
+      <if test="ffetchadd != null" >
+        FFetchAdd,
+      </if>
+      <if test="ffetchdate != null" >
+        FFetchDate,
+      </if>
+      <if test="fmanagerid != null" >
+        FManagerID,
+      </if>
+      <if test="freftype != null" >
+        FRefType,
+      </if>
+      <if test="fseltrantype != null" >
+        FSelTranType,
+      </if>
+      <if test="fchildren != null" >
+        FChildren,
+      </if>
+      <if test="fhookstatus != null" >
+        FHookStatus,
+      </if>
+      <if test="factpricevchtplid != null" >
+        FActPriceVchTplID,
+      </if>
+      <if test="fplanpricevchtplid != null" >
+        FPlanPriceVchTplID,
+      </if>
+      <if test="fprocid != null" >
+        FProcID,
+      </if>
+      <if test="factualvchtplid != null" >
+        FActualVchTplID,
+      </if>
+      <if test="fplanvchtplid != null" >
+        FPlanVchTplID,
+      </if>
+      <if test="fbrid != null" >
+        FBrID,
+      </if>
+      <if test="fvipcardid != null" >
+        FVIPCardID,
+      </if>
+      <if test="fvipscore != null" >
+        FVIPScore,
+      </if>
+      <if test="fholisticdiscountrate != null" >
+        FHolisticDiscountRate,
+      </if>
+      <if test="fposname != null" >
+        FPOSName,
+      </if>
+      <if test="fworkshiftid != null" >
+        FWorkShiftId,
+      </if>
+      <if test="fcussentacctid != null" >
+        FCussentAcctID,
+      </if>
+      <if test="fzangucount != null" >
+        FZanGuCount,
+      </if>
+      <if test="fcustid != null" >
+        FCustID,
+      </if>
+      <if test="fmoitemid != null" >
+        FMOItemID,
+      </if>
+      <if test="fmounitid != null" >
+        FMOUnitID,
+      </if>
+      <if test="fmoauxqty != null" >
+        FMOAuxQty,
+      </if>
+      <if test="fmobaseunitid != null" >
+        FMOBaseUnitID,
+      </if>
+      <if test="fmoqty != null" >
+        FMOQty,
+      </if>
+      <if test="fbatchno != null" >
+        FBatchNo,
+      </if>
+      <if test="fmcustitemno != null" >
+        FMCustItemNo,
+      </if>
+      <if test="fmcustitemname != null" >
+        FMCustItemName,
+      </if>
+      <if test="freceiveaddr != null" >
+        FReceiveAddr,
+      </if>
+      <if test="fbillsource != null" >
+        FBillSource,
+      </if>
+      <if test="frejected != null" >
+        FRejected,
+      </if>
+      <if test="frejectednote != null" >
+        FRejectedNote,
+      </if>
+      <if test="frejectedtime != null" >
+        FRejectedTime,
+      </if>
+      <if test="fwlnumber != null" >
+        FWLNumber,
+      </if>
+      <if test="fwlcompany != null" >
+        FWLCompany,
+      </if>
+      <if test="foperdate != null" >
+        FOperDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="finterid != null" >
+        #{finterid,jdbcType=INTEGER},
+      </if>
+      <if test="fbrno != null" >
+        #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="ftrantype != null" >
+        #{ftrantype,jdbcType=SMALLINT},
+      </if>
+      <if test="fdate != null" >
+        #{fdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fbillno != null" >
+        #{fbillno,jdbcType=NVARCHAR},
+      </if>
+      <if test="fuse != null" >
+        #{fuse,jdbcType=VARCHAR},
+      </if>
+      <if test="fnote != null" >
+        #{fnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fdcstockid != null" >
+        #{fdcstockid,jdbcType=INTEGER},
+      </if>
+      <if test="fscstockid != null" >
+        #{fscstockid,jdbcType=INTEGER},
+      </if>
+      <if test="fdeptid != null" >
+        #{fdeptid,jdbcType=INTEGER},
+      </if>
+      <if test="fempid != null" >
+        #{fempid,jdbcType=INTEGER},
+      </if>
+      <if test="fsupplyid != null" >
+        #{fsupplyid,jdbcType=INTEGER},
+      </if>
+      <if test="fposterid != null" >
+        #{fposterid,jdbcType=INTEGER},
+      </if>
+      <if test="fcheckerid != null" >
+        #{fcheckerid,jdbcType=INTEGER},
+      </if>
+      <if test="ffmanagerid != null" >
+        #{ffmanagerid,jdbcType=INTEGER},
+      </if>
+      <if test="fsmanagerid != null" >
+        #{fsmanagerid,jdbcType=INTEGER},
+      </if>
+      <if test="fbillerid != null" >
+        #{fbillerid,jdbcType=INTEGER},
+      </if>
+      <if test="freturnbillinterid != null" >
+        #{freturnbillinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fscbillno != null" >
+        #{fscbillno,jdbcType=VARCHAR},
+      </if>
+      <if test="fhookinterid != null" >
+        #{fhookinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fvchinterid != null" >
+        #{fvchinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fposted != null" >
+        #{fposted,jdbcType=SMALLINT},
+      </if>
+      <if test="fcheckselect != null" >
+        #{fcheckselect,jdbcType=SMALLINT},
+      </if>
+      <if test="fcurrencyid != null" >
+        #{fcurrencyid,jdbcType=INTEGER},
+      </if>
+      <if test="fsalestyle != null" >
+        #{fsalestyle,jdbcType=INTEGER},
+      </if>
+      <if test="facctid != null" >
+        #{facctid,jdbcType=INTEGER},
+      </if>
+      <if test="frob != null" >
+        #{frob,jdbcType=SMALLINT},
+      </if>
+      <if test="frscbillno != null" >
+        #{frscbillno,jdbcType=VARCHAR},
+      </if>
+      <if test="fstatus != null" >
+        #{fstatus,jdbcType=SMALLINT},
+      </if>
+      <if test="fupstockwhensave != null" >
+        #{fupstockwhensave,jdbcType=BIT},
+      </if>
+      <if test="fcancellation != null" >
+        #{fcancellation,jdbcType=BIT},
+      </if>
+      <if test="forgbillinterid != null" >
+        #{forgbillinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fbilltypeid != null" >
+        #{fbilltypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fpostyle != null" >
+        #{fpostyle,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel1 != null" >
+        #{fmultichecklevel1,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel2 != null" >
+        #{fmultichecklevel2,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel3 != null" >
+        #{fmultichecklevel3,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel4 != null" >
+        #{fmultichecklevel4,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel5 != null" >
+        #{fmultichecklevel5,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel6 != null" >
+        #{fmultichecklevel6,jdbcType=INTEGER},
+      </if>
+      <if test="fmulticheckdate1 != null" >
+        #{fmulticheckdate1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate2 != null" >
+        #{fmulticheckdate2,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate3 != null" >
+        #{fmulticheckdate3,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate4 != null" >
+        #{fmulticheckdate4,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate5 != null" >
+        #{fmulticheckdate5,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate6 != null" >
+        #{fmulticheckdate6,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fcurchecklevel != null" >
+        #{fcurchecklevel,jdbcType=INTEGER},
+      </if>
+      <if test="ftaskid != null" >
+        #{ftaskid,jdbcType=INTEGER},
+      </if>
+      <if test="fresourceid != null" >
+        #{fresourceid,jdbcType=INTEGER},
+      </if>
+      <if test="fbackflushed != null" >
+        #{fbackflushed,jdbcType=BIT},
+      </if>
+      <if test="fwbinterid != null" >
+        #{fwbinterid,jdbcType=INTEGER},
+      </if>
+      <if test="ftranstatus != null" >
+        #{ftranstatus,jdbcType=INTEGER},
+      </if>
+      <if test="fzpbillinterid != null" >
+        #{fzpbillinterid,jdbcType=INTEGER},
+      </if>
+      <if test="frelatebrid != null" >
+        #{frelatebrid,jdbcType=INTEGER},
+      </if>
+      <if test="fpurposeid != null" >
+        #{fpurposeid,jdbcType=INTEGER},
+      </if>
+      <if test="fuuid != null" >
+        #{fuuid,jdbcType=CHAR},
+      </if>
+      <if test="frelateinvoiceid != null" >
+        #{frelateinvoiceid,jdbcType=INTEGER},
+      </if>
+      <if test="fimport != null" >
+        #{fimport,jdbcType=INTEGER},
+      </if>
+      <if test="fsystemtype != null" >
+        #{fsystemtype,jdbcType=INTEGER},
+      </if>
+      <if test="fmarketingstyle != null" >
+        #{fmarketingstyle,jdbcType=INTEGER},
+      </if>
+      <if test="fpaybillid != null" >
+        #{fpaybillid,jdbcType=INTEGER},
+      </if>
+      <if test="fcheckdate != null" >
+        #{fcheckdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fexplanation != null" >
+        #{fexplanation,jdbcType=NVARCHAR},
+      </if>
+      <if test="ffetchadd != null" >
+        #{ffetchadd,jdbcType=NVARCHAR},
+      </if>
+      <if test="ffetchdate != null" >
+        #{ffetchdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmanagerid != null" >
+        #{fmanagerid,jdbcType=INTEGER},
+      </if>
+      <if test="freftype != null" >
+        #{freftype,jdbcType=INTEGER},
+      </if>
+      <if test="fseltrantype != null" >
+        #{fseltrantype,jdbcType=INTEGER},
+      </if>
+      <if test="fchildren != null" >
+        #{fchildren,jdbcType=INTEGER},
+      </if>
+      <if test="fhookstatus != null" >
+        #{fhookstatus,jdbcType=SMALLINT},
+      </if>
+      <if test="factpricevchtplid != null" >
+        #{factpricevchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fplanpricevchtplid != null" >
+        #{fplanpricevchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fprocid != null" >
+        #{fprocid,jdbcType=INTEGER},
+      </if>
+      <if test="factualvchtplid != null" >
+        #{factualvchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fplanvchtplid != null" >
+        #{fplanvchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fbrid != null" >
+        #{fbrid,jdbcType=INTEGER},
+      </if>
+      <if test="fvipcardid != null" >
+        #{fvipcardid,jdbcType=INTEGER},
+      </if>
+      <if test="fvipscore != null" >
+        #{fvipscore,jdbcType=DECIMAL},
+      </if>
+      <if test="fholisticdiscountrate != null" >
+        #{fholisticdiscountrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fposname != null" >
+        #{fposname,jdbcType=VARCHAR},
+      </if>
+      <if test="fworkshiftid != null" >
+        #{fworkshiftid,jdbcType=INTEGER},
+      </if>
+      <if test="fcussentacctid != null" >
+        #{fcussentacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fzangucount != null" >
+        #{fzangucount,jdbcType=BIT},
+      </if>
+      <if test="fcustid != null" >
+        #{fcustid,jdbcType=INTEGER},
+      </if>
+      <if test="fmoitemid != null" >
+        #{fmoitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fmounitid != null" >
+        #{fmounitid,jdbcType=INTEGER},
+      </if>
+      <if test="fmoauxqty != null" >
+        #{fmoauxqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fmobaseunitid != null" >
+        #{fmobaseunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fmoqty != null" >
+        #{fmoqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatchno != null" >
+        #{fbatchno,jdbcType=VARCHAR},
+      </if>
+      <if test="fmcustitemno != null" >
+        #{fmcustitemno,jdbcType=NVARCHAR},
+      </if>
+      <if test="fmcustitemname != null" >
+        #{fmcustitemname,jdbcType=NVARCHAR},
+      </if>
+      <if test="freceiveaddr != null" >
+        #{freceiveaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="fbillsource != null" >
+        #{fbillsource,jdbcType=VARCHAR},
+      </if>
+      <if test="frejected != null" >
+        #{frejected,jdbcType=INTEGER},
+      </if>
+      <if test="frejectednote != null" >
+        #{frejectednote,jdbcType=VARCHAR},
+      </if>
+      <if test="frejectedtime != null" >
+        #{frejectedtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fwlnumber != null" >
+        #{fwlnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fwlcompany != null" >
+        #{fwlcompany,jdbcType=VARCHAR},
+      </if>
+      <if test="foperdate != null" >
+        #{foperdate,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.icstockbill" >
+    update ICStockBill
+    <set >
+      <if test="fbrno != null" >
+        FBrNo = #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="ftrantype != null" >
+        FTranType = #{ftrantype,jdbcType=SMALLINT},
+      </if>
+      <if test="fdate != null" >
+        FDate = #{fdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fbillno != null" >
+        FBillNo = #{fbillno,jdbcType=NVARCHAR},
+      </if>
+      <if test="fuse != null" >
+        FUse = #{fuse,jdbcType=VARCHAR},
+      </if>
+      <if test="fnote != null" >
+        FNote = #{fnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fdcstockid != null" >
+        FDCStockID = #{fdcstockid,jdbcType=INTEGER},
+      </if>
+      <if test="fscstockid != null" >
+        FSCStockID = #{fscstockid,jdbcType=INTEGER},
+      </if>
+      <if test="fdeptid != null" >
+        FDeptID = #{fdeptid,jdbcType=INTEGER},
+      </if>
+      <if test="fempid != null" >
+        FEmpID = #{fempid,jdbcType=INTEGER},
+      </if>
+      <if test="fsupplyid != null" >
+        FSupplyID = #{fsupplyid,jdbcType=INTEGER},
+      </if>
+      <if test="fposterid != null" >
+        FPosterID = #{fposterid,jdbcType=INTEGER},
+      </if>
+      <if test="fcheckerid != null" >
+        FCheckerID = #{fcheckerid,jdbcType=INTEGER},
+      </if>
+      <if test="ffmanagerid != null" >
+        FFManagerID = #{ffmanagerid,jdbcType=INTEGER},
+      </if>
+      <if test="fsmanagerid != null" >
+        FSManagerID = #{fsmanagerid,jdbcType=INTEGER},
+      </if>
+      <if test="fbillerid != null" >
+        FBillerID = #{fbillerid,jdbcType=INTEGER},
+      </if>
+      <if test="freturnbillinterid != null" >
+        FReturnBillInterID = #{freturnbillinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fscbillno != null" >
+        FSCBillNo = #{fscbillno,jdbcType=VARCHAR},
+      </if>
+      <if test="fhookinterid != null" >
+        FHookInterID = #{fhookinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fvchinterid != null" >
+        FVchInterID = #{fvchinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fposted != null" >
+        FPosted = #{fposted,jdbcType=SMALLINT},
+      </if>
+      <if test="fcheckselect != null" >
+        FCheckSelect = #{fcheckselect,jdbcType=SMALLINT},
+      </if>
+      <if test="fcurrencyid != null" >
+        FCurrencyID = #{fcurrencyid,jdbcType=INTEGER},
+      </if>
+      <if test="fsalestyle != null" >
+        FSaleStyle = #{fsalestyle,jdbcType=INTEGER},
+      </if>
+      <if test="facctid != null" >
+        FAcctID = #{facctid,jdbcType=INTEGER},
+      </if>
+      <if test="frob != null" >
+        FROB = #{frob,jdbcType=SMALLINT},
+      </if>
+      <if test="frscbillno != null" >
+        FRSCBillNo = #{frscbillno,jdbcType=VARCHAR},
+      </if>
+      <if test="fstatus != null" >
+        FStatus = #{fstatus,jdbcType=SMALLINT},
+      </if>
+      <if test="fupstockwhensave != null" >
+        FUpStockWhenSave = #{fupstockwhensave,jdbcType=BIT},
+      </if>
+      <if test="fcancellation != null" >
+        FCancellation = #{fcancellation,jdbcType=BIT},
+      </if>
+      <if test="forgbillinterid != null" >
+        FOrgBillInterID = #{forgbillinterid,jdbcType=INTEGER},
+      </if>
+      <if test="fbilltypeid != null" >
+        FBillTypeID = #{fbilltypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fpostyle != null" >
+        FPOStyle = #{fpostyle,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel1 != null" >
+        FMultiCheckLevel1 = #{fmultichecklevel1,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel2 != null" >
+        FMultiCheckLevel2 = #{fmultichecklevel2,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel3 != null" >
+        FMultiCheckLevel3 = #{fmultichecklevel3,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel4 != null" >
+        FMultiCheckLevel4 = #{fmultichecklevel4,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel5 != null" >
+        FMultiCheckLevel5 = #{fmultichecklevel5,jdbcType=INTEGER},
+      </if>
+      <if test="fmultichecklevel6 != null" >
+        FMultiCheckLevel6 = #{fmultichecklevel6,jdbcType=INTEGER},
+      </if>
+      <if test="fmulticheckdate1 != null" >
+        FMultiCheckDate1 = #{fmulticheckdate1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate2 != null" >
+        FMultiCheckDate2 = #{fmulticheckdate2,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate3 != null" >
+        FMultiCheckDate3 = #{fmulticheckdate3,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate4 != null" >
+        FMultiCheckDate4 = #{fmulticheckdate4,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate5 != null" >
+        FMultiCheckDate5 = #{fmulticheckdate5,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmulticheckdate6 != null" >
+        FMultiCheckDate6 = #{fmulticheckdate6,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fcurchecklevel != null" >
+        FCurCheckLevel = #{fcurchecklevel,jdbcType=INTEGER},
+      </if>
+      <if test="ftaskid != null" >
+        FTaskID = #{ftaskid,jdbcType=INTEGER},
+      </if>
+      <if test="fresourceid != null" >
+        FResourceID = #{fresourceid,jdbcType=INTEGER},
+      </if>
+      <if test="fbackflushed != null" >
+        FBackFlushed = #{fbackflushed,jdbcType=BIT},
+      </if>
+      <if test="fwbinterid != null" >
+        FWBInterID = #{fwbinterid,jdbcType=INTEGER},
+      </if>
+      <if test="ftranstatus != null" >
+        FTranStatus = #{ftranstatus,jdbcType=INTEGER},
+      </if>
+      <if test="fzpbillinterid != null" >
+        FZPBillInterID = #{fzpbillinterid,jdbcType=INTEGER},
+      </if>
+      <if test="frelatebrid != null" >
+        FRelateBrID = #{frelatebrid,jdbcType=INTEGER},
+      </if>
+      <if test="fpurposeid != null" >
+        FPurposeID = #{fpurposeid,jdbcType=INTEGER},
+      </if>
+      <if test="fuuid != null" >
+        FUUID = #{fuuid,jdbcType=CHAR},
+      </if>
+      <if test="frelateinvoiceid != null" >
+        FRelateInvoiceID = #{frelateinvoiceid,jdbcType=INTEGER},
+      </if>
+      <if test="fimport != null" >
+        FImport = #{fimport,jdbcType=INTEGER},
+      </if>
+      <if test="fsystemtype != null" >
+        FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      </if>
+      <if test="fmarketingstyle != null" >
+        FMarketingStyle = #{fmarketingstyle,jdbcType=INTEGER},
+      </if>
+      <if test="fpaybillid != null" >
+        FPayBillID = #{fpaybillid,jdbcType=INTEGER},
+      </if>
+      <if test="fcheckdate != null" >
+        FCheckDate = #{fcheckdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fexplanation != null" >
+        FExplanation = #{fexplanation,jdbcType=NVARCHAR},
+      </if>
+      <if test="ffetchadd != null" >
+        FFetchAdd = #{ffetchadd,jdbcType=NVARCHAR},
+      </if>
+      <if test="ffetchdate != null" >
+        FFetchDate = #{ffetchdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fmanagerid != null" >
+        FManagerID = #{fmanagerid,jdbcType=INTEGER},
+      </if>
+      <if test="freftype != null" >
+        FRefType = #{freftype,jdbcType=INTEGER},
+      </if>
+      <if test="fseltrantype != null" >
+        FSelTranType = #{fseltrantype,jdbcType=INTEGER},
+      </if>
+      <if test="fchildren != null" >
+        FChildren = #{fchildren,jdbcType=INTEGER},
+      </if>
+      <if test="fhookstatus != null" >
+        FHookStatus = #{fhookstatus,jdbcType=SMALLINT},
+      </if>
+      <if test="factpricevchtplid != null" >
+        FActPriceVchTplID = #{factpricevchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fplanpricevchtplid != null" >
+        FPlanPriceVchTplID = #{fplanpricevchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fprocid != null" >
+        FProcID = #{fprocid,jdbcType=INTEGER},
+      </if>
+      <if test="factualvchtplid != null" >
+        FActualVchTplID = #{factualvchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fplanvchtplid != null" >
+        FPlanVchTplID = #{fplanvchtplid,jdbcType=INTEGER},
+      </if>
+      <if test="fbrid != null" >
+        FBrID = #{fbrid,jdbcType=INTEGER},
+      </if>
+      <if test="fvipcardid != null" >
+        FVIPCardID = #{fvipcardid,jdbcType=INTEGER},
+      </if>
+      <if test="fvipscore != null" >
+        FVIPScore = #{fvipscore,jdbcType=DECIMAL},
+      </if>
+      <if test="fholisticdiscountrate != null" >
+        FHolisticDiscountRate = #{fholisticdiscountrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fposname != null" >
+        FPOSName = #{fposname,jdbcType=VARCHAR},
+      </if>
+      <if test="fworkshiftid != null" >
+        FWorkShiftId = #{fworkshiftid,jdbcType=INTEGER},
+      </if>
+      <if test="fcussentacctid != null" >
+        FCussentAcctID = #{fcussentacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fzangucount != null" >
+        FZanGuCount = #{fzangucount,jdbcType=BIT},
+      </if>
+      <if test="fcustid != null" >
+        FCustID = #{fcustid,jdbcType=INTEGER},
+      </if>
+      <if test="fmoitemid != null" >
+        FMOItemID = #{fmoitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fmounitid != null" >
+        FMOUnitID = #{fmounitid,jdbcType=INTEGER},
+      </if>
+      <if test="fmoauxqty != null" >
+        FMOAuxQty = #{fmoauxqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fmobaseunitid != null" >
+        FMOBaseUnitID = #{fmobaseunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fmoqty != null" >
+        FMOQty = #{fmoqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatchno != null" >
+        FBatchNo = #{fbatchno,jdbcType=VARCHAR},
+      </if>
+      <if test="fmcustitemno != null" >
+        FMCustItemNo = #{fmcustitemno,jdbcType=NVARCHAR},
+      </if>
+      <if test="fmcustitemname != null" >
+        FMCustItemName = #{fmcustitemname,jdbcType=NVARCHAR},
+      </if>
+      <if test="freceiveaddr != null" >
+        FReceiveAddr = #{freceiveaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="fbillsource != null" >
+        FBillSource = #{fbillsource,jdbcType=VARCHAR},
+      </if>
+      <if test="frejected != null" >
+        FRejected = #{frejected,jdbcType=INTEGER},
+      </if>
+      <if test="frejectednote != null" >
+        FRejectedNote = #{frejectednote,jdbcType=VARCHAR},
+      </if>
+      <if test="frejectedtime != null" >
+        FRejectedTime = #{frejectedtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fwlnumber != null" >
+        FWLNumber = #{fwlnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fwlcompany != null" >
+        FWLCompany = #{fwlcompany,jdbcType=VARCHAR},
+      </if>
+      <if test="foperdate != null" >
+        FOperDate = #{foperdate,jdbcType=BINARY},
+      </if>
+    </set>
+    where FInterID = #{finterid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.com.yhb.entity.icstockbill" >
+    update ICStockBill
+    set FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FTranType = #{ftrantype,jdbcType=SMALLINT},
+      FDate = #{fdate,jdbcType=TIMESTAMP},
+      FBillNo = #{fbillno,jdbcType=NVARCHAR},
+      FUse = #{fuse,jdbcType=VARCHAR},
+      FNote = #{fnote,jdbcType=VARCHAR},
+      FDCStockID = #{fdcstockid,jdbcType=INTEGER},
+      FSCStockID = #{fscstockid,jdbcType=INTEGER},
+      FDeptID = #{fdeptid,jdbcType=INTEGER},
+      FEmpID = #{fempid,jdbcType=INTEGER},
+      FSupplyID = #{fsupplyid,jdbcType=INTEGER},
+      FPosterID = #{fposterid,jdbcType=INTEGER},
+      FCheckerID = #{fcheckerid,jdbcType=INTEGER},
+      FFManagerID = #{ffmanagerid,jdbcType=INTEGER},
+      FSManagerID = #{fsmanagerid,jdbcType=INTEGER},
+      FBillerID = #{fbillerid,jdbcType=INTEGER},
+      FReturnBillInterID = #{freturnbillinterid,jdbcType=INTEGER},
+      FSCBillNo = #{fscbillno,jdbcType=VARCHAR},
+      FHookInterID = #{fhookinterid,jdbcType=INTEGER},
+      FVchInterID = #{fvchinterid,jdbcType=INTEGER},
+      FPosted = #{fposted,jdbcType=SMALLINT},
+      FCheckSelect = #{fcheckselect,jdbcType=SMALLINT},
+      FCurrencyID = #{fcurrencyid,jdbcType=INTEGER},
+      FSaleStyle = #{fsalestyle,jdbcType=INTEGER},
+      FAcctID = #{facctid,jdbcType=INTEGER},
+      FROB = #{frob,jdbcType=SMALLINT},
+      FRSCBillNo = #{frscbillno,jdbcType=VARCHAR},
+      FStatus = #{fstatus,jdbcType=SMALLINT},
+      FUpStockWhenSave = #{fupstockwhensave,jdbcType=BIT},
+      FCancellation = #{fcancellation,jdbcType=BIT},
+      FOrgBillInterID = #{forgbillinterid,jdbcType=INTEGER},
+      FBillTypeID = #{fbilltypeid,jdbcType=INTEGER},
+      FPOStyle = #{fpostyle,jdbcType=INTEGER},
+      FMultiCheckLevel1 = #{fmultichecklevel1,jdbcType=INTEGER},
+      FMultiCheckLevel2 = #{fmultichecklevel2,jdbcType=INTEGER},
+      FMultiCheckLevel3 = #{fmultichecklevel3,jdbcType=INTEGER},
+      FMultiCheckLevel4 = #{fmultichecklevel4,jdbcType=INTEGER},
+      FMultiCheckLevel5 = #{fmultichecklevel5,jdbcType=INTEGER},
+      FMultiCheckLevel6 = #{fmultichecklevel6,jdbcType=INTEGER},
+      FMultiCheckDate1 = #{fmulticheckdate1,jdbcType=TIMESTAMP},
+      FMultiCheckDate2 = #{fmulticheckdate2,jdbcType=TIMESTAMP},
+      FMultiCheckDate3 = #{fmulticheckdate3,jdbcType=TIMESTAMP},
+      FMultiCheckDate4 = #{fmulticheckdate4,jdbcType=TIMESTAMP},
+      FMultiCheckDate5 = #{fmulticheckdate5,jdbcType=TIMESTAMP},
+      FMultiCheckDate6 = #{fmulticheckdate6,jdbcType=TIMESTAMP},
+      FCurCheckLevel = #{fcurchecklevel,jdbcType=INTEGER},
+      FTaskID = #{ftaskid,jdbcType=INTEGER},
+      FResourceID = #{fresourceid,jdbcType=INTEGER},
+      FBackFlushed = #{fbackflushed,jdbcType=BIT},
+      FWBInterID = #{fwbinterid,jdbcType=INTEGER},
+      FTranStatus = #{ftranstatus,jdbcType=INTEGER},
+      FZPBillInterID = #{fzpbillinterid,jdbcType=INTEGER},
+      FRelateBrID = #{frelatebrid,jdbcType=INTEGER},
+      FPurposeID = #{fpurposeid,jdbcType=INTEGER},
+      FUUID = #{fuuid,jdbcType=CHAR},
+      FRelateInvoiceID = #{frelateinvoiceid,jdbcType=INTEGER},
+      FImport = #{fimport,jdbcType=INTEGER},
+      FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      FMarketingStyle = #{fmarketingstyle,jdbcType=INTEGER},
+      FPayBillID = #{fpaybillid,jdbcType=INTEGER},
+      FCheckDate = #{fcheckdate,jdbcType=TIMESTAMP},
+      FExplanation = #{fexplanation,jdbcType=NVARCHAR},
+      FFetchAdd = #{ffetchadd,jdbcType=NVARCHAR},
+      FFetchDate = #{ffetchdate,jdbcType=TIMESTAMP},
+      FManagerID = #{fmanagerid,jdbcType=INTEGER},
+      FRefType = #{freftype,jdbcType=INTEGER},
+      FSelTranType = #{fseltrantype,jdbcType=INTEGER},
+      FChildren = #{fchildren,jdbcType=INTEGER},
+      FHookStatus = #{fhookstatus,jdbcType=SMALLINT},
+      FActPriceVchTplID = #{factpricevchtplid,jdbcType=INTEGER},
+      FPlanPriceVchTplID = #{fplanpricevchtplid,jdbcType=INTEGER},
+      FProcID = #{fprocid,jdbcType=INTEGER},
+      FActualVchTplID = #{factualvchtplid,jdbcType=INTEGER},
+      FPlanVchTplID = #{fplanvchtplid,jdbcType=INTEGER},
+      FBrID = #{fbrid,jdbcType=INTEGER},
+      FVIPCardID = #{fvipcardid,jdbcType=INTEGER},
+      FVIPScore = #{fvipscore,jdbcType=DECIMAL},
+      FHolisticDiscountRate = #{fholisticdiscountrate,jdbcType=DECIMAL},
+      FPOSName = #{fposname,jdbcType=VARCHAR},
+      FWorkShiftId = #{fworkshiftid,jdbcType=INTEGER},
+      FCussentAcctID = #{fcussentacctid,jdbcType=INTEGER},
+      FZanGuCount = #{fzangucount,jdbcType=BIT},
+      FCustID = #{fcustid,jdbcType=INTEGER},
+      FMOItemID = #{fmoitemid,jdbcType=INTEGER},
+      FMOUnitID = #{fmounitid,jdbcType=INTEGER},
+      FMOAuxQty = #{fmoauxqty,jdbcType=DECIMAL},
+      FMOBaseUnitID = #{fmobaseunitid,jdbcType=INTEGER},
+      FMOQty = #{fmoqty,jdbcType=DECIMAL},
+      FBatchNo = #{fbatchno,jdbcType=VARCHAR},
+      FMCustItemNo = #{fmcustitemno,jdbcType=NVARCHAR},
+      FMCustItemName = #{fmcustitemname,jdbcType=NVARCHAR},
+      FReceiveAddr = #{freceiveaddr,jdbcType=VARCHAR},
+      FBillSource = #{fbillsource,jdbcType=VARCHAR},
+      FRejected = #{frejected,jdbcType=INTEGER},
+      FRejectedNote = #{frejectednote,jdbcType=VARCHAR},
+      FRejectedTime = #{frejectedtime,jdbcType=TIMESTAMP},
+      FWLNumber = #{fwlnumber,jdbcType=VARCHAR},
+      FWLCompany = #{fwlcompany,jdbcType=VARCHAR},
+      FOperDate = #{foperdate,jdbcType=BINARY}
+    where FInterID = #{finterid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.icstockbill" >
+    update ICStockBill
+    set FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FTranType = #{ftrantype,jdbcType=SMALLINT},
+      FDate = #{fdate,jdbcType=TIMESTAMP},
+      FBillNo = #{fbillno,jdbcType=NVARCHAR},
+      FUse = #{fuse,jdbcType=VARCHAR},
+      FNote = #{fnote,jdbcType=VARCHAR},
+      FDCStockID = #{fdcstockid,jdbcType=INTEGER},
+      FSCStockID = #{fscstockid,jdbcType=INTEGER},
+      FDeptID = #{fdeptid,jdbcType=INTEGER},
+      FEmpID = #{fempid,jdbcType=INTEGER},
+      FSupplyID = #{fsupplyid,jdbcType=INTEGER},
+      FPosterID = #{fposterid,jdbcType=INTEGER},
+      FCheckerID = #{fcheckerid,jdbcType=INTEGER},
+      FFManagerID = #{ffmanagerid,jdbcType=INTEGER},
+      FSManagerID = #{fsmanagerid,jdbcType=INTEGER},
+      FBillerID = #{fbillerid,jdbcType=INTEGER},
+      FReturnBillInterID = #{freturnbillinterid,jdbcType=INTEGER},
+      FSCBillNo = #{fscbillno,jdbcType=VARCHAR},
+      FHookInterID = #{fhookinterid,jdbcType=INTEGER},
+      FVchInterID = #{fvchinterid,jdbcType=INTEGER},
+      FPosted = #{fposted,jdbcType=SMALLINT},
+      FCheckSelect = #{fcheckselect,jdbcType=SMALLINT},
+      FCurrencyID = #{fcurrencyid,jdbcType=INTEGER},
+      FSaleStyle = #{fsalestyle,jdbcType=INTEGER},
+      FAcctID = #{facctid,jdbcType=INTEGER},
+      FROB = #{frob,jdbcType=SMALLINT},
+      FRSCBillNo = #{frscbillno,jdbcType=VARCHAR},
+      FStatus = #{fstatus,jdbcType=SMALLINT},
+      FUpStockWhenSave = #{fupstockwhensave,jdbcType=BIT},
+      FCancellation = #{fcancellation,jdbcType=BIT},
+      FOrgBillInterID = #{forgbillinterid,jdbcType=INTEGER},
+      FBillTypeID = #{fbilltypeid,jdbcType=INTEGER},
+      FPOStyle = #{fpostyle,jdbcType=INTEGER},
+      FMultiCheckLevel1 = #{fmultichecklevel1,jdbcType=INTEGER},
+      FMultiCheckLevel2 = #{fmultichecklevel2,jdbcType=INTEGER},
+      FMultiCheckLevel3 = #{fmultichecklevel3,jdbcType=INTEGER},
+      FMultiCheckLevel4 = #{fmultichecklevel4,jdbcType=INTEGER},
+      FMultiCheckLevel5 = #{fmultichecklevel5,jdbcType=INTEGER},
+      FMultiCheckLevel6 = #{fmultichecklevel6,jdbcType=INTEGER},
+      FMultiCheckDate1 = #{fmulticheckdate1,jdbcType=TIMESTAMP},
+      FMultiCheckDate2 = #{fmulticheckdate2,jdbcType=TIMESTAMP},
+      FMultiCheckDate3 = #{fmulticheckdate3,jdbcType=TIMESTAMP},
+      FMultiCheckDate4 = #{fmulticheckdate4,jdbcType=TIMESTAMP},
+      FMultiCheckDate5 = #{fmulticheckdate5,jdbcType=TIMESTAMP},
+      FMultiCheckDate6 = #{fmulticheckdate6,jdbcType=TIMESTAMP},
+      FCurCheckLevel = #{fcurchecklevel,jdbcType=INTEGER},
+      FTaskID = #{ftaskid,jdbcType=INTEGER},
+      FResourceID = #{fresourceid,jdbcType=INTEGER},
+      FBackFlushed = #{fbackflushed,jdbcType=BIT},
+      FWBInterID = #{fwbinterid,jdbcType=INTEGER},
+      FTranStatus = #{ftranstatus,jdbcType=INTEGER},
+      FZPBillInterID = #{fzpbillinterid,jdbcType=INTEGER},
+      FRelateBrID = #{frelatebrid,jdbcType=INTEGER},
+      FPurposeID = #{fpurposeid,jdbcType=INTEGER},
+      FUUID = #{fuuid,jdbcType=CHAR},
+      FRelateInvoiceID = #{frelateinvoiceid,jdbcType=INTEGER},
+      FImport = #{fimport,jdbcType=INTEGER},
+      FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      FMarketingStyle = #{fmarketingstyle,jdbcType=INTEGER},
+      FPayBillID = #{fpaybillid,jdbcType=INTEGER},
+      FCheckDate = #{fcheckdate,jdbcType=TIMESTAMP},
+      FExplanation = #{fexplanation,jdbcType=NVARCHAR},
+      FFetchAdd = #{ffetchadd,jdbcType=NVARCHAR},
+      FFetchDate = #{ffetchdate,jdbcType=TIMESTAMP},
+      FManagerID = #{fmanagerid,jdbcType=INTEGER},
+      FRefType = #{freftype,jdbcType=INTEGER},
+      FSelTranType = #{fseltrantype,jdbcType=INTEGER},
+      FChildren = #{fchildren,jdbcType=INTEGER},
+      FHookStatus = #{fhookstatus,jdbcType=SMALLINT},
+      FActPriceVchTplID = #{factpricevchtplid,jdbcType=INTEGER},
+      FPlanPriceVchTplID = #{fplanpricevchtplid,jdbcType=INTEGER},
+      FProcID = #{fprocid,jdbcType=INTEGER},
+      FActualVchTplID = #{factualvchtplid,jdbcType=INTEGER},
+      FPlanVchTplID = #{fplanvchtplid,jdbcType=INTEGER},
+      FBrID = #{fbrid,jdbcType=INTEGER},
+      FVIPCardID = #{fvipcardid,jdbcType=INTEGER},
+      FVIPScore = #{fvipscore,jdbcType=DECIMAL},
+      FHolisticDiscountRate = #{fholisticdiscountrate,jdbcType=DECIMAL},
+      FPOSName = #{fposname,jdbcType=VARCHAR},
+      FWorkShiftId = #{fworkshiftid,jdbcType=INTEGER},
+      FCussentAcctID = #{fcussentacctid,jdbcType=INTEGER},
+      FZanGuCount = #{fzangucount,jdbcType=BIT},
+      FCustID = #{fcustid,jdbcType=INTEGER},
+      FMOItemID = #{fmoitemid,jdbcType=INTEGER},
+      FMOUnitID = #{fmounitid,jdbcType=INTEGER},
+      FMOAuxQty = #{fmoauxqty,jdbcType=DECIMAL},
+      FMOBaseUnitID = #{fmobaseunitid,jdbcType=INTEGER},
+      FMOQty = #{fmoqty,jdbcType=DECIMAL},
+      FBatchNo = #{fbatchno,jdbcType=VARCHAR},
+      FMCustItemNo = #{fmcustitemno,jdbcType=NVARCHAR},
+      FMCustItemName = #{fmcustitemname,jdbcType=NVARCHAR},
+      FReceiveAddr = #{freceiveaddr,jdbcType=VARCHAR},
+      FBillSource = #{fbillsource,jdbcType=VARCHAR},
+      FRejected = #{frejected,jdbcType=INTEGER},
+      FRejectedNote = #{frejectednote,jdbcType=VARCHAR},
+      FRejectedTime = #{frejectedtime,jdbcType=TIMESTAMP},
+      FWLNumber = #{fwlnumber,jdbcType=VARCHAR},
+      FWLCompany = #{fwlcompany,jdbcType=VARCHAR}
+    where FInterID = #{finterid,jdbcType=INTEGER}
+  </update>
+</mapper>

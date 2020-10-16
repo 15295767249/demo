@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds2.mapper.t_MeasureUnit2Mapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_MeasureUnit" >
+    <id column="FMeasureUnitID" property="fmeasureunitid" jdbcType="INTEGER" />
+    <result column="FUnitGroupID" property="funitgroupid" jdbcType="INTEGER" />
+    <result column="FNumber" property="fnumber" jdbcType="VARCHAR" />
+    <result column="FAuxClass" property="fauxclass" jdbcType="VARCHAR" />
+    <result column="FName" property="fname" jdbcType="VARCHAR" />
+    <result column="FConversation" property="fconversation" jdbcType="INTEGER" />
+    <result column="FCoefficient" property="fcoefficient" jdbcType="DECIMAL" />
+    <result column="FPrecision" property="fprecision" jdbcType="INTEGER" />
+    <result column="FBrNo" property="fbrno" jdbcType="CHAR" />
+    <result column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FParentID" property="fparentid" jdbcType="INTEGER" />
+    <result column="FDeleted" property="fdeleted" jdbcType="SMALLINT" />
+    <result column="FShortNumber" property="fshortnumber" jdbcType="VARCHAR" />
+    <result column="FOperDate" property="foperdate" jdbcType="CHAR" />
+    <result column="FScale" property="fscale" jdbcType="DECIMAL" />
+    <result column="FStandard" property="fstandard" jdbcType="SMALLINT" />
+    <result column="FControl" property="fcontrol" jdbcType="SMALLINT" />
+    <result column="FSystemType" property="fsystemtype" jdbcType="INTEGER" />
+    <result column="UUID" property="uuid" jdbcType="CHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_MeasureUnit" extends="BaseResultMap" >
+    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FMeasureUnitID, FUnitGroupID, FNumber, FAuxClass, FName, FConversation, FCoefficient, 
+    FPrecision, FBrNo, FItemID, FParentID, FDeleted, FShortNumber, FOperDate, FScale, 
+    FStandard, FControl, FSystemType, UUID
+  </sql>
+  <sql id="Blob_Column_List" >
+    FModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_MeasureUnit
+    where FMeasureUnitID = #{fmeasureunitid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_MeasureUnit
+    where FMeasureUnitID = #{fmeasureunitid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_MeasureUnit" >
+    insert into t_MeasureUnit (FMeasureUnitID, FUnitGroupID, FNumber, 
+      FAuxClass, FName, FConversation, 
+      FCoefficient, FPrecision, FBrNo, 
+      FItemID, FParentID, FDeleted, 
+      FShortNumber, FOperDate, FScale, 
+      FStandard, FControl, FSystemType, 
+      UUID, FModifyTime)
+    values (#{fmeasureunitid,jdbcType=INTEGER}, #{funitgroupid,jdbcType=INTEGER}, #{fnumber,jdbcType=VARCHAR}, 
+      #{fauxclass,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, #{fconversation,jdbcType=INTEGER}, 
+      #{fcoefficient,jdbcType=DECIMAL}, #{fprecision,jdbcType=INTEGER}, #{fbrno,jdbcType=CHAR}, 
+      #{fitemid,jdbcType=INTEGER}, #{fparentid,jdbcType=INTEGER}, #{fdeleted,jdbcType=SMALLINT}, 
+      #{fshortnumber,jdbcType=VARCHAR}, #{foperdate,jdbcType=CHAR}, #{fscale,jdbcType=DECIMAL}, 
+      #{fstandard,jdbcType=SMALLINT}, #{fcontrol,jdbcType=SMALLINT}, #{fsystemtype,jdbcType=INTEGER}, 
+      #{uuid,jdbcType=CHAR}, #{fmodifytime,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_MeasureUnit" >
+    insert into t_MeasureUnit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fmeasureunitid != null" >
+        FMeasureUnitID,
+      </if>
+      <if test="funitgroupid != null" >
+        FUnitGroupID,
+      </if>
+      <if test="fnumber != null" >
+        FNumber,
+      </if>
+      <if test="fauxclass != null" >
+        FAuxClass,
+      </if>
+      <if test="fname != null" >
+        FName,
+      </if>
+      <if test="fconversation != null" >
+        FConversation,
+      </if>
+      <if test="fcoefficient != null" >
+        FCoefficient,
+      </if>
+      <if test="fprecision != null" >
+        FPrecision,
+      </if>
+      <if test="fbrno != null" >
+        FBrNo,
+      </if>
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fparentid != null" >
+        FParentID,
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted,
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber,
+      </if>
+      <if test="foperdate != null" >
+        FOperDate,
+      </if>
+      <if test="fscale != null" >
+        FScale,
+      </if>
+      <if test="fstandard != null" >
+        FStandard,
+      </if>
+      <if test="fcontrol != null" >
+        FControl,
+      </if>
+      <if test="fsystemtype != null" >
+        FSystemType,
+      </if>
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fmeasureunitid != null" >
+        #{fmeasureunitid,jdbcType=INTEGER},
+      </if>
+      <if test="funitgroupid != null" >
+        #{funitgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fnumber != null" >
+        #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fauxclass != null" >
+        #{fauxclass,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fconversation != null" >
+        #{fconversation,jdbcType=INTEGER},
+      </if>
+      <if test="fcoefficient != null" >
+        #{fcoefficient,jdbcType=DECIMAL},
+      </if>
+      <if test="fprecision != null" >
+        #{fprecision,jdbcType=INTEGER},
+      </if>
+      <if test="fbrno != null" >
+        #{fbrno,jdbcType=CHAR},
+      </if>
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fparentid != null" >
+        #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fdeleted != null" >
+        #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="foperdate != null" >
+        #{foperdate,jdbcType=CHAR},
+      </if>
+      <if test="fscale != null" >
+        #{fscale,jdbcType=DECIMAL},
+      </if>
+      <if test="fstandard != null" >
+        #{fstandard,jdbcType=SMALLINT},
+      </if>
+      <if test="fcontrol != null" >
+        #{fcontrol,jdbcType=SMALLINT},
+      </if>
+      <if test="fsystemtype != null" >
+        #{fsystemtype,jdbcType=INTEGER},
+      </if>
+      <if test="uuid != null" >
+        #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_MeasureUnit" >
+    update t_MeasureUnit
+    <set >
+      <if test="funitgroupid != null" >
+        FUnitGroupID = #{funitgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fnumber != null" >
+        FNumber = #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fauxclass != null" >
+        FAuxClass = #{fauxclass,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        FName = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fconversation != null" >
+        FConversation = #{fconversation,jdbcType=INTEGER},
+      </if>
+      <if test="fcoefficient != null" >
+        FCoefficient = #{fcoefficient,jdbcType=DECIMAL},
+      </if>
+      <if test="fprecision != null" >
+        FPrecision = #{fprecision,jdbcType=INTEGER},
+      </if>
+      <if test="fbrno != null" >
+        FBrNo = #{fbrno,jdbcType=CHAR},
+      </if>
+      <if test="fitemid != null" >
+        FItemID = #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fparentid != null" >
+        FParentID = #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="foperdate != null" >
+        FOperDate = #{foperdate,jdbcType=CHAR},
+      </if>
+      <if test="fscale != null" >
+        FScale = #{fscale,jdbcType=DECIMAL},
+      </if>
+      <if test="fstandard != null" >
+        FStandard = #{fstandard,jdbcType=SMALLINT},
+      </if>
+      <if test="fcontrol != null" >
+        FControl = #{fcontrol,jdbcType=SMALLINT},
+      </if>
+      <if test="fsystemtype != null" >
+        FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      </if>
+      <if test="uuid != null" >
+        UUID = #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime = #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </set>
+    where FMeasureUnitID = #{fmeasureunitid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.com.yhb.entity.t_MeasureUnit" >
+    update t_MeasureUnit
+    set FUnitGroupID = #{funitgroupid,jdbcType=INTEGER},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FAuxClass = #{fauxclass,jdbcType=VARCHAR},
+      FName = #{fname,jdbcType=VARCHAR},
+      FConversation = #{fconversation,jdbcType=INTEGER},
+      FCoefficient = #{fcoefficient,jdbcType=DECIMAL},
+      FPrecision = #{fprecision,jdbcType=INTEGER},
+      FBrNo = #{fbrno,jdbcType=CHAR},
+      FItemID = #{fitemid,jdbcType=INTEGER},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FOperDate = #{foperdate,jdbcType=CHAR},
+      FScale = #{fscale,jdbcType=DECIMAL},
+      FStandard = #{fstandard,jdbcType=SMALLINT},
+      FControl = #{fcontrol,jdbcType=SMALLINT},
+      FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      UUID = #{uuid,jdbcType=CHAR},
+      FModifyTime = #{fmodifytime,jdbcType=BINARY}
+    where FMeasureUnitID = #{fmeasureunitid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_MeasureUnit" >
+    update t_MeasureUnit
+    set FUnitGroupID = #{funitgroupid,jdbcType=INTEGER},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FAuxClass = #{fauxclass,jdbcType=VARCHAR},
+      FName = #{fname,jdbcType=VARCHAR},
+      FConversation = #{fconversation,jdbcType=INTEGER},
+      FCoefficient = #{fcoefficient,jdbcType=DECIMAL},
+      FPrecision = #{fprecision,jdbcType=INTEGER},
+      FBrNo = #{fbrno,jdbcType=CHAR},
+      FItemID = #{fitemid,jdbcType=INTEGER},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FOperDate = #{foperdate,jdbcType=CHAR},
+      FScale = #{fscale,jdbcType=DECIMAL},
+      FStandard = #{fstandard,jdbcType=SMALLINT},
+      FControl = #{fcontrol,jdbcType=SMALLINT},
+      FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      UUID = #{uuid,jdbcType=CHAR}
+    where FMeasureUnitID = #{fmeasureunitid,jdbcType=INTEGER}
+  </update>
+</mapper>
