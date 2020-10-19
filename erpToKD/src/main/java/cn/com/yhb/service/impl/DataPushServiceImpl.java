@@ -66,10 +66,17 @@ public class DataPushServiceImpl implements DataPushService {
             Date weekStartTime = DateUtil.lastMonday();
             startTime = DateUtil.utilString(weekStartTime);
         }
+        //商品类型
+
 
         System.out.println("获取商品资料======================");
         //获取erp商品资料列表
-        erpDataDao.getEcs_erp_sys_prdts(startTime);
+        List<t_ICItem> icItems = erpDataDao.getEcs_erp_sys_prdts(startTime);
+        if (icItems.size() > 0) {
+            for (t_ICItem t_icItem : icItems) {
+                t_ICItem2Mapper.insert(t_icItem);
+            }
+        }
 
         System.out.println("获取供应商资料======================");
         //获取erp供应商资料列表

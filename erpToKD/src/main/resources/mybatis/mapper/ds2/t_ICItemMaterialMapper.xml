@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds2.mapper.t_ICItemMaterialMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemMaterial" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FOrderRector" property="forderrector" jdbcType="INTEGER" />
+    <result column="FPOHghPrcMnyType" property="fpohghprcmnytype" jdbcType="INTEGER" />
+    <result column="FPOHighPrice" property="fpohighprice" jdbcType="DECIMAL" />
+    <result column="FWWHghPrc" property="fwwhghprc" jdbcType="DECIMAL" />
+    <result column="FWWHghPrcMnyType" property="fwwhghprcmnytype" jdbcType="INTEGER" />
+    <result column="FSOLowPrc" property="fsolowprc" jdbcType="DECIMAL" />
+    <result column="FSOLowPrcMnyType" property="fsolowprcmnytype" jdbcType="INTEGER" />
+    <result column="FIsSale" property="fissale" jdbcType="BIT" />
+    <result column="FProfitRate" property="fprofitrate" jdbcType="DECIMAL" />
+    <result column="FSalePrice" property="fsaleprice" jdbcType="DECIMAL" />
+    <result column="FBatchManager" property="fbatchmanager" jdbcType="BIT" />
+    <result column="FISKFPeriod" property="fiskfperiod" jdbcType="BIT" />
+    <result column="FKFPeriod" property="fkfperiod" jdbcType="DECIMAL" />
+    <result column="FTrack" property="ftrack" jdbcType="INTEGER" />
+    <result column="FPlanPrice" property="fplanprice" jdbcType="DECIMAL" />
+    <result column="FPriceDecimal" property="fpricedecimal" jdbcType="SMALLINT" />
+    <result column="FAcctID" property="facctid" jdbcType="INTEGER" />
+    <result column="FSaleAcctID" property="fsaleacctid" jdbcType="INTEGER" />
+    <result column="FCostAcctID" property="fcostacctid" jdbcType="INTEGER" />
+    <result column="FAPAcctID" property="fapacctid" jdbcType="INTEGER" />
+    <result column="FGoodSpec" property="fgoodspec" jdbcType="INTEGER" />
+    <result column="FCostProject" property="fcostproject" jdbcType="INTEGER" />
+    <result column="FIsSnManage" property="fissnmanage" jdbcType="BIT" />
+    <result column="FStockTime" property="fstocktime" jdbcType="BIT" />
+    <result column="FBookPlan" property="fbookplan" jdbcType="BIT" />
+    <result column="FBeforeExpire" property="fbeforeexpire" jdbcType="INTEGER" />
+    <result column="FTaxRate" property="ftaxrate" jdbcType="INTEGER" />
+    <result column="FAdminAcctID" property="fadminacctid" jdbcType="INTEGER" />
+    <result column="FNote" property="fnote" jdbcType="VARCHAR" />
+    <result column="FIsSpecialTax" property="fisspecialtax" jdbcType="BIT" />
+    <result column="FSOHighLimit" property="fsohighlimit" jdbcType="DECIMAL" />
+    <result column="FSOLowLimit" property="fsolowlimit" jdbcType="DECIMAL" />
+    <result column="FOIHighLimit" property="foihighlimit" jdbcType="DECIMAL" />
+    <result column="FOILowLimit" property="foilowlimit" jdbcType="DECIMAL" />
+    <result column="FDaysPer" property="fdaysper" jdbcType="INTEGER" />
+    <result column="FLastCheckDate" property="flastcheckdate" jdbcType="TIMESTAMP" />
+    <result column="FCheckCycle" property="fcheckcycle" jdbcType="INTEGER" />
+    <result column="FCheckCycUnit" property="fcheckcycunit" jdbcType="INTEGER" />
+    <result column="FStockPrice" property="fstockprice" jdbcType="DECIMAL" />
+    <result column="FABCCls" property="fabccls" jdbcType="CHAR" />
+    <result column="FBatchQty" property="fbatchqty" jdbcType="DOUBLE" />
+    <result column="FClass" property="fclass" jdbcType="BIT" />
+    <result column="FCostDiffRate" property="fcostdiffrate" jdbcType="DOUBLE" />
+    <result column="FDepartment" property="fdepartment" jdbcType="INTEGER" />
+    <result column="FSaleTaxAcctID" property="fsaletaxacctid" jdbcType="INTEGER" />
+    <result column="FCBBmStandardID" property="fcbbmstandardid" jdbcType="INTEGER" />
+    <result column="FBatchCreate" property="fbatchcreate" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FOrderRector, FPOHghPrcMnyType, FPOHighPrice, FWWHghPrc, FWWHghPrcMnyType, 
+    FSOLowPrc, FSOLowPrcMnyType, FIsSale, FProfitRate, FSalePrice, FBatchManager, FISKFPeriod, 
+    FKFPeriod, FTrack, FPlanPrice, FPriceDecimal, FAcctID, FSaleAcctID, FCostAcctID, 
+    FAPAcctID, FGoodSpec, FCostProject, FIsSnManage, FStockTime, FBookPlan, FBeforeExpire, 
+    FTaxRate, FAdminAcctID, FNote, FIsSpecialTax, FSOHighLimit, FSOLowLimit, FOIHighLimit, 
+    FOILowLimit, FDaysPer, FLastCheckDate, FCheckCycle, FCheckCycUnit, FStockPrice, FABCCls, 
+    FBatchQty, FClass, FCostDiffRate, FDepartment, FSaleTaxAcctID, FCBBmStandardID, FBatchCreate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ICItemMaterial
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemMaterial
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemMaterial" >
+    insert into t_ICItemMaterial (FItemID, FOrderRector, FPOHghPrcMnyType, 
+      FPOHighPrice, FWWHghPrc, FWWHghPrcMnyType, 
+      FSOLowPrc, FSOLowPrcMnyType, FIsSale, 
+      FProfitRate, FSalePrice, FBatchManager, 
+      FISKFPeriod, FKFPeriod, FTrack, 
+      FPlanPrice, FPriceDecimal, FAcctID, 
+      FSaleAcctID, FCostAcctID, FAPAcctID, 
+      FGoodSpec, FCostProject, FIsSnManage, 
+      FStockTime, FBookPlan, FBeforeExpire, 
+      FTaxRate, FAdminAcctID, FNote, 
+      FIsSpecialTax, FSOHighLimit, FSOLowLimit, 
+      FOIHighLimit, FOILowLimit, FDaysPer, 
+      FLastCheckDate, FCheckCycle, FCheckCycUnit, 
+      FStockPrice, FABCCls, FBatchQty, 
+      FClass, FCostDiffRate, FDepartment, 
+      FSaleTaxAcctID, FCBBmStandardID, FBatchCreate
+      )
+    values (#{fitemid,jdbcType=INTEGER}, #{forderrector,jdbcType=INTEGER}, #{fpohghprcmnytype,jdbcType=INTEGER}, 
+      #{fpohighprice,jdbcType=DECIMAL}, #{fwwhghprc,jdbcType=DECIMAL}, #{fwwhghprcmnytype,jdbcType=INTEGER}, 
+      #{fsolowprc,jdbcType=DECIMAL}, #{fsolowprcmnytype,jdbcType=INTEGER}, #{fissale,jdbcType=BIT}, 
+      #{fprofitrate,jdbcType=DECIMAL}, #{fsaleprice,jdbcType=DECIMAL}, #{fbatchmanager,jdbcType=BIT}, 
+      #{fiskfperiod,jdbcType=BIT}, #{fkfperiod,jdbcType=DECIMAL}, #{ftrack,jdbcType=INTEGER}, 
+      #{fplanprice,jdbcType=DECIMAL}, #{fpricedecimal,jdbcType=SMALLINT}, #{facctid,jdbcType=INTEGER}, 
+      #{fsaleacctid,jdbcType=INTEGER}, #{fcostacctid,jdbcType=INTEGER}, #{fapacctid,jdbcType=INTEGER}, 
+      #{fgoodspec,jdbcType=INTEGER}, #{fcostproject,jdbcType=INTEGER}, #{fissnmanage,jdbcType=BIT}, 
+      #{fstocktime,jdbcType=BIT}, #{fbookplan,jdbcType=BIT}, #{fbeforeexpire,jdbcType=INTEGER}, 
+      #{ftaxrate,jdbcType=INTEGER}, #{fadminacctid,jdbcType=INTEGER}, #{fnote,jdbcType=VARCHAR}, 
+      #{fisspecialtax,jdbcType=BIT}, #{fsohighlimit,jdbcType=DECIMAL}, #{fsolowlimit,jdbcType=DECIMAL}, 
+      #{foihighlimit,jdbcType=DECIMAL}, #{foilowlimit,jdbcType=DECIMAL}, #{fdaysper,jdbcType=INTEGER}, 
+      #{flastcheckdate,jdbcType=TIMESTAMP}, #{fcheckcycle,jdbcType=INTEGER}, #{fcheckcycunit,jdbcType=INTEGER}, 
+      #{fstockprice,jdbcType=DECIMAL}, #{fabccls,jdbcType=CHAR}, #{fbatchqty,jdbcType=DOUBLE}, 
+      #{fclass,jdbcType=BIT}, #{fcostdiffrate,jdbcType=DOUBLE}, #{fdepartment,jdbcType=INTEGER}, 
+      #{fsaletaxacctid,jdbcType=INTEGER}, #{fcbbmstandardid,jdbcType=INTEGER}, #{fbatchcreate,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemMaterial" >
+    insert into t_ICItemMaterial
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="forderrector != null" >
+        FOrderRector,
+      </if>
+      <if test="fpohghprcmnytype != null" >
+        FPOHghPrcMnyType,
+      </if>
+      <if test="fpohighprice != null" >
+        FPOHighPrice,
+      </if>
+      <if test="fwwhghprc != null" >
+        FWWHghPrc,
+      </if>
+      <if test="fwwhghprcmnytype != null" >
+        FWWHghPrcMnyType,
+      </if>
+      <if test="fsolowprc != null" >
+        FSOLowPrc,
+      </if>
+      <if test="fsolowprcmnytype != null" >
+        FSOLowPrcMnyType,
+      </if>
+      <if test="fissale != null" >
+        FIsSale,
+      </if>
+      <if test="fprofitrate != null" >
+        FProfitRate,
+      </if>
+      <if test="fsaleprice != null" >
+        FSalePrice,
+      </if>
+      <if test="fbatchmanager != null" >
+        FBatchManager,
+      </if>
+      <if test="fiskfperiod != null" >
+        FISKFPeriod,
+      </if>
+      <if test="fkfperiod != null" >
+        FKFPeriod,
+      </if>
+      <if test="ftrack != null" >
+        FTrack,
+      </if>
+      <if test="fplanprice != null" >
+        FPlanPrice,
+      </if>
+      <if test="fpricedecimal != null" >
+        FPriceDecimal,
+      </if>
+      <if test="facctid != null" >
+        FAcctID,
+      </if>
+      <if test="fsaleacctid != null" >
+        FSaleAcctID,
+      </if>
+      <if test="fcostacctid != null" >
+        FCostAcctID,
+      </if>
+      <if test="fapacctid != null" >
+        FAPAcctID,
+      </if>
+      <if test="fgoodspec != null" >
+        FGoodSpec,
+      </if>
+      <if test="fcostproject != null" >
+        FCostProject,
+      </if>
+      <if test="fissnmanage != null" >
+        FIsSnManage,
+      </if>
+      <if test="fstocktime != null" >
+        FStockTime,
+      </if>
+      <if test="fbookplan != null" >
+        FBookPlan,
+      </if>
+      <if test="fbeforeexpire != null" >
+        FBeforeExpire,
+      </if>
+      <if test="ftaxrate != null" >
+        FTaxRate,
+      </if>
+      <if test="fadminacctid != null" >
+        FAdminAcctID,
+      </if>
+      <if test="fnote != null" >
+        FNote,
+      </if>
+      <if test="fisspecialtax != null" >
+        FIsSpecialTax,
+      </if>
+      <if test="fsohighlimit != null" >
+        FSOHighLimit,
+      </if>
+      <if test="fsolowlimit != null" >
+        FSOLowLimit,
+      </if>
+      <if test="foihighlimit != null" >
+        FOIHighLimit,
+      </if>
+      <if test="foilowlimit != null" >
+        FOILowLimit,
+      </if>
+      <if test="fdaysper != null" >
+        FDaysPer,
+      </if>
+      <if test="flastcheckdate != null" >
+        FLastCheckDate,
+      </if>
+      <if test="fcheckcycle != null" >
+        FCheckCycle,
+      </if>
+      <if test="fcheckcycunit != null" >
+        FCheckCycUnit,
+      </if>
+      <if test="fstockprice != null" >
+        FStockPrice,
+      </if>
+      <if test="fabccls != null" >
+        FABCCls,
+      </if>
+      <if test="fbatchqty != null" >
+        FBatchQty,
+      </if>
+      <if test="fclass != null" >
+        FClass,
+      </if>
+      <if test="fcostdiffrate != null" >
+        FCostDiffRate,
+      </if>
+      <if test="fdepartment != null" >
+        FDepartment,
+      </if>
+      <if test="fsaletaxacctid != null" >
+        FSaleTaxAcctID,
+      </if>
+      <if test="fcbbmstandardid != null" >
+        FCBBmStandardID,
+      </if>
+      <if test="fbatchcreate != null" >
+        FBatchCreate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="forderrector != null" >
+        #{forderrector,jdbcType=INTEGER},
+      </if>
+      <if test="fpohghprcmnytype != null" >
+        #{fpohghprcmnytype,jdbcType=INTEGER},
+      </if>
+      <if test="fpohighprice != null" >
+        #{fpohighprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fwwhghprc != null" >
+        #{fwwhghprc,jdbcType=DECIMAL},
+      </if>
+      <if test="fwwhghprcmnytype != null" >
+        #{fwwhghprcmnytype,jdbcType=INTEGER},
+      </if>
+      <if test="fsolowprc != null" >
+        #{fsolowprc,jdbcType=DECIMAL},
+      </if>
+      <if test="fsolowprcmnytype != null" >
+        #{fsolowprcmnytype,jdbcType=INTEGER},
+      </if>
+      <if test="fissale != null" >
+        #{fissale,jdbcType=BIT},
+      </if>
+      <if test="fprofitrate != null" >
+        #{fprofitrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fsaleprice != null" >
+        #{fsaleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatchmanager != null" >
+        #{fbatchmanager,jdbcType=BIT},
+      </if>
+      <if test="fiskfperiod != null" >
+        #{fiskfperiod,jdbcType=BIT},
+      </if>
+      <if test="fkfperiod != null" >
+        #{fkfperiod,jdbcType=DECIMAL},
+      </if>
+      <if test="ftrack != null" >
+        #{ftrack,jdbcType=INTEGER},
+      </if>
+      <if test="fplanprice != null" >
+        #{fplanprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fpricedecimal != null" >
+        #{fpricedecimal,jdbcType=SMALLINT},
+      </if>
+      <if test="facctid != null" >
+        #{facctid,jdbcType=INTEGER},
+      </if>
+      <if test="fsaleacctid != null" >
+        #{fsaleacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fcostacctid != null" >
+        #{fcostacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fapacctid != null" >
+        #{fapacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fgoodspec != null" >
+        #{fgoodspec,jdbcType=INTEGER},
+      </if>
+      <if test="fcostproject != null" >
+        #{fcostproject,jdbcType=INTEGER},
+      </if>
+      <if test="fissnmanage != null" >
+        #{fissnmanage,jdbcType=BIT},
+      </if>
+      <if test="fstocktime != null" >
+        #{fstocktime,jdbcType=BIT},
+      </if>
+      <if test="fbookplan != null" >
+        #{fbookplan,jdbcType=BIT},
+      </if>
+      <if test="fbeforeexpire != null" >
+        #{fbeforeexpire,jdbcType=INTEGER},
+      </if>
+      <if test="ftaxrate != null" >
+        #{ftaxrate,jdbcType=INTEGER},
+      </if>
+      <if test="fadminacctid != null" >
+        #{fadminacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fnote != null" >
+        #{fnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fisspecialtax != null" >
+        #{fisspecialtax,jdbcType=BIT},
+      </if>
+      <if test="fsohighlimit != null" >
+        #{fsohighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fsolowlimit != null" >
+        #{fsolowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="foihighlimit != null" >
+        #{foihighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="foilowlimit != null" >
+        #{foilowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fdaysper != null" >
+        #{fdaysper,jdbcType=INTEGER},
+      </if>
+      <if test="flastcheckdate != null" >
+        #{flastcheckdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fcheckcycle != null" >
+        #{fcheckcycle,jdbcType=INTEGER},
+      </if>
+      <if test="fcheckcycunit != null" >
+        #{fcheckcycunit,jdbcType=INTEGER},
+      </if>
+      <if test="fstockprice != null" >
+        #{fstockprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fabccls != null" >
+        #{fabccls,jdbcType=CHAR},
+      </if>
+      <if test="fbatchqty != null" >
+        #{fbatchqty,jdbcType=DOUBLE},
+      </if>
+      <if test="fclass != null" >
+        #{fclass,jdbcType=BIT},
+      </if>
+      <if test="fcostdiffrate != null" >
+        #{fcostdiffrate,jdbcType=DOUBLE},
+      </if>
+      <if test="fdepartment != null" >
+        #{fdepartment,jdbcType=INTEGER},
+      </if>
+      <if test="fsaletaxacctid != null" >
+        #{fsaletaxacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fcbbmstandardid != null" >
+        #{fcbbmstandardid,jdbcType=INTEGER},
+      </if>
+      <if test="fbatchcreate != null" >
+        #{fbatchcreate,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemMaterial" >
+    update t_ICItemMaterial
+    <set >
+      <if test="forderrector != null" >
+        FOrderRector = #{forderrector,jdbcType=INTEGER},
+      </if>
+      <if test="fpohghprcmnytype != null" >
+        FPOHghPrcMnyType = #{fpohghprcmnytype,jdbcType=INTEGER},
+      </if>
+      <if test="fpohighprice != null" >
+        FPOHighPrice = #{fpohighprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fwwhghprc != null" >
+        FWWHghPrc = #{fwwhghprc,jdbcType=DECIMAL},
+      </if>
+      <if test="fwwhghprcmnytype != null" >
+        FWWHghPrcMnyType = #{fwwhghprcmnytype,jdbcType=INTEGER},
+      </if>
+      <if test="fsolowprc != null" >
+        FSOLowPrc = #{fsolowprc,jdbcType=DECIMAL},
+      </if>
+      <if test="fsolowprcmnytype != null" >
+        FSOLowPrcMnyType = #{fsolowprcmnytype,jdbcType=INTEGER},
+      </if>
+      <if test="fissale != null" >
+        FIsSale = #{fissale,jdbcType=BIT},
+      </if>
+      <if test="fprofitrate != null" >
+        FProfitRate = #{fprofitrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fsaleprice != null" >
+        FSalePrice = #{fsaleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatchmanager != null" >
+        FBatchManager = #{fbatchmanager,jdbcType=BIT},
+      </if>
+      <if test="fiskfperiod != null" >
+        FISKFPeriod = #{fiskfperiod,jdbcType=BIT},
+      </if>
+      <if test="fkfperiod != null" >
+        FKFPeriod = #{fkfperiod,jdbcType=DECIMAL},
+      </if>
+      <if test="ftrack != null" >
+        FTrack = #{ftrack,jdbcType=INTEGER},
+      </if>
+      <if test="fplanprice != null" >
+        FPlanPrice = #{fplanprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fpricedecimal != null" >
+        FPriceDecimal = #{fpricedecimal,jdbcType=SMALLINT},
+      </if>
+      <if test="facctid != null" >
+        FAcctID = #{facctid,jdbcType=INTEGER},
+      </if>
+      <if test="fsaleacctid != null" >
+        FSaleAcctID = #{fsaleacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fcostacctid != null" >
+        FCostAcctID = #{fcostacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fapacctid != null" >
+        FAPAcctID = #{fapacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fgoodspec != null" >
+        FGoodSpec = #{fgoodspec,jdbcType=INTEGER},
+      </if>
+      <if test="fcostproject != null" >
+        FCostProject = #{fcostproject,jdbcType=INTEGER},
+      </if>
+      <if test="fissnmanage != null" >
+        FIsSnManage = #{fissnmanage,jdbcType=BIT},
+      </if>
+      <if test="fstocktime != null" >
+        FStockTime = #{fstocktime,jdbcType=BIT},
+      </if>
+      <if test="fbookplan != null" >
+        FBookPlan = #{fbookplan,jdbcType=BIT},
+      </if>
+      <if test="fbeforeexpire != null" >
+        FBeforeExpire = #{fbeforeexpire,jdbcType=INTEGER},
+      </if>
+      <if test="ftaxrate != null" >
+        FTaxRate = #{ftaxrate,jdbcType=INTEGER},
+      </if>
+      <if test="fadminacctid != null" >
+        FAdminAcctID = #{fadminacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fnote != null" >
+        FNote = #{fnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fisspecialtax != null" >
+        FIsSpecialTax = #{fisspecialtax,jdbcType=BIT},
+      </if>
+      <if test="fsohighlimit != null" >
+        FSOHighLimit = #{fsohighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fsolowlimit != null" >
+        FSOLowLimit = #{fsolowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="foihighlimit != null" >
+        FOIHighLimit = #{foihighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="foilowlimit != null" >
+        FOILowLimit = #{foilowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fdaysper != null" >
+        FDaysPer = #{fdaysper,jdbcType=INTEGER},
+      </if>
+      <if test="flastcheckdate != null" >
+        FLastCheckDate = #{flastcheckdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fcheckcycle != null" >
+        FCheckCycle = #{fcheckcycle,jdbcType=INTEGER},
+      </if>
+      <if test="fcheckcycunit != null" >
+        FCheckCycUnit = #{fcheckcycunit,jdbcType=INTEGER},
+      </if>
+      <if test="fstockprice != null" >
+        FStockPrice = #{fstockprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fabccls != null" >
+        FABCCls = #{fabccls,jdbcType=CHAR},
+      </if>
+      <if test="fbatchqty != null" >
+        FBatchQty = #{fbatchqty,jdbcType=DOUBLE},
+      </if>
+      <if test="fclass != null" >
+        FClass = #{fclass,jdbcType=BIT},
+      </if>
+      <if test="fcostdiffrate != null" >
+        FCostDiffRate = #{fcostdiffrate,jdbcType=DOUBLE},
+      </if>
+      <if test="fdepartment != null" >
+        FDepartment = #{fdepartment,jdbcType=INTEGER},
+      </if>
+      <if test="fsaletaxacctid != null" >
+        FSaleTaxAcctID = #{fsaletaxacctid,jdbcType=INTEGER},
+      </if>
+      <if test="fcbbmstandardid != null" >
+        FCBBmStandardID = #{fcbbmstandardid,jdbcType=INTEGER},
+      </if>
+      <if test="fbatchcreate != null" >
+        FBatchCreate = #{fbatchcreate,jdbcType=BIT},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemMaterial" >
+    update t_ICItemMaterial
+    set FOrderRector = #{forderrector,jdbcType=INTEGER},
+      FPOHghPrcMnyType = #{fpohghprcmnytype,jdbcType=INTEGER},
+      FPOHighPrice = #{fpohighprice,jdbcType=DECIMAL},
+      FWWHghPrc = #{fwwhghprc,jdbcType=DECIMAL},
+      FWWHghPrcMnyType = #{fwwhghprcmnytype,jdbcType=INTEGER},
+      FSOLowPrc = #{fsolowprc,jdbcType=DECIMAL},
+      FSOLowPrcMnyType = #{fsolowprcmnytype,jdbcType=INTEGER},
+      FIsSale = #{fissale,jdbcType=BIT},
+      FProfitRate = #{fprofitrate,jdbcType=DECIMAL},
+      FSalePrice = #{fsaleprice,jdbcType=DECIMAL},
+      FBatchManager = #{fbatchmanager,jdbcType=BIT},
+      FISKFPeriod = #{fiskfperiod,jdbcType=BIT},
+      FKFPeriod = #{fkfperiod,jdbcType=DECIMAL},
+      FTrack = #{ftrack,jdbcType=INTEGER},
+      FPlanPrice = #{fplanprice,jdbcType=DECIMAL},
+      FPriceDecimal = #{fpricedecimal,jdbcType=SMALLINT},
+      FAcctID = #{facctid,jdbcType=INTEGER},
+      FSaleAcctID = #{fsaleacctid,jdbcType=INTEGER},
+      FCostAcctID = #{fcostacctid,jdbcType=INTEGER},
+      FAPAcctID = #{fapacctid,jdbcType=INTEGER},
+      FGoodSpec = #{fgoodspec,jdbcType=INTEGER},
+      FCostProject = #{fcostproject,jdbcType=INTEGER},
+      FIsSnManage = #{fissnmanage,jdbcType=BIT},
+      FStockTime = #{fstocktime,jdbcType=BIT},
+      FBookPlan = #{fbookplan,jdbcType=BIT},
+      FBeforeExpire = #{fbeforeexpire,jdbcType=INTEGER},
+      FTaxRate = #{ftaxrate,jdbcType=INTEGER},
+      FAdminAcctID = #{fadminacctid,jdbcType=INTEGER},
+      FNote = #{fnote,jdbcType=VARCHAR},
+      FIsSpecialTax = #{fisspecialtax,jdbcType=BIT},
+      FSOHighLimit = #{fsohighlimit,jdbcType=DECIMAL},
+      FSOLowLimit = #{fsolowlimit,jdbcType=DECIMAL},
+      FOIHighLimit = #{foihighlimit,jdbcType=DECIMAL},
+      FOILowLimit = #{foilowlimit,jdbcType=DECIMAL},
+      FDaysPer = #{fdaysper,jdbcType=INTEGER},
+      FLastCheckDate = #{flastcheckdate,jdbcType=TIMESTAMP},
+      FCheckCycle = #{fcheckcycle,jdbcType=INTEGER},
+      FCheckCycUnit = #{fcheckcycunit,jdbcType=INTEGER},
+      FStockPrice = #{fstockprice,jdbcType=DECIMAL},
+      FABCCls = #{fabccls,jdbcType=CHAR},
+      FBatchQty = #{fbatchqty,jdbcType=DOUBLE},
+      FClass = #{fclass,jdbcType=BIT},
+      FCostDiffRate = #{fcostdiffrate,jdbcType=DOUBLE},
+      FDepartment = #{fdepartment,jdbcType=INTEGER},
+      FSaleTaxAcctID = #{fsaletaxacctid,jdbcType=INTEGER},
+      FCBBmStandardID = #{fcbbmstandardid,jdbcType=INTEGER},
+      FBatchCreate = #{fbatchcreate,jdbcType=BIT}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

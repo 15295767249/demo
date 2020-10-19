@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.t_ICItemDesignMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemDesign" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FChartNumber" property="fchartnumber" jdbcType="VARCHAR" />
+    <result column="FIsKeyItem" property="fiskeyitem" jdbcType="BIT" />
+    <result column="FMaund" property="fmaund" jdbcType="INTEGER" />
+    <result column="FGrossWeight" property="fgrossweight" jdbcType="DECIMAL" />
+    <result column="FNetWeight" property="fnetweight" jdbcType="DECIMAL" />
+    <result column="FCubicMeasure" property="fcubicmeasure" jdbcType="INTEGER" />
+    <result column="FLength" property="flength" jdbcType="DECIMAL" />
+    <result column="FWidth" property="fwidth" jdbcType="DECIMAL" />
+    <result column="FHeight" property="fheight" jdbcType="DECIMAL" />
+    <result column="FSize" property="fsize" jdbcType="DECIMAL" />
+    <result column="FVersion" property="fversion" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FChartNumber, FIsKeyItem, FMaund, FGrossWeight, FNetWeight, FCubicMeasure, 
+    FLength, FWidth, FHeight, FSize, FVersion
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ICItemDesign
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemDesign
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemDesign" >
+    insert into t_ICItemDesign (FItemID, FChartNumber, FIsKeyItem, 
+      FMaund, FGrossWeight, FNetWeight, 
+      FCubicMeasure, FLength, FWidth, 
+      FHeight, FSize, FVersion
+      )
+    values (#{fitemid,jdbcType=INTEGER}, #{fchartnumber,jdbcType=VARCHAR}, #{fiskeyitem,jdbcType=BIT}, 
+      #{fmaund,jdbcType=INTEGER}, #{fgrossweight,jdbcType=DECIMAL}, #{fnetweight,jdbcType=DECIMAL}, 
+      #{fcubicmeasure,jdbcType=INTEGER}, #{flength,jdbcType=DECIMAL}, #{fwidth,jdbcType=DECIMAL}, 
+      #{fheight,jdbcType=DECIMAL}, #{fsize,jdbcType=DECIMAL}, #{fversion,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemDesign" >
+    insert into t_ICItemDesign
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fchartnumber != null" >
+        FChartNumber,
+      </if>
+      <if test="fiskeyitem != null" >
+        FIsKeyItem,
+      </if>
+      <if test="fmaund != null" >
+        FMaund,
+      </if>
+      <if test="fgrossweight != null" >
+        FGrossWeight,
+      </if>
+      <if test="fnetweight != null" >
+        FNetWeight,
+      </if>
+      <if test="fcubicmeasure != null" >
+        FCubicMeasure,
+      </if>
+      <if test="flength != null" >
+        FLength,
+      </if>
+      <if test="fwidth != null" >
+        FWidth,
+      </if>
+      <if test="fheight != null" >
+        FHeight,
+      </if>
+      <if test="fsize != null" >
+        FSize,
+      </if>
+      <if test="fversion != null" >
+        FVersion,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fchartnumber != null" >
+        #{fchartnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fiskeyitem != null" >
+        #{fiskeyitem,jdbcType=BIT},
+      </if>
+      <if test="fmaund != null" >
+        #{fmaund,jdbcType=INTEGER},
+      </if>
+      <if test="fgrossweight != null" >
+        #{fgrossweight,jdbcType=DECIMAL},
+      </if>
+      <if test="fnetweight != null" >
+        #{fnetweight,jdbcType=DECIMAL},
+      </if>
+      <if test="fcubicmeasure != null" >
+        #{fcubicmeasure,jdbcType=INTEGER},
+      </if>
+      <if test="flength != null" >
+        #{flength,jdbcType=DECIMAL},
+      </if>
+      <if test="fwidth != null" >
+        #{fwidth,jdbcType=DECIMAL},
+      </if>
+      <if test="fheight != null" >
+        #{fheight,jdbcType=DECIMAL},
+      </if>
+      <if test="fsize != null" >
+        #{fsize,jdbcType=DECIMAL},
+      </if>
+      <if test="fversion != null" >
+        #{fversion,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemDesign" >
+    update t_ICItemDesign
+    <set >
+      <if test="fchartnumber != null" >
+        FChartNumber = #{fchartnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fiskeyitem != null" >
+        FIsKeyItem = #{fiskeyitem,jdbcType=BIT},
+      </if>
+      <if test="fmaund != null" >
+        FMaund = #{fmaund,jdbcType=INTEGER},
+      </if>
+      <if test="fgrossweight != null" >
+        FGrossWeight = #{fgrossweight,jdbcType=DECIMAL},
+      </if>
+      <if test="fnetweight != null" >
+        FNetWeight = #{fnetweight,jdbcType=DECIMAL},
+      </if>
+      <if test="fcubicmeasure != null" >
+        FCubicMeasure = #{fcubicmeasure,jdbcType=INTEGER},
+      </if>
+      <if test="flength != null" >
+        FLength = #{flength,jdbcType=DECIMAL},
+      </if>
+      <if test="fwidth != null" >
+        FWidth = #{fwidth,jdbcType=DECIMAL},
+      </if>
+      <if test="fheight != null" >
+        FHeight = #{fheight,jdbcType=DECIMAL},
+      </if>
+      <if test="fsize != null" >
+        FSize = #{fsize,jdbcType=DECIMAL},
+      </if>
+      <if test="fversion != null" >
+        FVersion = #{fversion,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemDesign" >
+    update t_ICItemDesign
+    set FChartNumber = #{fchartnumber,jdbcType=VARCHAR},
+      FIsKeyItem = #{fiskeyitem,jdbcType=BIT},
+      FMaund = #{fmaund,jdbcType=INTEGER},
+      FGrossWeight = #{fgrossweight,jdbcType=DECIMAL},
+      FNetWeight = #{fnetweight,jdbcType=DECIMAL},
+      FCubicMeasure = #{fcubicmeasure,jdbcType=INTEGER},
+      FLength = #{flength,jdbcType=DECIMAL},
+      FWidth = #{fwidth,jdbcType=DECIMAL},
+      FHeight = #{fheight,jdbcType=DECIMAL},
+      FSize = #{fsize,jdbcType=DECIMAL},
+      FVersion = #{fversion,jdbcType=VARCHAR}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

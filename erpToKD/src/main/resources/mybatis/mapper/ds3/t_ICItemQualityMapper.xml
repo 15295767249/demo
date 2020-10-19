@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.t_ICItemQualityMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemQuality" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FInspectionLevel" property="finspectionlevel" jdbcType="INTEGER" />
+    <result column="FInspectionProject" property="finspectionproject" jdbcType="INTEGER" />
+    <result column="FIsListControl" property="fislistcontrol" jdbcType="INTEGER" />
+    <result column="FProChkMde" property="fprochkmde" jdbcType="INTEGER" />
+    <result column="FWWChkMde" property="fwwchkmde" jdbcType="INTEGER" />
+    <result column="FSOChkMde" property="fsochkmde" jdbcType="INTEGER" />
+    <result column="FWthDrwChkMde" property="fwthdrwchkmde" jdbcType="INTEGER" />
+    <result column="FStkChkMde" property="fstkchkmde" jdbcType="INTEGER" />
+    <result column="FOtherChkMde" property="fotherchkmde" jdbcType="INTEGER" />
+    <result column="FStkChkPrd" property="fstkchkprd" jdbcType="INTEGER" />
+    <result column="FStkChkAlrm" property="fstkchkalrm" jdbcType="INTEGER" />
+    <result column="FIdentifier" property="fidentifier" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FInspectionLevel, FInspectionProject, FIsListControl, FProChkMde, FWWChkMde, 
+    FSOChkMde, FWthDrwChkMde, FStkChkMde, FOtherChkMde, FStkChkPrd, FStkChkAlrm, FIdentifier
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ICItemQuality
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemQuality
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemQuality" >
+    insert into t_ICItemQuality (FItemID, FInspectionLevel, FInspectionProject, 
+      FIsListControl, FProChkMde, FWWChkMde, 
+      FSOChkMde, FWthDrwChkMde, FStkChkMde, 
+      FOtherChkMde, FStkChkPrd, FStkChkAlrm, 
+      FIdentifier)
+    values (#{fitemid,jdbcType=INTEGER}, #{finspectionlevel,jdbcType=INTEGER}, #{finspectionproject,jdbcType=INTEGER}, 
+      #{fislistcontrol,jdbcType=INTEGER}, #{fprochkmde,jdbcType=INTEGER}, #{fwwchkmde,jdbcType=INTEGER}, 
+      #{fsochkmde,jdbcType=INTEGER}, #{fwthdrwchkmde,jdbcType=INTEGER}, #{fstkchkmde,jdbcType=INTEGER}, 
+      #{fotherchkmde,jdbcType=INTEGER}, #{fstkchkprd,jdbcType=INTEGER}, #{fstkchkalrm,jdbcType=INTEGER}, 
+      #{fidentifier,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemQuality" >
+    insert into t_ICItemQuality
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="finspectionlevel != null" >
+        FInspectionLevel,
+      </if>
+      <if test="finspectionproject != null" >
+        FInspectionProject,
+      </if>
+      <if test="fislistcontrol != null" >
+        FIsListControl,
+      </if>
+      <if test="fprochkmde != null" >
+        FProChkMde,
+      </if>
+      <if test="fwwchkmde != null" >
+        FWWChkMde,
+      </if>
+      <if test="fsochkmde != null" >
+        FSOChkMde,
+      </if>
+      <if test="fwthdrwchkmde != null" >
+        FWthDrwChkMde,
+      </if>
+      <if test="fstkchkmde != null" >
+        FStkChkMde,
+      </if>
+      <if test="fotherchkmde != null" >
+        FOtherChkMde,
+      </if>
+      <if test="fstkchkprd != null" >
+        FStkChkPrd,
+      </if>
+      <if test="fstkchkalrm != null" >
+        FStkChkAlrm,
+      </if>
+      <if test="fidentifier != null" >
+        FIdentifier,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="finspectionlevel != null" >
+        #{finspectionlevel,jdbcType=INTEGER},
+      </if>
+      <if test="finspectionproject != null" >
+        #{finspectionproject,jdbcType=INTEGER},
+      </if>
+      <if test="fislistcontrol != null" >
+        #{fislistcontrol,jdbcType=INTEGER},
+      </if>
+      <if test="fprochkmde != null" >
+        #{fprochkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fwwchkmde != null" >
+        #{fwwchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fsochkmde != null" >
+        #{fsochkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fwthdrwchkmde != null" >
+        #{fwthdrwchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fstkchkmde != null" >
+        #{fstkchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fotherchkmde != null" >
+        #{fotherchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fstkchkprd != null" >
+        #{fstkchkprd,jdbcType=INTEGER},
+      </if>
+      <if test="fstkchkalrm != null" >
+        #{fstkchkalrm,jdbcType=INTEGER},
+      </if>
+      <if test="fidentifier != null" >
+        #{fidentifier,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemQuality" >
+    update t_ICItemQuality
+    <set >
+      <if test="finspectionlevel != null" >
+        FInspectionLevel = #{finspectionlevel,jdbcType=INTEGER},
+      </if>
+      <if test="finspectionproject != null" >
+        FInspectionProject = #{finspectionproject,jdbcType=INTEGER},
+      </if>
+      <if test="fislistcontrol != null" >
+        FIsListControl = #{fislistcontrol,jdbcType=INTEGER},
+      </if>
+      <if test="fprochkmde != null" >
+        FProChkMde = #{fprochkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fwwchkmde != null" >
+        FWWChkMde = #{fwwchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fsochkmde != null" >
+        FSOChkMde = #{fsochkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fwthdrwchkmde != null" >
+        FWthDrwChkMde = #{fwthdrwchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fstkchkmde != null" >
+        FStkChkMde = #{fstkchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fotherchkmde != null" >
+        FOtherChkMde = #{fotherchkmde,jdbcType=INTEGER},
+      </if>
+      <if test="fstkchkprd != null" >
+        FStkChkPrd = #{fstkchkprd,jdbcType=INTEGER},
+      </if>
+      <if test="fstkchkalrm != null" >
+        FStkChkAlrm = #{fstkchkalrm,jdbcType=INTEGER},
+      </if>
+      <if test="fidentifier != null" >
+        FIdentifier = #{fidentifier,jdbcType=INTEGER},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemQuality" >
+    update t_ICItemQuality
+    set FInspectionLevel = #{finspectionlevel,jdbcType=INTEGER},
+      FInspectionProject = #{finspectionproject,jdbcType=INTEGER},
+      FIsListControl = #{fislistcontrol,jdbcType=INTEGER},
+      FProChkMde = #{fprochkmde,jdbcType=INTEGER},
+      FWWChkMde = #{fwwchkmde,jdbcType=INTEGER},
+      FSOChkMde = #{fsochkmde,jdbcType=INTEGER},
+      FWthDrwChkMde = #{fwthdrwchkmde,jdbcType=INTEGER},
+      FStkChkMde = #{fstkchkmde,jdbcType=INTEGER},
+      FOtherChkMde = #{fotherchkmde,jdbcType=INTEGER},
+      FStkChkPrd = #{fstkchkprd,jdbcType=INTEGER},
+      FStkChkAlrm = #{fstkchkalrm,jdbcType=INTEGER},
+      FIdentifier = #{fidentifier,jdbcType=INTEGER}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

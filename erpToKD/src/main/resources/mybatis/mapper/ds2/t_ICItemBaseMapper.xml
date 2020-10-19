@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds2.mapper.t_ICItemBaseMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemBase" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FErpClsID" property="ferpclsid" jdbcType="INTEGER" />
+    <result column="FUnitID" property="funitid" jdbcType="INTEGER" />
+    <result column="FUnitGroupID" property="funitgroupid" jdbcType="INTEGER" />
+    <result column="FDefaultLoc" property="fdefaultloc" jdbcType="INTEGER" />
+    <result column="FSPID" property="fspid" jdbcType="INTEGER" />
+    <result column="FSource" property="fsource" jdbcType="INTEGER" />
+    <result column="FQtyDecimal" property="fqtydecimal" jdbcType="SMALLINT" />
+    <result column="FLowLimit" property="flowlimit" jdbcType="DECIMAL" />
+    <result column="FHighLimit" property="fhighlimit" jdbcType="DECIMAL" />
+    <result column="FSecInv" property="fsecinv" jdbcType="DECIMAL" />
+    <result column="FUseState" property="fusestate" jdbcType="INTEGER" />
+    <result column="FIsEquipment" property="fisequipment" jdbcType="BIT" />
+    <result column="FEquipmentNum" property="fequipmentnum" jdbcType="VARCHAR" />
+    <result column="FIsSparePart" property="fissparepart" jdbcType="BIT" />
+    <result column="FFullName" property="ffullname" jdbcType="VARCHAR" />
+    <result column="FSecUnitID" property="fsecunitid" jdbcType="INTEGER" />
+    <result column="FSecCoefficient" property="fseccoefficient" jdbcType="DECIMAL" />
+    <result column="FSecUnitDecimal" property="fsecunitdecimal" jdbcType="INTEGER" />
+    <result column="FAlias" property="falias" jdbcType="VARCHAR" />
+    <result column="FOrderUnitID" property="forderunitid" jdbcType="INTEGER" />
+    <result column="FSaleUnitID" property="fsaleunitid" jdbcType="INTEGER" />
+    <result column="FStoreUnitID" property="fstoreunitid" jdbcType="INTEGER" />
+    <result column="FProductUnitID" property="fproductunitid" jdbcType="INTEGER" />
+    <result column="FApproveNo" property="fapproveno" jdbcType="VARCHAR" />
+    <result column="FAuxClassID" property="fauxclassid" jdbcType="INTEGER" />
+    <result column="FTypeID" property="ftypeid" jdbcType="INTEGER" />
+    <result column="FPreDeadLine" property="fpredeadline" jdbcType="INTEGER" />
+    <result column="FSerialClassID" property="fserialclassid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FErpClsID, FUnitID, FUnitGroupID, FDefaultLoc, FSPID, FSource, FQtyDecimal, 
+    FLowLimit, FHighLimit, FSecInv, FUseState, FIsEquipment, FEquipmentNum, FIsSparePart, 
+    FFullName, FSecUnitID, FSecCoefficient, FSecUnitDecimal, FAlias, FOrderUnitID, FSaleUnitID, 
+    FStoreUnitID, FProductUnitID, FApproveNo, FAuxClassID, FTypeID, FPreDeadLine, FSerialClassID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ICItemBase
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemBase
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemBase" >
+    insert into t_ICItemBase (FItemID, FErpClsID, FUnitID, 
+      FUnitGroupID, FDefaultLoc, FSPID, 
+      FSource, FQtyDecimal, FLowLimit, 
+      FHighLimit, FSecInv, FUseState, 
+      FIsEquipment, FEquipmentNum, FIsSparePart, 
+      FFullName, FSecUnitID, FSecCoefficient, 
+      FSecUnitDecimal, FAlias, FOrderUnitID, 
+      FSaleUnitID, FStoreUnitID, FProductUnitID, 
+      FApproveNo, FAuxClassID, FTypeID, 
+      FPreDeadLine, FSerialClassID)
+    values (#{fitemid,jdbcType=INTEGER}, #{ferpclsid,jdbcType=INTEGER}, #{funitid,jdbcType=INTEGER}, 
+      #{funitgroupid,jdbcType=INTEGER}, #{fdefaultloc,jdbcType=INTEGER}, #{fspid,jdbcType=INTEGER}, 
+      #{fsource,jdbcType=INTEGER}, #{fqtydecimal,jdbcType=SMALLINT}, #{flowlimit,jdbcType=DECIMAL}, 
+      #{fhighlimit,jdbcType=DECIMAL}, #{fsecinv,jdbcType=DECIMAL}, #{fusestate,jdbcType=INTEGER}, 
+      #{fisequipment,jdbcType=BIT}, #{fequipmentnum,jdbcType=VARCHAR}, #{fissparepart,jdbcType=BIT}, 
+      #{ffullname,jdbcType=VARCHAR}, #{fsecunitid,jdbcType=INTEGER}, #{fseccoefficient,jdbcType=DECIMAL}, 
+      #{fsecunitdecimal,jdbcType=INTEGER}, #{falias,jdbcType=VARCHAR}, #{forderunitid,jdbcType=INTEGER}, 
+      #{fsaleunitid,jdbcType=INTEGER}, #{fstoreunitid,jdbcType=INTEGER}, #{fproductunitid,jdbcType=INTEGER}, 
+      #{fapproveno,jdbcType=VARCHAR}, #{fauxclassid,jdbcType=INTEGER}, #{ftypeid,jdbcType=INTEGER}, 
+      #{fpredeadline,jdbcType=INTEGER}, #{fserialclassid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemBase" >
+    insert into t_ICItemBase
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="ferpclsid != null" >
+        FErpClsID,
+      </if>
+      <if test="funitid != null" >
+        FUnitID,
+      </if>
+      <if test="funitgroupid != null" >
+        FUnitGroupID,
+      </if>
+      <if test="fdefaultloc != null" >
+        FDefaultLoc,
+      </if>
+      <if test="fspid != null" >
+        FSPID,
+      </if>
+      <if test="fsource != null" >
+        FSource,
+      </if>
+      <if test="fqtydecimal != null" >
+        FQtyDecimal,
+      </if>
+      <if test="flowlimit != null" >
+        FLowLimit,
+      </if>
+      <if test="fhighlimit != null" >
+        FHighLimit,
+      </if>
+      <if test="fsecinv != null" >
+        FSecInv,
+      </if>
+      <if test="fusestate != null" >
+        FUseState,
+      </if>
+      <if test="fisequipment != null" >
+        FIsEquipment,
+      </if>
+      <if test="fequipmentnum != null" >
+        FEquipmentNum,
+      </if>
+      <if test="fissparepart != null" >
+        FIsSparePart,
+      </if>
+      <if test="ffullname != null" >
+        FFullName,
+      </if>
+      <if test="fsecunitid != null" >
+        FSecUnitID,
+      </if>
+      <if test="fseccoefficient != null" >
+        FSecCoefficient,
+      </if>
+      <if test="fsecunitdecimal != null" >
+        FSecUnitDecimal,
+      </if>
+      <if test="falias != null" >
+        FAlias,
+      </if>
+      <if test="forderunitid != null" >
+        FOrderUnitID,
+      </if>
+      <if test="fsaleunitid != null" >
+        FSaleUnitID,
+      </if>
+      <if test="fstoreunitid != null" >
+        FStoreUnitID,
+      </if>
+      <if test="fproductunitid != null" >
+        FProductUnitID,
+      </if>
+      <if test="fapproveno != null" >
+        FApproveNo,
+      </if>
+      <if test="fauxclassid != null" >
+        FAuxClassID,
+      </if>
+      <if test="ftypeid != null" >
+        FTypeID,
+      </if>
+      <if test="fpredeadline != null" >
+        FPreDeadLine,
+      </if>
+      <if test="fserialclassid != null" >
+        FSerialClassID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="ferpclsid != null" >
+        #{ferpclsid,jdbcType=INTEGER},
+      </if>
+      <if test="funitid != null" >
+        #{funitid,jdbcType=INTEGER},
+      </if>
+      <if test="funitgroupid != null" >
+        #{funitgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fdefaultloc != null" >
+        #{fdefaultloc,jdbcType=INTEGER},
+      </if>
+      <if test="fspid != null" >
+        #{fspid,jdbcType=INTEGER},
+      </if>
+      <if test="fsource != null" >
+        #{fsource,jdbcType=INTEGER},
+      </if>
+      <if test="fqtydecimal != null" >
+        #{fqtydecimal,jdbcType=SMALLINT},
+      </if>
+      <if test="flowlimit != null" >
+        #{flowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fhighlimit != null" >
+        #{fhighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fsecinv != null" >
+        #{fsecinv,jdbcType=DECIMAL},
+      </if>
+      <if test="fusestate != null" >
+        #{fusestate,jdbcType=INTEGER},
+      </if>
+      <if test="fisequipment != null" >
+        #{fisequipment,jdbcType=BIT},
+      </if>
+      <if test="fequipmentnum != null" >
+        #{fequipmentnum,jdbcType=VARCHAR},
+      </if>
+      <if test="fissparepart != null" >
+        #{fissparepart,jdbcType=BIT},
+      </if>
+      <if test="ffullname != null" >
+        #{ffullname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsecunitid != null" >
+        #{fsecunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fseccoefficient != null" >
+        #{fseccoefficient,jdbcType=DECIMAL},
+      </if>
+      <if test="fsecunitdecimal != null" >
+        #{fsecunitdecimal,jdbcType=INTEGER},
+      </if>
+      <if test="falias != null" >
+        #{falias,jdbcType=VARCHAR},
+      </if>
+      <if test="forderunitid != null" >
+        #{forderunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fsaleunitid != null" >
+        #{fsaleunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fstoreunitid != null" >
+        #{fstoreunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fproductunitid != null" >
+        #{fproductunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fapproveno != null" >
+        #{fapproveno,jdbcType=VARCHAR},
+      </if>
+      <if test="fauxclassid != null" >
+        #{fauxclassid,jdbcType=INTEGER},
+      </if>
+      <if test="ftypeid != null" >
+        #{ftypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fpredeadline != null" >
+        #{fpredeadline,jdbcType=INTEGER},
+      </if>
+      <if test="fserialclassid != null" >
+        #{fserialclassid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemBase" >
+    update t_ICItemBase
+    <set >
+      <if test="ferpclsid != null" >
+        FErpClsID = #{ferpclsid,jdbcType=INTEGER},
+      </if>
+      <if test="funitid != null" >
+        FUnitID = #{funitid,jdbcType=INTEGER},
+      </if>
+      <if test="funitgroupid != null" >
+        FUnitGroupID = #{funitgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fdefaultloc != null" >
+        FDefaultLoc = #{fdefaultloc,jdbcType=INTEGER},
+      </if>
+      <if test="fspid != null" >
+        FSPID = #{fspid,jdbcType=INTEGER},
+      </if>
+      <if test="fsource != null" >
+        FSource = #{fsource,jdbcType=INTEGER},
+      </if>
+      <if test="fqtydecimal != null" >
+        FQtyDecimal = #{fqtydecimal,jdbcType=SMALLINT},
+      </if>
+      <if test="flowlimit != null" >
+        FLowLimit = #{flowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fhighlimit != null" >
+        FHighLimit = #{fhighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="fsecinv != null" >
+        FSecInv = #{fsecinv,jdbcType=DECIMAL},
+      </if>
+      <if test="fusestate != null" >
+        FUseState = #{fusestate,jdbcType=INTEGER},
+      </if>
+      <if test="fisequipment != null" >
+        FIsEquipment = #{fisequipment,jdbcType=BIT},
+      </if>
+      <if test="fequipmentnum != null" >
+        FEquipmentNum = #{fequipmentnum,jdbcType=VARCHAR},
+      </if>
+      <if test="fissparepart != null" >
+        FIsSparePart = #{fissparepart,jdbcType=BIT},
+      </if>
+      <if test="ffullname != null" >
+        FFullName = #{ffullname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsecunitid != null" >
+        FSecUnitID = #{fsecunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fseccoefficient != null" >
+        FSecCoefficient = #{fseccoefficient,jdbcType=DECIMAL},
+      </if>
+      <if test="fsecunitdecimal != null" >
+        FSecUnitDecimal = #{fsecunitdecimal,jdbcType=INTEGER},
+      </if>
+      <if test="falias != null" >
+        FAlias = #{falias,jdbcType=VARCHAR},
+      </if>
+      <if test="forderunitid != null" >
+        FOrderUnitID = #{forderunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fsaleunitid != null" >
+        FSaleUnitID = #{fsaleunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fstoreunitid != null" >
+        FStoreUnitID = #{fstoreunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fproductunitid != null" >
+        FProductUnitID = #{fproductunitid,jdbcType=INTEGER},
+      </if>
+      <if test="fapproveno != null" >
+        FApproveNo = #{fapproveno,jdbcType=VARCHAR},
+      </if>
+      <if test="fauxclassid != null" >
+        FAuxClassID = #{fauxclassid,jdbcType=INTEGER},
+      </if>
+      <if test="ftypeid != null" >
+        FTypeID = #{ftypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fpredeadline != null" >
+        FPreDeadLine = #{fpredeadline,jdbcType=INTEGER},
+      </if>
+      <if test="fserialclassid != null" >
+        FSerialClassID = #{fserialclassid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemBase" >
+    update t_ICItemBase
+    set FErpClsID = #{ferpclsid,jdbcType=INTEGER},
+      FUnitID = #{funitid,jdbcType=INTEGER},
+      FUnitGroupID = #{funitgroupid,jdbcType=INTEGER},
+      FDefaultLoc = #{fdefaultloc,jdbcType=INTEGER},
+      FSPID = #{fspid,jdbcType=INTEGER},
+      FSource = #{fsource,jdbcType=INTEGER},
+      FQtyDecimal = #{fqtydecimal,jdbcType=SMALLINT},
+      FLowLimit = #{flowlimit,jdbcType=DECIMAL},
+      FHighLimit = #{fhighlimit,jdbcType=DECIMAL},
+      FSecInv = #{fsecinv,jdbcType=DECIMAL},
+      FUseState = #{fusestate,jdbcType=INTEGER},
+      FIsEquipment = #{fisequipment,jdbcType=BIT},
+      FEquipmentNum = #{fequipmentnum,jdbcType=VARCHAR},
+      FIsSparePart = #{fissparepart,jdbcType=BIT},
+      FFullName = #{ffullname,jdbcType=VARCHAR},
+      FSecUnitID = #{fsecunitid,jdbcType=INTEGER},
+      FSecCoefficient = #{fseccoefficient,jdbcType=DECIMAL},
+      FSecUnitDecimal = #{fsecunitdecimal,jdbcType=INTEGER},
+      FAlias = #{falias,jdbcType=VARCHAR},
+      FOrderUnitID = #{forderunitid,jdbcType=INTEGER},
+      FSaleUnitID = #{fsaleunitid,jdbcType=INTEGER},
+      FStoreUnitID = #{fstoreunitid,jdbcType=INTEGER},
+      FProductUnitID = #{fproductunitid,jdbcType=INTEGER},
+      FApproveNo = #{fapproveno,jdbcType=VARCHAR},
+      FAuxClassID = #{fauxclassid,jdbcType=INTEGER},
+      FTypeID = #{ftypeid,jdbcType=INTEGER},
+      FPreDeadLine = #{fpredeadline,jdbcType=INTEGER},
+      FSerialClassID = #{fserialclassid,jdbcType=INTEGER}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

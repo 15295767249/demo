@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.t_ICItemCustomMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemCustom" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FBatchCreate" property="fbatchcreate" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FBatchCreate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ICItemCustom
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemCustom
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemCustom" >
+    insert into t_ICItemCustom (FItemID, FBatchCreate)
+    values (#{fitemid,jdbcType=INTEGER}, #{fbatchcreate,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemCustom" >
+    insert into t_ICItemCustom
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fbatchcreate != null" >
+        FBatchCreate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fbatchcreate != null" >
+        #{fbatchcreate,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemCustom" >
+    update t_ICItemCustom
+    <set >
+      <if test="fbatchcreate != null" >
+        FBatchCreate = #{fbatchcreate,jdbcType=BIT},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemCustom" >
+    update t_ICItemCustom
+    set FBatchCreate = #{fbatchcreate,jdbcType=BIT}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

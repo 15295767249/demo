@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.t_ICItemPlanMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemPlan" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FPlanTrategy" property="fplantrategy" jdbcType="INTEGER" />
+    <result column="FOrderTrategy" property="fordertrategy" jdbcType="INTEGER" />
+    <result column="FLeadTime" property="fleadtime" jdbcType="REAL" />
+    <result column="FFixLeadTime" property="ffixleadtime" jdbcType="REAL" />
+    <result column="FTotalTQQ" property="ftotaltqq" jdbcType="INTEGER" />
+    <result column="FQtyMin" property="fqtymin" jdbcType="DECIMAL" />
+    <result column="FQtyMax" property="fqtymax" jdbcType="DECIMAL" />
+    <result column="FCUUnitID" property="fcuunitid" jdbcType="INTEGER" />
+    <result column="FOrderInterVal" property="forderinterval" jdbcType="INTEGER" />
+    <result column="FBatchAppendQty" property="fbatchappendqty" jdbcType="DECIMAL" />
+    <result column="FOrderPoint" property="forderpoint" jdbcType="DECIMAL" />
+    <result column="FBatFixEconomy" property="fbatfixeconomy" jdbcType="DECIMAL" />
+    <result column="FBatChangeEconomy" property="fbatchangeeconomy" jdbcType="DECIMAL" />
+    <result column="FRequirePoint" property="frequirepoint" jdbcType="INTEGER" />
+    <result column="FPlanPoint" property="fplanpoint" jdbcType="INTEGER" />
+    <result column="FDefaultRoutingID" property="fdefaultroutingid" jdbcType="INTEGER" />
+    <result column="FDefaultWorkTypeID" property="fdefaultworktypeid" jdbcType="INTEGER" />
+    <result column="FProductPrincipal" property="fproductprincipal" jdbcType="INTEGER" />
+    <result column="FDailyConsume" property="fdailyconsume" jdbcType="DECIMAL" />
+    <result column="FMRPCon" property="fmrpcon" jdbcType="BIT" />
+    <result column="FPlanner" property="fplanner" jdbcType="INTEGER" />
+    <result column="FPutInteger" property="fputinteger" jdbcType="BIT" />
+    <result column="FInHighLimit" property="finhighlimit" jdbcType="DECIMAL" />
+    <result column="FInLowLimit" property="finlowlimit" jdbcType="DECIMAL" />
+    <result column="FLowestBomCode" property="flowestbomcode" jdbcType="INTEGER" />
+    <result column="FMRPOrder" property="fmrporder" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FPlanTrategy, FOrderTrategy, FLeadTime, FFixLeadTime, FTotalTQQ, FQtyMin, 
+    FQtyMax, FCUUnitID, FOrderInterVal, FBatchAppendQty, FOrderPoint, FBatFixEconomy, 
+    FBatChangeEconomy, FRequirePoint, FPlanPoint, FDefaultRoutingID, FDefaultWorkTypeID, 
+    FProductPrincipal, FDailyConsume, FMRPCon, FPlanner, FPutInteger, FInHighLimit, FInLowLimit, 
+    FLowestBomCode, FMRPOrder
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ICItemPlan
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemPlan
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemPlan" >
+    insert into t_ICItemPlan (FItemID, FPlanTrategy, FOrderTrategy, 
+      FLeadTime, FFixLeadTime, FTotalTQQ, 
+      FQtyMin, FQtyMax, FCUUnitID, 
+      FOrderInterVal, FBatchAppendQty, FOrderPoint, 
+      FBatFixEconomy, FBatChangeEconomy, FRequirePoint, 
+      FPlanPoint, FDefaultRoutingID, FDefaultWorkTypeID, 
+      FProductPrincipal, FDailyConsume, FMRPCon, 
+      FPlanner, FPutInteger, FInHighLimit, 
+      FInLowLimit, FLowestBomCode, FMRPOrder
+      )
+    values (#{fitemid,jdbcType=INTEGER}, #{fplantrategy,jdbcType=INTEGER}, #{fordertrategy,jdbcType=INTEGER}, 
+      #{fleadtime,jdbcType=REAL}, #{ffixleadtime,jdbcType=REAL}, #{ftotaltqq,jdbcType=INTEGER}, 
+      #{fqtymin,jdbcType=DECIMAL}, #{fqtymax,jdbcType=DECIMAL}, #{fcuunitid,jdbcType=INTEGER}, 
+      #{forderinterval,jdbcType=INTEGER}, #{fbatchappendqty,jdbcType=DECIMAL}, #{forderpoint,jdbcType=DECIMAL}, 
+      #{fbatfixeconomy,jdbcType=DECIMAL}, #{fbatchangeeconomy,jdbcType=DECIMAL}, #{frequirepoint,jdbcType=INTEGER}, 
+      #{fplanpoint,jdbcType=INTEGER}, #{fdefaultroutingid,jdbcType=INTEGER}, #{fdefaultworktypeid,jdbcType=INTEGER}, 
+      #{fproductprincipal,jdbcType=INTEGER}, #{fdailyconsume,jdbcType=DECIMAL}, #{fmrpcon,jdbcType=BIT}, 
+      #{fplanner,jdbcType=INTEGER}, #{fputinteger,jdbcType=BIT}, #{finhighlimit,jdbcType=DECIMAL}, 
+      #{finlowlimit,jdbcType=DECIMAL}, #{flowestbomcode,jdbcType=INTEGER}, #{fmrporder,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemPlan" >
+    insert into t_ICItemPlan
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fplantrategy != null" >
+        FPlanTrategy,
+      </if>
+      <if test="fordertrategy != null" >
+        FOrderTrategy,
+      </if>
+      <if test="fleadtime != null" >
+        FLeadTime,
+      </if>
+      <if test="ffixleadtime != null" >
+        FFixLeadTime,
+      </if>
+      <if test="ftotaltqq != null" >
+        FTotalTQQ,
+      </if>
+      <if test="fqtymin != null" >
+        FQtyMin,
+      </if>
+      <if test="fqtymax != null" >
+        FQtyMax,
+      </if>
+      <if test="fcuunitid != null" >
+        FCUUnitID,
+      </if>
+      <if test="forderinterval != null" >
+        FOrderInterVal,
+      </if>
+      <if test="fbatchappendqty != null" >
+        FBatchAppendQty,
+      </if>
+      <if test="forderpoint != null" >
+        FOrderPoint,
+      </if>
+      <if test="fbatfixeconomy != null" >
+        FBatFixEconomy,
+      </if>
+      <if test="fbatchangeeconomy != null" >
+        FBatChangeEconomy,
+      </if>
+      <if test="frequirepoint != null" >
+        FRequirePoint,
+      </if>
+      <if test="fplanpoint != null" >
+        FPlanPoint,
+      </if>
+      <if test="fdefaultroutingid != null" >
+        FDefaultRoutingID,
+      </if>
+      <if test="fdefaultworktypeid != null" >
+        FDefaultWorkTypeID,
+      </if>
+      <if test="fproductprincipal != null" >
+        FProductPrincipal,
+      </if>
+      <if test="fdailyconsume != null" >
+        FDailyConsume,
+      </if>
+      <if test="fmrpcon != null" >
+        FMRPCon,
+      </if>
+      <if test="fplanner != null" >
+        FPlanner,
+      </if>
+      <if test="fputinteger != null" >
+        FPutInteger,
+      </if>
+      <if test="finhighlimit != null" >
+        FInHighLimit,
+      </if>
+      <if test="finlowlimit != null" >
+        FInLowLimit,
+      </if>
+      <if test="flowestbomcode != null" >
+        FLowestBomCode,
+      </if>
+      <if test="fmrporder != null" >
+        FMRPOrder,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fplantrategy != null" >
+        #{fplantrategy,jdbcType=INTEGER},
+      </if>
+      <if test="fordertrategy != null" >
+        #{fordertrategy,jdbcType=INTEGER},
+      </if>
+      <if test="fleadtime != null" >
+        #{fleadtime,jdbcType=REAL},
+      </if>
+      <if test="ffixleadtime != null" >
+        #{ffixleadtime,jdbcType=REAL},
+      </if>
+      <if test="ftotaltqq != null" >
+        #{ftotaltqq,jdbcType=INTEGER},
+      </if>
+      <if test="fqtymin != null" >
+        #{fqtymin,jdbcType=DECIMAL},
+      </if>
+      <if test="fqtymax != null" >
+        #{fqtymax,jdbcType=DECIMAL},
+      </if>
+      <if test="fcuunitid != null" >
+        #{fcuunitid,jdbcType=INTEGER},
+      </if>
+      <if test="forderinterval != null" >
+        #{forderinterval,jdbcType=INTEGER},
+      </if>
+      <if test="fbatchappendqty != null" >
+        #{fbatchappendqty,jdbcType=DECIMAL},
+      </if>
+      <if test="forderpoint != null" >
+        #{forderpoint,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatfixeconomy != null" >
+        #{fbatfixeconomy,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatchangeeconomy != null" >
+        #{fbatchangeeconomy,jdbcType=DECIMAL},
+      </if>
+      <if test="frequirepoint != null" >
+        #{frequirepoint,jdbcType=INTEGER},
+      </if>
+      <if test="fplanpoint != null" >
+        #{fplanpoint,jdbcType=INTEGER},
+      </if>
+      <if test="fdefaultroutingid != null" >
+        #{fdefaultroutingid,jdbcType=INTEGER},
+      </if>
+      <if test="fdefaultworktypeid != null" >
+        #{fdefaultworktypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fproductprincipal != null" >
+        #{fproductprincipal,jdbcType=INTEGER},
+      </if>
+      <if test="fdailyconsume != null" >
+        #{fdailyconsume,jdbcType=DECIMAL},
+      </if>
+      <if test="fmrpcon != null" >
+        #{fmrpcon,jdbcType=BIT},
+      </if>
+      <if test="fplanner != null" >
+        #{fplanner,jdbcType=INTEGER},
+      </if>
+      <if test="fputinteger != null" >
+        #{fputinteger,jdbcType=BIT},
+      </if>
+      <if test="finhighlimit != null" >
+        #{finhighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="finlowlimit != null" >
+        #{finlowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="flowestbomcode != null" >
+        #{flowestbomcode,jdbcType=INTEGER},
+      </if>
+      <if test="fmrporder != null" >
+        #{fmrporder,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemPlan" >
+    update t_ICItemPlan
+    <set >
+      <if test="fplantrategy != null" >
+        FPlanTrategy = #{fplantrategy,jdbcType=INTEGER},
+      </if>
+      <if test="fordertrategy != null" >
+        FOrderTrategy = #{fordertrategy,jdbcType=INTEGER},
+      </if>
+      <if test="fleadtime != null" >
+        FLeadTime = #{fleadtime,jdbcType=REAL},
+      </if>
+      <if test="ffixleadtime != null" >
+        FFixLeadTime = #{ffixleadtime,jdbcType=REAL},
+      </if>
+      <if test="ftotaltqq != null" >
+        FTotalTQQ = #{ftotaltqq,jdbcType=INTEGER},
+      </if>
+      <if test="fqtymin != null" >
+        FQtyMin = #{fqtymin,jdbcType=DECIMAL},
+      </if>
+      <if test="fqtymax != null" >
+        FQtyMax = #{fqtymax,jdbcType=DECIMAL},
+      </if>
+      <if test="fcuunitid != null" >
+        FCUUnitID = #{fcuunitid,jdbcType=INTEGER},
+      </if>
+      <if test="forderinterval != null" >
+        FOrderInterVal = #{forderinterval,jdbcType=INTEGER},
+      </if>
+      <if test="fbatchappendqty != null" >
+        FBatchAppendQty = #{fbatchappendqty,jdbcType=DECIMAL},
+      </if>
+      <if test="forderpoint != null" >
+        FOrderPoint = #{forderpoint,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatfixeconomy != null" >
+        FBatFixEconomy = #{fbatfixeconomy,jdbcType=DECIMAL},
+      </if>
+      <if test="fbatchangeeconomy != null" >
+        FBatChangeEconomy = #{fbatchangeeconomy,jdbcType=DECIMAL},
+      </if>
+      <if test="frequirepoint != null" >
+        FRequirePoint = #{frequirepoint,jdbcType=INTEGER},
+      </if>
+      <if test="fplanpoint != null" >
+        FPlanPoint = #{fplanpoint,jdbcType=INTEGER},
+      </if>
+      <if test="fdefaultroutingid != null" >
+        FDefaultRoutingID = #{fdefaultroutingid,jdbcType=INTEGER},
+      </if>
+      <if test="fdefaultworktypeid != null" >
+        FDefaultWorkTypeID = #{fdefaultworktypeid,jdbcType=INTEGER},
+      </if>
+      <if test="fproductprincipal != null" >
+        FProductPrincipal = #{fproductprincipal,jdbcType=INTEGER},
+      </if>
+      <if test="fdailyconsume != null" >
+        FDailyConsume = #{fdailyconsume,jdbcType=DECIMAL},
+      </if>
+      <if test="fmrpcon != null" >
+        FMRPCon = #{fmrpcon,jdbcType=BIT},
+      </if>
+      <if test="fplanner != null" >
+        FPlanner = #{fplanner,jdbcType=INTEGER},
+      </if>
+      <if test="fputinteger != null" >
+        FPutInteger = #{fputinteger,jdbcType=BIT},
+      </if>
+      <if test="finhighlimit != null" >
+        FInHighLimit = #{finhighlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="finlowlimit != null" >
+        FInLowLimit = #{finlowlimit,jdbcType=DECIMAL},
+      </if>
+      <if test="flowestbomcode != null" >
+        FLowestBomCode = #{flowestbomcode,jdbcType=INTEGER},
+      </if>
+      <if test="fmrporder != null" >
+        FMRPOrder = #{fmrporder,jdbcType=BIT},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemPlan" >
+    update t_ICItemPlan
+    set FPlanTrategy = #{fplantrategy,jdbcType=INTEGER},
+      FOrderTrategy = #{fordertrategy,jdbcType=INTEGER},
+      FLeadTime = #{fleadtime,jdbcType=REAL},
+      FFixLeadTime = #{ffixleadtime,jdbcType=REAL},
+      FTotalTQQ = #{ftotaltqq,jdbcType=INTEGER},
+      FQtyMin = #{fqtymin,jdbcType=DECIMAL},
+      FQtyMax = #{fqtymax,jdbcType=DECIMAL},
+      FCUUnitID = #{fcuunitid,jdbcType=INTEGER},
+      FOrderInterVal = #{forderinterval,jdbcType=INTEGER},
+      FBatchAppendQty = #{fbatchappendqty,jdbcType=DECIMAL},
+      FOrderPoint = #{forderpoint,jdbcType=DECIMAL},
+      FBatFixEconomy = #{fbatfixeconomy,jdbcType=DECIMAL},
+      FBatChangeEconomy = #{fbatchangeeconomy,jdbcType=DECIMAL},
+      FRequirePoint = #{frequirepoint,jdbcType=INTEGER},
+      FPlanPoint = #{fplanpoint,jdbcType=INTEGER},
+      FDefaultRoutingID = #{fdefaultroutingid,jdbcType=INTEGER},
+      FDefaultWorkTypeID = #{fdefaultworktypeid,jdbcType=INTEGER},
+      FProductPrincipal = #{fproductprincipal,jdbcType=INTEGER},
+      FDailyConsume = #{fdailyconsume,jdbcType=DECIMAL},
+      FMRPCon = #{fmrpcon,jdbcType=BIT},
+      FPlanner = #{fplanner,jdbcType=INTEGER},
+      FPutInteger = #{fputinteger,jdbcType=BIT},
+      FInHighLimit = #{finhighlimit,jdbcType=DECIMAL},
+      FInLowLimit = #{finlowlimit,jdbcType=DECIMAL},
+      FLowestBomCode = #{flowestbomcode,jdbcType=INTEGER},
+      FMRPOrder = #{fmrporder,jdbcType=BIT}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds2.mapper.t_ICItemStandardMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemStandard" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FStandardCost" property="fstandardcost" jdbcType="DECIMAL" />
+    <result column="FStandardManHour" property="fstandardmanhour" jdbcType="DECIMAL" />
+    <result column="FStdPayRate" property="fstdpayrate" jdbcType="DECIMAL" />
+    <result column="FChgFeeRate" property="fchgfeerate" jdbcType="DECIMAL" />
+    <result column="FStdFixFeeRate" property="fstdfixfeerate" jdbcType="DECIMAL" />
+    <result column="FOutMachFee" property="foutmachfee" jdbcType="DECIMAL" />
+    <result column="FPieceRate" property="fpiecerate" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FStandardCost, FStandardManHour, FStdPayRate, FChgFeeRate, FStdFixFeeRate, 
+    FOutMachFee, FPieceRate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ICItemStandard
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemStandard
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemStandard" >
+    insert into t_ICItemStandard (FItemID, FStandardCost, FStandardManHour, 
+      FStdPayRate, FChgFeeRate, FStdFixFeeRate, 
+      FOutMachFee, FPieceRate)
+    values (#{fitemid,jdbcType=INTEGER}, #{fstandardcost,jdbcType=DECIMAL}, #{fstandardmanhour,jdbcType=DECIMAL}, 
+      #{fstdpayrate,jdbcType=DECIMAL}, #{fchgfeerate,jdbcType=DECIMAL}, #{fstdfixfeerate,jdbcType=DECIMAL}, 
+      #{foutmachfee,jdbcType=DECIMAL}, #{fpiecerate,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemStandard" >
+    insert into t_ICItemStandard
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fstandardcost != null" >
+        FStandardCost,
+      </if>
+      <if test="fstandardmanhour != null" >
+        FStandardManHour,
+      </if>
+      <if test="fstdpayrate != null" >
+        FStdPayRate,
+      </if>
+      <if test="fchgfeerate != null" >
+        FChgFeeRate,
+      </if>
+      <if test="fstdfixfeerate != null" >
+        FStdFixFeeRate,
+      </if>
+      <if test="foutmachfee != null" >
+        FOutMachFee,
+      </if>
+      <if test="fpiecerate != null" >
+        FPieceRate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fstandardcost != null" >
+        #{fstandardcost,jdbcType=DECIMAL},
+      </if>
+      <if test="fstandardmanhour != null" >
+        #{fstandardmanhour,jdbcType=DECIMAL},
+      </if>
+      <if test="fstdpayrate != null" >
+        #{fstdpayrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fchgfeerate != null" >
+        #{fchgfeerate,jdbcType=DECIMAL},
+      </if>
+      <if test="fstdfixfeerate != null" >
+        #{fstdfixfeerate,jdbcType=DECIMAL},
+      </if>
+      <if test="foutmachfee != null" >
+        #{foutmachfee,jdbcType=DECIMAL},
+      </if>
+      <if test="fpiecerate != null" >
+        #{fpiecerate,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemStandard" >
+    update t_ICItemStandard
+    <set >
+      <if test="fstandardcost != null" >
+        FStandardCost = #{fstandardcost,jdbcType=DECIMAL},
+      </if>
+      <if test="fstandardmanhour != null" >
+        FStandardManHour = #{fstandardmanhour,jdbcType=DECIMAL},
+      </if>
+      <if test="fstdpayrate != null" >
+        FStdPayRate = #{fstdpayrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fchgfeerate != null" >
+        FChgFeeRate = #{fchgfeerate,jdbcType=DECIMAL},
+      </if>
+      <if test="fstdfixfeerate != null" >
+        FStdFixFeeRate = #{fstdfixfeerate,jdbcType=DECIMAL},
+      </if>
+      <if test="foutmachfee != null" >
+        FOutMachFee = #{foutmachfee,jdbcType=DECIMAL},
+      </if>
+      <if test="fpiecerate != null" >
+        FPieceRate = #{fpiecerate,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemStandard" >
+    update t_ICItemStandard
+    set FStandardCost = #{fstandardcost,jdbcType=DECIMAL},
+      FStandardManHour = #{fstandardmanhour,jdbcType=DECIMAL},
+      FStdPayRate = #{fstdpayrate,jdbcType=DECIMAL},
+      FChgFeeRate = #{fchgfeerate,jdbcType=DECIMAL},
+      FStdFixFeeRate = #{fstdfixfeerate,jdbcType=DECIMAL},
+      FOutMachFee = #{foutmachfee,jdbcType=DECIMAL},
+      FPieceRate = #{fpiecerate,jdbcType=DECIMAL}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

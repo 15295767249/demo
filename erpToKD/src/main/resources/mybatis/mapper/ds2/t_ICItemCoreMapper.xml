@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds2.mapper.t_ICItemCoreMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemCore" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FModel" property="fmodel" jdbcType="VARCHAR" />
+    <result column="FName" property="fname" jdbcType="VARCHAR" />
+    <result column="FHelpCode" property="fhelpcode" jdbcType="VARCHAR" />
+    <result column="FDeleted" property="fdeleted" jdbcType="SMALLINT" />
+    <result column="FShortNumber" property="fshortnumber" jdbcType="VARCHAR" />
+    <result column="FNumber" property="fnumber" jdbcType="VARCHAR" />
+    <result column="FParentID" property="fparentid" jdbcType="INTEGER" />
+    <result column="FBrNo" property="fbrno" jdbcType="VARCHAR" />
+    <result column="FTopID" property="ftopid" jdbcType="INTEGER" />
+    <result column="FRP" property="frp" jdbcType="SMALLINT" />
+    <result column="FOmortize" property="fomortize" jdbcType="SMALLINT" />
+    <result column="FOmortizeScale" property="fomortizescale" jdbcType="SMALLINT" />
+    <result column="FForSale" property="fforsale" jdbcType="BIT" />
+    <result column="FStaCost" property="fstacost" jdbcType="DOUBLE" />
+    <result column="FOrderPrice" property="forderprice" jdbcType="DOUBLE" />
+    <result column="FOrderMethod" property="fordermethod" jdbcType="INTEGER" />
+    <result column="FPriceFixingType" property="fpricefixingtype" jdbcType="INTEGER" />
+    <result column="FSalePriceFixingType" property="fsalepricefixingtype" jdbcType="INTEGER" />
+    <result column="FPerWastage" property="fperwastage" jdbcType="DOUBLE" />
+    <result column="FARAcctID" property="faracctid" jdbcType="INTEGER" />
+    <result column="FPlanPriceMethod" property="fplanpricemethod" jdbcType="SMALLINT" />
+    <result column="FPlanClass" property="fplanclass" jdbcType="SMALLINT" />
+    <result column="FItemDescription" property="fitemdescription" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_ICItemCore" extends="BaseResultMap" >
+    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FModel, FName, FHelpCode, FDeleted, FShortNumber, FNumber, FParentID, FBrNo, 
+    FTopID, FRP, FOmortize, FOmortizeScale, FForSale, FStaCost, FOrderPrice, FOrderMethod, 
+    FPriceFixingType, FSalePriceFixingType, FPerWastage, FARAcctID, FPlanPriceMethod, 
+    FPlanClass, FItemDescription
+  </sql>
+  <sql id="Blob_Column_List" >
+    FModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_ICItemCore
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ICItemCore
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemCore" >
+    insert into t_ICItemCore (FItemID, FModel, FName, 
+      FHelpCode, FDeleted, FShortNumber, 
+      FNumber, FParentID, FBrNo, 
+      FTopID, FRP, FOmortize, 
+      FOmortizeScale, FForSale, FStaCost, 
+      FOrderPrice, FOrderMethod, FPriceFixingType, 
+      FSalePriceFixingType, FPerWastage, FARAcctID, 
+      FPlanPriceMethod, FPlanClass, FItemDescription, 
+      FModifyTime)
+    values (#{fitemid,jdbcType=INTEGER}, #{fmodel,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, 
+      #{fhelpcode,jdbcType=VARCHAR}, #{fdeleted,jdbcType=SMALLINT}, #{fshortnumber,jdbcType=VARCHAR}, 
+      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, 
+      #{ftopid,jdbcType=INTEGER}, #{frp,jdbcType=SMALLINT}, #{fomortize,jdbcType=SMALLINT}, 
+      #{fomortizescale,jdbcType=SMALLINT}, #{fforsale,jdbcType=BIT}, #{fstacost,jdbcType=DOUBLE}, 
+      #{forderprice,jdbcType=DOUBLE}, #{fordermethod,jdbcType=INTEGER}, #{fpricefixingtype,jdbcType=INTEGER}, 
+      #{fsalepricefixingtype,jdbcType=INTEGER}, #{fperwastage,jdbcType=DOUBLE}, #{faracctid,jdbcType=INTEGER}, 
+      #{fplanpricemethod,jdbcType=SMALLINT}, #{fplanclass,jdbcType=SMALLINT}, #{fitemdescription,jdbcType=VARCHAR}, 
+      #{fmodifytime,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemCore" >
+    insert into t_ICItemCore
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fmodel != null" >
+        FModel,
+      </if>
+      <if test="fname != null" >
+        FName,
+      </if>
+      <if test="fhelpcode != null" >
+        FHelpCode,
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted,
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber,
+      </if>
+      <if test="fnumber != null" >
+        FNumber,
+      </if>
+      <if test="fparentid != null" >
+        FParentID,
+      </if>
+      <if test="fbrno != null" >
+        FBrNo,
+      </if>
+      <if test="ftopid != null" >
+        FTopID,
+      </if>
+      <if test="frp != null" >
+        FRP,
+      </if>
+      <if test="fomortize != null" >
+        FOmortize,
+      </if>
+      <if test="fomortizescale != null" >
+        FOmortizeScale,
+      </if>
+      <if test="fforsale != null" >
+        FForSale,
+      </if>
+      <if test="fstacost != null" >
+        FStaCost,
+      </if>
+      <if test="forderprice != null" >
+        FOrderPrice,
+      </if>
+      <if test="fordermethod != null" >
+        FOrderMethod,
+      </if>
+      <if test="fpricefixingtype != null" >
+        FPriceFixingType,
+      </if>
+      <if test="fsalepricefixingtype != null" >
+        FSalePriceFixingType,
+      </if>
+      <if test="fperwastage != null" >
+        FPerWastage,
+      </if>
+      <if test="faracctid != null" >
+        FARAcctID,
+      </if>
+      <if test="fplanpricemethod != null" >
+        FPlanPriceMethod,
+      </if>
+      <if test="fplanclass != null" >
+        FPlanClass,
+      </if>
+      <if test="fitemdescription != null" >
+        FItemDescription,
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fmodel != null" >
+        #{fmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fhelpcode != null" >
+        #{fhelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fdeleted != null" >
+        #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fnumber != null" >
+        #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fbrno != null" >
+        #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="ftopid != null" >
+        #{ftopid,jdbcType=INTEGER},
+      </if>
+      <if test="frp != null" >
+        #{frp,jdbcType=SMALLINT},
+      </if>
+      <if test="fomortize != null" >
+        #{fomortize,jdbcType=SMALLINT},
+      </if>
+      <if test="fomortizescale != null" >
+        #{fomortizescale,jdbcType=SMALLINT},
+      </if>
+      <if test="fforsale != null" >
+        #{fforsale,jdbcType=BIT},
+      </if>
+      <if test="fstacost != null" >
+        #{fstacost,jdbcType=DOUBLE},
+      </if>
+      <if test="forderprice != null" >
+        #{forderprice,jdbcType=DOUBLE},
+      </if>
+      <if test="fordermethod != null" >
+        #{fordermethod,jdbcType=INTEGER},
+      </if>
+      <if test="fpricefixingtype != null" >
+        #{fpricefixingtype,jdbcType=INTEGER},
+      </if>
+      <if test="fsalepricefixingtype != null" >
+        #{fsalepricefixingtype,jdbcType=INTEGER},
+      </if>
+      <if test="fperwastage != null" >
+        #{fperwastage,jdbcType=DOUBLE},
+      </if>
+      <if test="faracctid != null" >
+        #{faracctid,jdbcType=INTEGER},
+      </if>
+      <if test="fplanpricemethod != null" >
+        #{fplanpricemethod,jdbcType=SMALLINT},
+      </if>
+      <if test="fplanclass != null" >
+        #{fplanclass,jdbcType=SMALLINT},
+      </if>
+      <if test="fitemdescription != null" >
+        #{fitemdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_ICItemCore" >
+    update t_ICItemCore
+    <set >
+      <if test="fmodel != null" >
+        FModel = #{fmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        FName = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fhelpcode != null" >
+        FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fnumber != null" >
+        FNumber = #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        FParentID = #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fbrno != null" >
+        FBrNo = #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="ftopid != null" >
+        FTopID = #{ftopid,jdbcType=INTEGER},
+      </if>
+      <if test="frp != null" >
+        FRP = #{frp,jdbcType=SMALLINT},
+      </if>
+      <if test="fomortize != null" >
+        FOmortize = #{fomortize,jdbcType=SMALLINT},
+      </if>
+      <if test="fomortizescale != null" >
+        FOmortizeScale = #{fomortizescale,jdbcType=SMALLINT},
+      </if>
+      <if test="fforsale != null" >
+        FForSale = #{fforsale,jdbcType=BIT},
+      </if>
+      <if test="fstacost != null" >
+        FStaCost = #{fstacost,jdbcType=DOUBLE},
+      </if>
+      <if test="forderprice != null" >
+        FOrderPrice = #{forderprice,jdbcType=DOUBLE},
+      </if>
+      <if test="fordermethod != null" >
+        FOrderMethod = #{fordermethod,jdbcType=INTEGER},
+      </if>
+      <if test="fpricefixingtype != null" >
+        FPriceFixingType = #{fpricefixingtype,jdbcType=INTEGER},
+      </if>
+      <if test="fsalepricefixingtype != null" >
+        FSalePriceFixingType = #{fsalepricefixingtype,jdbcType=INTEGER},
+      </if>
+      <if test="fperwastage != null" >
+        FPerWastage = #{fperwastage,jdbcType=DOUBLE},
+      </if>
+      <if test="faracctid != null" >
+        FARAcctID = #{faracctid,jdbcType=INTEGER},
+      </if>
+      <if test="fplanpricemethod != null" >
+        FPlanPriceMethod = #{fplanpricemethod,jdbcType=SMALLINT},
+      </if>
+      <if test="fplanclass != null" >
+        FPlanClass = #{fplanclass,jdbcType=SMALLINT},
+      </if>
+      <if test="fitemdescription != null" >
+        FItemDescription = #{fitemdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime = #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.com.yhb.entity.t_ICItemCore" >
+    update t_ICItemCore
+    set FModel = #{fmodel,jdbcType=VARCHAR},
+      FName = #{fname,jdbcType=VARCHAR},
+      FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FTopID = #{ftopid,jdbcType=INTEGER},
+      FRP = #{frp,jdbcType=SMALLINT},
+      FOmortize = #{fomortize,jdbcType=SMALLINT},
+      FOmortizeScale = #{fomortizescale,jdbcType=SMALLINT},
+      FForSale = #{fforsale,jdbcType=BIT},
+      FStaCost = #{fstacost,jdbcType=DOUBLE},
+      FOrderPrice = #{forderprice,jdbcType=DOUBLE},
+      FOrderMethod = #{fordermethod,jdbcType=INTEGER},
+      FPriceFixingType = #{fpricefixingtype,jdbcType=INTEGER},
+      FSalePriceFixingType = #{fsalepricefixingtype,jdbcType=INTEGER},
+      FPerWastage = #{fperwastage,jdbcType=DOUBLE},
+      FARAcctID = #{faracctid,jdbcType=INTEGER},
+      FPlanPriceMethod = #{fplanpricemethod,jdbcType=SMALLINT},
+      FPlanClass = #{fplanclass,jdbcType=SMALLINT},
+      FItemDescription = #{fitemdescription,jdbcType=VARCHAR},
+      FModifyTime = #{fmodifytime,jdbcType=BINARY}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_ICItemCore" >
+    update t_ICItemCore
+    set FModel = #{fmodel,jdbcType=VARCHAR},
+      FName = #{fname,jdbcType=VARCHAR},
+      FHelpCode = #{fhelpcode,jdbcType=VARCHAR},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FTopID = #{ftopid,jdbcType=INTEGER},
+      FRP = #{frp,jdbcType=SMALLINT},
+      FOmortize = #{fomortize,jdbcType=SMALLINT},
+      FOmortizeScale = #{fomortizescale,jdbcType=SMALLINT},
+      FForSale = #{fforsale,jdbcType=BIT},
+      FStaCost = #{fstacost,jdbcType=DOUBLE},
+      FOrderPrice = #{forderprice,jdbcType=DOUBLE},
+      FOrderMethod = #{fordermethod,jdbcType=INTEGER},
+      FPriceFixingType = #{fpricefixingtype,jdbcType=INTEGER},
+      FSalePriceFixingType = #{fsalepricefixingtype,jdbcType=INTEGER},
+      FPerWastage = #{fperwastage,jdbcType=DOUBLE},
+      FARAcctID = #{faracctid,jdbcType=INTEGER},
+      FPlanPriceMethod = #{fplanpricemethod,jdbcType=SMALLINT},
+      FPlanClass = #{fplanclass,jdbcType=SMALLINT},
+      FItemDescription = #{fitemdescription,jdbcType=VARCHAR}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>
