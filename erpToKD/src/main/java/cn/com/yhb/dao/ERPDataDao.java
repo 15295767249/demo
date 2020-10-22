@@ -6,16 +6,12 @@ import cn.com.yhb.config.SSHConnection;
 import cn.com.yhb.ds2.mapper.*;
 import cn.com.yhb.ds3.mapper.*;
 import cn.com.yhb.entity.*;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @Component
@@ -174,7 +170,7 @@ public class ERPDataDao {
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 t_ICItemCore t_icItemCore = new t_ICItemCore();
-                t_icItemCore.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_icItemCore.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_icItemCore.setFmodel(StringUtil.getStr(resultSet.getString("spc")));
                 t_icItemCore.setFname(StringUtil.getStr(resultSet.getString("prdt_name")));
                 t_icItemCore.setFhelpcode("");
@@ -202,7 +198,7 @@ public class ERPDataDao {
                 t_icItemCore2Mapper.insert(t_icItemCore);
 
                 t_ICItemBase t_icItemBase = new t_ICItemBase();
-                t_icItemBase.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_icItemBase.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_icItemBase.setFerpclsid(1);
                 t_icItemBase.setFunitid(0);
                 t_icItemBase.setFunitgroupid(0);
@@ -232,7 +228,7 @@ public class ERPDataDao {
                 t_icItemBase2Mapper.insert(t_icItemBase);
 
                 t_ICItemMaterial t_iCItemMaterial = new t_ICItemMaterial();
-                t_iCItemMaterial.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_iCItemMaterial.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_iCItemMaterial.setForderrector(0);
                 t_iCItemMaterial.setFpohghprcmnytype(1);
                 t_iCItemMaterial.setFpohighprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("up_pur"))));
@@ -282,7 +278,7 @@ public class ERPDataDao {
                 t_icItemMaterial2Mapper.insert(t_iCItemMaterial);
 
                 t_ICItemPlan t_icItemPlan = new t_ICItemPlan();
-                t_icItemPlan.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_icItemPlan.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_icItemPlan.setFplantrategy(321);
                 t_icItemPlan.setFordertrategy(331);
                 t_icItemPlan.setFleadtime(0f);
@@ -311,7 +307,7 @@ public class ERPDataDao {
                 t_icItemPlan2Mapper.insert(t_icItemPlan);
 
                 t_ICItemDesign t_icItemDesign = new t_ICItemDesign();
-                t_icItemDesign.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_icItemDesign.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_icItemDesign.setFchartnumber(null);
                 t_icItemDesign.setFiskeyitem(false);
                 t_icItemDesign.setFmaund(0);
@@ -326,7 +322,7 @@ public class ERPDataDao {
                 t_iCItemDesign2Mapper.insert(t_icItemDesign);
 
                 t_ICItemStandard t_icItemStandard = new t_ICItemStandard();
-                t_icItemStandard.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_icItemStandard.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_icItemStandard.setFstandardcost(new BigDecimal(0));
                 t_icItemStandard.setFstandardmanhour(new BigDecimal(0));
                 t_icItemStandard.setFstdpayrate(new BigDecimal(0));
@@ -337,7 +333,7 @@ public class ERPDataDao {
                 t_icItemStandard2Mapper.insert(t_icItemStandard);
 
                 t_ICItemQuality t_icItemQuality = new t_ICItemQuality();
-                t_icItemQuality.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_icItemQuality.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_icItemQuality.setFinspectionlevel(352);
                 t_icItemQuality.setFinspectionproject(0);
                 t_icItemQuality.setFislistcontrol(null);
@@ -353,7 +349,7 @@ public class ERPDataDao {
                 t_icItemQuality2Mapper.insert(t_icItemQuality);
 
                 t_ICItemCustom t_icItemCustom = new t_ICItemCustom();
-                t_icItemCustom.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_icItemCustom.setFitemid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 t_icItemCustom.setFbatchcreate(false);
                 t_icItemCustom2Mapper.insert(t_icItemCustom);
 
@@ -546,7 +542,7 @@ public class ERPDataDao {
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
                 icstockbill.setFbrno(StringUtil.getStr(resultSet.getString("brh_id")));
-                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum("10000" + resultSet.getString("id"))));
                 icstockbill.setFtrantype(Short.parseShort(resultSet.getString("bil_type")));
                 icstockbill.setFdate(DateUtil.StringToDate1(resultSet.getString("bil_type")));
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
@@ -670,7 +666,7 @@ public class ERPDataDao {
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
                 icstockbill.setFbrno("");
-                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum("20000" + resultSet.getString("id"))));
                 icstockbill.setFtrantype((short) 0);
                 icstockbill.setFdate(DateUtil.StringToDate1(resultSet.getString("created")));
                 icstockbill.setFbillno("");
@@ -794,7 +790,7 @@ public class ERPDataDao {
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
                 icstockbill.setFbrno(StringUtil.getStr(resultSet.getString("branch_id")));
-                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum("30000" + resultSet.getString("id"))));
                 icstockbill.setFtrantype((short) 0);
                 icstockbill.setFdate(DateUtil.StringToDate1(resultSet.getString("bil_date")));
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
@@ -918,7 +914,7 @@ public class ERPDataDao {
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
                 icstockbill.setFbrno(StringUtil.getStr(resultSet.getString("branch_id")));
-                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum("40000" + resultSet.getString("id"))));
                 icstockbill.setFtrantype((short) 0);
                 icstockbill.setFdate(DateUtil.StringToDate1(resultSet.getString("bil_date")));
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
@@ -1042,7 +1038,7 @@ public class ERPDataDao {
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
                 icstockbill.setFbrno(StringUtil.getStr(resultSet.getString("branch_id")));
-                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                icstockbill.setFinterid(Integer.parseInt(StringUtil.strToNum("50000" + resultSet.getString("id"))));
                 icstockbill.setFtrantype((short) 0);
                 icstockbill.setFdate(DateUtil.StringToDate1(resultSet.getString("bil_date")));
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
