@@ -10,4 +10,11 @@ public class StringUtil {
         }
         return string;
     }
+
+    public static String getStr(String string) {
+        if (StringUtils.isEmpty(string) || string == "null") {
+            string = "";
+        }
+        return string;
+    }
 }

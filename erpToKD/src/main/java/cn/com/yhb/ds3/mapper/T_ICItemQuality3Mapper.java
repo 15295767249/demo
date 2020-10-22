@@ -1,8 +1,10 @@
 package cn.com.yhb.ds3.mapper;
 
 import cn.com.yhb.entity.t_ICItemQuality;
+import org.springframework.stereotype.Component;
 
-public interface t_ICItemQualityMapper {
+@Component
+public interface T_ICItemQuality3Mapper {
     int deleteByPrimaryKey(Integer fitemid);
 
     int insert(t_ICItemQuality record);

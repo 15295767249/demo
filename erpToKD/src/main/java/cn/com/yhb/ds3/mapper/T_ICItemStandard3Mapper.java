@@ -1,8 +1,10 @@
 package cn.com.yhb.ds3.mapper;
 
 import cn.com.yhb.entity.t_ICItemStandard;
+import org.springframework.stereotype.Component;
 
-public interface t_ICItemStandardMapper {
+@Component
+public interface T_ICItemStandard3Mapper {
     int deleteByPrimaryKey(Integer fitemid);
 
     int insert(t_ICItemStandard record);

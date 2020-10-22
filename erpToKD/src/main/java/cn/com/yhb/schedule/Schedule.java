@@ -24,12 +24,11 @@ public class Schedule {
     /**
      * 定时器：每周一零点同步ERP数据到本地备份SQL server数据库（SUN,MON,TUE,WED,THU,FRI,SAT）
      */
-//    @Scheduled(cron = "0 0 0 ? * MON")
-    @Scheduled(cron = "0 48 8 ? * WED")
+    @Scheduled(cron = "0 0 0 ? * MON")
+//    @Scheduled(cron = "0 48 8 ? * WED")
     public void weekDataTimer() {
         try {
             if (schedule_data_switch) {
-//                pointWeekDataService.weekDataTimer();
                 System.out.println("周开启定时器......................");
                 dataPushService.weekDataTimer("");
             }
@@ -45,8 +44,7 @@ public class Schedule {
     public void monthDataTimer() {
         try {
             if (schedule_data_switch) {
-//                pointMonthDataService.monthDataTimer();
-                dataPushService.monthDataTimer();
+                dataPushService.monthDataTimer("");
             }
         } catch (Exception e) {
             logger.info(e.toString());

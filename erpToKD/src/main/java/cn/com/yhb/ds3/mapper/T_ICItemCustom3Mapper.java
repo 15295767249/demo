@@ -1,8 +1,10 @@
 package cn.com.yhb.ds3.mapper;
 
 import cn.com.yhb.entity.t_ICItemCustom;
+import org.springframework.stereotype.Component;
 
-public interface t_ICItemCustomMapper {
+@Component
+public interface T_ICItemCustom3Mapper {
     int deleteByPrimaryKey(Integer fitemid);
 
     int insert(t_ICItemCustom record);

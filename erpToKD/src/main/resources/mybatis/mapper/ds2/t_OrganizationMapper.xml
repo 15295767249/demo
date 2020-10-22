@@ -110,9 +110,9 @@
     <result column="FQQNum" property="fqqnum" jdbcType="VARCHAR" />
     <result column="FCompanyPhone" property="fcompanyphone" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Organization" extends="BaseResultMap" >
+<!--  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Organization" extends="BaseResultMap" >
     <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
-  </resultMap>
+  </resultMap>-->
   <sql id="Base_Column_List" >
     FItemID, FAddress, FCity, FProvince, FCountry, FPostalCode, FPhone, FFax, FEmail, 
     FHomePage, FCreditLimit, FTaxID, FBank, FAccount, FBankNumber, FBrNo, FBoundAttr, 
@@ -131,17 +131,17 @@
     FWdhSecurity, FAcctID, FLogoID, FIsMbData, FIntent, FMark, FDeptName, FPosition, 
     FQQNum, FCompanyPhone
   </sql>
-  <sql id="Blob_Column_List" >
+<!--  <sql id="Blob_Column_List" >
     FModifyTime
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  </sql>-->
+<!--  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from t_Organization
     where FItemID = #{fitemid,jdbcType=INTEGER}
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_Organization
     where FItemID = #{fitemid,jdbcType=INTEGER}
@@ -182,7 +182,7 @@
       FMatchSupplyID, FWdhSecurity, FAcctID, 
       FLogoID, FIsMbData, FIntent, 
       FMark, FDeptName, FPosition, 
-      FQQNum, FCompanyPhone, FModifyTime
+      FQQNum, FCompanyPhone
       )
     values (#{fitemid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fcity,jdbcType=VARCHAR}, 
       #{fprovince,jdbcType=VARCHAR}, #{fcountry,jdbcType=VARCHAR}, #{fpostalcode,jdbcType=VARCHAR}, 
@@ -219,7 +219,7 @@
       #{fmatchsupplyid,jdbcType=INTEGER}, #{fwdhsecurity,jdbcType=NVARCHAR}, #{facctid,jdbcType=INTEGER}, 
       #{flogoid,jdbcType=NVARCHAR}, #{fismbdata,jdbcType=BIT}, #{fintent,jdbcType=BIT}, 
       #{fmark,jdbcType=BIT}, #{fdeptname,jdbcType=VARCHAR}, #{fposition,jdbcType=VARCHAR}, 
-      #{fqqnum,jdbcType=VARCHAR}, #{fcompanyphone,jdbcType=VARCHAR}, #{fmodifytime,jdbcType=BINARY}
+      #{fqqnum,jdbcType=VARCHAR}, #{fcompanyphone,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Organization" >

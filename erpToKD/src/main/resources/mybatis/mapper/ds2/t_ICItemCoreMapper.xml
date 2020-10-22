@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.com.yhb.ds2.mapper.t_ICItemCoreMapper" >
+<mapper namespace="cn.com.yhb.ds2.mapper.T_ICItemCore2Mapper" >
   <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemCore" >
     <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
     <result column="FModel" property="fmodel" jdbcType="VARCHAR" />
@@ -27,26 +27,26 @@
     <result column="FPlanClass" property="fplanclass" jdbcType="SMALLINT" />
     <result column="FItemDescription" property="fitemdescription" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_ICItemCore" extends="BaseResultMap" >
-    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
-  </resultMap>
+<!--  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_ICItemCore" extends="BaseResultMap" >-->
+<!--    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />-->
+<!--  </resultMap>-->
   <sql id="Base_Column_List" >
     FItemID, FModel, FName, FHelpCode, FDeleted, FShortNumber, FNumber, FParentID, FBrNo, 
     FTopID, FRP, FOmortize, FOmortizeScale, FForSale, FStaCost, FOrderPrice, FOrderMethod, 
     FPriceFixingType, FSalePriceFixingType, FPerWastage, FARAcctID, FPlanPriceMethod, 
     FPlanClass, FItemDescription
   </sql>
-  <sql id="Blob_Column_List" >
+<!--  <sql id="Blob_Column_List" >
     FModifyTime
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select 
+  </sql>-->
+  <!--<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from t_ICItemCore
     where FItemID = #{fitemid,jdbcType=INTEGER}
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_ICItemCore
     where FItemID = #{fitemid,jdbcType=INTEGER}
@@ -59,8 +59,7 @@
       FOmortizeScale, FForSale, FStaCost, 
       FOrderPrice, FOrderMethod, FPriceFixingType, 
       FSalePriceFixingType, FPerWastage, FARAcctID, 
-      FPlanPriceMethod, FPlanClass, FItemDescription, 
-      FModifyTime)
+      FPlanPriceMethod, FPlanClass, FItemDescription)
     values (#{fitemid,jdbcType=INTEGER}, #{fmodel,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, 
       #{fhelpcode,jdbcType=VARCHAR}, #{fdeleted,jdbcType=SMALLINT}, #{fshortnumber,jdbcType=VARCHAR}, 
       #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, 
@@ -68,8 +67,7 @@
       #{fomortizescale,jdbcType=SMALLINT}, #{fforsale,jdbcType=BIT}, #{fstacost,jdbcType=DOUBLE}, 
       #{forderprice,jdbcType=DOUBLE}, #{fordermethod,jdbcType=INTEGER}, #{fpricefixingtype,jdbcType=INTEGER}, 
       #{fsalepricefixingtype,jdbcType=INTEGER}, #{fperwastage,jdbcType=DOUBLE}, #{faracctid,jdbcType=INTEGER}, 
-      #{fplanpricemethod,jdbcType=SMALLINT}, #{fplanclass,jdbcType=SMALLINT}, #{fitemdescription,jdbcType=VARCHAR}, 
-      #{fmodifytime,jdbcType=BINARY})
+      #{fplanpricemethod,jdbcType=SMALLINT}, #{fplanclass,jdbcType=SMALLINT}, #{fitemdescription,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemCore" >
     insert into t_ICItemCore

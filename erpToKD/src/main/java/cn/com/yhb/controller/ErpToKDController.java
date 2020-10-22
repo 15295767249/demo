@@ -18,7 +18,7 @@ public class ErpToKDController {
     }
 
     @GetMapping(value = "/monthDataTimer")
-    public void monthDataTimer() {
-        dataPushService.monthDataTimer();
+    public void monthDataTimer(@RequestParam(value = "startTime") String startTime) {
+        dataPushService.monthDataTimer(startTime);
     }
 }

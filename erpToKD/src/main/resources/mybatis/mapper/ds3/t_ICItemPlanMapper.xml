@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.com.yhb.ds3.mapper.t_ICItemPlanMapper" >
+<mapper namespace="cn.com.yhb.ds3.mapper.T_ICItemPlan3Mapper" >
   <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_ICItemPlan" >
     <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
     <result column="FPlanTrategy" property="fplantrategy" jdbcType="INTEGER" />

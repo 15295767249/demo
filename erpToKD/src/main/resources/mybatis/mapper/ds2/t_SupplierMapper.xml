@@ -96,9 +96,9 @@
     <result column="FFullName" property="ffullname" jdbcType="VARCHAR" />
     <result column="FAcctID" property="facctid" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Supplier" extends="BaseResultMap" >
+  <!--<resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Supplier" extends="BaseResultMap" >
     <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
-  </resultMap>
+  </resultMap>-->
   <sql id="Base_Column_List" >
     FItemID, FAddress, FCity, FProvince, FCountry, FPostalCode, FPhone, FFax, FEmail, 
     FHomePage, FCreditLimit, FTaxID, FBank, FAccount, FBrNo, FBoundAttr, FErpClsID, FShortName, 
@@ -115,17 +115,17 @@
     FHelpCode, FCreditDegree, FRightUserID, FPaymentTime, FSMSPhoneNumber, FFullName, 
     FAcctID
   </sql>
-  <sql id="Blob_Column_List" >
+<!--  <sql id="Blob_Column_List" >
     FModifyTime
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  </sql>-->
+  <!--<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from t_Supplier
     where FItemID = #{fitemid,jdbcType=INTEGER}
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_Supplier
     where FItemID = #{fitemid,jdbcType=INTEGER}
@@ -161,8 +161,7 @@
       FPaperPeriod, FAlarmPeriod, FOtherARAcctID, 
       FOtherAPAcctID, FPreARAcctID, FHelpCode, 
       FCreditDegree, FRightUserID, FPaymentTime, 
-      FSMSPhoneNumber, FFullName, FAcctID, 
-      FModifyTime)
+      FSMSPhoneNumber, FFullName, FAcctID)
     values (#{fitemid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fcity,jdbcType=VARCHAR}, 
       #{fprovince,jdbcType=VARCHAR}, #{fcountry,jdbcType=VARCHAR}, #{fpostalcode,jdbcType=VARCHAR}, 
       #{fphone,jdbcType=VARCHAR}, #{ffax,jdbcType=VARCHAR}, #{femail,jdbcType=VARCHAR}, 
@@ -193,8 +192,7 @@
       #{fpaperperiod,jdbcType=TIMESTAMP}, #{falarmperiod,jdbcType=INTEGER}, #{fotheraracctid,jdbcType=INTEGER}, 
       #{fotherapacctid,jdbcType=INTEGER}, #{fprearacctid,jdbcType=INTEGER}, #{fhelpcode,jdbcType=VARCHAR}, 
       #{fcreditdegree,jdbcType=INTEGER}, #{frightuserid,jdbcType=VARCHAR}, #{fpaymenttime,jdbcType=INTEGER}, 
-      #{fsmsphonenumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR}, #{facctid,jdbcType=INTEGER}, 
-      #{fmodifytime,jdbcType=BINARY})
+      #{fsmsphonenumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR}, #{facctid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Supplier" >
     insert into t_Supplier

@@ -1,8 +1,10 @@
 package cn.com.yhb.ds2.mapper;
 
 import cn.com.yhb.entity.t_ICItemMaterial;
+import org.springframework.stereotype.Component;
 
-public interface t_ICItemMaterialMapper {
+@Component
+public interface T_ICItemMaterial2Mapper {
     int deleteByPrimaryKey(Integer fitemid);
 
     int insert(t_ICItemMaterial record);

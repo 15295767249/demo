@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yhb.ds3.mapper.T_Item3Mapper" >
+  <resultMap id="BaseResultMap" type="cn.com.yhb.entity.t_Item" >
+    <id column="FItemID" property="fitemid" jdbcType="INTEGER" />
+    <result column="FItemClassID" property="fitemclassid" jdbcType="INTEGER" />
+    <result column="FExternID" property="fexternid" jdbcType="INTEGER" />
+    <result column="FNumber" property="fnumber" jdbcType="VARCHAR" />
+    <result column="FParentID" property="fparentid" jdbcType="INTEGER" />
+    <result column="FLevel" property="flevel" jdbcType="SMALLINT" />
+    <result column="FDetail" property="fdetail" jdbcType="BIT" />
+    <result column="FName" property="fname" jdbcType="VARCHAR" />
+    <result column="FUnUsed" property="funused" jdbcType="BIT" />
+    <result column="FBrNo" property="fbrno" jdbcType="VARCHAR" />
+    <result column="FFullNumber" property="ffullnumber" jdbcType="VARCHAR" />
+    <result column="FDiff" property="fdiff" jdbcType="BIT" />
+    <result column="FDeleted" property="fdeleted" jdbcType="SMALLINT" />
+    <result column="FShortNumber" property="fshortnumber" jdbcType="VARCHAR" />
+    <result column="FFullName" property="ffullname" jdbcType="VARCHAR" />
+    <result column="UUID" property="uuid" jdbcType="CHAR" />
+    <result column="FGRCommonID" property="fgrcommonid" jdbcType="INTEGER" />
+    <result column="FSystemType" property="fsystemtype" jdbcType="INTEGER" />
+    <result column="FUseSign" property="fusesign" jdbcType="INTEGER" />
+    <result column="FChkUserID" property="fchkuserid" jdbcType="SMALLINT" />
+    <result column="FGrControl" property="fgrcontrol" jdbcType="INTEGER" />
+    <result column="FRightUserID" property="frightuserid" jdbcType="VARCHAR" />
+    <result column="FOnSale" property="fonsale" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Item" extends="BaseResultMap" >
+    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    FItemID, FItemClassID, FExternID, FNumber, FParentID, FLevel, FDetail, FName, FUnUsed, 
+    FBrNo, FFullNumber, FDiff, FDeleted, FShortNumber, FFullName, UUID, FGRCommonID, 
+    FSystemType, FUseSign, FChkUserID, FGrControl, FRightUserID, FOnSale
+  </sql>
+  <sql id="Blob_Column_List" >
+    FModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_Item
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_Item
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yhb.entity.t_Item" >
+    insert into t_Item (FItemID, FItemClassID, FExternID, 
+      FNumber, FParentID, FLevel, 
+      FDetail, FName, FUnUsed, FBrNo, 
+      FFullNumber, FDiff, FDeleted, 
+      FShortNumber, FFullName, UUID, 
+      FGRCommonID, FSystemType, FUseSign, 
+      FChkUserID, FGrControl, FRightUserID, 
+      FOnSale, FModifyTime)
+    values (#{fitemid,jdbcType=INTEGER}, #{fitemclassid,jdbcType=INTEGER}, #{fexternid,jdbcType=INTEGER}, 
+      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{flevel,jdbcType=SMALLINT}, 
+      #{fdetail,jdbcType=BIT}, #{fname,jdbcType=VARCHAR}, #{funused,jdbcType=BIT}, #{fbrno,jdbcType=VARCHAR}, 
+      #{ffullnumber,jdbcType=VARCHAR}, #{fdiff,jdbcType=BIT}, #{fdeleted,jdbcType=SMALLINT}, 
+      #{fshortnumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR}, #{uuid,jdbcType=CHAR}, 
+      #{fgrcommonid,jdbcType=INTEGER}, #{fsystemtype,jdbcType=INTEGER}, #{fusesign,jdbcType=INTEGER}, 
+      #{fchkuserid,jdbcType=SMALLINT}, #{fgrcontrol,jdbcType=INTEGER}, #{frightuserid,jdbcType=VARCHAR}, 
+      #{fonsale,jdbcType=INTEGER}, #{fmodifytime,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Item" >
+    insert into t_Item
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        FItemID,
+      </if>
+      <if test="fitemclassid != null" >
+        FItemClassID,
+      </if>
+      <if test="fexternid != null" >
+        FExternID,
+      </if>
+      <if test="fnumber != null" >
+        FNumber,
+      </if>
+      <if test="fparentid != null" >
+        FParentID,
+      </if>
+      <if test="flevel != null" >
+        FLevel,
+      </if>
+      <if test="fdetail != null" >
+        FDetail,
+      </if>
+      <if test="fname != null" >
+        FName,
+      </if>
+      <if test="funused != null" >
+        FUnUsed,
+      </if>
+      <if test="fbrno != null" >
+        FBrNo,
+      </if>
+      <if test="ffullnumber != null" >
+        FFullNumber,
+      </if>
+      <if test="fdiff != null" >
+        FDiff,
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted,
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber,
+      </if>
+      <if test="ffullname != null" >
+        FFullName,
+      </if>
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="fgrcommonid != null" >
+        FGRCommonID,
+      </if>
+      <if test="fsystemtype != null" >
+        FSystemType,
+      </if>
+      <if test="fusesign != null" >
+        FUseSign,
+      </if>
+      <if test="fchkuserid != null" >
+        FChkUserID,
+      </if>
+      <if test="fgrcontrol != null" >
+        FGrControl,
+      </if>
+      <if test="frightuserid != null" >
+        FRightUserID,
+      </if>
+      <if test="fonsale != null" >
+        FOnSale,
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fitemid != null" >
+        #{fitemid,jdbcType=INTEGER},
+      </if>
+      <if test="fitemclassid != null" >
+        #{fitemclassid,jdbcType=INTEGER},
+      </if>
+      <if test="fexternid != null" >
+        #{fexternid,jdbcType=INTEGER},
+      </if>
+      <if test="fnumber != null" >
+        #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="flevel != null" >
+        #{flevel,jdbcType=SMALLINT},
+      </if>
+      <if test="fdetail != null" >
+        #{fdetail,jdbcType=BIT},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="funused != null" >
+        #{funused,jdbcType=BIT},
+      </if>
+      <if test="fbrno != null" >
+        #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="ffullnumber != null" >
+        #{ffullnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fdiff != null" >
+        #{fdiff,jdbcType=BIT},
+      </if>
+      <if test="fdeleted != null" >
+        #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ffullname != null" >
+        #{ffullname,jdbcType=VARCHAR},
+      </if>
+      <if test="uuid != null" >
+        #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="fgrcommonid != null" >
+        #{fgrcommonid,jdbcType=INTEGER},
+      </if>
+      <if test="fsystemtype != null" >
+        #{fsystemtype,jdbcType=INTEGER},
+      </if>
+      <if test="fusesign != null" >
+        #{fusesign,jdbcType=INTEGER},
+      </if>
+      <if test="fchkuserid != null" >
+        #{fchkuserid,jdbcType=SMALLINT},
+      </if>
+      <if test="fgrcontrol != null" >
+        #{fgrcontrol,jdbcType=INTEGER},
+      </if>
+      <if test="frightuserid != null" >
+        #{frightuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fonsale != null" >
+        #{fonsale,jdbcType=INTEGER},
+      </if>
+      <if test="fmodifytime != null" >
+        #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yhb.entity.t_Item" >
+    update t_Item
+    <set >
+      <if test="fitemclassid != null" >
+        FItemClassID = #{fitemclassid,jdbcType=INTEGER},
+      </if>
+      <if test="fexternid != null" >
+        FExternID = #{fexternid,jdbcType=INTEGER},
+      </if>
+      <if test="fnumber != null" >
+        FNumber = #{fnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fparentid != null" >
+        FParentID = #{fparentid,jdbcType=INTEGER},
+      </if>
+      <if test="flevel != null" >
+        FLevel = #{flevel,jdbcType=SMALLINT},
+      </if>
+      <if test="fdetail != null" >
+        FDetail = #{fdetail,jdbcType=BIT},
+      </if>
+      <if test="fname != null" >
+        FName = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="funused != null" >
+        FUnUsed = #{funused,jdbcType=BIT},
+      </if>
+      <if test="fbrno != null" >
+        FBrNo = #{fbrno,jdbcType=VARCHAR},
+      </if>
+      <if test="ffullnumber != null" >
+        FFullNumber = #{ffullnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fdiff != null" >
+        FDiff = #{fdiff,jdbcType=BIT},
+      </if>
+      <if test="fdeleted != null" >
+        FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      </if>
+      <if test="fshortnumber != null" >
+        FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ffullname != null" >
+        FFullName = #{ffullname,jdbcType=VARCHAR},
+      </if>
+      <if test="uuid != null" >
+        UUID = #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="fgrcommonid != null" >
+        FGRCommonID = #{fgrcommonid,jdbcType=INTEGER},
+      </if>
+      <if test="fsystemtype != null" >
+        FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      </if>
+      <if test="fusesign != null" >
+        FUseSign = #{fusesign,jdbcType=INTEGER},
+      </if>
+      <if test="fchkuserid != null" >
+        FChkUserID = #{fchkuserid,jdbcType=SMALLINT},
+      </if>
+      <if test="fgrcontrol != null" >
+        FGrControl = #{fgrcontrol,jdbcType=INTEGER},
+      </if>
+      <if test="frightuserid != null" >
+        FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fonsale != null" >
+        FOnSale = #{fonsale,jdbcType=INTEGER},
+      </if>
+      <if test="fmodifytime != null" >
+        FModifyTime = #{fmodifytime,jdbcType=BINARY},
+      </if>
+    </set>
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.com.yhb.entity.t_Item" >
+    update t_Item
+    set FItemClassID = #{fitemclassid,jdbcType=INTEGER},
+      FExternID = #{fexternid,jdbcType=INTEGER},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FLevel = #{flevel,jdbcType=SMALLINT},
+      FDetail = #{fdetail,jdbcType=BIT},
+      FName = #{fname,jdbcType=VARCHAR},
+      FUnUsed = #{funused,jdbcType=BIT},
+      FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FFullNumber = #{ffullnumber,jdbcType=VARCHAR},
+      FDiff = #{fdiff,jdbcType=BIT},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FFullName = #{ffullname,jdbcType=VARCHAR},
+      UUID = #{uuid,jdbcType=CHAR},
+      FGRCommonID = #{fgrcommonid,jdbcType=INTEGER},
+      FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      FUseSign = #{fusesign,jdbcType=INTEGER},
+      FChkUserID = #{fchkuserid,jdbcType=SMALLINT},
+      FGrControl = #{fgrcontrol,jdbcType=INTEGER},
+      FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      FOnSale = #{fonsale,jdbcType=INTEGER},
+      FModifyTime = #{fmodifytime,jdbcType=BINARY}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.t_Item" >
+    update t_Item
+    set FItemClassID = #{fitemclassid,jdbcType=INTEGER},
+      FExternID = #{fexternid,jdbcType=INTEGER},
+      FNumber = #{fnumber,jdbcType=VARCHAR},
+      FParentID = #{fparentid,jdbcType=INTEGER},
+      FLevel = #{flevel,jdbcType=SMALLINT},
+      FDetail = #{fdetail,jdbcType=BIT},
+      FName = #{fname,jdbcType=VARCHAR},
+      FUnUsed = #{funused,jdbcType=BIT},
+      FBrNo = #{fbrno,jdbcType=VARCHAR},
+      FFullNumber = #{ffullnumber,jdbcType=VARCHAR},
+      FDiff = #{fdiff,jdbcType=BIT},
+      FDeleted = #{fdeleted,jdbcType=SMALLINT},
+      FShortNumber = #{fshortnumber,jdbcType=VARCHAR},
+      FFullName = #{ffullname,jdbcType=VARCHAR},
+      UUID = #{uuid,jdbcType=CHAR},
+      FGRCommonID = #{fgrcommonid,jdbcType=INTEGER},
+      FSystemType = #{fsystemtype,jdbcType=INTEGER},
+      FUseSign = #{fusesign,jdbcType=INTEGER},
+      FChkUserID = #{fchkuserid,jdbcType=SMALLINT},
+      FGrControl = #{fgrcontrol,jdbcType=INTEGER},
+      FRightUserID = #{frightuserid,jdbcType=VARCHAR},
+      FOnSale = #{fonsale,jdbcType=INTEGER}
+    where FItemID = #{fitemid,jdbcType=INTEGER}
+  </update>
+</mapper>

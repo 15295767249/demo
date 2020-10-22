@@ -2,6 +2,7 @@ package cn.com.yhb.Utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -61,7 +62,9 @@ public class DateUtil {
     public static Date StringToDate1(String timeString) {
         Date date = null;
         try {
-            date = df1.parse(timeString);
+            if (!StringUtils.isEmpty(timeString)) {
+                date = df1.parse(timeString);
+            }
         } catch (Exception e) {
             logger.error(e.toString());
         }
@@ -376,6 +379,21 @@ public class DateUtil {
         result.put("year", year);
         return result;
     }
+
+    public static String getUpMonthFirstTime() {
+        Calendar calendar=Calendar.getInstance();
+        calendar.add(Calendar.MONTH, -1);//上个月
+        //获取某月第一天
+        int firstDay = calendar.getMinimum(Calendar.DATE);
+        calendar.set(Calendar.DAY_OF_MONTH, firstDay);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        String first_day = df1.format(calendar.getTime());
+        return first_day;
+    }
+
+
 
 //    public static void main(String[] args) {
 //        int year = 2019;
