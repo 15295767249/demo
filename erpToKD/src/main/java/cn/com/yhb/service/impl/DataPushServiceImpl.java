@@ -5,7 +5,6 @@ import cn.com.yhb.config.SSHConnection;
 import cn.com.yhb.dao.ERPDataDao;
 import cn.com.yhb.ds2.mapper.*;
 import cn.com.yhb.ds3.mapper.*;
-import cn.com.yhb.entity.t_ICItem;
 import cn.com.yhb.service.DataPushService;
 import com.jcraft.jsch.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class DataPushServiceImpl implements DataPushService {
