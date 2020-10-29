@@ -28,8 +28,6 @@ public class ERPDataDao {
     private ResultSet resultSet;
 
     @Autowired
-    cn_account2Mapper cn_account2Mapper;
-    @Autowired
     icstockbill2Mapper icstockbill2Mapper;
     @Autowired
     t_ICItem2Mapper t_ICItem2Mapper;
@@ -44,8 +42,6 @@ public class ERPDataDao {
     @Autowired
     t_Supplier2Mapper t_Supplier2Mapper;
 
-    @Autowired
-    cn_account3Mapper cn_account3Mapper;
     @Autowired
     icstockbill3Mapper icstockbill3Mapper;
     @Autowired
@@ -161,12 +157,15 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_sys_prdts(String startTime) {
+    public boolean getEcs_erp_sys_prdts(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
-            sql = "select * from ecs_erp_sys_prdt t where t.created >= '" + startTime + "'";
+            sql = "select * from ecs_erp_sys_prdt t where t.created >= '" + startTime + "' ";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 t_ICItemCore t_icItemCore = new t_ICItemCore();
@@ -367,16 +366,47 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_sys_custs(String startTime) {
+    public boolean getEcs_erp_sys_custs(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_sys_cust t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
+                String id = "10000" + StringUtil.strToNum(resultSet.getString("id"));
+                //先添加物料数据主表
+                t_Item t_item = new t_Item();
+                t_item.setFitemid(Integer.parseInt(id));
+                t_item.setFitemclassid(8);
+                t_item.setFexternid(-1);
+                t_item.setFnumber(StringUtil.strToNum(id));
+                t_item.setFparentid(0);
+                t_item.setFlevel(Short.parseShort("1"));
+                t_item.setFdetail(true);
+                t_item.setFname(StringUtil.getStr(resultSet.getString("cust_name")));
+                t_item.setFunused(false);
+                t_item.setFbrno("0");
+                t_item.setFfullnumber(StringUtil.getStr(id));
+                t_item.setFdiff(false);
+                t_item.setFdeleted((short) 0);
+                t_item.setFshortnumber(StringUtil.getStr(id));
+                t_item.setFfullname(StringUtil.getStr(resultSet.getString("cust_name")));
+                t_item.setUuid(UUID.randomUUID().toString());
+                t_item.setFgrcommonid(-1);
+                t_item.setFsystemtype(1);
+                t_item.setFusesign(0);
+                t_item.setFchkuserid((short) 0);
+                t_item.setFgrcontrol(-1);
+                t_item.setFrightuserid(null);
+                t_item.setFonsale(0);
+                t_item2Mapper.insert(t_item);
+
                 t_Supplier t_supplier = new t_Supplier();
-                t_supplier.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_supplier.setFitemid(Integer.parseInt(id));
                 t_supplier.setFaddress(StringUtil.getStr(resultSet.getString("addrs")));
                 t_supplier.setFcity("");
                 t_supplier.setFprovince(StringUtil.getStr(resultSet.getString("state")));
@@ -398,8 +428,8 @@ public class ERPDataDao {
                 t_supplier.setFpogroupid(null);
                 t_supplier.setFstatus(1072);
                 t_supplier.setFlanguageid(null);
-                t_supplier.setFregionid(null);
-                t_supplier.setFtrade(null);
+                t_supplier.setFregionid(0);
+                t_supplier.setFtrade(0);
                 t_supplier.setFminpovalue(0.0);
                 t_supplier.setFmaxdebitdate(0.0);
                 t_supplier.setFlegalperson("");
@@ -419,11 +449,11 @@ public class ERPDataDao {
                 t_supplier.setFoperid(null);
                 t_supplier.setFciqnumber("");
                 t_supplier.setFdeleted(Short.parseShort(StringUtil.strToNum(resultSet.getString("is_stop"))));
-                t_supplier.setFsalemode((short)0);
+                t_supplier.setFsalemode((short)1057);
                 t_supplier.setFname(StringUtil.getStr(resultSet.getString("cust_name")));
-                t_supplier.setFnumber(StringUtil.getStr(resultSet.getString("id")));
+                t_supplier.setFnumber(StringUtil.getStr(id));
                 t_supplier.setFparentid(0);
-                t_supplier.setFshortnumber("");
+                t_supplier.setFshortnumber(StringUtil.getStr(id));
                 t_supplier.setFaraccountid(0);
                 t_supplier.setFapaccountid(0);
                 t_supplier.setFpreacctid(0);
@@ -431,7 +461,7 @@ public class ERPDataDao {
                 t_supplier.setFlastrpamount(new BigDecimal(0));
                 t_supplier.setFfavorpolicy("");
                 t_supplier.setFdepartment(Integer.parseInt(StringUtil.strToNum(resultSet.getString("brh_id"))));
-                t_supplier.setFemployee(Integer.parseInt(StringUtil.strToNum(resultSet.getString("salm_id"))));
+                t_supplier.setFemployee(0);
                 t_supplier.setFcorperate(StringUtil.getStr(resultSet.getString("boss_name")));
                 t_supplier.setFbegintradedate(null);
                 t_supplier.setFendtradedate(null);
@@ -443,8 +473,8 @@ public class ERPDataDao {
                 t_supplier.setFminreserverate(0.0);
                 t_supplier.setFmaxforepayamount(0.0);
                 t_supplier.setFmaxforepayrate(0.0);
-                t_supplier.setFdebtlevel(1);
-                t_supplier.setFcreditdays(1);
+                t_supplier.setFdebtlevel(0);
+                t_supplier.setFcreditdays(0);
                 t_supplier.setFvalueaddrate(new BigDecimal(StringUtil.strToNum(resultSet.getString("tax_rto"))));
                 t_supplier.setFpaytaxacctid(0);
                 t_supplier.setFdiscount(new BigDecimal(0));
@@ -454,7 +484,7 @@ public class ERPDataDao {
                 t_supplier.setFstockidassignee(0);
                 t_supplier.setFbr(0);
                 t_supplier.setFregmark("");
-                t_supplier.setFlicandpermit(false);
+                t_supplier.setFlicandpermit(true);
                 t_supplier.setFlicence("");
                 t_supplier.setFpaperperiod(null);
                 t_supplier.setFalarmperiod(null);
@@ -467,8 +497,8 @@ public class ERPDataDao {
                 t_supplier.setFrightuserid("");
                 t_supplier.setFpaymenttime(0);
                 t_supplier.setFsmsphonenumber("");
-                t_supplier.setFfullname("");
-                t_supplier.setFacctid(null);
+                t_supplier.setFfullname(StringUtil.getStr(resultSet.getString("cust_name")));
+                t_supplier.setFacctid(0);
                 t_Supplier2Mapper.insert(t_supplier);
             }
         } catch (Exception e) {
@@ -484,12 +514,15 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_sys_whs(String startTime) {
+    public boolean getEcs_erp_sys_whs(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_sys_wh t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 t_Stock t_stock = new t_Stock();
@@ -532,12 +565,15 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_sal_outs(String startTime) {
+    public boolean getEcs_erp_sal_outs(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_sal_out t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
@@ -656,12 +692,15 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_afs_results(String startTime) {
+    public boolean getEcs_erp_afs_results(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_afs_result t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
@@ -780,12 +819,15 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_stk_moves(String startTime) {
+    public boolean getEcs_erp_stk_moves(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_stk_move t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
@@ -904,12 +946,15 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_pur_ins(String startTime) {
+    public boolean getEcs_erp_pur_ins(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_pur_in t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
@@ -1028,12 +1073,15 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_pur_backs(String startTime) {
+    public boolean getEcs_erp_pur_backs(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_pur_back t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
                 icstockbill icstockbill = new icstockbill();
@@ -1152,14 +1200,45 @@ public class ERPDataDao {
      * @param startTime
      * @return
      */
-    public boolean getEcs_erp_sys_sites(String startTime) {
+    public boolean getEcs_erp_sys_sites(String startTime, String endTime) {
         sshConnection = new SSHConnection();
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
             sql = "select * from ecs_erp_sys_site t where t.created >= '" + startTime + "'";
+            if (!StringUtils.isEmpty(endTime)) {
+                sql += "and t.created <= '" + endTime + "' ";
+            }
             resultSet = sshConnection.runSql(sql, st);
             while (resultSet.next()) {
+                String id = "20000" + StringUtil.strToNum(resultSet.getString("id"));
+                //先添加物料数据主表
+                t_Item t_item = new t_Item();
+                t_item.setFitemid(Integer.parseInt(id));
+                t_item.setFitemclassid(1);
+                t_item.setFexternid(-1);
+                t_item.setFnumber(StringUtil.strToNum(id));
+                t_item.setFparentid(0);
+                t_item.setFlevel(Short.parseShort("1"));
+                t_item.setFdetail(true);
+                t_item.setFname(StringUtil.getStr(resultSet.getString("site_name")));
+                t_item.setFunused(false);
+                t_item.setFbrno("0");
+                t_item.setFfullnumber(StringUtil.getStr(id));
+                t_item.setFdiff(false);
+                t_item.setFdeleted((short) 0);
+                t_item.setFshortnumber(StringUtil.getStr(id));
+                t_item.setFfullname(StringUtil.getStr(resultSet.getString("site_name")));
+                t_item.setUuid(UUID.randomUUID().toString());
+                t_item.setFgrcommonid(-1);
+                t_item.setFsystemtype(1);
+                t_item.setFusesign(0);
+                t_item.setFchkuserid((short) 0);
+                t_item.setFgrcontrol(-1);
+                t_item.setFrightuserid(null);
+                t_item.setFonsale(0);
+                t_item2Mapper.insert(t_item);
+
                 t_Organization t_organization = new t_Organization();
                 t_organization.setFaccount(StringUtil.getStr(resultSet.getString("bank_id")));
                 t_organization.setFaddracct("");
@@ -1197,7 +1276,7 @@ public class ERPDataDao {
                 t_organization.setFfaxacct("");
                 t_organization.setFhomepage("");
                 t_organization.setFiscreditmgr(false);
-                t_organization.setFitemid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("id"))));
+                t_organization.setFitemid(Integer.parseInt(id));
                 t_organization.setFlanguageid(null);
                 t_organization.setFlastreceivedate(null);
                 t_organization.setFlastrpamount(new BigDecimal(0));
@@ -1210,7 +1289,7 @@ public class ERPDataDao {
                 t_organization.setFminpovalue(0.0);
                 t_organization.setFminreserverate(0.0);
                 t_organization.setFmodifytime(null);
-                t_organization.setFname("");
+                t_organization.setFname(StringUtil.getStr(resultSet.getString("site_name")));
                 t_organization.setFnumber(StringUtil.getStr(resultSet.getString("merchand_id")));
                 t_organization.setFoperid(null);
                 t_organization.setFparentid(0);
@@ -1227,8 +1306,8 @@ public class ERPDataDao {
                 t_organization.setFsalemode(0);
                 t_organization.setFsetdlineid(null);
                 t_organization.setFsetid(null);
-                t_organization.setFshortname("");
-                t_organization.setFshortnumber("");
+                t_organization.setFshortname(StringUtil.getStr(resultSet.getString("site_name")));
+                t_organization.setFshortnumber(StringUtil.getStr(resultSet.getString("merchand_id")));
                 t_organization.setFstatus(null);
                 t_organization.setFtax(0f);
                 t_organization.setFtaxid("");

@@ -23,7 +23,6 @@ import javax.sql.DataSource;
 public class MybatisPlusConfig4ds1 {
 
     //主数据源 ds1数据源
-    @Primary
     @Bean("ds1SqlSessionFactory")
     public SqlSessionFactory ds1SqlSessionFactory(@Qualifier("dataSource1") DataSource dataSource) throws Exception {
         MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
@@ -33,13 +32,11 @@ public class MybatisPlusConfig4ds1 {
         return sqlSessionFactory.getObject();
     }
 
-    @Primary
     @Bean(name = "ds1TransactionManager")
     public DataSourceTransactionManager ds1TransactionManager(@Qualifier("dataSource1") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Primary
     @Bean(name = "ds1SqlSessionTemplate")
     public SqlSessionTemplate ds1SqlSessionTemplate(@Qualifier("ds1SqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);

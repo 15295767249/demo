@@ -22,21 +22,21 @@ public class ThymeleafConfig {
     @Autowired
     private SpringTemplateEngine templateEngine;
 
-    @Value("${file.web_resources}")
-    private String webResources;
+//    @Value("${file.web_resources}")
+//    private String webResources;
 
 
     @PostConstruct
     public void webResourcesResolver() {
-        FileTemplateResolver resolver = new FileTemplateResolver();
-        resolver.setPrefix(webResources);
-        resolver.setSuffix(".html");
-        resolver.setTemplateMode(TemplateMode.HTML);
-        resolver.setCharacterEncoding("UTF-8");
-        resolver.setOrder(templateEngine.getTemplateResolvers().size());
-        resolver.setCacheable(false);
-
-        templateEngine.addTemplateResolver(resolver);
+//        FileTemplateResolver resolver = new FileTemplateResolver();
+//        resolver.setPrefix(webResources);
+//        resolver.setSuffix(".html");
+//        resolver.setTemplateMode(TemplateMode.HTML);
+//        resolver.setCharacterEncoding("UTF-8");
+//        resolver.setOrder(templateEngine.getTemplateResolvers().size());
+//        resolver.setCacheable(false);
+//
+//        templateEngine.addTemplateResolver(resolver);
 
     }
 }

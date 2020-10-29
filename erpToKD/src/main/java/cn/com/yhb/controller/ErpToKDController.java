@@ -13,12 +13,12 @@ public class ErpToKDController {
     DataPushService dataPushService;
 
     @GetMapping(value = "/weekDataTimer")
-    public void weekDataTimer(@RequestParam(value = "startTime") String startTime) {
-        dataPushService.weekDataTimer(startTime);
+    public void weekDataTimer(@RequestParam(value = "startTime") String startTime, @RequestParam(value = "endTime") String endTime) {
+        dataPushService.weekDataTimer(startTime, endTime);
     }
 
     @GetMapping(value = "/monthDataTimer")
-    public void monthDataTimer(@RequestParam(value = "startTime") String startTime) {
-        dataPushService.monthDataTimer(startTime);
+    public void monthDataTimer(@RequestParam(value = "startTime") String startTime, @RequestParam(value = "endTime") String endTime) {
+        dataPushService.monthDataTimer(startTime, endTime);
     }
 }

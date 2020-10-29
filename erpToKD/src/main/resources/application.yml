@@ -1,10 +1,5 @@
-file:
-  #web_resources: classpath:/resources/templates/
-  web_resources: classpath:/resources/static/
-  ##download_path: ${DEMO_HOME}/download/
-
 server:
-  port: 88
+  port: 89
   servlet:
     context-path: /
 
@@ -15,47 +10,78 @@ spring:
       max-file-size: 1024MB
       enabled: true
 
-  config:
-    location: classpath:/
-    additional-location: file:${DEMO_HOME}/config/
-    name: application
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+
+#  datasource:
+##    type: com.alibaba.druid.pool.DruidDataSource
+##    time-between-eviction-runs-millis: 30000
+##    min-evictable-idle-time-millis: 300000
+##    test-while-idle: true
+##    test-on-borrow: false
+##    test-on-return: false
+##    filters: stat
+##    break-after-acquire-failure: true
+##    connection-error-retry-attempts: 3
+#    validation-query: SELECT 1
+#    erp:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3307/erp_yto?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#      username: root
+#      password: root
+#    test:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://localhost/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+#      username: root
+#      password: root
+#    sqlserver-back:
+#      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS001;integratedSecurity=true;
+#      username: DESKTOP-SQ3J3GR\\86152
+#    sqlserver-kd:
+#      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS001;integratedSecurity=true;
+#      username: DESKTOP-SQ3J3GR\\86152
 
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    time-between-eviction-runs-millis: 30000
-    min-evictable-idle-time-millis: 300000
-    test-while-idle: true
-    test-on-borrow: false
-    test-on-return: false
-    filters: stat
-    break-after-acquire-failure: true
-    connection-error-retry-attempts: 3
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    time-between-eviction-runs-millis: 30000
+#    min-evictable-idle-time-millis: 300000
+#    test-while-idle: true
+#    test-on-borrow: false
+#    test-on-return: false
+#    filters: stat
+#    break-after-acquire-failure: true
+#    connection-error-retry-attempts: 3
     validation-query: SELECT 1
-  #    validation-query: SELECT 1 from dual
     erp:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3307/erp_yto?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       username: root
       password: root
     test:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
-      username: root
-      password: root
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS001;integratedSecurity=true;
+      username: sa
+      password: kd@888888
     sqlserver-back:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS20200927145440;integratedSecurity=true;
-      username: DESKTOP-SQ3J3GR\\86152
-      #password:
+      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS001;integratedSecurity=true;
+      username: sa
+      password: kd@888888
     sqlserver-kd:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AISBACK;integratedSecurity=true;
-      username: DESKTOP-SQ3J3GR\\86152
-      #password:
+      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS001;integratedSecurity=true;
+      username: sa
+      password: kd@888888
+
+    config:
+      location: classpath:/
+      additional-location: file:${DEMO_HOME}/config/
+      name: application
 
   resources:
-    #static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/ecms/
-    static-locations: classpath:/META-INF/resources/, classpath:/static/ecms/
+    static-locations: classpath:/META-INF/resources/, classpath:/
 
   mvc:
     static-path-pattern: /**
@@ -64,8 +90,7 @@ spring:
   thymeleaf:
     mode: HTML5
     cache: true
-    #prefix: classpath:/templates/
-    prefix: classpath:/static/ecms/
+    prefix: classpath:/
     encoding: UTF-8
     suffix: .html
     check-template-location: true
@@ -88,7 +113,6 @@ mybatis:
   mvc:
     static-path-pattern: /**
 
-#同步定时器开关
 schedule:
   data:
     switch: true

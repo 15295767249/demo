@@ -4,7 +4,7 @@ file:
   ##download_path: ${DEMO_HOME}/download/
 
 server:
-  port: 88
+  port: 89
   servlet:
     context-path: /
 
@@ -31,17 +31,17 @@ spring:
     break-after-acquire-failure: true
     connection-error-retry-attempts: 3
     validation-query: SELECT 1
-  #    validation-query: SELECT 1 from dual
+    #    validation-query: SELECT 1 from dual
     erp:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3307/erp_yto?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       username: root
       password: root
     test:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
-      username: root
-      password: root
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20200927145440;integratedSecurity=true;
+      username: sa
+      password: kd@888888
     sqlserver-back:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
       url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20200927145440;integratedSecurity=true;

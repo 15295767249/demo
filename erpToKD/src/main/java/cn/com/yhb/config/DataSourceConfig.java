@@ -16,7 +16,6 @@ import javax.sql.DataSource;
 public class DataSourceConfig {
 
     //主数据源配置 test
-    @Primary
     @Bean(name = "dataSourceProperties1")
     @ConfigurationProperties(prefix = "spring.datasource.test")
     public DataSourceProperties dataSourceProperties1() {
@@ -24,13 +23,13 @@ public class DataSourceConfig {
     }
 
     //主数据与 test数据源
-    @Primary
     @Bean(name = "dataSource1")
     public DataSource dataSource1(@Qualifier("dataSourceProperties1") DataSourceProperties dataSourceProperties) {
         return dataSourceProperties.initializeDataSourceBuilder().build();
     }
 
     //第二个数据源配置 test1
+    @Primary
     @Bean(name = "dataSourceProperties2")
     @ConfigurationProperties(prefix = "spring.datasource.sqlserver-back")
     public DataSourceProperties dataSourceProperties2() {
@@ -38,6 +37,7 @@ public class DataSourceConfig {
     }
 
     //第二个数据源 test1
+    @Primary
     @Bean(name = "dataSource2")
     public DataSource dataSource2(@Qualifier("dataSourceProperties2") DataSourceProperties dataSourceProperties) {
         return dataSourceProperties.initializeDataSourceBuilder().build();

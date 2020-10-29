@@ -30,7 +30,7 @@ public class Schedule {
         try {
             if (schedule_data_switch) {
                 System.out.println("周开启定时器......................");
-                dataPushService.weekDataTimer("");
+                dataPushService.weekDataTimer("", "");
             }
         } catch (Exception e) {
             logger.info(e.toString());
@@ -44,7 +44,7 @@ public class Schedule {
     public void monthDataTimer() {
         try {
             if (schedule_data_switch) {
-                dataPushService.monthDataTimer("");
+                dataPushService.monthDataTimer("", "");
             }
         } catch (Exception e) {
             logger.info(e.toString());

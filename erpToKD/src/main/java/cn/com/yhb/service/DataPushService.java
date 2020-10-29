@@ -8,10 +8,10 @@ public interface DataPushService {
     /**
      * 每周同步一次
      */
-    void weekDataTimer(String startTime);
+    void weekDataTimer(String startTime, String endTime);
 
     /**
      * 每月同步一次
      */
-    void monthDataTimer(String startTime);
+    void monthDataTimer(String startTime, String endTime);
 }

@@ -203,6 +203,38 @@ public class DateUtil {
         return date;
     }
 
+    public static Date getNowMonthFirstDate() {
+        Date date = null;
+        try {
+            Calendar c = Calendar.getInstance();
+            //获取某月第一天
+            int firstDay = c.getMinimum(Calendar.DATE);
+            c.set(Calendar.DAY_OF_MONTH, firstDay);
+            c.set(Calendar.HOUR_OF_DAY, 0);
+            c.set(Calendar.MINUTE, 0);
+            c.set(Calendar.SECOND, 0);
+            date = c.getTime();
+        } catch (Exception e) {
+            logger.error(e.toString());
+        }
+        return date;
+    }
+
+
+    public static void main(String[] args) {
+        String startTime = "";
+        //上周开始时间（上周一）
+        Date weekStartTime = DateUtil.lastMonday();
+        //获取本月1日时间
+        Date nowMonthFirstDay = DateUtil.getNowMonthFirstDate();
+        if (StringToDate1("2020-09-28 00:00:00").getTime() < nowMonthFirstDay.getTime()) {
+            startTime = DateUtil.utilString(nowMonthFirstDay);
+        } else {
+            startTime = DateUtil.utilString(weekStartTime);
+        }
+        System.out.println(startTime);
+    }
+
     public static Date getMonthLastDate(int year, int month) {
         Date date = null;
         try {
@@ -265,6 +297,20 @@ public class DateUtil {
         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
         int offset = 1 - dayOfWeek;
         calendar.add(Calendar.DATE, offset - 7);
+        return getFirstDayOfWeek(calendar.getTime(), 2);
+    }
+
+    /**
+     * 获取本周一时间
+     */
+    public static Date getNowMonday() {
+        Calendar calendar = Calendar.getInstance();
+        while (calendar.get(Calendar.DAY_OF_WEEK) != Calendar.MONDAY) {
+            calendar.add(Calendar.DAY_OF_WEEK, -1);
+        }
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
+        int offset = 1 - dayOfWeek;
+        calendar.add(Calendar.DATE, offset - 0);
         return getFirstDayOfWeek(calendar.getTime(), 2);
     }
 
@@ -402,13 +448,13 @@ public class DateUtil {
 //        System.out.println(dateToDateTimeString(getMonthLastDate(year, month)));
 //    }
 
-    public static void main(String[] args) {
-        String start = "2020-01-13 00:00:00";
-//        String end = "2020-07-19 01:00:00";
-//
-//        System.out.println(timeIntervalDay(start, end));
-//        System.out.println((int)timeIntervalDay(start, end));
-        System.out.println(getDateMonthAndYear(start));
-    }
+//    public static void main(String[] args) {
+//        String start = "2020-01-13 00:00:00";
+////        String end = "2020-07-19 01:00:00";
+////
+////        System.out.println(timeIntervalDay(start, end));
+////        System.out.println((int)timeIntervalDay(start, end));
+//        System.out.println(getDateMonthAndYear(start));
+//    }
 
 }

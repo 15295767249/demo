@@ -18,13 +18,13 @@ import javax.sql.DataSource;
 public class JdbcTemplateDataSourceConfig {
 
     //JdbcTemplate主数据源ds1数据源
-    @Primary
     @Bean(name = "jdbcTemplate1")
     public JdbcTemplate jdbcTemplate1(@Qualifier("dataSource1") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
     //JdbcTemplate第二个ds2数据源
+    @Primary
     @Bean(name = "jdbcTemplate2")
     public JdbcTemplate jdbcTemplate2(@Qualifier("dataSource2") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
