@@ -59,7 +59,7 @@ public class SSHTest {
         //第三步：通过DriverManager的getconnection方法获取数据连接
         Connection connection = DriverManager.getConnection(url,user,password);
         Statement st = connection.createStatement();
-        ResultSet resultSet = st.executeQuery("select * from ecs_core_cpws_ctg where 1=1" );
+        ResultSet resultSet = st.executeQuery("select * from ecs_erp_sys_prdt where 1=1" );
         ResultSetMetaData metaData = resultSet.getMetaData();
         for (int i = 0; i < metaData.getColumnCount(); i++) {
             // resultSet数据下标从1开始
