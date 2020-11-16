@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="dataSourceDemo" options="-parameters -verbose -bootclasspath &quot;H:/Program Files/Java/jdk1.8.0_102/jre/lib/rt.jar;H:/Program Files/Java/jdk1.8.0_102/jre/jce.jar&quot;" />
+      <module name="dataSourceDemo" options="-parameters -verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_152/jre/lib/rt.jar;C:/Program Files/Java/jdk1.8.0_152/jre/jce.jar&quot;" />
     </option>
   </component>
 </project>

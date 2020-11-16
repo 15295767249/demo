@@ -4,7 +4,7 @@ file:
   ##download_path: ${DEMO_HOME}/download/
 
 server:
-  port: 88
+  port: 8500
   servlet:
     context-path: /
 
@@ -32,14 +32,24 @@ spring:
     connection-error-retry-attempts: 3
     validation-query: SELECT 1
   #    validation-query: SELECT 1 from dual
+#    test:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://101.133.235.77:3306/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+#      username: root
+#      password: Yt@123456
+#    test1:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://101.133.235.77:3306/test1?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+#      username: root
+#      password: Yt@123456
     test:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+      url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
       username: root
       password: root
     test1:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost/test1?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+      url: jdbc:mysql://localhost:3306/test1?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
       username: root
       password: root
 

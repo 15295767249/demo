@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="843ffa22-4f6d-4195-868a-512dd167b0ac" name="Default Changelist" comment="" />
+    <list default="true" id="843ffa22-4f6d-4195-868a-512dd167b0ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/com/yhb/test/FileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/com/yhb/test/open_oauth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/com/yhb/test/open_oauth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/ErpToKDApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/ErpToKDApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/Utils/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/Utils/DateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/DataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/DataSourceConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/JdbcTemplateDataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/JdbcTemplateDataSourceConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/MybatisPlusConfig4ds1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/MybatisPlusConfig4ds1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/MybatisPlusConfig4ds2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/MybatisPlusConfig4ds2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/ThymeleafConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/config/ThymeleafConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/controller/ErpToKDController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/controller/ErpToKDController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/dao/ERPDataDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/dao/ERPDataDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/ds1/mapper/TestUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/ds2/mapper/Test1UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/ds3/mapper/Test3UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/model/Ecs_core_cpws_ctg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/schedule/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/schedule/Schedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/service/DataPushService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/service/DataPushService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/service/impl/DataPushServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/service/impl/DataPushServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/test/Demo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/test/SSHTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/test/SSHTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/test/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/cn/com/yhb/test/open_oauth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds1/TestUserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/icstockbillMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/icstockbillMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/t_OrganizationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/t_OrganizationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/t_StockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/t_StockMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/t_SupplierMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/classes/mybatis/mapper/ds2/t_SupplierMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../erpToKD/target/test-classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../erpToKD/target/test-classes/Test.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,16 +57,19 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="H:\Users\Administrator\.m2\repository" />
-        <option name="mavenHome" value="H:/apache-maven-3.3.9" />
-        <option name="userSettingsFile" value="H:\Users\Administrator\.m2\settings.xml" />
+        <option name="localRepository" value="C:\Users\86152\.m2\repository" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.3" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1gqLIK1ohkvHzEVNLxANxtJeJhG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -39,11 +79,11 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/海通安恒/项目资料/masterdata/masterdata" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -74,7 +114,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DataSourceApplication">
+  <component name="RunManager" selected="Application.FileTest">
+    <configuration name="FileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.com.yhb.test.FileTest" />
+      <module name="dataSourceDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.com.yhb.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataSourceDemo" />
       <option name="PACKAGE_NAME" value="" />
@@ -98,9 +151,11 @@
     <list>
       <item itemvalue="JUnit.Test.Test" />
       <item itemvalue="Spring Boot.DataSourceApplication" />
+      <item itemvalue="Application.FileTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FileTest" />
         <item itemvalue="JUnit.Test.Test" />
       </list>
     </recent_temporary>
@@ -123,11 +178,32 @@
       <workItem from="1599461610230" duration="1634000" />
       <workItem from="1602210919265" duration="491000" />
       <workItem from="1602223565763" duration="667000" />
+      <workItem from="1602486820696" duration="131000" />
+      <workItem from="1602487099122" duration="10000" />
+      <workItem from="1603700885743" duration="2453000" />
+      <workItem from="1603765773188" duration="1094000" />
+      <workItem from="1603874955650" duration="8723000" />
+      <workItem from="1604394544238" duration="34000" />
+      <workItem from="1604453525042" duration="2806000" />
+      <workItem from="1604969879628" duration="1357000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -141,6 +217,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/cn/com/yhb/config/DataSourceConfig.java</url>
           <line>30</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/com/yhb/controller/UserController.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
