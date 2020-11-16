@@ -9,6 +9,8 @@ import cn.com.yhb.service.DataPushService;
 import com.jcraft.jsch.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
@@ -88,6 +90,7 @@ public class DataPushServiceImpl implements DataPushService {
     @Autowired
     ERPDataDao erpDataDao;
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void weekDataTimer(String startTime, String endTime) {
         conexionssh = new SSHConnection();
@@ -148,6 +151,7 @@ public class DataPushServiceImpl implements DataPushService {
         conexionssh.closeSSH(session);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void monthDataTimer(String startTime, String endTime) {
         conexionssh = new SSHConnection();
