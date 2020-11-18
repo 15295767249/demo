@@ -132,13 +132,13 @@ public class DataPushServiceImpl implements DataPushService {
         //获取erp销售发货单
         erpDataDao.getEcs_erp_sal_outs(startTime, endTime);
 
-        System.out.println("获取销售退货单======================");
-        //获取erp销售订单确认退货表
-        erpDataDao.getEcs_erp_afs_results(startTime, endTime);
+//        System.out.println("获取销售退货单======================");
+//        //获取erp销售订单确认退货表
+//        erpDataDao.getEcs_erp_afs_results(startTime, endTime);
 
-        System.out.println("获取库存调拨======================");
-        //获取erp库存调拨
-        erpDataDao.getEcs_erp_stk_moves(startTime, endTime);
+//        System.out.println("获取库存调拨======================");
+//        //获取erp库存调拨
+//        erpDataDao.getEcs_erp_stk_moves(startTime, endTime);
 
         System.out.println("获取采购入库单======================");
         //获取erp采购入库单
@@ -181,9 +181,9 @@ public class DataPushServiceImpl implements DataPushService {
 //        //获取erp客户
 //        erpDataDao.getEcs_erp_sys_sites(startTime, endTime);
 
-//        System.out.println("获取销售发货单======================");
-//        //获取erp销售发货单
-//        erpDataDao.getEcs_erp_sal_outs(startTime, endTime);
+        System.out.println("获取销售发货单======================");
+        //获取erp销售发货单
+        erpDataDao.getEcs_erp_sal_outs(startTime, endTime);
 //
 //        System.out.println("获取销售退货单======================");
 //        //获取erp销售订单确认退货表
@@ -193,13 +193,13 @@ public class DataPushServiceImpl implements DataPushService {
 //        //获取erp库存调拨
 //        erpDataDao.getEcs_erp_stk_moves(startTime, endTime);
 //
-//        System.out.println("获取采购入库单======================");
-//        //获取erp采购入库单
-//        erpDataDao.getEcs_erp_pur_ins(startTime, endTime);
-//
-//        System.out.println("获取采购入库单退回单======================");
-//        //获取erp销售发货单
-//        erpDataDao.getEcs_erp_pur_backs(startTime, endTime);
+        System.out.println("获取采购入库单======================");
+        //获取erp采购入库单
+        erpDataDao.getEcs_erp_pur_ins(startTime, endTime);
+
+        System.out.println("获取采购入库单退回单======================");
+        //获取erp销售发货单
+        erpDataDao.getEcs_erp_pur_backs(startTime, endTime);
 
         conexionssh.closeSSH(session);
     }
