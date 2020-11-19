@@ -6,12 +6,23 @@ import org.springframework.stereotype.Service;
 public interface DataPushService {
 
     /**
-     * 每周同步一次
+     * 每周同步一次（贝立）
      */
-    void weekDataTimer(String startTime, String endTime);
+    void weekDataTimerBL(String startTime, String endTime);
 
     /**
-     * 每月同步一次
+     * 每月同步一次（贝立）
      */
-    void monthDataTimer(String startTime, String endTime);
+    void monthDataTimerBL(String startTime, String endTime);
+
+
+    /**
+     * 每周同步一次（咿童）
+     */
+    void weekDataTimerYT(String startTime, String endTime);
+
+    /**
+     * 每月同步一次（咿童）
+     */
+    void monthDataTimerYT(String startTime, String endTime);
 }

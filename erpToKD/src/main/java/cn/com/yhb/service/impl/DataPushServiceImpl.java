@@ -2,7 +2,8 @@ package cn.com.yhb.service.impl;
 
 import cn.com.yhb.Utils.DateUtil;
 import cn.com.yhb.config.SSHConnection;
-import cn.com.yhb.dao.ERPDataDao;
+import cn.com.yhb.dao.BLERPDataDao;
+import cn.com.yhb.dao.YTERPDataDao;
 import cn.com.yhb.ds2.mapper.*;
 import cn.com.yhb.ds3.mapper.*;
 import cn.com.yhb.service.DataPushService;
@@ -88,11 +89,14 @@ public class DataPushServiceImpl implements DataPushService {
     T_ICItemStandard3Mapper t_icItemStandard3Mapper;
 
     @Autowired
-    ERPDataDao erpDataDao;
+    BLERPDataDao BLERPDataDao;
+
+    @Autowired
+    YTERPDataDao YTERPDataDao;
 
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
-    public void weekDataTimer(String startTime, String endTime) {
+    public void weekDataTimerBL(String startTime, String endTime) {
         conexionssh = new SSHConnection();
         Session session = conexionssh.SSHConnection();
         if (StringUtils.isEmpty(startTime)) {
@@ -130,7 +134,7 @@ public class DataPushServiceImpl implements DataPushService {
 
         System.out.println("获取销售发货单======================");
         //获取erp销售发货单
-        erpDataDao.getEcs_erp_sal_outs(startTime, endTime);
+        BLERPDataDao.getEcs_erp_sal_outs(startTime, endTime);
 
 //        System.out.println("获取销售退货单======================");
 //        //获取erp销售订单确认退货表
@@ -142,18 +146,18 @@ public class DataPushServiceImpl implements DataPushService {
 
         System.out.println("获取采购入库单======================");
         //获取erp采购入库单
-        erpDataDao.getEcs_erp_pur_ins(startTime, endTime);
+        BLERPDataDao.getEcs_erp_pur_ins(startTime, endTime);
 
         System.out.println("获取采购入库单退回单======================");
         //获取erp销售发货单
-        erpDataDao.getEcs_erp_pur_backs(startTime, endTime);
+        BLERPDataDao.getEcs_erp_pur_backs(startTime, endTime);
 
         conexionssh.closeSSH(session);
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
-    public void monthDataTimer(String startTime, String endTime) {
+    public void monthDataTimerBL(String startTime, String endTime) {
         conexionssh = new SSHConnection();
         Session session = conexionssh.SSHConnection();
         if (StringUtils.isEmpty(startTime)) {
@@ -183,7 +187,7 @@ public class DataPushServiceImpl implements DataPushService {
 
         System.out.println("获取销售发货单======================");
         //获取erp销售发货单
-        erpDataDao.getEcs_erp_sal_outs(startTime, endTime);
+        BLERPDataDao.getEcs_erp_sal_outs(startTime, endTime);
 //
 //        System.out.println("获取销售退货单======================");
 //        //获取erp销售订单确认退货表
@@ -195,11 +199,126 @@ public class DataPushServiceImpl implements DataPushService {
 //
         System.out.println("获取采购入库单======================");
         //获取erp采购入库单
-        erpDataDao.getEcs_erp_pur_ins(startTime, endTime);
+        BLERPDataDao.getEcs_erp_pur_ins(startTime, endTime);
 
         System.out.println("获取采购入库单退回单======================");
         //获取erp销售发货单
-        erpDataDao.getEcs_erp_pur_backs(startTime, endTime);
+        BLERPDataDao.getEcs_erp_pur_backs(startTime, endTime);
+
+        conexionssh.closeSSH(session);
+    }
+
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void weekDataTimerYT(String startTime, String endTime) {
+        conexionssh = new SSHConnection();
+        Session session = conexionssh.SSHConnection();
+        if (StringUtils.isEmpty(startTime)) {
+            //上周开始时间（上周一）
+            Date weekStartTime = DateUtil.lastMonday();
+            //获取本月1日时间
+            Date nowMonthFirstDay = DateUtil.getNowMonthFirstDate();
+            if (weekStartTime.getTime() < nowMonthFirstDay.getTime()) {
+                startTime = DateUtil.utilString(nowMonthFirstDay);
+            } else {
+                startTime = DateUtil.utilString(weekStartTime);
+            }
+            System.out.println(startTime);
+        }
+//        System.out.println("获取供应商资料======================");
+//        //获取erp供应商资料列表
+//        erpDataDao.getEcs_erp_sys_custs(startTime, endTime);
+//
+//        System.out.println("获取客户资料表======================");
+//        //获取erp销售发货单
+//        erpDataDao.getEcs_erp_sys_sites(startTime, endTime);
+//
+//        System.out.println("获取仓库资料======================");
+//        //获取erp仓库资料
+//        erpDataDao.getEcs_erp_sys_whs(startTime, endTime);
+
+
+//        //商品类型
+//        System.out.println("获取商品类别======================");
+//        erpDataDao.getEcs_erp_sys_prdt_types(startTime);
+//
+//        System.out.println("获取商品资料======================");
+//        //获取erp商品资料列表
+//        erpDataDao.getEcs_erp_sys_prdts(startTime, endTime);
+
+        System.out.println("获取销售发货单======================");
+        //获取erp销售发货单
+        YTERPDataDao.getEcs_erp_sal_outs(startTime, endTime);
+
+//        System.out.println("获取销售退货单======================");
+//        //获取erp销售订单确认退货表
+//        erpDataDao.getEcs_erp_afs_results(startTime, endTime);
+
+//        System.out.println("获取库存调拨======================");
+//        //获取erp库存调拨
+//        erpDataDao.getEcs_erp_stk_moves(startTime, endTime);
+
+        System.out.println("获取采购入库单======================");
+        //获取erp采购入库单
+        YTERPDataDao.getEcs_erp_pur_ins(startTime, endTime);
+
+        System.out.println("获取采购入库单退回单======================");
+        //获取erp销售发货单
+        YTERPDataDao.getEcs_erp_pur_backs(startTime, endTime);
+
+        conexionssh.closeSSH(session);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void monthDataTimerYT(String startTime, String endTime) {
+        conexionssh = new SSHConnection();
+        Session session = conexionssh.SSHConnection();
+        if (StringUtils.isEmpty(startTime)) {
+            //获取本周一时间
+            startTime = DateUtil.utilString(DateUtil.getNowMonday());
+            System.out.println(startTime);
+        }
+//        //商品类型
+//        System.out.println("获取商品类别======================");
+//        erpDataDao.getEcs_erp_sys_prdt_types(startTime);
+//
+//        System.out.println("获取商品资料======================");
+//        //获取erp商品资料列表
+//        erpDataDao.getEcs_erp_sys_prdts(startTime, endTime);
+
+//        System.out.println("获取供应商资料======================");
+//        //获取erp供应商资料列表
+//        erpDataDao.getEcs_erp_sys_custs(startTime, endTime);
+//
+//        System.out.println("获取仓库资料======================");
+//        //获取erp仓库资料
+//        erpDataDao.getEcs_erp_sys_whs(startTime, endTime);
+
+//        System.out.println("获取客户资料表======================");
+//        //获取erp客户
+//        erpDataDao.getEcs_erp_sys_sites(startTime, endTime);
+
+        System.out.println("获取销售发货单======================");
+        //获取erp销售发货单
+        YTERPDataDao.getEcs_erp_sal_outs(startTime, endTime);
+//
+//        System.out.println("获取销售退货单======================");
+//        //获取erp销售订单确认退货表
+//        erpDataDao.getEcs_erp_afs_results(startTime, endTime);
+//
+//        System.out.println("获取库存调拨======================");
+//        //获取erp库存调拨
+//        erpDataDao.getEcs_erp_stk_moves(startTime, endTime);
+//
+        System.out.println("获取采购入库单======================");
+        //获取erp采购入库单
+        YTERPDataDao.getEcs_erp_pur_ins(startTime, endTime);
+
+        System.out.println("获取采购入库单退回单======================");
+        //获取erp销售发货单
+        YTERPDataDao.getEcs_erp_pur_backs(startTime, endTime);
 
         conexionssh.closeSSH(session);
     }

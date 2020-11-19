@@ -121,11 +121,11 @@
     FMOInterID, FMOEntryID, FMOBillNo, FCustItemNo, FCustItemName, FIndex
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="cn.com.yhb.entity.ICStockBillEntryKey" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from ICStockBillEntry
     where FInterID = #{finterid,jdbcType=INTEGER}
-      and FEntryID = #{fentryid,jdbcType=INTEGER}
+    and FEntryID = #{fentryid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="cn.com.yhb.entity.ICStockBillEntryKey" >
     delete from ICStockBillEntry
@@ -158,41 +158,41 @@
       FCurrentHookQTY, FCurrentHookAmount, FStdAllHookAmount, 
       FStdCurrentHookAmount, FSCStockID, FDCStockID, 
       FPeriodDate, FCostObjGroupID, FCostOBJID, 
-      FDetailID, FMaterialCostPrice, FReProduceType, 
-      FBomInterID, FDiscountRate, FDiscountAmount, 
-      FSepcialSaleId, FOutCommitQty, FOutSecCommitQty, 
-      FDBCommitQty, FDBSecCommitQty, FAuxQtyInvoice, 
-      FOperSN, FCheckStatus, FSplitSecQty, 
-      FDVStockID, FHookInterID, FHookStatus, 
-      FAFBillNO, FMOInterID, FMOEntryID, 
-      FMOBillNo, FCustItemNo, FCustItemName, 
+       FMaterialCostPrice, FReProduceType,
+      FBomInterID, FDiscountRate, FDiscountAmount,
+      FSepcialSaleId, FOutCommitQty, FOutSecCommitQty,
+      FDBCommitQty, FDBSecCommitQty, FAuxQtyInvoice,
+      FOperSN, FCheckStatus, FSplitSecQty,
+      FDVStockID, FHookInterID, FHookStatus,
+      FAFBillNO, FMOInterID, FMOEntryID,
+      FMOBillNo, FCustItemNo, FCustItemName,
       FIndex)
-    values (#{finterid,jdbcType=INTEGER}, #{fentryid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, 
-      #{fitemid,jdbcType=INTEGER}, #{fqtymust,jdbcType=DECIMAL}, #{fqty,jdbcType=DECIMAL}, 
-      #{fprice,jdbcType=DECIMAL}, #{fbatchno,jdbcType=VARCHAR}, #{famount,jdbcType=DECIMAL}, 
-      #{fnote,jdbcType=VARCHAR}, #{fscbillinterid,jdbcType=INTEGER}, #{fscbillno,jdbcType=VARCHAR}, 
-      #{funitid,jdbcType=INTEGER}, #{fauxprice,jdbcType=DECIMAL}, #{fauxqty,jdbcType=DECIMAL}, 
-      #{fauxqtymust,jdbcType=DECIMAL}, #{fqtyactual,jdbcType=DECIMAL}, #{fauxqtyactual,jdbcType=DECIMAL}, 
-      #{fplanprice,jdbcType=DECIMAL}, #{fauxplanprice,jdbcType=DECIMAL}, #{fsourceentryid,jdbcType=INTEGER}, 
-      #{fcommitqty,jdbcType=DECIMAL}, #{fauxcommitqty,jdbcType=DECIMAL}, #{fkfdate,jdbcType=TIMESTAMP}, 
-      #{fkfperiod,jdbcType=INTEGER}, #{fdcspid,jdbcType=INTEGER}, #{fscspid,jdbcType=INTEGER}, 
-      #{fconsignprice,jdbcType=DECIMAL}, #{fconsignamount,jdbcType=DECIMAL}, #{fprocesscost,jdbcType=DECIMAL}, 
-      #{fmaterialcost,jdbcType=DECIMAL}, #{ftaxamount,jdbcType=DECIMAL}, #{fmapnumber,jdbcType=VARCHAR}, 
-      #{fmapname,jdbcType=VARCHAR}, #{forgbillentryid,jdbcType=INTEGER}, #{foperid,jdbcType=INTEGER}, 
-      #{fplanamount,jdbcType=DECIMAL}, #{fprocessprice,jdbcType=DECIMAL}, #{ftaxrate,jdbcType=DECIMAL}, 
-      #{fsnlistid,jdbcType=INTEGER}, #{famtref,jdbcType=DECIMAL}, #{fauxpropid,jdbcType=INTEGER}, 
-      #{fcost,jdbcType=DECIMAL}, #{fpriceref,jdbcType=DECIMAL}, #{fauxpriceref,jdbcType=DECIMAL}, 
-      #{ffetchdate,jdbcType=TIMESTAMP}, #{fqtyinvoice,jdbcType=DECIMAL}, #{fqtyinvoicebase,jdbcType=DECIMAL}, 
-      #{funitcost,jdbcType=DECIMAL}, #{fseccoefficient,jdbcType=DECIMAL}, #{fsecqty,jdbcType=DECIMAL}, 
-      #{fseccommitqty,jdbcType=DECIMAL}, #{fsourcetrantype,jdbcType=INTEGER}, #{fsourceinterid,jdbcType=INTEGER}, 
-      #{fsourcebillno,jdbcType=NVARCHAR}, #{fcontractinterid,jdbcType=INTEGER}, #{fcontractentryid,jdbcType=INTEGER}, 
-      #{fcontractbillno,jdbcType=NVARCHAR}, #{ficmobillno,jdbcType=NVARCHAR}, #{ficmointerid,jdbcType=INTEGER}, 
-      #{fppbomentryid,jdbcType=INTEGER}, #{forderinterid,jdbcType=INTEGER}, #{forderentryid,jdbcType=INTEGER}, 
-      #{forderbillno,jdbcType=NVARCHAR}, #{fallhookqty,jdbcType=DECIMAL}, #{fallhookamount,jdbcType=DECIMAL}, 
-      #{fcurrenthookqty,jdbcType=DECIMAL}, #{fcurrenthookamount,jdbcType=DECIMAL}, #{fstdallhookamount,jdbcType=DECIMAL}, 
-      #{fstdcurrenthookamount,jdbcType=DECIMAL}, #{fscstockid,jdbcType=INTEGER}, #{fdcstockid,jdbcType=INTEGER}, 
-      #{fperioddate,jdbcType=TIMESTAMP}, #{fcostobjgroupid,jdbcType=INTEGER}, #{fcostobjid,jdbcType=INTEGER}, 
-      #{fdetailid,jdbcType=INTEGER}, #{fmaterialcostprice,jdbcType=DECIMAL}, #{freproducetype,jdbcType=INTEGER}, 
+    values (#{finterid,jdbcType=INTEGER}, #{fentryid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR},
+      #{fitemid,jdbcType=INTEGER}, #{fqtymust,jdbcType=DECIMAL}, #{fqty,jdbcType=DECIMAL},
+      #{fprice,jdbcType=DECIMAL}, #{fbatchno,jdbcType=VARCHAR}, #{famount,jdbcType=DECIMAL},
+      #{fnote,jdbcType=VARCHAR}, #{fscbillinterid,jdbcType=INTEGER}, #{fscbillno,jdbcType=VARCHAR},
+      #{funitid,jdbcType=INTEGER}, #{fauxprice,jdbcType=DECIMAL}, #{fauxqty,jdbcType=DECIMAL},
+      #{fauxqtymust,jdbcType=DECIMAL}, #{fqtyactual,jdbcType=DECIMAL}, #{fauxqtyactual,jdbcType=DECIMAL},
+      #{fplanprice,jdbcType=DECIMAL}, #{fauxplanprice,jdbcType=DECIMAL}, #{fsourceentryid,jdbcType=INTEGER},
+      #{fcommitqty,jdbcType=DECIMAL}, #{fauxcommitqty,jdbcType=DECIMAL}, #{fkfdate,jdbcType=TIMESTAMP},
+      #{fkfperiod,jdbcType=INTEGER}, #{fdcspid,jdbcType=INTEGER}, #{fscspid,jdbcType=INTEGER},
+      #{fconsignprice,jdbcType=DECIMAL}, #{fconsignamount,jdbcType=DECIMAL}, #{fprocesscost,jdbcType=DECIMAL},
+      #{fmaterialcost,jdbcType=DECIMAL}, #{ftaxamount,jdbcType=DECIMAL}, #{fmapnumber,jdbcType=VARCHAR},
+      #{fmapname,jdbcType=VARCHAR}, #{forgbillentryid,jdbcType=INTEGER}, #{foperid,jdbcType=INTEGER},
+      #{fplanamount,jdbcType=DECIMAL}, #{fprocessprice,jdbcType=DECIMAL}, #{ftaxrate,jdbcType=DECIMAL},
+      #{fsnlistid,jdbcType=INTEGER}, #{famtref,jdbcType=DECIMAL}, #{fauxpropid,jdbcType=INTEGER},
+      #{fcost,jdbcType=DECIMAL}, #{fpriceref,jdbcType=DECIMAL}, #{fauxpriceref,jdbcType=DECIMAL},
+      #{ffetchdate,jdbcType=TIMESTAMP}, #{fqtyinvoice,jdbcType=DECIMAL}, #{fqtyinvoicebase,jdbcType=DECIMAL},
+      #{funitcost,jdbcType=DECIMAL}, #{fseccoefficient,jdbcType=DECIMAL}, #{fsecqty,jdbcType=DECIMAL},
+      #{fseccommitqty,jdbcType=DECIMAL}, #{fsourcetrantype,jdbcType=INTEGER}, #{fsourceinterid,jdbcType=INTEGER},
+      #{fsourcebillno,jdbcType=NVARCHAR}, #{fcontractinterid,jdbcType=INTEGER}, #{fcontractentryid,jdbcType=INTEGER},
+      #{fcontractbillno,jdbcType=NVARCHAR}, #{ficmobillno,jdbcType=NVARCHAR}, #{ficmointerid,jdbcType=INTEGER},
+      #{fppbomentryid,jdbcType=INTEGER}, #{forderinterid,jdbcType=INTEGER}, #{forderentryid,jdbcType=INTEGER},
+      #{forderbillno,jdbcType=NVARCHAR}, #{fallhookqty,jdbcType=DECIMAL}, #{fallhookamount,jdbcType=DECIMAL},
+      #{fcurrenthookqty,jdbcType=DECIMAL}, #{fcurrenthookamount,jdbcType=DECIMAL}, #{fstdallhookamount,jdbcType=DECIMAL},
+      #{fstdcurrenthookamount,jdbcType=DECIMAL}, #{fscstockid,jdbcType=INTEGER}, #{fdcstockid,jdbcType=INTEGER},
+      #{fperioddate,jdbcType=TIMESTAMP}, #{fcostobjgroupid,jdbcType=INTEGER}, #{fcostobjid,jdbcType=INTEGER},
+       #{fmaterialcostprice,jdbcType=DECIMAL}, #{freproducetype,jdbcType=INTEGER},
       #{fbominterid,jdbcType=INTEGER}, #{fdiscountrate,jdbcType=DECIMAL}, #{fdiscountamount,jdbcType=DECIMAL}, 
       #{fsepcialsaleid,jdbcType=INTEGER}, #{foutcommitqty,jdbcType=DECIMAL}, #{foutseccommitqty,jdbcType=DECIMAL}, 
       #{fdbcommitqty,jdbcType=DECIMAL}, #{fdbseccommitqty,jdbcType=DECIMAL}, #{fauxqtyinvoice,jdbcType=DECIMAL}, 
@@ -1108,7 +1108,7 @@
       </if>
     </set>
     where FInterID = #{finterid,jdbcType=INTEGER}
-      and FEntryID = #{fentryid,jdbcType=INTEGER}
+    and FEntryID = #{fentryid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.com.yhb.entity.ICStockBillEntry" >
     update ICStockBillEntry
