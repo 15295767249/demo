@@ -34,13 +34,13 @@ spring:
       url: jdbc:mysql://localhost/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
       username: root
       password: root
-    sqlserver-back:
+    sqlserver-bl:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS001;integratedSecurity=true;
+      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS20201103111621;integratedSecurity=true;
       username: DESKTOP-SQ3J3GR\\86152
-    sqlserver-kd:
+    sqlserver-yt:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AISBACK;integratedSecurity=true;
+      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS20201103111549;integratedSecurity=true;
       username: DESKTOP-SQ3J3GR\\86152
 
 #  datasource:
@@ -61,15 +61,15 @@ spring:
 #      password: root
 #    test:
 #      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20201103111830;integratedSecurity=true;
+#      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS1111;integratedSecurity=true;
 #      username: sa
 #      password: kd@888888
-#    sqlserver-back:
+#    sqlserver-bl:
 #      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20201103111830;integratedSecurity=true;
+#      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS1111;integratedSecurity=true;
 #      username: sa
 #      password: kd@888888
-#    sqlserver-kd:
+#    sqlserver-yt:
 #      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 #      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20201103111830;integratedSecurity=true;
 #      username: sa

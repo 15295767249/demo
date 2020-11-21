@@ -26,46 +26,46 @@
     <result column="FRightUserID" property="frightuserid" jdbcType="VARCHAR" />
     <result column="FOnSale" property="fonsale" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Item" extends="BaseResultMap" >
+  <!--<resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Item" extends="BaseResultMap" >
     <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    FItemID, FItemClassID, FExternID, FNumber, FParentID, FLevel, FDetail, FName, FUnUsed, 
-    FBrNo, FFullNumber, FDiff, FDeleted, FShortNumber, FFullName, UUID, FGRCommonID, 
-    FSystemType, FUseSign, FChkUserID, FGrControl, FRightUserID, FOnSale
-  </sql>
-  <sql id="Blob_Column_List" >
-    FModifyTime
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select 
+  </resultMap>-->
+  <!--  <sql id="Base_Column_List" >
+      FItemID, FItemClassID, FExternID, FNumber, FParentID, FLevel, FDetail, FName, FUnUsed,
+      FBrNo, FFullNumber, FDiff, FDeleted, FShortNumber, FFullName, UUID, FGRCommonID,
+      FSystemType, FUseSign, FChkUserID, FGrControl, FRightUserID, FOnSale
+    </sql>
+    <sql id="Blob_Column_List" >
+      FModifyTime
+    </sql>-->
+  <!--<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from t_Item
     where FItemID = #{fitemid,jdbcType=INTEGER}
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_Item
     where FItemID = #{fitemid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.com.yhb.entity.t_Item" >
-    insert into t_Item (FItemID, FItemClassID, FExternID, 
-      FNumber, FParentID, FLevel, 
-      FDetail, FName, FUnUsed, FBrNo, 
-      FFullNumber, FDiff, FDeleted, 
-      FShortNumber, FFullName, UUID, 
-      FGRCommonID, FSystemType, FUseSign, 
-      FChkUserID, FGrControl, FRightUserID, 
-      FOnSale, FModifyTime)
-    values (#{fitemid,jdbcType=INTEGER}, #{fitemclassid,jdbcType=INTEGER}, #{fexternid,jdbcType=INTEGER}, 
-      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{flevel,jdbcType=SMALLINT}, 
-      #{fdetail,jdbcType=BIT}, #{fname,jdbcType=VARCHAR}, #{funused,jdbcType=BIT}, #{fbrno,jdbcType=VARCHAR}, 
-      #{ffullnumber,jdbcType=VARCHAR}, #{fdiff,jdbcType=BIT}, #{fdeleted,jdbcType=SMALLINT}, 
-      #{fshortnumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR}, #{uuid,jdbcType=CHAR}, 
-      #{fgrcommonid,jdbcType=INTEGER}, #{fsystemtype,jdbcType=INTEGER}, #{fusesign,jdbcType=INTEGER}, 
-      #{fchkuserid,jdbcType=SMALLINT}, #{fgrcontrol,jdbcType=INTEGER}, #{frightuserid,jdbcType=VARCHAR}, 
-      #{fonsale,jdbcType=INTEGER}, #{fmodifytime,jdbcType=BINARY})
+    insert into t_Item (FItemID, FItemClassID, FExternID,
+      FNumber, FParentID, FLevel,
+      FDetail, FName, FUnUsed, FBrNo,
+      FFullNumber, FDiff, FDeleted,
+      FShortNumber, FFullName, UUID,
+      FGRCommonID, FSystemType, FUseSign,
+      FChkUserID, FGrControl, FRightUserID,
+      FOnSale)
+    values (#{fitemid,jdbcType=INTEGER}, #{fitemclassid,jdbcType=INTEGER}, #{fexternid,jdbcType=INTEGER},
+      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{flevel,jdbcType=SMALLINT},
+      #{fdetail,jdbcType=BIT}, #{fname,jdbcType=VARCHAR}, #{funused,jdbcType=BIT}, #{fbrno,jdbcType=VARCHAR},
+      #{ffullnumber,jdbcType=VARCHAR}, #{fdiff,jdbcType=BIT}, #{fdeleted,jdbcType=SMALLINT},
+      #{fshortnumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR}, #{uuid,jdbcType=CHAR},
+      #{fgrcommonid,jdbcType=INTEGER}, #{fsystemtype,jdbcType=INTEGER}, #{fusesign,jdbcType=INTEGER},
+      #{fchkuserid,jdbcType=SMALLINT}, #{fgrcontrol,jdbcType=INTEGER}, #{frightuserid,jdbcType=VARCHAR},
+      #{fonsale,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Item" >
     insert into t_Item
@@ -346,4 +346,8 @@
       FOnSale = #{fonsale,jdbcType=INTEGER}
     where FItemID = #{fitemid,jdbcType=INTEGER}
   </update>
+
+  <select id="getLastId" resultType="INTEGER">
+    SELECT TOP 1 FItemID from t_Item ORDER BY FItemID DESC
+  </select>
 </mapper>

@@ -21,7 +21,7 @@
     FSOChkMde, FWthDrwChkMde, FStkChkMde, FOtherChkMde, FStkChkPrd, FStkChkAlrm, FIdentifier
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_ICItemQuality
     where FItemID = #{fitemid,jdbcType=INTEGER}

@@ -110,116 +110,116 @@
     <result column="FQQNum" property="fqqnum" jdbcType="VARCHAR" />
     <result column="FCompanyPhone" property="fcompanyphone" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Organization" extends="BaseResultMap" >
-    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
-  </resultMap>
+  <!--  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Organization" extends="BaseResultMap" >
+      <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
+    </resultMap>-->
   <sql id="Base_Column_List" >
-    FItemID, FAddress, FCity, FProvince, FCountry, FPostalCode, FPhone, FFax, FEmail, 
-    FHomePage, FCreditLimit, FTaxID, FBank, FAccount, FBankNumber, FBrNo, FBoundAttr, 
-    FErpClsID, FShortName, FPriorityID, FPOGroupID, FStatus, FLanguageID, FRegionID, 
-    FTrade, FMinPOValue, FMaxDebitDate, FLegalPerson, FContact, FContactAcct, FPhoneAcct, 
-    FFaxAcct, FZipAcct, FEmailAcct, FAddrAcct, FTax, FCyID, FSetID, FSetDLineID, FTaxNum, 
-    FPriceClsID, FOperID, FCIQNumber, FDeleted, FSaleMode, FName, FNumber, FParentID, 
-    FShortNumber, FARAccountID, FAPAccountID, FpreAcctID, FlastTradeAmount, FlastRPAmount, 
-    FfavorPolicy, Fdepartment, Femployee, Fcorperate, FbeginTradeDate, FendTradeDate, 
-    FlastTradeDate, FlastReceiveDate, FcashDiscount, FcurrencyID, FmaxDealAmount, FminForeReceiveRate, 
-    FminReserverate, FdebtLevel, FCarryingAOS, FIsCreditMgr, FCreditPeriod, FCreditLevel, 
-    FPayTaxAcctID, FValueAddRate, FTypeID, FCreditDays, FCreditAmount, FStockIDAssign, 
-    FStockIDInst, FStockIDKeep, FPaperPeriod, FAlarmPeriod, FLicAndPermit, FOtherARAcctID, 
-    FOtherAPAcctID, FPreAPAcctID, FSaleID, FHelpCode, FCreditDegree, FRightUserID, FPaymentTime, 
-    FSMSPhoneNumber, FFullName, FRelateUserID, FNote, FBusinessUserID, FMatchSupplyID, 
-    FWdhSecurity, FAcctID, FLogoID, FIsMbData, FIntent, FMark, FDeptName, FPosition, 
+    FItemID, FAddress, FCity, FProvince, FCountry, FPostalCode, FPhone, FFax, FEmail,
+    FHomePage, FCreditLimit, FTaxID, FBank, FAccount, FBankNumber, FBrNo, FBoundAttr,
+    FErpClsID, FShortName, FPriorityID, FPOGroupID, FStatus, FLanguageID, FRegionID,
+    FTrade, FMinPOValue, FMaxDebitDate, FLegalPerson, FContact, FContactAcct, FPhoneAcct,
+    FFaxAcct, FZipAcct, FEmailAcct, FAddrAcct, FTax, FCyID, FSetID, FSetDLineID, FTaxNum,
+    FPriceClsID, FOperID, FCIQNumber, FDeleted, FSaleMode, FName, FNumber, FParentID,
+    FShortNumber, FARAccountID, FAPAccountID, FpreAcctID, FlastTradeAmount, FlastRPAmount,
+    FfavorPolicy, Fdepartment, Femployee, Fcorperate, FbeginTradeDate, FendTradeDate,
+    FlastTradeDate, FlastReceiveDate, FcashDiscount, FcurrencyID, FmaxDealAmount, FminForeReceiveRate,
+    FminReserverate, FdebtLevel, FCarryingAOS, FIsCreditMgr, FCreditPeriod, FCreditLevel,
+    FPayTaxAcctID, FValueAddRate, FTypeID, FCreditDays, FCreditAmount, FStockIDAssign,
+    FStockIDInst, FStockIDKeep, FPaperPeriod, FAlarmPeriod, FLicAndPermit, FOtherARAcctID,
+    FOtherAPAcctID, FPreAPAcctID, FSaleID, FHelpCode, FCreditDegree, FRightUserID, FPaymentTime,
+    FSMSPhoneNumber, FFullName, FRelateUserID, FNote, FBusinessUserID, FMatchSupplyID,
+    FWdhSecurity, FAcctID, FLogoID, FIsMbData, FIntent, FMark, FDeptName, FPosition,
     FQQNum, FCompanyPhone
   </sql>
-  <sql id="Blob_Column_List" >
-    FModifyTime
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from t_Organization
-    where FItemID = #{fitemid,jdbcType=INTEGER}
-  </select>
+  <!--  <sql id="Blob_Column_List" >
+      FModifyTime
+    </sql>-->
+  <!--  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+      select
+      <include refid="Base_Column_List" />
+      ,
+      <include refid="Blob_Column_List" />
+      from t_Organization
+      where FItemID = #{fitemid,jdbcType=INTEGER}
+    </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_Organization
     where FItemID = #{fitemid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.com.yhb.entity.t_Organization" >
-    insert into t_Organization (FItemID, FAddress, FCity, 
-      FProvince, FCountry, FPostalCode, 
-      FPhone, FFax, FEmail, 
-      FHomePage, FCreditLimit, FTaxID, 
-      FBank, FAccount, FBankNumber, 
-      FBrNo, FBoundAttr, FErpClsID, 
-      FShortName, FPriorityID, FPOGroupID, 
-      FStatus, FLanguageID, FRegionID, 
-      FTrade, FMinPOValue, FMaxDebitDate, 
-      FLegalPerson, FContact, FContactAcct, 
-      FPhoneAcct, FFaxAcct, FZipAcct, 
-      FEmailAcct, FAddrAcct, FTax, 
-      FCyID, FSetID, FSetDLineID, 
-      FTaxNum, FPriceClsID, FOperID, 
-      FCIQNumber, FDeleted, FSaleMode, 
-      FName, FNumber, FParentID, 
-      FShortNumber, FARAccountID, FAPAccountID, 
-      FpreAcctID, FlastTradeAmount, FlastRPAmount, 
-      FfavorPolicy, Fdepartment, Femployee, 
-      Fcorperate, FbeginTradeDate, FendTradeDate, 
-      FlastTradeDate, FlastReceiveDate, FcashDiscount, 
-      FcurrencyID, FmaxDealAmount, FminForeReceiveRate, 
-      FminReserverate, FdebtLevel, FCarryingAOS, 
-      FIsCreditMgr, FCreditPeriod, FCreditLevel, 
-      FPayTaxAcctID, FValueAddRate, FTypeID, 
-      FCreditDays, FCreditAmount, FStockIDAssign, 
-      FStockIDInst, FStockIDKeep, FPaperPeriod, 
-      FAlarmPeriod, FLicAndPermit, FOtherARAcctID, 
-      FOtherAPAcctID, FPreAPAcctID, FSaleID, 
-      FHelpCode, FCreditDegree, FRightUserID, 
-      FPaymentTime, FSMSPhoneNumber, FFullName, 
-      FRelateUserID, FNote, FBusinessUserID, 
-      FMatchSupplyID, FWdhSecurity, FAcctID, 
-      FLogoID, FIsMbData, FIntent, 
-      FMark, FDeptName, FPosition, 
-      FQQNum, FCompanyPhone, FModifyTime
+    insert into t_Organization (FItemID, FAddress, FCity,
+      FProvince, FCountry, FPostalCode,
+      FPhone, FFax, FEmail,
+      FHomePage, FCreditLimit, FTaxID,
+      FBank, FAccount, FBankNumber,
+      FBrNo, FBoundAttr, FErpClsID,
+      FShortName, FPriorityID, FPOGroupID,
+      FStatus, FLanguageID, FRegionID,
+      FTrade, FMinPOValue, FMaxDebitDate,
+      FLegalPerson, FContact, FContactAcct,
+      FPhoneAcct, FFaxAcct, FZipAcct,
+      FEmailAcct, FAddrAcct, FTax,
+      FCyID, FSetID, FSetDLineID,
+      FTaxNum, FPriceClsID, FOperID,
+      FCIQNumber, FDeleted, FSaleMode,
+      FName, FNumber, FParentID,
+      FShortNumber, FARAccountID, FAPAccountID,
+      FpreAcctID, FlastTradeAmount, FlastRPAmount,
+      FfavorPolicy, Fdepartment, Femployee,
+      Fcorperate, FbeginTradeDate, FendTradeDate,
+      FlastTradeDate, FlastReceiveDate, FcashDiscount,
+      FcurrencyID, FmaxDealAmount, FminForeReceiveRate,
+      FminReserverate, FdebtLevel, FCarryingAOS,
+      FIsCreditMgr, FCreditPeriod, FCreditLevel,
+      FPayTaxAcctID, FValueAddRate, FTypeID,
+      FCreditDays, FCreditAmount, FStockIDAssign,
+      FStockIDInst, FStockIDKeep, FPaperPeriod,
+      FAlarmPeriod, FLicAndPermit, FOtherARAcctID,
+      FOtherAPAcctID, FPreAPAcctID, FSaleID,
+      FHelpCode, FCreditDegree, FRightUserID,
+      FPaymentTime, FSMSPhoneNumber, FFullName,
+      FRelateUserID, FNote, FBusinessUserID,
+      FMatchSupplyID, FWdhSecurity, FAcctID,
+      FLogoID, FIsMbData, FIntent,
+      FMark, FDeptName, FPosition,
+      FQQNum, FCompanyPhone
       )
-    values (#{fitemid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fcity,jdbcType=VARCHAR}, 
-      #{fprovince,jdbcType=VARCHAR}, #{fcountry,jdbcType=VARCHAR}, #{fpostalcode,jdbcType=VARCHAR}, 
-      #{fphone,jdbcType=VARCHAR}, #{ffax,jdbcType=VARCHAR}, #{femail,jdbcType=VARCHAR}, 
-      #{fhomepage,jdbcType=VARCHAR}, #{fcreditlimit,jdbcType=VARCHAR}, #{ftaxid,jdbcType=VARCHAR}, 
-      #{fbank,jdbcType=VARCHAR}, #{faccount,jdbcType=VARCHAR}, #{fbanknumber,jdbcType=VARCHAR}, 
-      #{fbrno,jdbcType=VARCHAR}, #{fboundattr,jdbcType=INTEGER}, #{ferpclsid,jdbcType=INTEGER}, 
-      #{fshortname,jdbcType=VARCHAR}, #{fpriorityid,jdbcType=INTEGER}, #{fpogroupid,jdbcType=INTEGER}, 
-      #{fstatus,jdbcType=INTEGER}, #{flanguageid,jdbcType=INTEGER}, #{fregionid,jdbcType=INTEGER}, 
-      #{ftrade,jdbcType=INTEGER}, #{fminpovalue,jdbcType=DOUBLE}, #{fmaxdebitdate,jdbcType=DOUBLE}, 
-      #{flegalperson,jdbcType=VARCHAR}, #{fcontact,jdbcType=VARCHAR}, #{fcontactacct,jdbcType=VARCHAR}, 
-      #{fphoneacct,jdbcType=VARCHAR}, #{ffaxacct,jdbcType=VARCHAR}, #{fzipacct,jdbcType=VARCHAR}, 
-      #{femailacct,jdbcType=VARCHAR}, #{faddracct,jdbcType=VARCHAR}, #{ftax,jdbcType=REAL}, 
-      #{fcyid,jdbcType=INTEGER}, #{fsetid,jdbcType=INTEGER}, #{fsetdlineid,jdbcType=INTEGER}, 
-      #{ftaxnum,jdbcType=VARCHAR}, #{fpriceclsid,jdbcType=INTEGER}, #{foperid,jdbcType=INTEGER}, 
-      #{fciqnumber,jdbcType=VARCHAR}, #{fdeleted,jdbcType=SMALLINT}, #{fsalemode,jdbcType=INTEGER}, 
-      #{fname,jdbcType=VARCHAR}, #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, 
-      #{fshortnumber,jdbcType=VARCHAR}, #{faraccountid,jdbcType=INTEGER}, #{fapaccountid,jdbcType=INTEGER}, 
-      #{fpreacctid,jdbcType=INTEGER}, #{flasttradeamount,jdbcType=DECIMAL}, #{flastrpamount,jdbcType=DECIMAL}, 
-      #{ffavorpolicy,jdbcType=VARCHAR}, #{fdepartment,jdbcType=INTEGER}, #{femployee,jdbcType=INTEGER}, 
-      #{fcorperate,jdbcType=VARCHAR}, #{fbegintradedate,jdbcType=TIMESTAMP}, #{fendtradedate,jdbcType=TIMESTAMP}, 
-      #{flasttradedate,jdbcType=TIMESTAMP}, #{flastreceivedate,jdbcType=TIMESTAMP}, #{fcashdiscount,jdbcType=VARCHAR}, 
-      #{fcurrencyid,jdbcType=INTEGER}, #{fmaxdealamount,jdbcType=DOUBLE}, #{fminforereceiverate,jdbcType=DOUBLE}, 
-      #{fminreserverate,jdbcType=DOUBLE}, #{fdebtlevel,jdbcType=INTEGER}, #{fcarryingaos,jdbcType=INTEGER}, 
-      #{fiscreditmgr,jdbcType=BIT}, #{fcreditperiod,jdbcType=INTEGER}, #{fcreditlevel,jdbcType=INTEGER}, 
-      #{fpaytaxacctid,jdbcType=INTEGER}, #{fvalueaddrate,jdbcType=DECIMAL}, #{ftypeid,jdbcType=INTEGER}, 
-      #{fcreditdays,jdbcType=INTEGER}, #{fcreditamount,jdbcType=DECIMAL}, #{fstockidassign,jdbcType=INTEGER}, 
-      #{fstockidinst,jdbcType=INTEGER}, #{fstockidkeep,jdbcType=INTEGER}, #{fpaperperiod,jdbcType=TIMESTAMP}, 
-      #{falarmperiod,jdbcType=INTEGER}, #{flicandpermit,jdbcType=BIT}, #{fotheraracctid,jdbcType=INTEGER}, 
-      #{fotherapacctid,jdbcType=INTEGER}, #{fpreapacctid,jdbcType=INTEGER}, #{fsaleid,jdbcType=INTEGER}, 
-      #{fhelpcode,jdbcType=VARCHAR}, #{fcreditdegree,jdbcType=INTEGER}, #{frightuserid,jdbcType=VARCHAR}, 
-      #{fpaymenttime,jdbcType=INTEGER}, #{fsmsphonenumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR}, 
-      #{frelateuserid,jdbcType=INTEGER}, #{fnote,jdbcType=NVARCHAR}, #{fbusinessuserid,jdbcType=INTEGER}, 
-      #{fmatchsupplyid,jdbcType=INTEGER}, #{fwdhsecurity,jdbcType=NVARCHAR}, #{facctid,jdbcType=INTEGER}, 
-      #{flogoid,jdbcType=NVARCHAR}, #{fismbdata,jdbcType=BIT}, #{fintent,jdbcType=BIT}, 
-      #{fmark,jdbcType=BIT}, #{fdeptname,jdbcType=VARCHAR}, #{fposition,jdbcType=VARCHAR}, 
-      #{fqqnum,jdbcType=VARCHAR}, #{fcompanyphone,jdbcType=VARCHAR}, #{fmodifytime,jdbcType=BINARY}
+    values (#{fitemid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fcity,jdbcType=VARCHAR},
+      #{fprovince,jdbcType=VARCHAR}, #{fcountry,jdbcType=VARCHAR}, #{fpostalcode,jdbcType=VARCHAR},
+      #{fphone,jdbcType=VARCHAR}, #{ffax,jdbcType=VARCHAR}, #{femail,jdbcType=VARCHAR},
+      #{fhomepage,jdbcType=VARCHAR}, #{fcreditlimit,jdbcType=VARCHAR}, #{ftaxid,jdbcType=VARCHAR},
+      #{fbank,jdbcType=VARCHAR}, #{faccount,jdbcType=VARCHAR}, #{fbanknumber,jdbcType=VARCHAR},
+      #{fbrno,jdbcType=VARCHAR}, #{fboundattr,jdbcType=INTEGER}, #{ferpclsid,jdbcType=INTEGER},
+      #{fshortname,jdbcType=VARCHAR}, #{fpriorityid,jdbcType=INTEGER}, #{fpogroupid,jdbcType=INTEGER},
+      #{fstatus,jdbcType=INTEGER}, #{flanguageid,jdbcType=INTEGER}, #{fregionid,jdbcType=INTEGER},
+      #{ftrade,jdbcType=INTEGER}, #{fminpovalue,jdbcType=DOUBLE}, #{fmaxdebitdate,jdbcType=DOUBLE},
+      #{flegalperson,jdbcType=VARCHAR}, #{fcontact,jdbcType=VARCHAR}, #{fcontactacct,jdbcType=VARCHAR},
+      #{fphoneacct,jdbcType=VARCHAR}, #{ffaxacct,jdbcType=VARCHAR}, #{fzipacct,jdbcType=VARCHAR},
+      #{femailacct,jdbcType=VARCHAR}, #{faddracct,jdbcType=VARCHAR}, #{ftax,jdbcType=REAL},
+      #{fcyid,jdbcType=INTEGER}, #{fsetid,jdbcType=INTEGER}, #{fsetdlineid,jdbcType=INTEGER},
+      #{ftaxnum,jdbcType=VARCHAR}, #{fpriceclsid,jdbcType=INTEGER}, #{foperid,jdbcType=INTEGER},
+      #{fciqnumber,jdbcType=VARCHAR}, #{fdeleted,jdbcType=SMALLINT}, #{fsalemode,jdbcType=INTEGER},
+      #{fname,jdbcType=VARCHAR}, #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER},
+      #{fshortnumber,jdbcType=VARCHAR}, #{faraccountid,jdbcType=INTEGER}, #{fapaccountid,jdbcType=INTEGER},
+      #{fpreacctid,jdbcType=INTEGER}, #{flasttradeamount,jdbcType=DECIMAL}, #{flastrpamount,jdbcType=DECIMAL},
+      #{ffavorpolicy,jdbcType=VARCHAR}, #{fdepartment,jdbcType=INTEGER}, #{femployee,jdbcType=INTEGER},
+      #{fcorperate,jdbcType=VARCHAR}, #{fbegintradedate,jdbcType=TIMESTAMP}, #{fendtradedate,jdbcType=TIMESTAMP},
+      #{flasttradedate,jdbcType=TIMESTAMP}, #{flastreceivedate,jdbcType=TIMESTAMP}, #{fcashdiscount,jdbcType=VARCHAR},
+      #{fcurrencyid,jdbcType=INTEGER}, #{fmaxdealamount,jdbcType=DOUBLE}, #{fminforereceiverate,jdbcType=DOUBLE},
+      #{fminreserverate,jdbcType=DOUBLE}, #{fdebtlevel,jdbcType=INTEGER}, #{fcarryingaos,jdbcType=INTEGER},
+      #{fiscreditmgr,jdbcType=BIT}, #{fcreditperiod,jdbcType=INTEGER}, #{fcreditlevel,jdbcType=INTEGER},
+      #{fpaytaxacctid,jdbcType=INTEGER}, #{fvalueaddrate,jdbcType=DECIMAL}, #{ftypeid,jdbcType=INTEGER},
+      #{fcreditdays,jdbcType=INTEGER}, #{fcreditamount,jdbcType=DECIMAL}, #{fstockidassign,jdbcType=INTEGER},
+      #{fstockidinst,jdbcType=INTEGER}, #{fstockidkeep,jdbcType=INTEGER}, #{fpaperperiod,jdbcType=TIMESTAMP},
+      #{falarmperiod,jdbcType=INTEGER}, #{flicandpermit,jdbcType=BIT}, #{fotheraracctid,jdbcType=INTEGER},
+      #{fotherapacctid,jdbcType=INTEGER}, #{fpreapacctid,jdbcType=INTEGER}, #{fsaleid,jdbcType=INTEGER},
+      #{fhelpcode,jdbcType=VARCHAR}, #{fcreditdegree,jdbcType=INTEGER}, #{frightuserid,jdbcType=VARCHAR},
+      #{fpaymenttime,jdbcType=INTEGER}, #{fsmsphonenumber,jdbcType=VARCHAR}, #{ffullname,jdbcType=VARCHAR},
+      #{frelateuserid,jdbcType=INTEGER}, #{fnote,jdbcType=NVARCHAR}, #{fbusinessuserid,jdbcType=INTEGER},
+      #{fmatchsupplyid,jdbcType=INTEGER}, #{fwdhsecurity,jdbcType=NVARCHAR}, #{facctid,jdbcType=INTEGER},
+      #{flogoid,jdbcType=NVARCHAR}, #{fismbdata,jdbcType=BIT}, #{fintent,jdbcType=BIT},
+      #{fmark,jdbcType=BIT}, #{fdeptname,jdbcType=VARCHAR}, #{fposition,jdbcType=VARCHAR},
+      #{fqqnum,jdbcType=VARCHAR}, #{fcompanyphone,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Organization" >

@@ -31,7 +31,7 @@ public class DataSourceConfig {
     //第二个数据源配置 test1
     @Primary
     @Bean(name = "dataSourceProperties2")
-    @ConfigurationProperties(prefix = "spring.datasource.sqlserver-back")
+    @ConfigurationProperties(prefix = "spring.datasource.sqlserver-bl")
     public DataSourceProperties dataSourceProperties2() {
         return new DataSourceProperties();
     }
@@ -45,7 +45,7 @@ public class DataSourceConfig {
 
     //第三个数据源配置server test1
     @Bean(name = "dataSourceProperties3")
-    @ConfigurationProperties(prefix = "spring.datasource.sqlserver-kd")
+    @ConfigurationProperties(prefix = "spring.datasource.sqlserver-yt")
     public DataSourceProperties dataSourceProperties3() {
         return new DataSourceProperties();
     }

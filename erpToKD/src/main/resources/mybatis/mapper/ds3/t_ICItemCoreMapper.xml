@@ -27,49 +27,47 @@
     <result column="FPlanClass" property="fplanclass" jdbcType="SMALLINT" />
     <result column="FItemDescription" property="fitemdescription" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_ICItemCore" extends="BaseResultMap" >
-    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
-  </resultMap>
+  <!--  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_ICItemCore" extends="BaseResultMap" >-->
+  <!--    <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />-->
+  <!--  </resultMap>-->
   <sql id="Base_Column_List" >
-    FItemID, FModel, FName, FHelpCode, FDeleted, FShortNumber, FNumber, FParentID, FBrNo, 
-    FTopID, FRP, FOmortize, FOmortizeScale, FForSale, FStaCost, FOrderPrice, FOrderMethod, 
-    FPriceFixingType, FSalePriceFixingType, FPerWastage, FARAcctID, FPlanPriceMethod, 
+    FItemID, FModel, FName, FHelpCode, FDeleted, FShortNumber, FNumber, FParentID, FBrNo,
+    FTopID, FRP, FOmortize, FOmortizeScale, FForSale, FStaCost, FOrderPrice, FOrderMethod,
+    FPriceFixingType, FSalePriceFixingType, FPerWastage, FARAcctID, FPlanPriceMethod,
     FPlanClass, FItemDescription
   </sql>
-  <sql id="Blob_Column_List" >
-    FModifyTime
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select 
+  <!--  <sql id="Blob_Column_List" >
+      FModifyTime
+    </sql>-->
+  <!--<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from t_ICItemCore
     where FItemID = #{fitemid,jdbcType=INTEGER}
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_ICItemCore
     where FItemID = #{fitemid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.com.yhb.entity.t_ICItemCore" >
-    insert into t_ICItemCore (FItemID, FModel, FName, 
-      FHelpCode, FDeleted, FShortNumber, 
-      FNumber, FParentID, FBrNo, 
-      FTopID, FRP, FOmortize, 
-      FOmortizeScale, FForSale, FStaCost, 
-      FOrderPrice, FOrderMethod, FPriceFixingType, 
-      FSalePriceFixingType, FPerWastage, FARAcctID, 
-      FPlanPriceMethod, FPlanClass, FItemDescription, 
-      FModifyTime)
-    values (#{fitemid,jdbcType=INTEGER}, #{fmodel,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, 
-      #{fhelpcode,jdbcType=VARCHAR}, #{fdeleted,jdbcType=SMALLINT}, #{fshortnumber,jdbcType=VARCHAR}, 
-      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, 
-      #{ftopid,jdbcType=INTEGER}, #{frp,jdbcType=SMALLINT}, #{fomortize,jdbcType=SMALLINT}, 
-      #{fomortizescale,jdbcType=SMALLINT}, #{fforsale,jdbcType=BIT}, #{fstacost,jdbcType=DOUBLE}, 
-      #{forderprice,jdbcType=DOUBLE}, #{fordermethod,jdbcType=INTEGER}, #{fpricefixingtype,jdbcType=INTEGER}, 
-      #{fsalepricefixingtype,jdbcType=INTEGER}, #{fperwastage,jdbcType=DOUBLE}, #{faracctid,jdbcType=INTEGER}, 
-      #{fplanpricemethod,jdbcType=SMALLINT}, #{fplanclass,jdbcType=SMALLINT}, #{fitemdescription,jdbcType=VARCHAR}, 
-      #{fmodifytime,jdbcType=BINARY})
+    insert into t_ICItemCore (FItemID, FModel, FName,
+      FHelpCode, FDeleted, FShortNumber,
+      FNumber, FParentID, FBrNo,
+      FTopID, FRP, FOmortize,
+      FOmortizeScale, FForSale, FStaCost,
+      FOrderPrice, FOrderMethod, FPriceFixingType,
+      FSalePriceFixingType, FPerWastage, FARAcctID,
+      FPlanPriceMethod, FPlanClass, FItemDescription)
+    values (#{fitemid,jdbcType=INTEGER}, #{fmodel,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR},
+      #{fhelpcode,jdbcType=VARCHAR}, #{fdeleted,jdbcType=SMALLINT}, #{fshortnumber,jdbcType=VARCHAR},
+      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR},
+      #{ftopid,jdbcType=INTEGER}, #{frp,jdbcType=SMALLINT}, #{fomortize,jdbcType=SMALLINT},
+      #{fomortizescale,jdbcType=SMALLINT}, #{fforsale,jdbcType=BIT}, #{fstacost,jdbcType=DOUBLE},
+      #{forderprice,jdbcType=DOUBLE}, #{fordermethod,jdbcType=INTEGER}, #{fpricefixingtype,jdbcType=INTEGER},
+      #{fsalepricefixingtype,jdbcType=INTEGER}, #{fperwastage,jdbcType=DOUBLE}, #{faracctid,jdbcType=INTEGER},
+      #{fplanpricemethod,jdbcType=SMALLINT}, #{fplanclass,jdbcType=SMALLINT}, #{fitemdescription,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_ICItemCore" >
     insert into t_ICItemCore

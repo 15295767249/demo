@@ -26,47 +26,47 @@
     <result column="FRightUserID" property="frightuserid" jdbcType="VARCHAR" />
     <result column="FSMSPhoneNumber" property="fsmsphonenumber" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Stock" extends="BaseResultMap" >
+  <!--<resultMap id="ResultMapWithBLOBs" type="cn.com.yhb.entity.t_Stock" extends="BaseResultMap" >
     <result column="FModifyTime" property="fmodifytime" jdbcType="BINARY" />
-  </resultMap>
+  </resultMap>-->
   <sql id="Base_Column_List" >
-    FItemID, FBrNO, FHelpCode, FEmpID, FAddress, FPhone, FProperty, FBWorkShop, FName, 
-    FNumber, FParentID, FDeleted, FShortNumber, FTypeID, FIsStockMgr, FSPGroupID, FMRPAvail, 
+    FItemID, FBrNO, FHelpCode, FEmpID, FAddress, FPhone, FProperty, FBWorkShop, FName,
+    FNumber, FParentID, FDeleted, FShortNumber, FTypeID, FIsStockMgr, FSPGroupID, FMRPAvail,
     FGroupID, FStockGroupID, FCalcCostOrder, FPlanArea, FRightUserID, FSMSPhoneNumber
   </sql>
-  <sql id="Blob_Column_List" >
+  <!--<sql id="Blob_Column_List" >
     FModifyTime
   </sql>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from t_Stock
     where FItemID = #{fitemid,jdbcType=INTEGER}
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_Stock
     where FItemID = #{fitemid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.com.yhb.entity.t_Stock" >
-    insert into t_Stock (FItemID, FBrNO, FHelpCode, 
-      FEmpID, FAddress, FPhone, 
-      FProperty, FBWorkShop, FName, 
-      FNumber, FParentID, FDeleted, 
-      FShortNumber, FTypeID, FIsStockMgr, 
-      FSPGroupID, FMRPAvail, FGroupID, 
-      FStockGroupID, FCalcCostOrder, FPlanArea, 
-      FRightUserID, FSMSPhoneNumber, FModifyTime
+    insert into t_Stock (FItemID, FBrNO, FHelpCode,
+      FEmpID, FAddress, FPhone,
+      FProperty, FBWorkShop, FName,
+      FNumber, FParentID, FDeleted,
+      FShortNumber, FTypeID, FIsStockMgr,
+      FSPGroupID, FMRPAvail, FGroupID,
+      FStockGroupID, FCalcCostOrder, FPlanArea,
+      FRightUserID, FSMSPhoneNumber
       )
-    values (#{fitemid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, #{fhelpcode,jdbcType=VARCHAR}, 
-      #{fempid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fphone,jdbcType=VARCHAR}, 
-      #{fproperty,jdbcType=SMALLINT}, #{fbworkshop,jdbcType=INTEGER}, #{fname,jdbcType=VARCHAR}, 
-      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fdeleted,jdbcType=SMALLINT}, 
-      #{fshortnumber,jdbcType=VARCHAR}, #{ftypeid,jdbcType=INTEGER}, #{fisstockmgr,jdbcType=BIT}, 
-      #{fspgroupid,jdbcType=INTEGER}, #{fmrpavail,jdbcType=BIT}, #{fgroupid,jdbcType=INTEGER}, 
-      #{fstockgroupid,jdbcType=INTEGER}, #{fcalccostorder,jdbcType=INTEGER}, #{fplanarea,jdbcType=INTEGER}, 
-      #{frightuserid,jdbcType=VARCHAR}, #{fsmsphonenumber,jdbcType=VARCHAR}, #{fmodifytime,jdbcType=BINARY}
+    values (#{fitemid,jdbcType=INTEGER}, #{fbrno,jdbcType=VARCHAR}, #{fhelpcode,jdbcType=VARCHAR},
+      #{fempid,jdbcType=INTEGER}, #{faddress,jdbcType=VARCHAR}, #{fphone,jdbcType=VARCHAR},
+      #{fproperty,jdbcType=SMALLINT}, #{fbworkshop,jdbcType=INTEGER}, #{fname,jdbcType=VARCHAR},
+      #{fnumber,jdbcType=VARCHAR}, #{fparentid,jdbcType=INTEGER}, #{fdeleted,jdbcType=SMALLINT},
+      #{fshortnumber,jdbcType=VARCHAR}, #{ftypeid,jdbcType=INTEGER}, #{fisstockmgr,jdbcType=BIT},
+      #{fspgroupid,jdbcType=INTEGER}, #{fmrpavail,jdbcType=BIT}, #{fgroupid,jdbcType=INTEGER},
+      #{fstockgroupid,jdbcType=INTEGER}, #{fcalccostorder,jdbcType=INTEGER}, #{fplanarea,jdbcType=INTEGER},
+      #{frightuserid,jdbcType=VARCHAR}, #{fsmsphonenumber,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.com.yhb.entity.t_Stock" >

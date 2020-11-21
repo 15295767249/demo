@@ -39,7 +39,7 @@
     FStoreUnitID, FProductUnitID, FApproveNo, FAuxClassID, FTypeID, FPreDeadLine, FSerialClassID
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_ICItemBase
     where FItemID = #{fitemid,jdbcType=INTEGER}

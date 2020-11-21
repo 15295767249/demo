@@ -61,7 +61,7 @@
     FBatchQty, FClass, FCostDiffRate, FDepartment, FSaleTaxAcctID, FCBBmStandardID, FBatchCreate
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_ICItemMaterial
     where FItemID = #{fitemid,jdbcType=INTEGER}
