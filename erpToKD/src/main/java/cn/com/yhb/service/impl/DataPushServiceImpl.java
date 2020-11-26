@@ -111,25 +111,25 @@ public class DataPushServiceImpl implements DataPushService {
             }
             System.out.println(startTime);
         }
-        System.out.println("获取供应商资料======================");
-        //获取erp供应商资料列表
-        BLERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
+//        System.out.println("获取供应商资料======================");
+//        //获取erp供应商资料列表
+//        BLERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
 
-        System.out.println("获取客户资料表======================");
-        //获取erp销售发货单
-        BLERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
+//        System.out.println("获取客户资料表======================");
+//        //获取erp销售发货单
+//        BLERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
 
-        System.out.println("获取仓库资料======================");
-        //获取erp仓库资料
-        BLERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
+//        System.out.println("获取仓库资料======================");
+//        //获取erp仓库资料
+//        BLERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
 
-        //商品类型
-        System.out.println("获取商品类别======================");
-        BLERPDataDao.getEcs_erp_sys_prdt_types(startTime);
-
-        System.out.println("获取商品资料======================");
-        //获取erp商品资料列表
-        BLERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
+//        //商品类型
+//        System.out.println("获取商品类别======================");
+//        BLERPDataDao.getEcs_erp_sys_prdt_types(startTime);
+//
+//        System.out.println("获取商品资料======================");
+//        //获取erp商品资料列表
+//        BLERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
 
         System.out.println("获取销售发货单======================");
         //获取erp销售发货单
@@ -164,25 +164,25 @@ public class DataPushServiceImpl implements DataPushService {
             startTime = DateUtil.utilString(DateUtil.getNowMonday());
             System.out.println(startTime);
         }
-        System.out.println("获取供应商资料======================");
-        //获取erp供应商资料列表
-        BLERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
+//        System.out.println("获取供应商资料======================");
+//        //获取erp供应商资料列表
+//        BLERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
 
-        System.out.println("获取客户资料表======================");
-        //获取erp客户
-        BLERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
+//        System.out.println("获取客户资料表======================");
+//        //获取erp客户
+//        BLERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
 
-        System.out.println("获取仓库资料======================");
-        //获取erp仓库资料
-        BLERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
+//        System.out.println("获取仓库资料======================");
+//        //获取erp仓库资料
+//        BLERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
 
-        //商品类型
-        System.out.println("获取商品类别======================");
-        BLERPDataDao.getEcs_erp_sys_prdt_types(startTime);
-
-        System.out.println("获取商品资料======================");
-        //获取erp商品资料列表
-        BLERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
+//        //商品类型
+//        System.out.println("获取商品类别======================");
+//        BLERPDataDao.getEcs_erp_sys_prdt_types(startTime);
+//
+//        System.out.println("获取商品资料======================");
+//        //获取erp商品资料列表
+//        BLERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
 
         System.out.println("获取销售发货单======================");
         //获取erp销售发货单
@@ -225,26 +225,25 @@ public class DataPushServiceImpl implements DataPushService {
             }
             System.out.println(startTime);
         }
-        System.out.println("获取供应商资料======================");
-        //获取erp供应商资料列表
-        YTERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
+//        System.out.println("获取供应商资料======================");
+//        //获取erp供应商资料列表
+//        YTERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
 
-        System.out.println("获取客户资料表======================");
-        //获取erp销售发货单
-        YTERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
+//        System.out.println("获取客户资料表======================");
+//        //获取erp销售发货单
+//        YTERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
 
-        System.out.println("获取仓库资料======================");
-        //获取erp仓库资料
-        YTERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
+//        System.out.println("获取仓库资料======================");
+//        //获取erp仓库资料
+//        YTERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
 
-
-        //商品类型
-        System.out.println("获取商品类别======================");
-        YTERPDataDao.getEcs_erp_sys_prdt_types(startTime);
-
-        System.out.println("获取商品资料======================");
-        //获取erp商品资料列表
-        YTERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
+//        //商品类型
+//        System.out.println("获取商品类别======================");
+//        YTERPDataDao.getEcs_erp_sys_prdt_types(startTime);
+//
+//        System.out.println("获取商品资料======================");
+//        //获取erp商品资料列表
+//        YTERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
 
         System.out.println("获取销售发货单======================");
         //获取erp销售发货单
@@ -279,25 +278,26 @@ public class DataPushServiceImpl implements DataPushService {
             startTime = DateUtil.utilString(DateUtil.getNowMonday());
             System.out.println(startTime);
         }
-        //商品类型
-        System.out.println("获取商品类别======================");
-        YTERPDataDao.getEcs_erp_sys_prdt_types(startTime);
 
-        System.out.println("获取商品资料======================");
-        //获取erp商品资料列表
-        YTERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
+//        System.out.println("获取供应商资料======================");
+//        //获取erp供应商资料列表
+//        YTERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
 
-        System.out.println("获取仓库资料======================");
-        //获取erp仓库资料
-        YTERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
+//        System.out.println("获取客户资料表======================");
+//        //获取erp客户
+//        YTERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
 
-        System.out.println("获取供应商资料======================");
-        //获取erp供应商资料列表
-        YTERPDataDao.getEcs_erp_sys_custs(startTime, endTime);
+//        System.out.println("获取仓库资料======================");
+//        //获取erp仓库资料
+//        YTERPDataDao.getEcs_erp_sys_whs(startTime, endTime);
 
-        System.out.println("获取客户资料表======================");
-        //获取erp客户
-        YTERPDataDao.getEcs_erp_sys_sites(startTime, endTime);
+//        //商品类型
+//        System.out.println("获取商品类别======================");
+//        YTERPDataDao.getEcs_erp_sys_prdt_types(startTime);
+//
+//        System.out.println("获取商品资料======================");
+//        //获取erp商品资料列表
+//        YTERPDataDao.getEcs_erp_sys_prdts(startTime, endTime);
 
         System.out.println("获取销售发货单======================");
         //获取erp销售发货单

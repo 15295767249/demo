@@ -286,7 +286,7 @@ public class YTERPDataDao {
                 t_iCItemMaterial.setFtrack(76);
                 t_iCItemMaterial.setFplanprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("declare_value"))));
                 t_iCItemMaterial.setFpricedecimal(Short.parseShort("2"));
-                t_iCItemMaterial.setFacctid(1029);
+                t_iCItemMaterial.setFacctid(0);
                 t_iCItemMaterial.setFsaleacctid(1181);
                 t_iCItemMaterial.setFcostacctid(1152);
                 t_iCItemMaterial.setFapacctid(null);
@@ -523,7 +523,7 @@ public class YTERPDataDao {
                 t_supplier.setFdiscount(new BigDecimal(0));
                 t_supplier.setFtypeid(0);
                 t_supplier.setFcreditamount(new BigDecimal(0));
-                t_supplier.setFcreditlevel("");
+                t_supplier.setFcreditlevel("0");
                 t_supplier.setFstockidassignee(0);
                 t_supplier.setFbr(0);
                 t_supplier.setFregmark("");
@@ -662,7 +662,7 @@ public class YTERPDataDao {
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
-                icStockBillEntry.setFunitid(183);
+                icStockBillEntry.setFunitid(260);
                 icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_real"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_real"))));
@@ -721,7 +721,7 @@ public class YTERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -760,13 +760,13 @@ public class YTERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
-                icstockbill.setFscstockid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFscstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(Integer.parseInt("200" + StringUtil.strToNum(resultSet.getString("cust_id"))));//销售：对应客户
+                icstockbill.setFsupplyid(251);//销售：对应客户(注意)
                 icstockbill.setFposterid(0);
-                icstockbill.setFcheckerid(0);
+                icstockbill.setFcheckerid(16394);
                 icstockbill.setFfmanagerid(0);
                 icstockbill.setFsmanagerid(0);
                 icstockbill.setFbillerid(16394);//生产同步前应查询相关表（t_User）
@@ -889,14 +889,14 @@ public class YTERPDataDao {
                 icStockBillEntry.setFitemid(Integer.parseInt(StringUtil.strToNum("400" + resultSet.getString("prdt_id"))));
                 icStockBillEntry.setFqtymust(new BigDecimal(0));
                 icStockBillEntry.setFqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_actual"))));
-                icStockBillEntry.setFprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_actual"))));
+                icStockBillEntry.setFprice(new BigDecimal(0));
                 icStockBillEntry.setFbatchno("");
-                icStockBillEntry.setFamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_actual"))));
+                icStockBillEntry.setFamount(new BigDecimal(0));
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
-                icStockBillEntry.setFunitid(183);
-                icStockBillEntry.setFauxprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_actual"))));
+                icStockBillEntry.setFunitid(260);
+                icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_actual"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_actual"))));
                 icStockBillEntry.setFqtyactual(new BigDecimal(0));
@@ -954,7 +954,7 @@ public class YTERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("back_wh"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -993,13 +993,13 @@ public class YTERPDataDao {
                 icstockbill.setFbillno("");
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo")));
-                icstockbill.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("back_wh"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
-                icstockbill.setFscstockid(0);
+                icstockbill.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFscstockid(257);
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(Integer.parseInt("200" + StringUtil.strToNum(resultSet.getString("site_id"))));//销售：对应客户
+                icstockbill.setFsupplyid(251);//销售：对应客户
                 icstockbill.setFposterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("operator"))));
-                icstockbill.setFcheckerid(0);
+                icstockbill.setFcheckerid(16394);
                 icstockbill.setFfmanagerid(0);
                 icstockbill.setFsmanagerid(0);
                 icstockbill.setFbillerid(16394);//生产同步前应查询相关表（t_User）
@@ -1127,7 +1127,7 @@ public class YTERPDataDao {
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
-                icStockBillEntry.setFunitid(183);
+                icStockBillEntry.setFunitid(260);
                 icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_in"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_in"))));
@@ -1186,7 +1186,7 @@ public class YTERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id_in"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -1225,13 +1225,13 @@ public class YTERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(0);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
-                icstockbill.setFscstockid(0);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFscstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(1000023);
+                icstockbill.setFsupplyid(216);
                 icstockbill.setFposterid(0);
-                icstockbill.setFcheckerid(null);
+                icstockbill.setFcheckerid(16394);
                 icstockbill.setFfmanagerid(0);
                 icstockbill.setFsmanagerid(0);
                 icstockbill.setFbillerid(16394);//生产同步前应查询相关表（t_User）
@@ -1353,14 +1353,14 @@ public class YTERPDataDao {
                 icStockBillEntry.setFitemid(Integer.parseInt(StringUtil.strToNum("400" + resultSet.getString("prdt_id"))));
                 icStockBillEntry.setFqtymust(new BigDecimal(0));
                 icStockBillEntry.setFqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
-                icStockBillEntry.setFprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFprice(new BigDecimal(0));
                 icStockBillEntry.setFbatchno("");
-                icStockBillEntry.setFamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFamount(new BigDecimal(0));
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
-                icStockBillEntry.setFunitid(183);
-                icStockBillEntry.setFauxprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFunitid(260);
+                icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFqtyactual(new BigDecimal(0));
@@ -1418,7 +1418,7 @@ public class YTERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -1457,11 +1457,11 @@ public class YTERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFscstockid(0);
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(Integer.parseInt("100" + StringUtil.strToNum(resultSet.getString("cust_id"))));//采购：对应供应商
+                icstockbill.setFsupplyid(216);//采购：对应供应商——贝立
                 icstockbill.setFposterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("cls_user_id"))));
                 icstockbill.setFcheckerid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("chk_user_id"))));
                 icstockbill.setFfmanagerid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("qc_user_id"))));
@@ -1585,14 +1585,14 @@ public class YTERPDataDao {
                 icStockBillEntry.setFitemid(Integer.parseInt(StringUtil.strToNum("400" + resultSet.getString("prdt_id"))));
                 icStockBillEntry.setFqtymust(new BigDecimal(0));
                 icStockBillEntry.setFqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
-                icStockBillEntry.setFprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFprice(new BigDecimal(0));
                 icStockBillEntry.setFbatchno("");
-                icStockBillEntry.setFamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFamount(new BigDecimal(0));
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
-                icStockBillEntry.setFunitid(183);
-                icStockBillEntry.setFauxprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFunitid(260);
+                icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFqtyactual(new BigDecimal(0));
@@ -1650,7 +1650,7 @@ public class YTERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -1689,11 +1689,11 @@ public class YTERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(257);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFscstockid(0);
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(Integer.parseInt("100" + StringUtil.strToNum(resultSet.getString("cust_id"))));//采购：对应供应商
+                icstockbill.setFsupplyid(216);//采购：对应供应商
                 icstockbill.setFposterid(0);
                 icstockbill.setFcheckerid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("chk_user_id"))));
                 icstockbill.setFfmanagerid(0);
@@ -1802,7 +1802,7 @@ public class YTERPDataDao {
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
-            sql = "select * from ecs_erp_sys_site t where t.created >= '" + startTime + "'";
+            sql = "select * from ecs_erp_sys_site t where t.is_stop != 1 and t.created >= '" + startTime + "'";
             if (!StringUtils.isEmpty(endTime)) {
                 sql += "and t.created <= '" + endTime + "' ";
             }
@@ -1814,18 +1814,18 @@ public class YTERPDataDao {
                 t_item.setFitemid(Integer.parseInt(id));
                 t_item.setFitemclassid(1);
                 t_item.setFexternid(-1);
-                t_item.setFnumber(StringUtil.strToNum(id));
-                t_item.setFparentid(0);
-                t_item.setFlevel(Short.parseShort("1"));
+                t_item.setFnumber("国际." + StringUtil.strToNum(id));
+                t_item.setFparentid(250);
+                t_item.setFlevel(Short.parseShort("2"));
                 t_item.setFdetail(true);
                 t_item.setFname(StringUtil.getStr(resultSet.getString("site_name")));
                 t_item.setFunused(false);
                 t_item.setFbrno("0");
-                t_item.setFfullnumber(StringUtil.getStr(id));
+                t_item.setFfullnumber("国际." + StringUtil.getStr(id));
                 t_item.setFdiff(false);
                 t_item.setFdeleted((short) 0);
                 t_item.setFshortnumber(StringUtil.getStr(id));
-                t_item.setFfullname(StringUtil.getStr(resultSet.getString("site_name")));
+                t_item.setFfullname("国际_" + StringUtil.getStr(resultSet.getString("site_name")));
                 t_item.setUuid(UUID.randomUUID().toString());
                 t_item.setFgrcommonid(-1);
                 t_item.setFsystemtype(1);
@@ -1862,10 +1862,10 @@ public class YTERPDataDao {
                 t_organization.setFcyid(null);
                 t_organization.setFdebtlevel(0);
                 t_organization.setFdeleted(Short.parseShort(StringUtil.strToNum(resultSet.getString("is_stop"))));
-                t_organization.setFdepartment(Integer.parseInt(StringUtil.strToNum(resultSet.getString("dept_id"))));
+                t_organization.setFdepartment(0);
                 t_organization.setFemail("");
                 t_organization.setFemailacct("");
-                t_organization.setFemployee(Integer.parseInt(StringUtil.strToNum(resultSet.getString("salm_id"))));
+                t_organization.setFemployee(0);
                 t_organization.setFendtradedate(null);
                 t_organization.setFerpclsid(null);
                 t_organization.setFfavorpolicy("");
@@ -1887,9 +1887,10 @@ public class YTERPDataDao {
                 t_organization.setFminreserverate(0.0);
                 t_organization.setFmodifytime(null);
                 t_organization.setFname(StringUtil.getStr(resultSet.getString("site_name")));
-                t_organization.setFnumber(StringUtil.getStr(resultSet.getString("merchand_id")));
+                t_organization.setFfullname("国际_" + StringUtil.getStr(resultSet.getString("site_name")));
+                t_organization.setFnumber("国际." + StringUtil.getStr(resultSet.getString("merchand_id")));
                 t_organization.setFoperid(null);
-                t_organization.setFparentid(0);
+                t_organization.setFparentid(250);
                 t_organization.setFpaytaxacctid(0);
                 t_organization.setFphone("");
                 t_organization.setFphoneacct("");
@@ -1899,23 +1900,24 @@ public class YTERPDataDao {
                 t_organization.setFpriceclsid(null);
                 t_organization.setFpriorityid(null);
                 t_organization.setFprovince("");
-                t_organization.setFregionid(null);
-                t_organization.setFsalemode(0);
+                t_organization.setFregionid(0);
+                t_organization.setFsalemode(1057);
                 t_organization.setFsetdlineid(null);
                 t_organization.setFsetid(null);
                 t_organization.setFshortname(StringUtil.getStr(resultSet.getString("site_name")));
                 t_organization.setFshortnumber(StringUtil.getStr(resultSet.getString("merchand_id")));
-                t_organization.setFstatus(null);
+                t_organization.setFstatus(1072);
                 t_organization.setFtax(0f);
                 t_organization.setFtaxid("");
                 t_organization.setFtaxnum("");
-                t_organization.setFtrade(null);
+                t_organization.setFtrade(0);
                 t_organization.setFvalueaddrate(new BigDecimal(0));
                 t_organization.setFzipacct("");
                 t_organization.setFtypeid(0);
                 t_organization.setFstockidassign(0);
+                t_organization.setFstockidkeep(0);
                 t_organization.setFstockidinst(0);
-                t_organization.setFlicandpermit(false);
+                t_organization.setFlicandpermit(true);
                 t_organization.setFotheraracctid(0);
                 t_organization.setFotherapacctid(0);
                 t_organization.setFpreapacctid(0);
@@ -1923,7 +1925,7 @@ public class YTERPDataDao {
                 t_organization.setFpaymenttime(0);
                 t_organization.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
                 t_organization.setFmatchsupplyid(0);
-                t_organization.setFwdhsecurity("");
+                t_organization.setFwdhsecurity("1");
                 t_organization.setFlogoid("");
                 t_organization.setFismbdata(false);
                 t_organization.setFintent(false);

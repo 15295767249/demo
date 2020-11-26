@@ -1,5 +1,5 @@
 server:
-  port: 89
+  port: 8087
   servlet:
     context-path: /
 
@@ -12,36 +12,6 @@ spring:
 
   autoconfigure:
     exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
-
-  datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    time-between-eviction-runs-millis: 30000
-#    min-evictable-idle-time-millis: 300000
-#    test-while-idle: true
-#    test-on-borrow: false
-#    test-on-return: false
-#    filters: stat
-#    break-after-acquire-failure: true
-#    connection-error-retry-attempts: 3
-    validation-query: SELECT 1
-    erp:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3307/erp_yto?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-      username: root
-      password: root
-    test:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
-      username: root
-      password: root
-    sqlserver-bl:
-      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS20201103111621;integratedSecurity=true;
-      username: DESKTOP-SQ3J3GR\\86152
-    sqlserver-yt:
-      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS20201103111549;integratedSecurity=true;
-      username: DESKTOP-SQ3J3GR\\86152
 
 #  datasource:
 ##    type: com.alibaba.druid.pool.DruidDataSource
@@ -60,20 +30,50 @@ spring:
 #      username: root
 #      password: root
 #    test:
-#      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS1111;integratedSecurity=true;
-#      username: sa
-#      password: kd@888888
+#      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://localhost/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+#      username: root
+#      password: root
 #    sqlserver-bl:
 #      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS1111;integratedSecurity=true;
-#      username: sa
-#      password: kd@888888
+#      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS20201103111621;integratedSecurity=true;
+#      username: DESKTOP-SQ3J3GR\\86152
 #    sqlserver-yt:
 #      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20201103111830;integratedSecurity=true;
-#      username: sa
-#      password: kd@888888
+#      url: jdbc:sqlserver://DESKTOP-SQ3J3GR\SQLEXPRESS;DatabaseName=AIS20201103111549;integratedSecurity=true;
+#      username: DESKTOP-SQ3J3GR\\86152
+
+  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    time-between-eviction-runs-millis: 30000
+#    min-evictable-idle-time-millis: 300000
+#    test-while-idle: true
+#    test-on-borrow: false
+#    test-on-return: false
+#    filters: stat
+#    break-after-acquire-failure: true
+#    connection-error-retry-attempts: 3
+    validation-query: SELECT 1
+    erp:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3307/erp_yto?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: root
+      password: root
+    test:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20201124092127;integratedSecurity=true;
+      username: sa
+      password: kd@888888
+    sqlserver-bl:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20201124092127;integratedSecurity=true;
+      username: sa
+      password: kd@888888
+    sqlserver-yt:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://KDSERVER;DatabaseName=AIS20201103111549;integratedSecurity=true;
+      username: sa
+      password: kd@888888
 
     config:
       location: classpath:/

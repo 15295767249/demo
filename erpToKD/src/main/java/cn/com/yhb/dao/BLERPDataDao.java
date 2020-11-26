@@ -652,14 +652,14 @@ public class BLERPDataDao {
                 icStockBillEntry.setFitemid(Integer.parseInt(StringUtil.strToNum("400" + StringUtil.getStr(resultSet.getString("prdt_id")))));
                 icStockBillEntry.setFqtymust(new BigDecimal(0));
                 icStockBillEntry.setFqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
-                icStockBillEntry.setFprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("up_cst"))));
+                icStockBillEntry.setFprice(new BigDecimal(0));
                 icStockBillEntry.setFbatchno("");
-                icStockBillEntry.setFamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("up_cst"))));
+                icStockBillEntry.setFamount(new BigDecimal(0));
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
                 icStockBillEntry.setFunitid(276);
-                icStockBillEntry.setFauxprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("up_cst"))));
+                icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFqtyactual(new BigDecimal(0));
@@ -673,8 +673,8 @@ public class BLERPDataDao {
                 icStockBillEntry.setFkfperiod(0);
                 icStockBillEntry.setFdcspid(0);
                 icStockBillEntry.setFscspid(null);
-                icStockBillEntry.setFconsignprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("up_cst"))));
-                icStockBillEntry.setFconsignamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("up_cst"))));
+                icStockBillEntry.setFconsignprice(new BigDecimal(0));
+                icStockBillEntry.setFconsignamount(new BigDecimal(0));
                 icStockBillEntry.setFprocesscost(new BigDecimal(0));
                 icStockBillEntry.setFmaterialcost(new BigDecimal(0));
                 icStockBillEntry.setFtaxamount(new BigDecimal(0));
@@ -717,7 +717,7 @@ public class BLERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -756,13 +756,13 @@ public class BLERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
-                icstockbill.setFscstockid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFscstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(Integer.parseInt("200" + StringUtil.strToNum(resultSet.getString("site_id"))));//销售：对应客户
+                icstockbill.setFsupplyid(209);//销售：对应客户
                 icstockbill.setFposterid(0);
-                icstockbill.setFcheckerid(0);
+                icstockbill.setFcheckerid(16394);
                 icstockbill.setFfmanagerid(0);
                 icstockbill.setFsmanagerid(0);
                 icstockbill.setFbillerid(16394);//生产同步前应查询相关表（t_User）
@@ -885,14 +885,14 @@ public class BLERPDataDao {
                 icStockBillEntry.setFitemid(Integer.parseInt(StringUtil.strToNum("400" + resultSet.getString("prdt_id"))));
                 icStockBillEntry.setFqtymust(new BigDecimal(0));
                 icStockBillEntry.setFqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_actual"))));
-                icStockBillEntry.setFprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_actual"))));
+                icStockBillEntry.setFprice(new BigDecimal(0));
                 icStockBillEntry.setFbatchno("");
-                icStockBillEntry.setFamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_actual"))));
+                icStockBillEntry.setFamount(new BigDecimal(0));
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
                 icStockBillEntry.setFunitid(276);
-                icStockBillEntry.setFauxprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_actual"))));
+                icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_actual"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty_actual"))));
                 icStockBillEntry.setFqtyactual(new BigDecimal(0));
@@ -950,7 +950,7 @@ public class BLERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("back_wh"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -989,13 +989,13 @@ public class BLERPDataDao {
                 icstockbill.setFbillno("");
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo")));
-                icstockbill.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("back_wh"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFscstockid(0);
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(Integer.parseInt("200" + StringUtil.strToNum(resultSet.getString("site_id"))));//销售：对应客户
+                icstockbill.setFsupplyid(209);//销售：对应客户
                 icstockbill.setFposterid(Integer.parseInt(StringUtil.strToNum(resultSet.getString("operator"))));
-                icstockbill.setFcheckerid(0);
+                icstockbill.setFcheckerid(16394);
                 icstockbill.setFfmanagerid(0);
                 icstockbill.setFsmanagerid(0);
                 icstockbill.setFbillerid(16394);//生产同步前应查询相关表（t_User）
@@ -1182,7 +1182,7 @@ public class BLERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id_in"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -1221,13 +1221,13 @@ public class BLERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(0);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
-                icstockbill.setFscstockid(0);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFscstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
-                icstockbill.setFsupplyid(1000023);
+                icstockbill.setFsupplyid(209);
                 icstockbill.setFposterid(0);
-                icstockbill.setFcheckerid(null);
+                icstockbill.setFcheckerid(16394);
                 icstockbill.setFfmanagerid(0);
                 icstockbill.setFsmanagerid(0);
                 icstockbill.setFbillerid(16394);//生产同步前应查询相关表（t_User）
@@ -1349,14 +1349,14 @@ public class BLERPDataDao {
                 icStockBillEntry.setFitemid(Integer.parseInt(StringUtil.strToNum("400" + resultSet.getString("prdt_id"))));
                 icStockBillEntry.setFqtymust(new BigDecimal(0));
                 icStockBillEntry.setFqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
-                icStockBillEntry.setFprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFprice(new BigDecimal(0));
                 icStockBillEntry.setFbatchno("");
-                icStockBillEntry.setFamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFamount(new BigDecimal(0));
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
                 icStockBillEntry.setFunitid(276);
-                icStockBillEntry.setFauxprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFqtyactual(new BigDecimal(0));
@@ -1414,7 +1414,7 @@ public class BLERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -1453,7 +1453,7 @@ public class BLERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFscstockid(0);
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
@@ -1581,14 +1581,14 @@ public class BLERPDataDao {
                 icStockBillEntry.setFitemid(Integer.parseInt(StringUtil.strToNum("400" + resultSet.getString("prdt_id"))));
                 icStockBillEntry.setFqtymust(new BigDecimal(0));
                 icStockBillEntry.setFqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
-                icStockBillEntry.setFprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFprice(new BigDecimal(0));
                 icStockBillEntry.setFbatchno("");
-                icStockBillEntry.setFamount(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFamount(new BigDecimal(0));
                 icStockBillEntry.setFnote("");
                 icStockBillEntry.setFscbillinterid(null);
                 icStockBillEntry.setFscbillno(null);
                 icStockBillEntry.setFunitid(276);
-                icStockBillEntry.setFauxprice(new BigDecimal(StringUtil.strToNum(resultSet.getString("amt_tax"))));
+                icStockBillEntry.setFauxprice(new BigDecimal(0));
                 icStockBillEntry.setFauxqty(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFauxqtymust(new BigDecimal(StringUtil.strToNum(resultSet.getString("qty"))));
                 icStockBillEntry.setFqtyactual(new BigDecimal(0));
@@ -1646,7 +1646,7 @@ public class BLERPDataDao {
                 icStockBillEntry.setFstdallhookamount(new BigDecimal(0));
                 icStockBillEntry.setFstdcurrenthookamount(new BigDecimal(0));
                 icStockBillEntry.setFscstockid(0);
-                icStockBillEntry.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icStockBillEntry.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icStockBillEntry.setFperioddate(null);
                 icStockBillEntry.setFcostobjgroupid(0);
                 icStockBillEntry.setFcostobjid(0);
@@ -1685,7 +1685,7 @@ public class BLERPDataDao {
                 icstockbill.setFbillno(StringUtil.getStr(resultSet.getString("bil_no")));
                 icstockbill.setFuse("");
                 icstockbill.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
-                icstockbill.setFdcstockid(Integer.parseInt("300" + StringUtil.strToNum(resultSet.getString("wh_id"))));//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
+                icstockbill.setFdcstockid(274);//后期需修改为生产环境的仓库（贝利：内销仓，咿童：外销仓）
                 icstockbill.setFscstockid(0);
                 icstockbill.setFdeptid(0);
                 icstockbill.setFempid(0);
@@ -1798,7 +1798,7 @@ public class BLERPDataDao {
         connection = sshConnection.getConnection();
         try {
             st = connection.createStatement();
-            sql = "select * from ecs_erp_sys_site t where t.created >= '" + startTime + "'";
+            sql = "select * from ecs_erp_sys_site t where t.is_stop != 1 and t.created >= '" + startTime + "'";
             if (!StringUtils.isEmpty(endTime)) {
                 sql += "and t.created <= '" + endTime + "' ";
             }
@@ -1810,18 +1810,18 @@ public class BLERPDataDao {
                 t_item.setFitemid(Integer.parseInt(id));
                 t_item.setFitemclassid(1);
                 t_item.setFexternid(-1);
-                t_item.setFnumber(StringUtil.strToNum(id));
-                t_item.setFparentid(0);
-                t_item.setFlevel(Short.parseShort("1"));
+                t_item.setFnumber("HW." + StringUtil.strToNum(id));
+                t_item.setFparentid(183);
+                t_item.setFlevel(Short.parseShort("2"));
                 t_item.setFdetail(true);
                 t_item.setFname(StringUtil.getStr(resultSet.getString("site_name")));
                 t_item.setFunused(false);
                 t_item.setFbrno("0");
-                t_item.setFfullnumber(StringUtil.getStr(id));
+                t_item.setFfullnumber("HW." + StringUtil.getStr(id));
                 t_item.setFdiff(false);
                 t_item.setFdeleted((short) 0);
                 t_item.setFshortnumber(StringUtil.getStr(id));
-                t_item.setFfullname(StringUtil.getStr(resultSet.getString("site_name")));
+                t_item.setFfullname("海外_" + StringUtil.getStr(resultSet.getString("site_name")));
                 t_item.setUuid(UUID.randomUUID().toString());
                 t_item.setFgrcommonid(-1);
                 t_item.setFsystemtype(1);
@@ -1883,9 +1883,9 @@ public class BLERPDataDao {
                 t_organization.setFminreserverate(0.0);
                 t_organization.setFmodifytime(null);
                 t_organization.setFname(StringUtil.getStr(resultSet.getString("site_name")));
-                t_organization.setFnumber(StringUtil.getStr(resultSet.getString("merchand_id")));
+                t_organization.setFnumber("HW." + StringUtil.getStr(resultSet.getString("merchand_id")));
                 t_organization.setFoperid(null);
-                t_organization.setFparentid(0);
+                t_organization.setFparentid(183);
                 t_organization.setFpaytaxacctid(0);
                 t_organization.setFphone("");
                 t_organization.setFphoneacct("");
@@ -1895,23 +1895,24 @@ public class BLERPDataDao {
                 t_organization.setFpriceclsid(null);
                 t_organization.setFpriorityid(null);
                 t_organization.setFprovince("");
-                t_organization.setFregionid(null);
-                t_organization.setFsalemode(0);
+                t_organization.setFregionid(0);
+                t_organization.setFsalemode(1057);
                 t_organization.setFsetdlineid(null);
                 t_organization.setFsetid(null);
                 t_organization.setFshortname(StringUtil.getStr(resultSet.getString("site_name")));
+                t_organization.setFfullname("海外_" + StringUtil.getStr(resultSet.getString("site_name")));
                 t_organization.setFshortnumber(StringUtil.getStr(resultSet.getString("merchand_id")));
-                t_organization.setFstatus(null);
+                t_organization.setFstatus(1072);
                 t_organization.setFtax(0f);
                 t_organization.setFtaxid("");
                 t_organization.setFtaxnum("");
-                t_organization.setFtrade(null);
+                t_organization.setFtrade(0);
                 t_organization.setFvalueaddrate(new BigDecimal(0));
                 t_organization.setFzipacct("");
                 t_organization.setFtypeid(0);
                 t_organization.setFstockidassign(0);
                 t_organization.setFstockidinst(0);
-                t_organization.setFlicandpermit(false);
+                t_organization.setFlicandpermit(true);
                 t_organization.setFotheraracctid(0);
                 t_organization.setFotherapacctid(0);
                 t_organization.setFpreapacctid(0);
@@ -1919,7 +1920,7 @@ public class BLERPDataDao {
                 t_organization.setFpaymenttime(0);
                 t_organization.setFnote(StringUtil.getStr(resultSet.getString("memo_info")));
                 t_organization.setFmatchsupplyid(0);
-                t_organization.setFwdhsecurity("");
+                t_organization.setFwdhsecurity("1");
                 t_organization.setFlogoid("");
                 t_organization.setFismbdata(false);
                 t_organization.setFintent(false);
