@@ -206,7 +206,17 @@ public class BLERPDataDao {
 
                 t_ICItemCore t_icItemCore = new t_ICItemCore();
                 t_icItemCore.setFitemid(Integer.parseInt(id));
-                t_icItemCore.setFmodel(StringUtil.getStr(resultSet.getString("spc")) + "_" + StringUtil.getStr(resultSet.getString("properties_name")));
+                String f_model = "";
+                if (!StringUtils.isEmpty(StringUtil.getStr(resultSet.getString("spc")))) {
+                    f_model = StringUtil.getStr(resultSet.getString("spc"));
+                }
+                if (!StringUtils.isEmpty(StringUtil.getStr(resultSet.getString("spc"))) && !StringUtils.isEmpty(StringUtil.getStr(resultSet.getString("properties_name")))) {
+                    f_model += "_";
+                }
+                if (!StringUtils.isEmpty(StringUtil.getStr(resultSet.getString("properties_name")))) {
+                    f_model += StringUtil.getStr(resultSet.getString("properties_name"));
+                }
+                t_icItemCore.setFmodel(f_model);
                 t_icItemCore.setFname(StringUtil.getStr(resultSet.getString("prdt_name")));
                 t_icItemCore.setFhelpcode("");
                 t_icItemCore.setFdeleted(Short.parseShort(StringUtil.strToNum(resultSet.getString("is_stop"))));

@@ -2,9 +2,17 @@ file:
   #web_resources: classpath:/resources/templates/
   web_resources: classpath:/resources/static/
   ##download_path: ${DEMO_HOME}/download/
+  windowsUrl: http://192.168.101.10:8081
+  LinuxUrl: http://101.133.235.77:83
+  path:
+    windows: D:\apache-tomcat-8.5.59\webapps\file\
+    linux: /usr/local/tomcat/webapps/file/
+  rar:
+    unRar: /usr/local/bin/unrar
+  html: file/111.html
 
 server:
-  port: 8500
+  port: 8104
   servlet:
     context-path: /
 
@@ -21,16 +29,17 @@ spring:
     name: application
 
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    time-between-eviction-runs-millis: 30000
-    min-evictable-idle-time-millis: 300000
-    test-while-idle: true
-    test-on-borrow: false
-    test-on-return: false
-    filters: stat
-    break-after-acquire-failure: true
-    connection-error-retry-attempts: 3
-    validation-query: SELECT 1
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    time-between-eviction-runs-millis: 30000
+#    min-evictable-idle-time-millis: 300000
+#    test-while-idle: true
+#    test-on-borrow: false
+#    test-on-return: false
+#    filters: stat
+#    break-after-acquire-failure: true
+#    connection-error-retry-attempts: 3
+#    validation-query: SELECT 1
+
   #    validation-query: SELECT 1 from dual
 #    test:
 #      driver-class-name: com.mysql.jdbc.Driver
@@ -43,13 +52,13 @@ spring:
 #      username: root
 #      password: Yt@123456
     test:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
       username: root
       password: root
     test1:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/test1?characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
       username: root
       password: root
 
@@ -87,4 +96,3 @@ mybatis:
 
   mvc:
     static-path-pattern: /**
-
