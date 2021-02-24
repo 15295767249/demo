@@ -3,7 +3,7 @@ file:
   web_resources: classpath:/resources/static/
   ##download_path: ${DEMO_HOME}/download/
   windowsUrl: http://192.168.101.10:8081
-  LinuxUrl: http://101.133.235.77:83
+  LinuxUrl: http://101.133.235.77:84
   path:
     windows: D:\apache-tomcat-8.5.59\webapps\file\
     linux: /usr/local/tomcat/webapps/file/

@@ -80,7 +80,8 @@ public class UnPackeUtil {
      */
     public static void thumbnails(List<String> list, String saveDir) throws IOException {
         for (String filePath : list) {
-            String fileNameNow = filePath.substring(filePath.lastIndexOf("\\")+1);
+
+            String fileNameNow = filePath.substring(filePath.lastIndexOf(File.separator)+1);
             File file = new File(filePath);
             if (file.exists() && file.isFile()) {
                 System.out.println(file.length());
